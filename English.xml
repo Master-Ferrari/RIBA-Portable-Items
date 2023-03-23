@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <entityname.RIBATextdisplay>Text display DIY </entityname.RIBATextdisplay>
+  <entitydescription.RIBATextdisplay>Displays text and only it</entitydescription.RIBATextdisplay>
+  <entityname.RIBAControlMonitor>Display DIY </entityname.RIBAControlMonitor>
+  <entitydescription.RIBAControlMonitor>For watching "dirty" movies</entitydescription.RIBAControlMonitor>
+  <entityname.RIBAControlCamera>Camera DIY</entityname.RIBAControlCamera>
+  <entitydescription.RIBAControlCamera>For filming "dirty" movies</entitydescription.RIBAControlCamera>
+  <entityname.RIBALRwifiComponent>Component "Wireless+"</entityname.RIBALRwifiComponent>
+  <entitydescription.RIBALRwifiComponent>Causes cancer, but it's not certain</entitydescription.RIBALRwifiComponent>
+  <entityname.RIBAStatusMonitor>Status monitor DIY</entityname.RIBAStatusMonitor>
+  <entitydescription.RIBAStatusMonitor>To watch the flood myth</entitydescription.RIBAStatusMonitor>
+  <entityname.RIBATerminal>Terminal DIY</entityname.RIBATerminal>
+  <entitydescription.RIBATerminal>640kb ought to be enough for anybody!</entitydescription.RIBATerminal>
+  <entityname.RIBAJunctionBox>Cable box DIY</entityname.RIBAJunctionBox>
+  <entitydescription.RIBAJunctionBox>When trying to fix it bites</entitydescription.RIBAJunctionBox>
+  <entityname.RIBALamp>Lamp DIY</entityname.RIBALamp>
+  <entitydescription.RIBALamp>Top friend looking for a toilet at night </entitydescription.RIBALamp>
+  <!--entityname.RIBAsupercapacitor>Конденсатор DIY</entityname.RIBAsupercapacitor>
+<entitydescription.RIBAsupercapacitor>Конденсатор DIY</entitydescription.RIBAsupercapacitor-->
+  <entityname.RIBAbattery>Battery DIY</entityname.RIBAbattery>
+  <entitydescription.RIBAbattery>Contains potential</entitydescription.RIBAbattery>
+  <entityname.RIBAchargingdock>Charging dock DIY</entityname.RIBAchargingdock>
+  <entitydescription.RIBAchargingdock>Feed your batteries</entitydescription.RIBAchargingdock>
+  <entityname.RIBAsuppliescabinet>Supplies cabinet DIY</entityname.RIBAsuppliescabinet>
+  <entitydescription.RIBAsuppliescabinet>Usually contains eternally disappearing items on submarine</entitydescription.RIBAsuppliescabinet>
+  <entityname.RIBAmediumsteelcabinet>Medium steel cabinet DIY</entityname.RIBAmediumsteelcabinet>
+  <entitydescription.RIBAmediumsteelcabinet>Strong as steel</entitydescription.RIBAmediumsteelcabinet>
+  <entityname.RIBAmediumwindowedsteelcabinet>Medium steel cabinet DIY</entityname.RIBAmediumwindowedsteelcabinet>
+  <entitydescription.RIBAmediumwindowedsteelcabinet>Window to the Narnia</entitydescription.RIBAmediumwindowedsteelcabinet>
+  <entityname.RIBAdivingsuitlocker>Diving suit locker DIY</entityname.RIBAdivingsuitlocker>
+  <entitydescription.RIBAdivingsuitlocker>Keeps a fish dating suit</entitydescription.RIBAdivingsuitlocker>
+  <entityname.RIBAmedcabinet>Medcabinet DIY</entityname.RIBAmedcabinet>
+  <entitydescription.RIBAmedcabinet>We had 5 bags of tobacco, 12 doses of ethanol ... </entitydescription.RIBAmedcabinet>
+  <entityname.RIBArailgunshellrack>Railgun shell rack DIY</entityname.RIBArailgunshellrack>
+  <entitydescription.RIBArailgunshellrack>Only for old FPS gamers</entitydescription.RIBArailgunshellrack>
+  <entityname.RIBAcoilgunammoshelf>Coilgun ammo shelf DIY</entityname.RIBAcoilgunammoshelf>
+  <entitydescription.RIBAcoilgunammoshelf>Dominion followers only, we do not approve of riots</entitydescription.RIBAcoilgunammoshelf>
+  <entityname.RIBAcrateshelf>Crate shelf DIY</entityname.RIBAcrateshelf>
+  <entitydescription.RIBAcrateshelf>Crate for crates. Comfortable.</entitydescription.RIBAcrateshelf>
+  <entityname.RIBAtoxcabinet>Toxic cabinet DIY</entityname.RIBAtoxcabinet>
+  <entitydescription.RIBAtoxcabinet>You can't poisoned if you're toxic</entitydescription.RIBAtoxcabinet>
+  <entityname.RIBAoxygentankshelf>Oxygen tank shelf DIY</entityname.RIBAoxygentankshelf>
+  <entitydescription.RIBAoxygentankshelf>Contains cocktail ingredients</entitydescription.RIBAoxygentankshelf>
+  <entityname.RIBAweaponholder>Weapon holder DIY</entityname.RIBAweaponholder>
+  <entitydescription.RIBAweaponholder>Every space cowboy needs his own holster. See you later.</entitydescription.RIBAweaponholder>
+  <entityname.RIBAextinguisherbracket>Extinguisher bracket DIY</entityname.RIBAextinguisherbracket>
+  <entitydescription.RIBAextinguisherbracket>It's fine</entitydescription.RIBAextinguisherbracket>
+  <entityname.RIBAmetalcrate>Metal crate DIY</entityname.RIBAmetalcrate>
+  <entitydescription.RIBAmetalcrate>Do you really need a description of this item?</entitydescription.RIBAmetalcrate>
+  <entityname.RIBAsmallpump>Small pump DIY</entityname.RIBAsmallpump>
+  <entitydescription.RIBAsmallpump>Not musician</entitydescription.RIBAsmallpump>
+  <entityname.RIBAbigpump>Big pump DIY</entityname.RIBAbigpump>
+  <entitydescription.RIBAbigpump>Have a built-in blender (no)</entitydescription.RIBAbigpump>
+  <entityname.RIBAhandheldterminal>Handmade notebook</entityname.RIBAhandheldterminal>
+  <entitydescription.RIBAhandheldterminal>Remembers gaudy fanfiction</entitydescription.RIBAhandheldterminal>
+  <entityname.RIBAmedfabricator>Medical Fabricator DIY</entityname.RIBAmedfabricator>
+  <entitydescription.RIBAmedfabricator>Traditional medicine</entitydescription.RIBAmedfabricator>
+  <entityname.RIBAdeconstructor>Deconstructor DIY</entityname.RIBAdeconstructor>
+  <entitydescription.RIBAdeconstructor>It's time to end this all</entitydescription.RIBAdeconstructor>
+  <entityname.RIBAfabricator>Fabricator DIY</entityname.RIBAfabricator>
+  <entitydescription.RIBAfabricator>DIY DIY DIY DIY DIY</entitydescription.RIBAfabricator>
+  <entityname.RIBAsteelcabinet>Large steel cabinet DIY</entityname.RIBAsteelcabinet>
+  <entitydescription.RIBAsteelcabinet>As large as captain's salary</entitydescription.RIBAsteelcabinet>
+  <entityname.RIBAbigsteelcabinet>Big steel cabinet DIY</entityname.RIBAbigsteelcabinet>
+  <entitydescription.RIBAbigsteelcabinet>Well, the cabinet..</entitydescription.RIBAbigsteelcabinet>
+  <RIBAItemMsgDetachCrowbar>[[use]]  It's not so easy to demontage  (Crowbar)</RIBAItemMsgDetachCrowbar>
+  <RIBAItemMsgDetachWrench>[[use]]  It's not so easy to demontage  (Wrench)</RIBAItemMsgDetachWrench>
+  <RIBAFixingtothefloor>Mounting to the floor</RIBAFixingtothefloor>
+</infotexts>

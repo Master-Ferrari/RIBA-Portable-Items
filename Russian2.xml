@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <entityname.RIBABuyableTextdisplay>Текстовый экран (новый)</entityname.RIBABuyableTextdisplay>
+  <entitydescription.RIBABuyableTextdisplay>Отображает текст и только его</entitydescription.RIBABuyableTextdisplay>
+  <entityname.RIBABuyableControlMonitor>Монитор (новый)</entityname.RIBABuyableControlMonitor>
+  <entitydescription.RIBABuyableControlMonitor>Для просмотра "грязных" фильмов</entitydescription.RIBABuyableControlMonitor>
+  <entityname.RIBABuyableControlCamera>Камера (новая)</entityname.RIBABuyableControlCamera>
+  <entitydescription.RIBABuyableControlCamera>Для съёмок "грязных" фильмов</entitydescription.RIBABuyableControlCamera>
+  <!-- <entityname.RIBABuyableLRwifiComponent>Компонент "Беспроводной+"</entityname.RIBABuyableLRwifiComponent> -->
+  <!-- <entitydescription.RIBABuyableLRwifiComponent>Вызывает рак, но это не точно</entitydescription.RIBABuyableLRwifiComponent> -->
+  <entityname.RIBABuyableStatusMonitor>Монитор состояния (новый)</entityname.RIBABuyableStatusMonitor>
+  <entitydescription.RIBABuyableStatusMonitor>Для просмотра всеми́рного пото́па</entitydescription.RIBABuyableStatusMonitor>
+  <entityname.RIBABuyableTerminal>Терминал (новый)</entityname.RIBABuyableTerminal>
+  <entitydescription.RIBABuyableTerminal>640кб хватит всем!</entitydescription.RIBABuyableTerminal>
+  <entityname.RIBABuyableJunctionBox>Кабельная коробка (новая)</entityname.RIBABuyableJunctionBox>
+  <entitydescription.RIBABuyableJunctionBox>При попытке починить кусается</entitydescription.RIBABuyableJunctionBox>
+  <entityname.RIBABuyableLamp>Лампа (новая)</entityname.RIBABuyableLamp>
+  <entitydescription.RIBABuyableLamp>Главный друг в поисках туалета ночью</entitydescription.RIBABuyableLamp>
+  <entityname.RIBABuyablebattery>Батарея (новая)</entityname.RIBABuyablebattery>
+  <entitydescription.RIBABuyablebattery>Хранит в себе потенциал</entitydescription.RIBABuyablebattery>
+  <entityname.RIBABuyablechargingdock>Станция зарядки (новая)</entityname.RIBABuyablechargingdock>
+  <entitydescription.RIBABuyablechargingdock>Кормит ваши батарейки</entitydescription.RIBABuyablechargingdock>
+  <entityname.RIBABuyablesuppliescabinet>Хозяйственный шкаф (новый)</entityname.RIBABuyablesuppliescabinet>
+  <entitydescription.RIBABuyablesuppliescabinet>Обычно хранит в себе вечно исчезающие предметы</entitydescription.RIBABuyablesuppliescabinet>
+  <entityname.RIBABuyablemediumsteelcabinet>Средний стальной шкаф (новый)</entityname.RIBABuyablemediumsteelcabinet>
+  <entitydescription.RIBABuyablemediumsteelcabinet>Крепок как сталь!</entitydescription.RIBABuyablemediumsteelcabinet>
+  <entityname.RIBABuyablemediumwindowedsteelcabinet>Средний стальной шкаф с окном (новый)</entityname.RIBABuyablemediumwindowedsteelcabinet>
+  <entitydescription.RIBABuyablemediumwindowedsteelcabinet>Окно в Нарнию</entitydescription.RIBABuyablemediumwindowedsteelcabinet>
+  <entityname.RIBABuyabledivingsuitlocker>Шкаф для подводного снаряжения (новый)</entityname.RIBABuyabledivingsuitlocker>
+  <entitydescription.RIBABuyabledivingsuitlocker>Хранит в себе костюм для свиданий с рыбами</entitydescription.RIBABuyabledivingsuitlocker>
+  <entityname.RIBABuyablemedcabinet>Медкабинет (новый)</entityname.RIBABuyablemedcabinet>
+  <entitydescription.RIBABuyablemedcabinet>У нас было 5 пакетиков табака, 12 доз этанола...</entitydescription.RIBABuyablemedcabinet>
+  <entityname.RIBABuyablerailgunshellrack>Стойка для снарядов рельсотрона (новый)</entityname.RIBABuyablerailgunshellrack>
+  <entitydescription.RIBABuyablerailgunshellrack>Пушка! Это заряжает Пушку! ...Зачем?</entitydescription.RIBABuyablerailgunshellrack>
+  <entityname.RIBABuyablecoilgunammoshelf>Полка с боеприпасами для пушки (новый)</entityname.RIBABuyablecoilgunammoshelf>
+  <entitydescription.RIBABuyablecoilgunammoshelf>Лучше бы ты подплыл поближе, чтобы я смог ударить их своим мечом!</entitydescription.RIBABuyablecoilgunammoshelf>
+  <entityname.RIBABuyablecrateshelf>Стеллаж для ящиков (новый)</entityname.RIBABuyablecrateshelf>
+  <entitydescription.RIBABuyablecrateshelf>Ящик для ящиков. Удобно.</entitydescription.RIBABuyablecrateshelf>
+  <entityname.RIBABuyabletoxcabinet>Шкаф для хранения токсинов (новый)</entityname.RIBABuyabletoxcabinet>
+  <entitydescription.RIBABuyabletoxcabinet>Склад грязи</entitydescription.RIBABuyabletoxcabinet>
+  <entityname.RIBABuyableoxygentankshelf>Полка для хранения кислородных баллонов (новый)</entityname.RIBABuyableoxygentankshelf>
+  <entitydescription.RIBABuyableoxygentankshelf>Содержит ингредиенты для коктейлей</entitydescription.RIBABuyableoxygentankshelf>
+  <entityname.RIBABuyableweaponholder>Оружейная стойка (новый)</entityname.RIBABuyableweaponholder>
+  <entitydescription.RIBABuyableweaponholder>Каждому космическому ковбою нужна своя кобура</entitydescription.RIBABuyableweaponholder>
+  <entityname.RIBABuyableextinguisherbracket>Стойка огнетушителя (новый)</entityname.RIBABuyableextinguisherbracket>
+  <entitydescription.RIBABuyableextinguisherbracket>It's fine</entitydescription.RIBABuyableextinguisherbracket>
+  <entityname.RIBABuyablemetalcrate>Металлический ящик (новый)</entityname.RIBABuyablemetalcrate>
+  <entitydescription.RIBABuyablemetalcrate>Вам правда необходимо описание?</entitydescription.RIBABuyablemetalcrate>
+  <entityname.RIBABuyablesmallpump>Малый насос (новый)</entityname.RIBABuyablesmallpump>
+  <entitydescription.RIBABuyablesmallpump>В 10 раз слабее чем от нашего Механыча, ноо... тоже ничо так качает...</entitydescription.RIBABuyablesmallpump>
+  <entityname.RIBABuyablemedfabricator>Медицинский фабрикатор (новый)</entityname.RIBABuyablemedfabricator>
+  <entitydescription.RIBABuyablemedfabricator>Народная медицина</entitydescription.RIBABuyablemedfabricator>
+  <entityname.RIBABuyabledeconstructor>Деконструктор (новый)</entityname.RIBABuyabledeconstructor>
+  <entitydescription.RIBABuyabledeconstructor>Пора с этим покончить</entitydescription.RIBABuyabledeconstructor>
+  <entityname.RIBABuyablefabricator>Фабрикатор (новый)</entityname.RIBABuyablefabricator>
+  <entitydescription.RIBABuyablefabricator>для DIY</entitydescription.RIBABuyablefabricator>
+  <entityname.RIBABuyablehandheldterminal>Судовой журнал</entityname.RIBABuyablehandheldterminal>
+  <entitydescription.RIBABuyablehandheldterminal>Запоминает безвкусные фанфики</entitydescription.RIBABuyablehandheldterminal>
+  <entityname.RIBAop_researchterminal>Исследовательский терминал</entityname.RIBAop_researchterminal>
+  <entitydescription.RIBAop_researchterminal>Генная инженерия</entitydescription.RIBAop_researchterminal>
+  <entityname.RIBAsecuresteelcabinet>Защищённый стальной шкаф</entityname.RIBAsecuresteelcabinet>
+  <entitydescription.RIBAsecuresteelcabinet>Сейф с доступом для капитана и сб</entitydescription.RIBAsecuresteelcabinet>
+  <entityname.RIBAengineermetalcrate>Защищённый ящик для электроники</entityname.RIBAengineermetalcrate>
+  <entitydescription.RIBAengineermetalcrate>Сейф с доступом для капитана и инженера</entitydescription.RIBAengineermetalcrate>
+  <entityname.RIBAmechanicmetalcrate>Защищённый ящик для инструментов</entityname.RIBAmechanicmetalcrate>
+  <entitydescription.RIBAmechanicmetalcrate>Сейф с доступом для капитана и механика</entitydescription.RIBAmechanicmetalcrate>
+  <entityname.RIBABuyablesteelcabinet>Большой стальной шкаф (новый)</entityname.RIBABuyablesteelcabinet>
+  <entitydescription.RIBABuyablesteelcabinet>Большой как капитанское чсв</entitydescription.RIBABuyablesteelcabinet>
+  <RIBABuyableItemMsgDetachCrowbar>[[use]] Это так просто не выдрать (Лом)</RIBABuyableItemMsgDetachCrowbar>
+  <RIBABuyableItemMsgDetachWrench>[[use]] Это так просто не выдрать (Гаечный ключ)</RIBABuyableItemMsgDetachWrench>
+  <RIBABuyableFixingtothefloor>Крепление к полу</RIBABuyableFixingtothefloor>
+</infotexts>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <entityname.RIBATextdisplay>Текстовый экран DIY</entityname.RIBATextdisplay>
+  <entitydescription.RIBATextdisplay>Отображает текст и только его</entitydescription.RIBATextdisplay>
+  <entityname.RIBAControlMonitor>Монитор</entityname.RIBAControlMonitor>
+  <entitydescription.RIBAControlMonitor>Для просмотра "грязных" фильмов</entitydescription.RIBAControlMonitor>
+  <entityname.RIBAControlCamera>Камера DIY</entityname.RIBAControlCamera>
+  <entitydescription.RIBAControlCamera>Для съёмок "грязных" фильмов</entitydescription.RIBAControlCamera>
+  <entityname.RIBALRwifiComponent>Компонент "Беспроводной+"</entityname.RIBALRwifiComponent>
+  <entitydescription.RIBALRwifiComponent>Вызывает рак, но это не точно</entitydescription.RIBALRwifiComponent>
+  <entityname.RIBAStatusMonitor>Монитор состояния DIY</entityname.RIBAStatusMonitor>
+  <entitydescription.RIBAStatusMonitor>Для просмотра всеми́рного пото́па</entitydescription.RIBAStatusMonitor>
+  <entityname.RIBATerminal>Терминал DIY</entityname.RIBATerminal>
+  <entitydescription.RIBATerminal>640кб хватит всем!</entitydescription.RIBATerminal>
+  <entityname.RIBAJunctionBox>Кабельная коробка DIY</entityname.RIBAJunctionBox>
+  <entitydescription.RIBAJunctionBox>При попытке починить кусается</entitydescription.RIBAJunctionBox>
+  <entityname.RIBALamp>Лампа DIY</entityname.RIBALamp>
+  <entitydescription.RIBALamp>Главный друг в поисках туалета ночью</entitydescription.RIBALamp>
+  <!--entityname.RIBAsupercapacitor>Конденсатор DIY</entityname.RIBAsupercapacitor>
+<entitydescription.RIBAsupercapacitor>Конденсатор DIY</entitydescription.RIBAsupercapacitor-->
+  <entityname.RIBAbattery>Батарея DIY</entityname.RIBAbattery>
+  <entitydescription.RIBAbattery>Хранит в себе потенциал</entitydescription.RIBAbattery>
+  <entityname.RIBAchargingdock>Станция зарядки DIY</entityname.RIBAchargingdock>
+  <entitydescription.RIBAchargingdock>Кормит ваши батарейки</entitydescription.RIBAchargingdock>
+  <entityname.RIBAsuppliescabinet>Хозяйственный шкаф DIY</entityname.RIBAsuppliescabinet>
+  <entitydescription.RIBAsuppliescabinet>Обычно хранит в себе вечно исчезающие предметы</entitydescription.RIBAsuppliescabinet>
+  <entityname.RIBAmediumsteelcabinet>Средний стальной шкаф DIY</entityname.RIBAmediumsteelcabinet>
+  <entitydescription.RIBAmediumsteelcabinet>Крепок как сталь!</entitydescription.RIBAmediumsteelcabinet>
+  <entityname.RIBAmediumwindowedsteelcabinet>Средний стальной шкаф с окном DIY</entityname.RIBAmediumwindowedsteelcabinet>
+  <entitydescription.RIBAmediumwindowedsteelcabinet>Окно в Нарнию</entitydescription.RIBAmediumwindowedsteelcabinet>
+  <entityname.RIBAdivingsuitlocker>Шкаф для подводного снаряжения DIY</entityname.RIBAdivingsuitlocker>
+  <entitydescription.RIBAdivingsuitlocker>Хранит в себе костюм для свиданий с рыбами</entitydescription.RIBAdivingsuitlocker>
+  <entityname.RIBAmedcabinet>Медкабинет DIY</entityname.RIBAmedcabinet>
+  <entitydescription.RIBAmedcabinet>У нас было 5 пакетиков табака, 12 доз этанола...</entitydescription.RIBAmedcabinet>
+  <entityname.RIBArailgunshellrack>Стойка для снарядов рельсотрона DIY</entityname.RIBArailgunshellrack>
+  <entitydescription.RIBArailgunshellrack>Пушка! Это заряжает Пушку! ...Зачем?</entitydescription.RIBArailgunshellrack>
+  <entityname.RIBAcoilgunammoshelf>Полка с боеприпасами для пушки DIY</entityname.RIBAcoilgunammoshelf>
+  <entitydescription.RIBAcoilgunammoshelf>Лучше бы ты подплыл поближе, чтобы я смог ударить их своим мечом!</entitydescription.RIBAcoilgunammoshelf>
+  <entityname.RIBAcrateshelf>Стеллаж для ящиков DIY</entityname.RIBAcrateshelf>
+  <entitydescription.RIBAcrateshelf>Ящик для ящиков. Удобно.</entitydescription.RIBAcrateshelf>
+  <entityname.RIBAtoxcabinet>Шкаф для хранения токсинов DIY</entityname.RIBAtoxcabinet>
+  <entitydescription.RIBAtoxcabinet>Склад грязи</entitydescription.RIBAtoxcabinet>
+  <entityname.RIBAoxygentankshelf>Полка для хранения кислородных баллонов DIY</entityname.RIBAoxygentankshelf>
+  <entitydescription.RIBAoxygentankshelf>Содержит ингредиенты для коктейлей</entitydescription.RIBAoxygentankshelf>
+  <entityname.RIBAweaponholder>Оружейная стойка DIY</entityname.RIBAweaponholder>
+  <entitydescription.RIBAweaponholder>Каждому космическому ковбою нужна своя кобура</entitydescription.RIBAweaponholder>
+  <entityname.RIBAextinguisherbracket>Стойка огнетушителя DIY</entityname.RIBAextinguisherbracket>
+  <entitydescription.RIBAextinguisherbracket>It's fine</entitydescription.RIBAextinguisherbracket>
+  <entityname.RIBAmetalcrate>Металлический ящик DIY</entityname.RIBAmetalcrate>
+  <entitydescription.RIBAmetalcrate>Вам правда необходимо описание?</entitydescription.RIBAmetalcrate>
+  <entityname.RIBAsmallpump>Малый насос DIY</entityname.RIBAsmallpump>
+  <entitydescription.RIBAsmallpump>Неплохо так качает...</entitydescription.RIBAsmallpump>
+  <entityname.RIBAbigpump>BIG насос DIY</entityname.RIBAbigpump>
+  <entitydescription.RIBAbigpump>Встроенная пальцерубка</entitydescription.RIBAbigpump>
+  <entityname.RIBAmedfabricator>Медицинский фабрикатор DIY</entityname.RIBAmedfabricator>
+  <entitydescription.RIBAmedfabricator>Народная медицина</entitydescription.RIBAmedfabricator>
+  <entityname.RIBAdeconstructor>Деконструктор DIY</entityname.RIBAdeconstructor>
+  <entitydescription.RIBAdeconstructor>Пора с этим покончить</entitydescription.RIBAdeconstructor>
+  <entityname.RIBAfabricator>Фабрикатор DIY</entityname.RIBAfabricator>
+  <entitydescription.RIBAfabricator>DIY DIY DIY DIY DIY</entitydescription.RIBAfabricator>
+  <entityname.RIBAhandheldterminal>Самодельный журнал</entityname.RIBAhandheldterminal>
+  <entitydescription.RIBAhandheldterminal>Запоминает безвкусные фанфики</entitydescription.RIBAhandheldterminal>
+  <entityname.RIBAsteelcabinet>Большой стальной шкаф DIY</entityname.RIBAsteelcabinet>
+  <entitydescription.RIBAsteelcabinet>Большой как капитанский оклад</entitydescription.RIBAsteelcabinet>
+  <entityname.RIBAbigsteelcabinet>Стальной шкаф DIY</entityname.RIBAbigsteelcabinet>
+  <entitydescription.RIBAbigsteelcabinet>ну и шкаф</entitydescription.RIBAbigsteelcabinet>
+  <RIBAItemMsgDetachCrowbar>[[use]] Это так просто не выдрать (Лом)</RIBAItemMsgDetachCrowbar>
+  <RIBAItemMsgDetachWrench>[[use]] Это так просто не выдрать (Гаечный ключ)</RIBAItemMsgDetachWrench>
+  <RIBAFixingtothefloor>Крепление к полу</RIBAFixingtothefloor>
+</infotexts>

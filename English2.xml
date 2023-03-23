@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <entityname.RIBABuyableTextdisplay>Text display (new)</entityname.RIBABuyableTextdisplay>
+  <entitydescription.RIBABuyableTextdisplay>Displays text and only it</entitydescription.RIBABuyableTextdisplay>
+  <entityname.RIBABuyableControlMonitor>Display (new)</entityname.RIBABuyableControlMonitor>
+  <entitydescription.RIBABuyableControlMonitor>For watching "dirty" movies</entitydescription.RIBABuyableControlMonitor>
+  <entityname.RIBABuyableControlCamera>Camera (new)</entityname.RIBABuyableControlCamera>
+  <entitydescription.RIBABuyableControlCamera>For filming "dirty" movies</entitydescription.RIBABuyableControlCamera>
+  <!-- <entityname.RIBABuyableLRwifiComponent>Component "Wireless+"</entityname.RIBABuyableLRwifiComponent> -->
+  <!-- <entitydescription.RIBABuyableLRwifiComponent>Causes cancer, but it's not certain</entitydescription.RIBABuyableLRwifiComponent> -->
+  <entityname.RIBABuyableStatusMonitor>Status monitor (new)</entityname.RIBABuyableStatusMonitor>
+  <entitydescription.RIBABuyableStatusMonitor>To watch the flood myth</entitydescription.RIBABuyableStatusMonitor>
+  <entityname.RIBABuyableTerminal>Terminal (new)</entityname.RIBABuyableTerminal>
+  <entitydescription.RIBABuyableTerminal>640kb ought to be enough for anybody!</entitydescription.RIBABuyableTerminal>
+  <entityname.RIBABuyableJunctionBox>Cable box (new)</entityname.RIBABuyableJunctionBox>
+  <entitydescription.RIBABuyableJunctionBox>When trying to fix it bites</entitydescription.RIBABuyableJunctionBox>
+  <entityname.RIBABuyableLamp>Lamp (new)</entityname.RIBABuyableLamp>
+  <entitydescription.RIBABuyableLamp>Top friend looking for a toilet at night </entitydescription.RIBABuyableLamp>
+  <entityname.RIBABuyablebattery>Battery (new)</entityname.RIBABuyablebattery>
+  <entitydescription.RIBABuyablebattery>Contains potential</entitydescription.RIBABuyablebattery>
+  <entityname.RIBABuyablechargingdock>Charging dock (new)</entityname.RIBABuyablechargingdock>
+  <entitydescription.RIBABuyablechargingdock>Feed your batteries</entitydescription.RIBABuyablechargingdock>
+  <entityname.RIBABuyablesuppliescabinet>Supplies cabinet (new)</entityname.RIBABuyablesuppliescabinet>
+  <entitydescription.RIBABuyablesuppliescabinet>Usually contains eternally disappearing items on submarine</entitydescription.RIBABuyablesuppliescabinet>
+  <entityname.RIBABuyablemediumsteelcabinet>Medium steel cabinet (new)</entityname.RIBABuyablemediumsteelcabinet>
+  <entitydescription.RIBABuyablemediumsteelcabinet>Strong as steel</entitydescription.RIBABuyablemediumsteelcabinet>
+  <entityname.RIBABuyablemediumwindowedsteelcabinet>Medium steel cabinet (new)</entityname.RIBABuyablemediumwindowedsteelcabinet>
+  <entitydescription.RIBABuyablemediumwindowedsteelcabinet>Window to the Narnia</entitydescription.RIBABuyablemediumwindowedsteelcabinet>
+  <entityname.RIBABuyabledivingsuitlocker>Diving suit locker (new)</entityname.RIBABuyabledivingsuitlocker>
+  <entitydescription.RIBABuyabledivingsuitlocker>Keeps a fish dating suit</entitydescription.RIBABuyabledivingsuitlocker>
+  <entityname.RIBABuyablemedcabinet>Medcabinet (new)</entityname.RIBABuyablemedcabinet>
+  <entitydescription.RIBABuyablemedcabinet>We had 5 bags of tobacco, 12 doses of ethanol ... </entitydescription.RIBABuyablemedcabinet>
+  <entityname.RIBABuyablerailgunshellrack>Railgun shell rack (new)</entityname.RIBABuyablerailgunshellrack>
+  <entitydescription.RIBABuyablerailgunshellrack>Only for old FPS gamers</entitydescription.RIBABuyablerailgunshellrack>
+  <entityname.RIBABuyablecoilgunammoshelf>Coilgun ammo shelf (new)</entityname.RIBABuyablecoilgunammoshelf>
+  <entitydescription.RIBABuyablecoilgunammoshelf>Dominion followers only, we do not approve of riots</entitydescription.RIBABuyablecoilgunammoshelf>
+  <entityname.RIBABuyablecrateshelf>Crate shelf (new)</entityname.RIBABuyablecrateshelf>
+  <entitydescription.RIBABuyablecrateshelf>Crate for crates. Comfortable.</entitydescription.RIBABuyablecrateshelf>
+  <entityname.RIBABuyabletoxcabinet>Toxic cabinet (new)</entityname.RIBABuyabletoxcabinet>
+  <entitydescription.RIBABuyabletoxcabinet>You can't poisoned if you're toxic</entitydescription.RIBABuyabletoxcabinet>
+  <entityname.RIBABuyableoxygentankshelf>Oxygen tank shelf (new)</entityname.RIBABuyableoxygentankshelf>
+  <entitydescription.RIBABuyableoxygentankshelf>Contains cocktail ingredients</entitydescription.RIBABuyableoxygentankshelf>
+  <entityname.RIBABuyableweaponholder>Weapon holder (new)</entityname.RIBABuyableweaponholder>
+  <entitydescription.RIBABuyableweaponholder>Every space cowboy needs his own holster. See you later.</entitydescription.RIBABuyableweaponholder>
+  <entityname.RIBABuyableextinguisherbracket>Extinguisher bracket (new)</entityname.RIBABuyableextinguisherbracket>
+  <entitydescription.RIBABuyableextinguisherbracket>It's fine</entitydescription.RIBABuyableextinguisherbracket>
+  <entityname.RIBABuyablemetalcrate>Metal crate (new)</entityname.RIBABuyablemetalcrate>
+  <entitydescription.RIBABuyablemetalcrate>Do you really need a description of this item?</entitydescription.RIBABuyablemetalcrate>
+  <entityname.RIBABuyablesmallpump>Small pump (new)</entityname.RIBABuyablesmallpump>
+  <entitydescription.RIBABuyablesmallpump>10 times worse than "portable" ("portable") but without batteries!</entitydescription.RIBABuyablesmallpump>
+  <entityname.RIBABuyablehandheldterminal>Ship log </entityname.RIBABuyablehandheldterminal>
+  <entitydescription.RIBABuyablehandheldterminal>Remembers gaudy fanfiction</entitydescription.RIBABuyablehandheldterminal>
+  <entityname.RIBABuyablemedfabricator>Medical Fabricator (new)</entityname.RIBABuyablemedfabricator>
+  <entitydescription.RIBABuyablemedfabricator>Traditional medicine</entitydescription.RIBABuyablemedfabricator>
+  <entityname.RIBABuyabledeconstructor>Deconstructor (new)</entityname.RIBABuyabledeconstructor>
+  <entitydescription.RIBABuyabledeconstructor>It's time to end this all</entitydescription.RIBABuyabledeconstructor>
+  <entityname.RIBABuyablefabricator>Fabricator (new)</entityname.RIBABuyablefabricator>
+  <entitydescription.RIBABuyablefabricator>This is necessary for DIY crafting</entitydescription.RIBABuyablefabricator>
+  <entityname.RIBAop_researchterminal>Research Terminal</entityname.RIBAop_researchterminal>
+  <entitydescription.RIBAop_researchterminal>Genetic engineering. Only for smart boys.</entitydescription.RIBAop_researchterminal>
+  <entityname.RIBAsecuresteelcabinet>Secure steel cabinet</entityname.RIBAsecuresteelcabinet>
+  <entitydescription.RIBAsecuresteelcabinet>Safe with access for Captain and Security</entitydescription.RIBAsecuresteelcabinet>
+  <entityname.RIBAengineermetalcrate>Secure wire box</entityname.RIBAengineermetalcrate>
+  <entitydescription.RIBAengineermetalcrate>Safe with access for Captain and Engineer</entitydescription.RIBAengineermetalcrate>
+  <entityname.RIBAmechanicmetalcrate>Secure tool box</entityname.RIBAmechanicmetalcrate>
+  <entitydescription.RIBAmechanicmetalcrate>Safe with access for Captain and mechanic</entitydescription.RIBAmechanicmetalcrate>
+  <entityname.RIBABuyablesteelcabinet>Large steel cabinet (new)</entityname.RIBABuyablesteelcabinet>
+  <entitydescription.RIBABuyablesteelcabinet>As large as captain's arrogance</entitydescription.RIBABuyablesteelcabinet>
+  <RIBABuyableItemMsgDetachCrowbar>[[use]]  It's not so easy to demontage  (Crowbar)</RIBABuyableItemMsgDetachCrowbar>
+  <RIBABuyableItemMsgDetachWrench>[[use]]  It's not so easy to demontage  (Wrench)</RIBABuyableItemMsgDetachWrench>
+  <RIBABuyableFixingtothefloor>Mounting to the floor</RIBABuyableFixingtothefloor>
+</infotexts>

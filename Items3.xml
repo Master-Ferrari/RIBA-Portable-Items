@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+<!-- НЕДОСТУПНЫЕ ПРЕДМЕТЫ -->
+<!-- АЙДИКАРТЫ -->
+  <Item name="MedicCard" identifier="RIBAMedicCard" category="Equipment" Tags="smallitem,id_medic,med,doc,id_medical,idcard" cargocontaineridentifier="metalcrate">
+    <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
+    <Body width="16" height="12" density="20" />
+    <IdCard slots="Card,Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="MechanicCard" identifier="RIBAMechanicCard" category="Equipment" Tags="smallitem,id_mechanic,mechanic,mech,idcard" cargocontaineridentifier="metalcrate">
+    <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
+    <Body width="16" height="12" density="20" />
+    <IdCard slots="Card,Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="EngineerCard" identifier="RIBAEngineerCard" category="Equipment" Tags="smallitem,id_engineer,engineer,engi,idcard" cargocontaineridentifier="metalcrate">
+    <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
+    <Body width="16" height="12" density="20" />
+    <IdCard slots="Card,Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="CaptainCard" identifier="RIBACaptainCard" category="Equipment" Tags="smallitem,id_captain,captain,cap,com,idcard" cargocontaineridentifier="metalcrate">
+    <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
+    <Body width="16" height="12" density="20" />
+    <IdCard slots="Card,Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="SecurityCard" identifier="RIBASecurityCard" category="Equipment" Tags="smallitem,id_security,security,sec,idcard" cargocontaineridentifier="metalcrate">
+    <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
+    <Body width="16" height="12" density="20" />
+    <IdCard slots="Card,Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="AssistantCard" identifier="RIBAAssistantCard" category="Equipment" Tags="smallitem,id_assistant,assistant,idcard" cargocontaineridentifier="metalcrate">
+    <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
+    <Body width="16" height="12" density="20" />
+    <IdCard slots="Card,Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  
+  
+  
+  
+  <!-- Терминал -->
+  <Item name="" description="" identifier="RIBABuyableTerminal" category="Electrical" tags="logic" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <!-- <Price baseprice="1000"> -->
+      <!-- <Price locationtype="research" multiplier="1" minavailable="1" /> -->
+    <!-- </Price> -->
+    <Sprite texture="%ModDir%/portable2.png" depth="0.7" sourcerect="322,352,138,112" origin="0.5,0.5" />
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false">
+      <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
+    </Terminal>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem identifier="screwdriveritem" type="Equipped" />
+      <input name="signal_in" displayname="connection.signalin" />
+      <output name="signal_out" displayname="connection.signalout" />
+    </ConnectionPanel>
+    <Deconstruct time="75">
+      <Item identifier="addercomponent" />
+      <Item identifier="subtractcomponent" />
+      <Item identifier="equalscomponent" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+	  
+      <Item identifier="tin" />
+      <Item identifier="silicon" />
+    </Deconstruct>
+    <Body width="138" height="112" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
+    </Holdable>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.12" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriveritem" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+    </Repairable>
+  </Item>
+  
+  
+  
+  <!-- Терминал -->
+  <Item name="" description="" identifier="RIBATerminal" category="Electrical" tags="logic" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/portable.png" depth="0.7" sourcerect="322,352,138,112" origin="0.5,0.5" />
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false">
+      <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
+    </Terminal>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem identifier="screwdriveritem" type="Equipped" />
+      <input name="signal_in" displayname="connection.signalin" />
+      <output name="signal_out" displayname="connection.signalout" />
+    </ConnectionPanel>
+    <Deconstruct time="75">
+      <Item identifier="addercomponent" />
+      <Item identifier="subtractcomponent" />
+      <Item identifier="equalscomponent" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+	    
+      <Item identifier="tin" />
+      <Item identifier="silicon" />
+    </Deconstruct>
+    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="120"> -->
+      <!-- <RequiredSkill identifier="electrical" level="80" /> -->
+      <!-- <RequiredItem identifier="addercomponent" /> -->
+      <!-- <RequiredItem identifier="subtractcomponent" /> -->
+      <!-- <RequiredItem identifier="equalscomponent" /> -->
+      <!-- <RequiredItem identifier="fpgacircuit" /> -->
+      <!-- <RequiredItem identifier="plastic" /> -->
+    <!-- </Fabricate> -->
+    <Body width="138" height="112" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
+    </Holdable>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.12" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriveritem" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+    </Repairable>
+  </Item>
+  
+  
+  <!-- Текстовая панель -->
+  <Item name="" description="" identifier="RIBABuyableTextdisplay" category="Electrical" tags="smallitem" cargocontaineridentifier="metalcrate" scale="1" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <!-- <Price baseprice="300"> -->
+      <!-- <Price locationtype="outpost" multiplier="1.1" minavailable="2" /> -->
+      <!-- <Price locationtype="city" multiplier="1" minavailable="3" /> -->
+      <!-- <Price locationtype="research" multiplier="1.2" minavailable="1" /> -->
+      <!-- <Price locationtype="military" multiplier="1.2" /> -->
+      <!-- <Price locationtype="mine" multiplier="1.2" /> -->
+    <!-- </Price> -->
+    <Sprite texture="%ModDir%/portable.png" depth="0.6" sourcerect="542,611,64,25" />
+    <ItemLabel text="connect me" canbeselected="true" scrollable="true" padding="7,2,6,4" textcolor="1,1,1,1" color="1.0,0.5,0.5,1.0">
+      <LightComponent range="10.0" lightcolor="1.0,1.0,1.0,0.1" IsOn="true" castshadows="false">
+        <sprite texture="%ModDir%/portable.png" sourcerect="542,636,64,25" depth="0.59" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </ItemLabel>
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+      <Item identifier="silicon" />
+      <Item identifier="phosphorus" />
+	  
+      <RequiredItem identifier="tin" />
+    </Deconstruct>
+    <Body width="64" height="25" density="40" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriveritem" type="Equipped" />
+      <input name="set_text" displayname="connection.set_text" fallbackdisplayname="connection.setoutput" />
+      <input name="set_color" displayname="connection.setcolor" />
+    </ConnectionPanel>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.05" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem items="screwdriveritem" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="0.1" scalemax="0.2" mincondition="0.0" maxcondition="50.0" />
+    </Repairable>
+  </Item>
+  
+  
+  <!-- Текстовая панель -->
+  <Item name="" description="" identifier="RIBATextdisplay" category="Electrical" tags="smallitem" cargocontaineridentifier="metalcrate" scale="1" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Sprite texture="%ModDir%/portable.png" depth="0.6" sourcerect="542,611,64,25" />
+    <ItemLabel text="connect me" canbeselected="true" scrollable="true" padding="7,2,6,4" textcolor="1,1,1,1" color="1.0,0.5,0.5,1.0">
+      <LightComponent range="10.0" lightcolor="0.1,1.0,0.1,0.1" IsOn="true" castshadows="false">
+        <sprite texture="%ModDir%/portable.png" sourcerect="542,636,64,25" depth="0.59" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </ItemLabel>
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+      <Item identifier="silicon" />
+      <Item identifier="phosphorus" />
+	  
+      <RequiredItem identifier="tin" />
+    </Deconstruct>
+    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="10"> -->
+      <!-- <RequiredSkill identifier="electrical" level="25" /> -->
+      <!-- <RequiredItem identifier="fpgacircuit" /> -->
+      <!-- <RequiredItem identifier="plastic" /> -->
+      <!-- <RequiredItem identifier="silicon" /> -->
+      <!-- <RequiredItem identifier="phosphorus" /> -->
+    <!-- </Fabricate> -->
+    <Body width="64" height="25" density="40" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriveritem" type="Equipped" />
+      <input name="set_text" displayname="connection.set_text" fallbackdisplayname="connection.setoutput" />
+      <input name="set_color" displayname="connection.setcolor" />
+    </ConnectionPanel>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.05" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem items="screwdriveritem" type="equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="0.1" scalemax="0.2" mincondition="0.0" maxcondition="50.0" />
+    </Repairable>
+  </Item>
+  
+  
+  <!-- Вай-фай -->
+  <Item name="" identifier="RIBALRwifiComponent" category="Electrical" Tags="smallitem,signal" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <PreferredContainer primary="reactorcab,storagecab" />
+    <PreferredContainer secondary="wreckreactorcab,wreckstoragecab" minamount="0" maxamount="1" spawnprobability="0.06" />
+    <Deconstruct time="10">
+      <Item identifier="wificomponent" />
+      <Item identifier="equalscomponent" />
+      <Item identifier="fpgacircuit" />
+      <Item identifier="tin" />
+    </Deconstruct>
+    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="10"> -->
+      <!-- <RequiredSkill identifier="electrical" level="55" /> -->
+      <!-- <RequiredItem identifier="wificomponent" /> -->
+      <!-- <RequiredItem identifier="equalscomponent" /> -->
+      <!-- <RequiredItem identifier="fpgacircuit" /> -->
+      <!-- <RequiredItem identifier="tin" /> -->
+    <!-- </Fabricate> -->
+    <InventoryIcon texture="%ModDir%/portable.png" sourcerect="892,809,28,27" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/portable.png" depth="0.75" sourcerect="892,809,28,27" origin="0.5,0.5" spritecolor="1.0,0.6,0.6,1.0" />
+    <WifiComponent range="80000" canbeselected="true" MinChatMessageInterval="1.0" DiscardDuplicateChatMessages="true" />
+    <Body width="28" height="27" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" aimpos="65,-10" handle1="0,0" attachable="true" PickingTime="5.0" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench">
+      <RequiredItem items="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="1" setvalue="true" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriveritem" type="Equipped" />
+      <input name="signal_in" displayname="connection.signal" />
+      <output name="signal_out" displayname="connection.signalout" />
+      <input name="set_channel" displayname="connection.setchannel" />
+    </ConnectionPanel>
+  </Item>
+  
+  
+</Items>
