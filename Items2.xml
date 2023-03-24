@@ -3,7 +3,7 @@
  
  
    <!-- грузовой шкаф для ящиков  -->
-  <Item name="" identifier="RIBABuyablecrateshelf2" isshootable="true" tags="container,cargocontainer" linkable="true" pickdistance="150" scale="0.5">
+  <Item name="" identifier="RIBABuyablecrateshelf2" isshootable="true" tags="cargocontainer" linkable="true" pickdistance="150" scale="0.5">
     <Sprite texture="%ModDir%/portable4.png" depth="0.82" sourcerect="681,649,341,375" canflipx="false" origin="0.5,0.5" />
     <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.79" offset="3,-3" sourcerect="849,278,168,359"/>
     <Body width="341" height="375" density="40" />
