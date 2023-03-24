@@ -30,7 +30,12 @@
     <Deconstruct time="15">
       <Item identifier="steel"  amount="16"/>
     </Deconstruct>
-    <Price baseprice="1000"   sold="false">
+    <Price baseprice="1999">
+      <Price locationtype="outpost" multiplier="1" maxavailable="1" />
+      <Price locationtype="city" multiplier="1" maxavailable="1" />
+      <Price locationtype="research" multiplier="1"   sold="false"/>
+      <Price locationtype="military" multiplier="1"   sold="false" />
+      <Price locationtype="mine" multiplier="1" maxavailable="1" />
     </Price>
 	
   </Item>
