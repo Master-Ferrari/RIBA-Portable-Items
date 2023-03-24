@@ -4,7 +4,7 @@
   <!-- ПомпачкаААА -->
   <Item name="" identifier="RIBABuyableBigpump" tags="pump" isshootable="true" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
   
-    <Sprite texture="%ModDir%/portable4.png" depth="0.8" sourcerect="416,475,400,192" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/portable4.png" depth="0.8" sourcerect="396,475,400,192" origin="0.5,0.5" />
     <InfectedSprite texture="%ModDir%/portable4.png" sourcerect="416,4,427,222" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/portable4.png" sourcerect="416,226,427,225" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/portable4.png" sourcerect="16,624,400,192" depth="0.8" maxcondition="80" fadein="true" />
