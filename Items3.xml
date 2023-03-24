@@ -1,6 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
 <!-- НЕДОСТУПНЫЕ ПРЕДМЕТЫ -->
+
+  <!-- Шкаф для ящиков  -->
+  <Item name="" identifier="RIBABuyablecrateshelf" isshootable="true" tags="container" linkable="true" pickdistance="150" scale="0.5">
+    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="0,656,187,368" canflipx="false" origin="0.5,0.5" />
+    <Body width="187" height="368" density="40" />
+    <ItemContainer capacity="4" canbeselected="true" hideitems="false" itempos="92,-48" iteminterval="0,-94" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="crate" />
+      <StatusEffect type="OnContained" target="This" itempos="0,130" />
+      <StatusEffect type="Always" target="This" itempos="92,-46" />
+    </ItemContainer>
+    <Price baseprice="300" sold="false">
+      <!-- <Price locationtype="outpost" multiplier="0.9"/> -->
+      <!-- <Price locationtype="city" multiplier="0.8"/> -->
+      <!-- <Price locationtype="research" multiplier="1.2" /> -->
+      <!-- <Price locationtype="military" multiplier="1.2" /> -->
+      <!-- <Price locationtype="mine" multiplier="0.5" /> -->
+    </Price>
+    <Holdable selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="35.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
+      <RequiredItem items="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+    </Holdable>
+    <Deconstruct time="15">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+    </Deconstruct>
+  </Item>
+  <!-- Шкаф для ящиков  -->
+  <Item name="" identifier="RIBAcrateshelf" isshootable="true" tags="container" linkable="true" pickdistance="150" scale="0.5">
+    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="0,656,187,368" canflipx="false" origin="0.5,0.5" />
+    <Body width="187" height="368" density="40" />
+    <ItemContainer capacity="4" canbeselected="true" hideitems="false" itempos="92,-48" iteminterval="0,-94" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="crate" />
+      <StatusEffect type="OnContained" target="This" itempos="0,130" />
+      <StatusEffect type="Always" target="This" itempos="92,-46" />
+    </ItemContainer>
+    <Holdable selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="35.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
+      <RequiredItem items="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+    </Holdable>
+    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="20"> -->
+      <!-- <RequiredSkill identifier="mechanical" level="18" /> -->
+      <!-- <RequiredItem identifier="steel" /> -->
+      <!-- <RequiredItem identifier="steel" /> -->
+      <!-- <RequiredItem identifier="steel" /> -->
+    <!-- </Fabricate> -->
+    <Deconstruct time="15">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+    </Deconstruct>
+	
+    <Price baseprice="200"   sold="false">
+    </Price>
+  </Item>
 <!-- АЙДИКАРТЫ -->
   <Item name="MedicCard" identifier="RIBAMedicCard" category="Equipment" Tags="smallitem,id_medic,med,doc,id_medical,idcard" cargocontaineridentifier="metalcrate">
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
@@ -44,9 +101,9 @@
   
   <!-- Терминал -->
   <Item name="" description="" identifier="RIBABuyableTerminal" category="Electrical" tags="logic" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
-    <!-- <Price baseprice="1000"> -->
+    <Price baseprice="1000"  sold="false">
       <!-- <Price locationtype="research" multiplier="1" minavailable="1" /> -->
-    <!-- </Price> -->
+    </Price>
     <Sprite texture="%ModDir%/portable2.png" depth="0.7" sourcerect="322,352,138,112" origin="0.5,0.5" />
     <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false">
       <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
@@ -132,13 +189,13 @@
   
   <!-- Текстовая панель -->
   <Item name="" description="" identifier="RIBABuyableTextdisplay" category="Electrical" tags="smallitem" cargocontaineridentifier="metalcrate" scale="1" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
-    <!-- <Price baseprice="300"> -->
+    <Price baseprice="300" sold="false">
       <!-- <Price locationtype="outpost" multiplier="1.1" minavailable="2" /> -->
       <!-- <Price locationtype="city" multiplier="1" minavailable="3" /> -->
       <!-- <Price locationtype="research" multiplier="1.2" minavailable="1" /> -->
       <!-- <Price locationtype="military" multiplier="1.2" /> -->
       <!-- <Price locationtype="mine" multiplier="1.2" /> -->
-    <!-- </Price> -->
+    </Price>
     <Sprite texture="%ModDir%/portable.png" depth="0.6" sourcerect="542,611,64,25" />
     <ItemLabel text="connect me" canbeselected="true" scrollable="true" padding="7,2,6,4" textcolor="1,1,1,1" color="1.0,0.5,0.5,1.0">
       <LightComponent range="10.0" lightcolor="1.0,1.0,1.0,0.1" IsOn="true" castshadows="false">
@@ -191,6 +248,9 @@
 	  
       <RequiredItem identifier="tin" />
     </Deconstruct>
+	
+    <Price baseprice="300" sold="false">
+    </Price>
     <!-- <Fabricate suitablefabricators="fabricator" requiredtime="10"> -->
       <!-- <RequiredSkill identifier="electrical" level="25" /> -->
       <!-- <RequiredItem identifier="fpgacircuit" /> -->
@@ -230,6 +290,9 @@
       <Item identifier="fpgacircuit" />
       <Item identifier="tin" />
     </Deconstruct>
+	
+    <Price baseprice="300" sold="false">
+    </Price>
     <!-- <Fabricate suitablefabricators="fabricator" requiredtime="10"> -->
       <!-- <RequiredSkill identifier="electrical" level="55" /> -->
       <!-- <RequiredItem identifier="wificomponent" /> -->

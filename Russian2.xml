@@ -36,6 +36,8 @@
   <entitydescription.RIBABuyablecoilgunammoshelf>Лучше бы ты подплыл поближе, чтобы я смог ударить их своим мечом!</entitydescription.RIBABuyablecoilgunammoshelf>
   <entityname.RIBABuyablecrateshelf>Стеллаж для ящиков (новый)</entityname.RIBABuyablecrateshelf>
   <entitydescription.RIBABuyablecrateshelf>Ящик для ящиков. Удобно.</entitydescription.RIBABuyablecrateshelf>
+  <entityname.RIBABuyablecrateshelf2>Небольшой грузовой модуль</entityname.RIBABuyablecrateshelf2>
+  <entitydescription.RIBABuyablecrateshelf2>Заполняется сам! Приносит дополнителный доход!!</entitydescription.RIBABuyablecrateshelf2>
   <entityname.RIBABuyabletoxcabinet>Шкаф для хранения токсинов (новый)</entityname.RIBABuyabletoxcabinet>
   <entitydescription.RIBABuyabletoxcabinet>Склад грязи</entitydescription.RIBABuyabletoxcabinet>
   <entityname.RIBABuyableoxygentankshelf>Полка для хранения кислородных баллонов (новый)</entityname.RIBABuyableoxygentankshelf>
@@ -48,6 +50,8 @@
   <entitydescription.RIBABuyablemetalcrate>Вам правда необходимо описание?</entitydescription.RIBABuyablemetalcrate>
   <entityname.RIBABuyablesmallpump>Малый насос (новый)</entityname.RIBABuyablesmallpump>
   <entitydescription.RIBABuyablesmallpump>В 10 раз слабее чем от нашего Механыча, ноо... тоже ничо так качает...</entitydescription.RIBABuyablesmallpump>
+  <entityname.RIBABuyableBigpump>Насос (новый)</entityname.RIBABuyableBigpump>
+  <entitydescription.RIBABuyableBigpump>Перекачивание энергии в стену?</entitydescription.RIBABuyableBigpump>
   <entityname.RIBABuyablemedfabricator>Медицинский фабрикатор (новый)</entityname.RIBABuyablemedfabricator>
   <entitydescription.RIBABuyablemedfabricator>Народная медицина</entitydescription.RIBABuyablemedfabricator>
   <entityname.RIBABuyabledeconstructor>Деконструктор (новый)</entityname.RIBABuyabledeconstructor>

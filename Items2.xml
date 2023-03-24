@@ -1,10 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
 
+  
+  <Item name="" identifier="RIBABuyablecrateshelf2" isshootable="true" tags="container" linkable="true" pickdistance="150" scale="0.5">
+    <Sprite texture="%ModDir%/portable4.png" depth="0.84" sourcerect="681,649,341,375" canflipx="false" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.78" offset="3,-3" sourcerect="849,278,168,359"/>
+    <Body width="341" height="375" density="40" />
+	
+    <ItemContainer capacity="4" canbeselected="true" hideitems="false" itempos="173,-54" iteminterval="0,-91" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="crate" />
+      <!-- <StatusEffect type="OnContained" target="This" itempos="0,130" /> -->
+      <!-- <StatusEffect type="Always" target="This" itempos="112,-44" /> -->
+    </ItemContainer>
+	
+    <Holdable selectkey="Select" pickkey="Use" aimpos="110,-15"  controlpose="true" holdpos="130,-45" attachable="true" aimable="false" PickingTime="5.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" handle1="-160,50" handle2="-160,20" >
+      <RequiredItem items="Crowbaritem" type="Equipped" />
+	  
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+      
+	  <StatusEffect target="This" type="Always">
+        <Conditional attached="false" targetitemcomponentname="Holdable"/>
+        <DropContainedItems/>
+      </StatusEffect>
+	  
+    </Holdable>
+	
+    <Deconstruct time="15">
+      <Item identifier="steel"  amount="16"/>
+    </Deconstruct>
+    <Price baseprice="1000"   sold="false">
+    </Price>
+	
+  </Item>
+  
+  
+  
   <!-- ПомпачкаААА -->
   <Item name="" identifier="RIBABuyableBigpump" tags="pump" isshootable="true" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
   
-    <Sprite texture="%ModDir%/portable4.png" depth="0.8" sourcerect="396,475,400,192" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/portable4.png" depth="0.8" sourcerect="416,455,400,192" origin="0.5,0.5" />
     <InfectedSprite texture="%ModDir%/portable4.png" sourcerect="416,4,427,222" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/portable4.png" sourcerect="416,226,427,225" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/portable4.png" sourcerect="16,624,400,192" depth="0.8" maxcondition="80" fadein="true" />
@@ -703,7 +738,7 @@
     </ConnectionPanel>
     <ItemContainer hideitems="false" drawinventory="true" capacity="1" slotsperrow="1" itempos="0,0" iteminterval="0,0" canbeselected="true" msg="ItemMsgInteractSelect">
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
-      <Containable items="divingsuit,abyssdivingsuit,combatdivingsuit,pucs,slipsuit"  excludeditems="deepdivinglarge" />
+      <Containable items="deepdiving" excludeditems="deepdivinglarge" />
     </ItemContainer>
     <Price baseprice="350">
       <Price locationtype="outpost" multiplier="1.1" />
@@ -716,6 +751,12 @@
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" controlpose="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
+	  
+	  <StatusEffect target="This" type="Always">
+        <Conditional attached="false" targetitemcomponentname="Holdable"/>
+        <DropContainedItems/>
+      </StatusEffect>
+	  
     </Holdable>
     <Deconstruct time="20">
       <RequiredItem identifier="steel" />
@@ -768,6 +809,12 @@
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+	  
+	  <StatusEffect target="This" type="Always">
+        <Conditional attached="false" targetitemcomponentname="Holdable"/>
+        <DropContainedItems/>
+      </StatusEffect>
+	  
     </Holdable>
     <Deconstruct time="10">
       <Item identifier="steel" />
@@ -794,34 +841,13 @@
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+	  
+	  <StatusEffect target="This" type="Always">
+        <Conditional attached="false" targetitemcomponentname="Holdable"/>
+        <DropContainedItems/>
+      </StatusEffect>
+	  
     </Holdable>
-  </Item>
-  <!-- Шкаф для ящиков  -->
-  <Item name="" identifier="RIBABuyablecrateshelf" isshootable="true" tags="container" linkable="true" pickdistance="150" scale="0.5">
-    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="0,656,187,368" canflipx="false" origin="0.5,0.5" />
-    <Body width="187" height="368" density="40" />
-    <ItemContainer capacity="4" canbeselected="true" hideitems="false" itempos="92,-48" iteminterval="0,-94" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
-      <Containable items="crate" />
-      <StatusEffect type="OnContained" target="This" itempos="0,130" />
-      <StatusEffect type="Always" target="This" itempos="92,-46" />
-    </ItemContainer>
-    <Price baseprice="300">
-      <Price locationtype="outpost" multiplier="0.9"/>
-      <Price locationtype="city" multiplier="0.8"/>
-      <Price locationtype="research" multiplier="1.2" />
-      <Price locationtype="military" multiplier="1.2" />
-      <Price locationtype="mine" multiplier="0.5" />
-    </Price>
-    <Holdable selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="35.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
-      <RequiredItem items="wrenchitem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
-    </Holdable>
-    <Deconstruct time="15">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-    </Deconstruct>
   </Item>
   <!-- Токсичный ящик -->
   <Item name="" identifier="RIBABuyabletoxcabinet" isshootable="true" tags="container,toxcontainer" linkable="true" pickdistance="150" waterproof="true" scale="0.5">
@@ -1017,6 +1043,12 @@
     <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-100" handle1="-150,0" handle2="-150,0" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbaritem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+	  
+	  <StatusEffect target="This" type="Always">
+        <Conditional attached="false" targetitemcomponentname="Holdable"/>
+        <DropContainedItems/>
+      </StatusEffect>
+	  
     </Holdable>
     <Deconstruct time="35">
       <Item identifier="fpgacircuit" />
@@ -1061,6 +1093,12 @@
     <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbaritem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+	  
+	  <StatusEffect target="This" type="Always">
+        <Conditional attached="false" targetitemcomponentname="Holdable"/>
+        <DropContainedItems/>
+      </StatusEffect>
+	  
     </Holdable>
     <Sprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,304,256,320" />
     <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="272,304,256,320" depth="0.8" maxcondition="80" fadein="true" />
@@ -1111,6 +1149,12 @@
     <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="300,-60" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbaritem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+	  
+	  <StatusEffect target="This" type="Always">
+        <Conditional attached="false" targetitemcomponentname="Holdable"/>
+        <DropContainedItems/>
+      </StatusEffect>
+	  
     </Holdable>
     <Sprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,0,336,288" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="336,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="80" fadein="true" />

@@ -36,6 +36,8 @@
   <entitydescription.RIBABuyablecoilgunammoshelf>Dominion followers only, we do not approve of riots</entitydescription.RIBABuyablecoilgunammoshelf>
   <entityname.RIBABuyablecrateshelf>Crate shelf (new)</entityname.RIBABuyablecrateshelf>
   <entitydescription.RIBABuyablecrateshelf>Crate for crates. Comfortable.</entitydescription.RIBABuyablecrateshelf>
+  <entityname.RIBABuyablecrateshelf2>Cargo container (smol)</entityname.RIBABuyablecrateshelf2>
+  <entitydescription.RIBABuyablecrateshelf2>It is filled in by itself! Makes additional income!!</entitydescription.RIBABuyablecrateshelf2>
   <entityname.RIBABuyabletoxcabinet>Toxic cabinet (new)</entityname.RIBABuyabletoxcabinet>
   <entitydescription.RIBABuyabletoxcabinet>You can't poisoned if you're toxic</entitydescription.RIBABuyabletoxcabinet>
   <entityname.RIBABuyableoxygentankshelf>Oxygen tank shelf (new)</entityname.RIBABuyableoxygentankshelf>
@@ -48,6 +50,8 @@
   <entitydescription.RIBABuyablemetalcrate>Do you really need a description of this item?</entitydescription.RIBABuyablemetalcrate>
   <entityname.RIBABuyablesmallpump>Small pump (new)</entityname.RIBABuyablesmallpump>
   <entitydescription.RIBABuyablesmallpump>10 times worse than "portable" ("portable") but without batteries!</entitydescription.RIBABuyablesmallpump>
+  <entityname.RIBABuyableBigpump>Pump (new)</entityname.RIBABuyableBigpump>
+  <entitydescription.RIBABuyableBigpump>It's a classic pump and dump</entitydescription.RIBABuyableBigpump>
   <entityname.RIBABuyablehandheldterminal>Ship log </entityname.RIBABuyablehandheldterminal>
   <entitydescription.RIBABuyablehandheldterminal>Remembers gaudy fanfiction</entitydescription.RIBABuyablehandheldterminal>
   <entityname.RIBABuyablemedfabricator>Medical Fabricator (new)</entityname.RIBABuyablemedfabricator>
