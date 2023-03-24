@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-
-  
-  <Item name="" identifier="RIBABuyablecrateshelf2" isshootable="true" tags="container" linkable="true" pickdistance="150" scale="0.5">
+ 
+ 
+   <!-- грузовой шкаф для ящиков  -->
+  <Item name="" identifier="RIBABuyablecrateshelf2" isshootable="true" tags="container,cargocontainer" linkable="true" pickdistance="150" scale="0.5">
     <Sprite texture="%ModDir%/portable4.png" depth="0.84" sourcerect="681,649,341,375" canflipx="false" origin="0.5,0.5" />
     <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.78" offset="3,-3" sourcerect="849,278,168,359"/>
     <Body width="341" height="375" density="40" />
