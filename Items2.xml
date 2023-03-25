@@ -15,7 +15,7 @@
       <!-- <StatusEffect type="Always" target="This" itempos="112,-44" /> -->
     </ItemContainer>
 	
-    <Holdable selectkey="Select" pickkey="Use" aimpos="110,-15"  controlpose="true" holdpos="130,-45" attachable="true" aimable="false" PickingTime="5.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" handle1="-160,50" handle2="-160,20" >
+    <Holdable selectkey="Select" pickkey="Use" aimpos="110,-15"  controlpose="true" holdpos="130,-45" attachable="true" aimable="false" PickingTime="40.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" handle1="-160,50" handle2="-160,20" >
       <RequiredItem items="Crowbaritem" type="Equipped" />
 	  
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
