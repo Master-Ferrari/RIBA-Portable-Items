@@ -22,7 +22,7 @@
 	  
     </Holdable>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredSkill identifier="mechanical" level="18" />
+      <RequiredSkill identifier="mechanical" level="25" />
       <RequiredItem identifier="steel" amount="8"/>
     </Fabricate>
     <Deconstruct time="15">
@@ -106,16 +106,17 @@
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
-      <RequiredSkill identifier="mechanical" level="50" />
-	  
-      <RequiredItem identifier="steel" amount="4"/>
-      <RequiredItem identifier="plastic" />
+      <RequiredSkill identifier="mechanical" level="80" />
+      <RequiredItem identifier="steel" amount="6"/>
+      <RequiredItem identifier="aluminium" amount="4" />
       <RequiredItem identifier="dementonite" amount="4" />
+      <RequiredItem identifier="plastic" />
     </Fabricate>
     <Deconstruct time="20">
-      <Item identifier="steel" amount="3"/>
-      <Item identifier="plastic" />
+      <Item identifier="steel" amount="4"/>
+      <Item identifier="aluminium" amount="3" />
       <Item identifier="dementonite" amount="4" />
+      <Item identifier="plastic" />
     </Deconstruct>
 	
     <Price baseprice="400"   sold="false">
@@ -173,20 +174,18 @@
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredSkill identifier="mechanical" level="40" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="35">
+      <RequiredSkill identifier="mechanical" level="70" />
+      <RequiredItem identifier="steel" amount="6"/>
+      <RequiredItem identifier="aluminium" amount="4" />
+      <RequiredItem identifier="dementonite" amount="4" />
       <RequiredItem identifier="plastic" />
-      <RequiredItem identifier="dementonite" amount="2" />
     </Fabricate>
-    <Deconstruct time="10">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
+    <Deconstruct time="20">
+      <Item identifier="steel" amount="4"/>
+      <Item identifier="aluminium" amount="3" />
+      <Item identifier="dementonite" amount="4" />
       <Item identifier="plastic" />
-	  
-      <Item identifier="dementonite" amount="2" />
-      <Item identifier="fpgacircuit" />
     </Deconstruct>
 	
     <Price baseprice="150"   sold="false">
@@ -216,15 +215,16 @@
     <Deconstruct time="10">
       <Item identifier="fpgacircuit" />
       <Item identifier="colorcomponent" />
-      <Item identifier="aluminium" />
-      <Item identifier="plastic" />
+      <Itme identifier="silicon" />
+      <Item identifier="plastic" amount="2" />
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="25">
-      <RequiredSkill identifier="electrical" level="65" />
-      <RequiredItem identifier="fpgacircuit" />
-      <RequiredItem identifier="colorcomponent" />
-      <RequiredItem identifier="silicon" />
-      <RequiredItem identifier="plastic" />
+      <RequiredSkill identifier="electrical" level="85" />
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="fpgacircuit" amount="2" />
+      <RequiredItem identifier="colorcomponent" amount="2" />
+      <RequiredItem identifier="silicon" amount="2" />
+      <RequiredItem identifier="plastic" amount="3" />
     </Fabricate>
     <Body width="140" height="145" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -273,11 +273,12 @@
     </ConnectionPanel>
     <Fabricate suitablefabricators="fabricator" requiredtime="25">
       <RequiredSkill identifier="electrical" level="80" />
-      <RequiredItem identifier="equalscomponent" />
-      <RequiredItem identifier="fpgacircuit" />
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredItem identifier="equalscomponent" amount="3" />
+      <RequiredItem identifier="fpgacircuit" amount="3" />
       <RequiredItem identifier="silicon" />
-      <RequiredItem identifier="plastic" />
-      <RequiredItem identifier="phosphorus" />
+      <RequiredItem identifier="plastic" amount="2" />
+      <RequiredItem identifier="phosphorus" amount="3" />
     </Fabricate>
     <Deconstruct time="15">
       <Item identifier="equalscomponent" />
@@ -324,19 +325,19 @@
     </ConnectionPanel>
     <Deconstruct time="10">
       <Item identifier="wificomponent" />
-      <Item identifier="equalscomponent" />
+      <Item identifier="equalscomponent"  />
       <Item identifier="greatercomponent" />
-      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" amount="2" />
       <Item identifier="plastic" />
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="25">
       <RequiredSkill identifier="electrical" level="65" />
       <RequiredSkill identifier="helm" level="25" />
-      <RequiredItem identifier="wificomponent" />
-      <RequiredItem identifier="equalscomponent" />
-      <RequiredItem identifier="greatercomponent" />
-      <RequiredItem identifier="fpgacircuit" />
-      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="wificomponent" amount="2" />
+      <RequiredItem identifier="equalscomponent" amount="2" />
+      <RequiredItem identifier="greatercomponent" amount="2" />
+      <RequiredItem identifier="fpgacircuit" amount="3" />
+      <RequiredItem identifier="plastic" amount="2" />
     </Fabricate>
     <Body width="146" height="112" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -400,19 +401,15 @@
       <output name="signal_3" displayname="connection.signalx~[num]=3" fallbackdisplayname="connection.signalinx~[num]=3" />
     </ConnectionPanel>
     <Deconstruct time="30">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="copper" />
-      <Item identifier="copper" />
+      <Item identifier="steel" amount="3" />
+      <Item identifier="copper" amount="2" />
+      <Item identifier="wire" amount="4" />
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="45">
-      <RequiredSkill identifier="electrical" level="30" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="copper" />
-      <RequiredItem identifier="copper" />
+      <RequiredSkill identifier="electrical" level="50" />
+      <RequiredItem identifier="steel" amount="3" />
+      <RequiredItem identifier="copper" amount="3" />
+      <RequiredItem identifier="wire" amount="5" />
     </Fabricate>
     <Body width="113" height="176" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -441,13 +438,13 @@
     <Deconstruct time="10">
       <Item identifier="tin" />
       <Item identifier="aluminium" />
-      <Item identifier="phosphorus" />
+      <Item identifier="phosphorus" amount="2" />
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredSkill identifier="electrical" level="25" />
       <RequiredItem identifier="tin" />
       <RequiredItem identifier="aluminium" />
-      <RequiredItem identifier="phosphorus" />
+      <RequiredItem identifier="phosphorus" amount="3" />
     </Fabricate>
     <Body width="63" height="89" density="40" />
     <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
@@ -481,18 +478,14 @@
   <!-- Батарея -->
   <Item name="" identifier="RIBAbattery" isshootable="true" tags="battery, battery, batterycellrecharger" category="Electrical" Scale="0.5" description="" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
     <Sprite texture="%ModDir%/portable.png" sourcerect="339,154,118,160" depth="0.8" />
-    <Fabricate suitablefabricators="fabricator" requiredtime="70">
-      <RequiredSkill identifier="electrical" level="40" />
-      <RequiredItem identifier="batterycell"  mincondition="0.0" usecondition="false"/>
-      <RequiredItem identifier="batterycell"  mincondition="0.0" usecondition="false"/>
-      <RequiredItem identifier="batterycell"  mincondition="0.0" usecondition="false"/>
+    <Fabricate suitablefabricators="fabricator" requiredtime="60">
+      <RequiredSkill identifier="electrical" level="60" />
+      <RequiredItem identifier="batterycell"  mincondition="0.0" amount="5" usecondition="false"/>
       <RequiredItem identifier="fpgacircuit" />
-      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" amount="2" />
     </Fabricate>
     <Deconstruct time="50">
-      <Item identifier="batterycell" />
-      <Item identifier="batterycell" />
-      <Item identifier="batterycell" />
+      <Item identifier="batterycell" amount="4" />
       <Item identifier="fpgacircuit" />
       <Item identifier="steel" />
     </Deconstruct>
@@ -546,14 +539,6 @@
       <requireditem identifier="crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
     </Holdable>
-    <Deconstruct time="10">
-      <Item identifier="batterycell" />
-      <Item identifier="batterycell" />
-      <Item identifier="batterycell" />
-      <Item identifier="fpgacircuit" />
-      <Item identifier="steel" />
-    </Deconstruct>
-	
     <Price baseprice="175"   sold="false">
     </Price>
   </Item>
@@ -561,17 +546,16 @@
   <Item name="" identifier="RIBAchargingdock" isshootable="true" tags="logic, battery, batterycellrecharger" category="Electrical" scale="0.5" description="">
     <Sprite texture="%ModDir%/portable.png" sourcerect="339,314,118,34" depth="0.8" />
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
-      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredSkill identifier="electrical" level="60" />
       <RequiredItem identifier="batterycell" />
-      <RequiredItem identifier="aluminium" />
-      <RequiredItem identifier="copper" />
-      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="aluminium" amount="2" />
+      <RequiredItem identifier="copper" amount="3" />
+      <RequiredItem identifier="wire" amount="3" />
     </Fabricate>
     <Deconstruct time="15">
-      <Item identifier="batterycell" />
       <Item identifier="aluminium" />
-      <Item identifier="copper" />
-      <Item identifier="copper" />
+      <Item identifier="wire" amount="2" />
+      <Item identifier="copper" amount="2" />
     </Deconstruct>
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="457,314,118,34" depth="0.8" maxcondition="40" fadein="true" />
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="575,314,118,34" depth="0.8" maxcondition="0" />
@@ -625,13 +609,11 @@
     </Holdable>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="20" />
-      <RequiredItem identifier="aluminium" />
-      <RequiredItem identifier="aluminium" />
-      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="aluminium" amount="3" />
+      <RequiredItem identifier="plastic" amount="2" />
     </Fabricate>
     <Deconstruct time="10">
-      <Item identifier="aluminium" />
-      <Item identifier="aluminium" />
+      <Item identifier="aluminium" amount="2" />
       <Item identifier="plastic" />
     </Deconstruct>
 	
@@ -652,18 +634,10 @@
     </Holdable>
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="30" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" amount="8" />
     </Fabricate>
     <Deconstruct time="30">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
+      <Item identifier="steel" amount="6" />
     </Deconstruct>
 	
     <Price baseprice="200"   sold="false">
@@ -683,18 +657,11 @@
     </Holdable>
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="30" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" amount="6" />
       <RequiredItem identifier="silicon" />
     </Fabricate>
     <Deconstruct time="15">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="silicon" />
+      <Item identifier="steel" amount="5" />
     </Deconstruct>
 	
     <Price baseprice="200"   sold="false">
@@ -709,13 +676,7 @@
     </ItemContainer>
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="30" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" amount="8" />
     </Fabricate>
     <Body width="360" height="268" density="332" />
     <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
@@ -723,13 +684,7 @@
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
     <Deconstruct time="15">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
+      <Item identifier="steel" amount="6" />
     </Deconstruct>
 	
     <Price baseprice="500"   sold="false">
@@ -799,17 +754,16 @@
 	  
     </Holdable>
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
-      <RequiredSkill identifier="mechanical" level="30" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="plastic" />
-      <RequiredItem identifier="silicon" />
-      <RequiredItem identifier="silicon" />
+      <RequiredSkill identifier="mechanical" level="60" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="plastic" amount="2" />
+      <RequiredItem identifier="silicon" amount="4" />
     </Fabricate>
     <Deconstruct time="20">
       <RequiredItem identifier="steel" />
       <RequiredItem identifier="plastic" />
-      <RequiredItem identifier="silicon" />
-      <RequiredItem identifier="silicon" />
+      <RequiredItem identifier="silicon" amount="3" />
     </Deconstruct>
 	
     <Price baseprice="200"   sold="false">
@@ -819,20 +773,15 @@
   <Item name="" identifier="RIBAmedcabinet" tags="container,medcontainer" linkable="true" pickdistance="150" waterproof="true" scale="0.5" isshootable="true">
     <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="338,495,204,320" canflipx="false" />
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
-      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredSkill identifier="mechanical" level="60" />
       <RequiredSkill identifier="medical" level="15" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="silicon" />
-      <RequiredItem identifier="silicon" />
+      <RequiredItem identifier="steel" amount="10" />
+      <RequiredItem identifier="silicon" amount="2" />
+      <RequiredItem identifier="paint" />
     </Fabricate>
     <Deconstruct time="20">
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="silicon" />
-      <RequiredItem identifier="silicon" />
+      <Item identifier="steel" amount="8" />
+      <Item identifier="silicon" />
     </Deconstruct>
     <ItemContainer capacity="30" slotsperrow="6" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
       <GuiFrame relativesize="0.25,0.45" slotsperrow="6" anchor="Center" style="ItemUI" />
@@ -869,14 +818,12 @@
 	  
     </Holdable>
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
-      <RequiredSkill identifier="mechanical" level="15" />
-      <RequiredSkill identifier="weapons" level="15" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
+      <RequiredSkill identifier="mechanical" level="35" />
+      <RequiredSkill identifier="weapons" level="20" />
+      <RequiredItem identifier="steel" amount="4" />
     </Fabricate>
     <Deconstruct time="10">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
+      <Item identifier="steel" amount="3" />
     </Deconstruct>
 	
     <Price baseprice="50"   sold="false">
@@ -886,14 +833,12 @@
   <Item name="" identifier="RIBAcoilgunammoshelf" isshootable="true" tags="container,coilgunammocontainer" linkable="true" pickdistance="150" waterproof="true" scale="0.5">
     <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="187,724,139,300" canflipx="false" origin="0.5,0.5" />
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
-      <RequiredSkill identifier="mechanical" level="15" />
-      <RequiredSkill identifier="weapons" level="15" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
+      <RequiredSkill identifier="mechanical" level="35" />
+      <RequiredSkill identifier="weapons" level="20" />
+      <RequiredItem identifier="steel" amount="4" />
     </Fabricate>
     <Deconstruct time="10">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
+      <Item identifier="steel" amount="3" />
     </Deconstruct>
     <ItemContainer capacity="3" canbeselected="true" hideitems="false" itempos="70,-52" iteminterval="0,-96" msg="ItemMsgInteractSelect">
       <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
@@ -933,17 +878,15 @@
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
     </Holdable>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <RequiredSkill identifier="mechanical" level="35" />
-      <RequiredSkill identifier="medical" level="20" />
-      <RequiredItem identifier="plastic" />
-      <RequiredItem identifier="plastic" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="silicon" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="40">
+      <RequiredSkill identifier="mechanical" level="70" />
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="plastic" amount="6" />
+      <RequiredItem identifier="silicon" amount="4" />
     </Fabricate>
-    <Deconstruct time="10">
-      <Item identifier="tin" />
-      <Item identifier="aluminium" />
+    <Deconstruct time="14">
+      <Item identifier="plastic" amount="4" />
+      <Item identifier="silicon" amount="2" />
     </Deconstruct>
 	
     <Price baseprice="150"   sold="false">
@@ -985,14 +928,12 @@
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredSkill identifier="mechanical" level="25" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="aluminium" />
+      <RequiredSkill identifier="mechanical" level="45" />
+      <RequiredItem identifier="steel" amount="3" />
+      <RequiredItem identifier="aluminium" amount="2" />
     </Fabricate>
     <Deconstruct time="10">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
+      <Item identifier="steel" amount="2" />
       <Item identifier="aluminium" />
     </Deconstruct>
 	
@@ -1016,12 +957,12 @@
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
     </Holdable>
     <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <RequiredSkill identifier="mechanical" level="17" />
-      <RequiredSkill identifier="weapons" level="15" />
-      <RequiredItem identifier="aluminium" />
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="aluminium" amount="3" />
     </Fabricate>
     <Deconstruct time="6">
-      <Item identifier="aluminium" />
+      <Item identifier="aluminium" amount="2" />
     </Deconstruct>
 	
     <Price baseprice="20"   sold="false">
@@ -1042,12 +983,12 @@
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
     </Holdable>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <RequiredSkill identifier="mechanical" level="17" />
-      <RequiredItem identifier="aluminium" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem identifier="carbon" amount="3" />
     </Fabricate>
-    <Deconstruct time="6">
-      <Item identifier="aluminium" />
+    <Deconstruct time="8">
+      <Item identifier="carbon" amount="2" />
     </Deconstruct>
 	
     <Price baseprice="20"   sold="false">
@@ -1128,21 +1069,14 @@
       </StatusEffect>
 	  
     </Holdable>
-    <Fabricate suitablefabricators="fabricator" requiredtime="60">
-      <RequiredSkill identifier="mechanical" level="70" />
-      <RequiredItem identifier="fpgacircuit" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="180">
+      <RequiredSkill identifier="mechanical" level="90" />
+      <RequiredSkill identifier="electrical" level="60" />
+      <RequiredItem identifier="fpgacircuit" amount="4" />
       <RequiredItem identifier="terminal" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" amount="12" />
       <RequiredItem identifier="RIBAStatusMonitor" />
     </Fabricate>
-    <Deconstruct time="35">
-      <Item identifier="fpgacircuit" />
-      <Item identifier="terminal" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="RIBAStatusMonitor" />
-    </Deconstruct>
     <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
       <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
       <RequiredSkill identifier="mechanical" level="55" />
@@ -1165,20 +1099,14 @@
   <!-- Деконстрактор  -->
   <Item name="" identifier="RIBAdeconstructor" tags="deconstructor" category="Machine" scale="0.49" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
-      <RequiredSkill identifier="mechanical" level="70" />
+      <RequiredSkill identifier="mechanical" level="90" />
+      <RequiredSkill identifier="electrical" level="60" />
       <RequiredItem identifier="fpgacircuit" />
       <RequiredItem identifier="terminal" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="steel" amount="8" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
       <RequiredItem identifier="RIBAStatusMonitor" />
     </Fabricate>
-    <Deconstruct time="35">
-      <Item identifier="fpgacircuit" />
-      <Item identifier="terminal" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="RIBAStatusMonitor" />
-    </Deconstruct>
     <Body width="250" height="320" density="40" />
     <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
@@ -1315,13 +1243,12 @@
     </Price>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="20" />
-      <Item identifier="titanium" />
-      <Item identifier="titanium" />
-      <Item identifier="memorycomponent" />
+      <RequiredItem identifier="titanium" amount="4" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="memorycomponent" />
     </Fabricate>
     <Deconstruct time="20">
-      <Item identifier="titanium" />
-      <Item identifier="titanium" />
+      <Item identifier="titanium" amount="2" />
       <Item identifier="memorycomponent" />
     </Deconstruct>
     <Body width="113" height="125" density="40" />
@@ -1358,15 +1285,13 @@
     <!-- <Item identifier="steel" /> -->
     <!-- </Deconstruct> -->
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredSkill identifier="mechanical" level="20" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="memorycomponent" />
+      <RequiredSkill identifier="mechanical" level="50" />
+      <RequiredSkill identifier="electical" level="30" /> 
+      <RequiredItem identifier="titanium" amount="3" />
+      <RequiredItem identifier="memorycomponent" />
     </Fabricate>
     <Deconstruct time="20">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="memorycomponent" />
+      <Item identifier="titanium" amount="3" />
     </Deconstruct>
     <!-- <Price baseprice="25" > -->
     <!-- <Price locationtype="outpost" multiplier="1" minavailable="4" /> -->
@@ -1406,15 +1331,13 @@
     <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.05" />
     <PreferredContainer primary="outpostcrewcabinet" minamount="0" maxamount="1" spawnprobability="0.5" />
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredSkill identifier="mechanical" level="20" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="memorycomponent" />
+      <RequiredSkill identifier="mechanical" level="50" />
+      <RequiredSkill identifier="electical" level="30" /> 
+      <RequiredItem identifier="titanium" amount="3" />
+      <RequiredItem identifier="memorycomponent" />
     </Fabricate>
     <Deconstruct time="20">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="memorycomponent" />
+      <Item identifier="titanium" amount="3" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="125,369,127,73" origin="0.5,0.6" />
     <Sprite texture="%ModDir%/portable2.png" sourcerect="125,366,127,73" origin="0.5,0.5" depth="0.6" />
