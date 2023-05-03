@@ -33,7 +33,6 @@
     </Price>
   </ImportItem>
   
-  
   <!-- ПомпачкаААА -->
   <ImportItem file="../../Content/Items/Pump/pump.xml"  item="pump">
 	<EditAttributes method="replace" identifier="RIBAbigpump" isshootable="true" />
@@ -86,52 +85,18 @@
   </ImportItem>
   
   <!-- Помпачка -->
-  <Item name="" identifier="RIBAsmallpump" tags="pump" isshootable="true" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Pump/pump.xml"  item="smallpump">
+	<EditAttributes method="replace" identifier="RIBAsmallpump" isshootable="true"/>
+	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all)"/>
+	
     <Sprite texture="%ModDir%/portable.png" depth="0.8" sourcerect="688,778,128,74" origin="0.5,0.5" />
     <InfectedSprite texture="%ModDir%/portable.png" sourcerect="555,0,216,129" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/portable.png" sourcerect="339,0,216,129" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="688,852,128,74" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="688,926,128,74" depth="0.8" maxcondition="0" />
-    <Pump canbeselected="true" maxflow="100" PowerConsumption="60.0" MinVoltage="0.3" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
-      <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.005" loop="true" />
-      <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="500.0" volumeproperty="CurrentBrokenVolume" volume="0.004" loop="true" />
-      <PumpInEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="0.6" />
-      <PumpInEmitter particle="watersplash" particlespersecond="50" position="7,-51" anglemin="180" anglemax="180" velocitymin="200" velocitymax="400" scalemin="0.5" scalemax="0.6" />
-      <PumpOutEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
-    </Pump>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="70" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-      <input name="toggle" displayname="connection.togglestate" />
-      <input name="set_active" displayname="connection.setstate" />
-      <input name="set_speed" displayname="connection.setpumpingspeed" />
-      <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
-    </ConnectionPanel>
-    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.2" mindeteriorationdelay="60" maxdeteriorationdelay="240" MinDeteriorationCondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
-      <RequiredSkill identifier="mechanical" level="55" />
-      <RequiredItem items="wrenchitem" type="Equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
-      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-        <Affliction identifier="lacerations" strength="5" />
-        <Affliction identifier="stun" strength="5" />
-      </StatusEffect>
-    </Repairable>
+	
     <Body width="128" height="74" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <!--Conditional targetcontainer="false"/-->
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
@@ -148,31 +113,24 @@
       <Item identifier="dementonite" amount="4" />
       <Item identifier="plastic" />
     </Deconstruct>
-	
     <Price baseprice="150"   sold="false">
     </Price>
-	
-  </Item>
-  
-  
+  </ImportItem>
   
   <!-- Монитор камеры -->
-  <Item name="" description="" identifier="RIBAControlMonitor" tags="RIBAperiscope" category="Electrical" type="Controller" disableitemusagewhenselected="true" scale="0.360" impactsoundtag="impact_metal_light" isshootable="true" requireaimtouse="false" requireaimtosecondaryuse="false" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Weapons/railgun.xml"  item="periscope">
+	<EditAttributes method="replace" identifier="RIBAControlMonitor" isshootable="true" impactsoundtag="impact_metal_light"/>
+	<RemoveElements elements="Sprite(0),Controller(0)"/>
+	
     <Sprite texture="%ModDir%/portable.png" depth="0.7" sourcerect="460,348,140,145" origin="0.5,0.5" />
     <Controller UserPos="-30.0, -0.0" direction="Right" canbeselected="true" msg="ItemMsgInteractSelect">
       <limbposition limb="LeftHand" position="60,-110" />
       <limbposition limb="RightHand" position="120,-130" />
     </Controller>
+	
     <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" flicker="0.3" allowingameediting="false" scale="1.">
       <sprite texture="%ModDir%/portable.png" depth="0.59" sourcerect="600,348,122,77" origin="0.47,0.77" alpha="1.0" />
     </LightComponent>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-      <output name="position_out" displayname="connection.turretaimingout" fallbackdisplayname="inputtype.aim" />
-      <output name="trigger_out" displayname="connection.turrettriggerout" fallbackdisplayname="inputtype.shoot" />
-    </ConnectionPanel>
     <Deconstruct time="10">
       <Item identifier="fpgacircuit" />
       <Item identifier="colorcomponent" />
@@ -205,10 +163,10 @@
         <Affliction identifier="burn" strength="5" />
       </StatusEffect>
     </Repairable>
+    <Price baseprice="200"   sold="false"/>
 	
-    <Price baseprice="200"   sold="false">
-    </Price>
-  </Item>
+  </ImportItem>
+  
   <!-- Камера -->
   <Item name="" identifier="RIBAControlCamera" tags="searchlight" category="Machine" focusonselected="true" offsetonselected="500" linkable="false" Scale="0.5">
     <Upgrade gameversion="0.9.5.0" scale="0.5" />
@@ -224,12 +182,6 @@
       <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
       <RequiredItem items="screwdriveritem" type="Equipped" />
       <input name="power_in" displayname="connection.powerin" />
-      <!-- <StatusEffect type="Always" targettype="This" focusonselected="false"> -->
-      <!-- <Conditional Voltage="eq 0.0" /> -->
-      <!-- </StatusEffect> -->
-      <!-- <StatusEffect type="Always" targettype="This" focusonselected="true"> -->
-      <!-- <Conditional Voltage="gt 0.1" /> -->
-      <!-- </StatusEffect> -->
       <input name="position_in" displayname="connection.turretaimingin" />
     </ConnectionPanel>
     <Fabricate suitablefabricators="fabricator" requiredtime="25">
@@ -256,34 +208,22 @@
     <Price baseprice="200"   sold="false">
     </Price>
   </Item>
+  
   <!-- монитор состояния	-->
-  <Item name="" description="" identifier="RIBAStatusMonitor" category="Electrical" aliases="MiniMap" tags="command" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Command/command.xml"  item="statusmonitor">
+	<EditAttributes method="replace" identifier="RIBAStatusMonitor"  isshootable="true"  impactsoundtag="impact_metal_light"/>
+	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+	
     <Sprite texture="%ModDir%/portable.png" sourcerect="542,666,146,112" depth="0.7" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="542,778,146,112" depth="0.7" maxcondition="80" fadein="true" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="688,666,146,112" depth="0.7" maxcondition="0" origin="0.5,0.5" />
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false">
-      <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
-      <sprite texture="%ModDir%/portable.png" depth="0.69" sourcerect="542,890,146,112" origin="0.5,0.5" alpha="1.0" />
-    </LightComponent>
-    <MiniMap MinVoltage="0.5" PowerConsumption="100" canbeselected="true" msg="ItemMsgInteractSelect" allowuioverlap="true">
-      <GuiFrame relativesize="0.5,0.5" anchor="Center" style="ItemUI" />
-      <AlternativeLayout relativesize="0.2725,0.3" pivot="BottomLeft" relativeoffset="0.05,-0.001" />
-      <poweronsound file="Content/Items/PowerOnLight3.ogg" range="1000" loop="false" />
-    </MiniMap>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <AlternativeLayout anchor="CenterRight" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <requireditem items="screwdriveritem" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-      <input name="water_data_in" displayname="connection.waterdatain" />
-      <input name="oxygen_data_in" displayname="connection.oxygendatain" />
-    </ConnectionPanel>
+    
+	<GetExistingElement element="LightComponent(0)">
+		<RemoveElements elements="sprite(0)"/>
+		<sprite texture="%ModDir%/portable.png" depth="0.69" sourcerect="542,890,146,112" origin="0.5,0.5" alpha="1.0" />
+    </GetExistingElement>
+	
+	
     <Deconstruct time="10">
       <Item identifier="wificomponent" />
       <Item identifier="equalscomponent"  />
@@ -305,62 +245,29 @@
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
     </Holdable>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.15" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <RequiredItem items="screwdriveritem" type="equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-    </Repairable>
-	
-    <Price baseprice="400"   sold="false">
-    </Price>
-  </Item>
+    <Price baseprice="400"   sold="false"/>
+  </ImportItem>
+
   <!-- Щиток -->
-  <Item name="" description="" identifier="RIBAJunctionBox" category="Electrical" tags="junctionbox,light,logic" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Electricity/poweritems.xml"  item="junctionbox">
+	<EditAttributes method="replace" identifier="RIBAJunctionBox"  isshootable="true"  impactsoundtag="impact_metal_light"/>
+	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all)"/>
+
     <Sprite texture="%ModDir%/portable.png" sourcerect="0,0,113,176" depth="0.8" canflipx="false" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="113,0,113,176" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="226,0я,113,176" depth="0.8" maxcondition="0" />
     <InfectedSprite texture="%ModDir%/portable.png" sourcerect="0,352,161,239" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/portable.png" sourcerect="161,352,161,239" origin="0.5,0.5" />
-    <PowerTransfer canbeselected="true" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.2,0.14" minsize="450,160" anchor="Center" style="ItemUI" />
-      <StatusEffect type="InWater" target="This" condition="-0.6">
-        <Conditional currPowerConsumption="lt -10" />
-      </StatusEffect>
-    </PowerTransfer>
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="1" IsOn="true" castshadows="false" allowingameediting="false">
-      <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
-      <sprite texture="%ModDir%/portable.png" sourcerect="0,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
-      <IsActive targetitemcomponent="PowerTransfer" overload="eq False" />
-    </LightComponent>
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="1" IsOn="false" castshadows="false" allowingameediting="false" blinkfrequency="1.5">
-      <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
-      <sprite texture="%ModDir%/portable.png" sourcerect="113,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
-      <IsActive targetitemcomponent="PowerTransfer" overload="eq True" />
-    </LightComponent>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="70" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <output name="power" displayname="connection.power" />
-      <output name="signal_0" displayname="connection.signalx~[num]=0" fallbackdisplayname="connection.signalinx~[num]=0" />
-      <output name="signal_1" displayname="connection.signalx~[num]=1" fallbackdisplayname="connection.signalinx~[num]=1" />
-      <output name="signal_2" displayname="connection.signalx~[num]=2" fallbackdisplayname="connection.signalinx~[num]=2" />
-      <output name="signal_3" displayname="connection.signalx~[num]=3" fallbackdisplayname="connection.signalinx~[num]=3" />
-    </ConnectionPanel>
+	
+	<GetExistingElement element="LightComponent(0)">
+		<RemoveElements elements="sprite(all)"/>
+		<sprite texture="%ModDir%/portable.png" sourcerect="0,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+	</GetExistingElement>
+	<GetExistingElement element="LightComponent(1)">
+		<RemoveElements elements="sprite(all)"/>
+		<sprite texture="%ModDir%/portable.png" sourcerect="113,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+	</GetExistingElement>
+	
     <Deconstruct time="30">
       <Item identifier="steel" amount="3" />
       <Item identifier="copper" amount="2" />
@@ -377,25 +284,17 @@
       <requireditem identifier="crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
     </Holdable>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.12" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <RequiredItem items="screwdriveritem" type="equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-    </Repairable>
+    <Price baseprice="200"   sold="false"/>
 	
-    <Price baseprice="200"   sold="false">
-    </Price>
-  </Item>
+  </ImportItem>
+  
   <!-- Лампа -->
-  <Item name="" description="" identifier="RIBALamp" scale="0.5" category="Electrical" tags="largeitem,light" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Electricity/lights.xml"  item="lightfluorescentm04">
+	<EditAttributes method="replace" identifier="RIBALamp"  isshootable="true"  impactsoundtag="impact_metal_light"/>
+	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+
     <Sprite texture="%ModDir%/portable.png" sourcerect="892,846,63,89" depth="0.8" origin="0.5,0.5" />
-    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" powerconsumption="5" ison="True">
-      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
-      <sprite texture="%ModDir%/portable.png" sourcerect="892,935,63,89" alpha="1.0" />
-    </LightComponent>
+	
     <Deconstruct time="10">
       <Item identifier="tin" />
       <Item identifier="aluminium" />
@@ -408,37 +307,23 @@
       <RequiredItem identifier="phosphorus" amount="3" />
     </Fabricate>
     <Body width="63" height="89" density="40" />
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="power" displayname="connection.power" />
-      <input name="toggle" displayname="connection.togglestate" />
-      <input name="set_state" displayname="connection.setstate" />
-    </ConnectionPanel>
     <Holdable selectkey="Select" pickkey="Use" slots="Any, RightHand, LeftHand" msg="ItemMsgDetachWrench" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="1" setvalue="true" />
     </Holdable>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.05" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <RequiredItem items="screwdriveritem" type="equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="0.1" scalemax="0.2" mincondition="0.0" maxcondition="50.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Affliction identifier="stun" strength="2" />
-        <Affliction identifier="burn" strength="2" />
-      </StatusEffect>
-    </Repairable>
+    <Price baseprice="100"   sold="false"/>
 	
-    <Price baseprice="20"   sold="false">
-    </Price>
-  </Item>
+  </ImportItem>
+
   <!-- Батарея -->
-  <Item name="" identifier="RIBAbattery" isshootable="true" tags="battery, battery, batterycellrecharger" category="Electrical" Scale="0.5" description="" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Electricity/poweritems.xml"  item="battery">
+	<EditAttributes method="replace" identifier="RIBAbattery"  isshootable="true"  impactsoundtag="impact_metal_light"/>
+	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+
     <Sprite texture="%ModDir%/portable.png" sourcerect="339,154,118,160" depth="0.8" />
+    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="457,154,118,160" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="575,154,118,160" depth="0.8" maxcondition="0" />
+	
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
       <RequiredSkill identifier="electrical" level="60" />
       <RequiredItem identifier="batterycell"  mincondition="0.0" amount="5" usecondition="false"/>
@@ -450,59 +335,14 @@
       <Item identifier="fpgacircuit" />
       <Item identifier="steel" />
     </Deconstruct>
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="457,154,118,160" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="575,154,118,160" depth="0.8" maxcondition="0" />
-    <PowerContainer capacity="2500.0" maxrechargespeed="300.0" maxoutput="1000.0" canbeselected="true" indicatorposition="65,33" indicatorsize="34,46" ishorizontal="false" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.25,0.23" minsize="350,200" anchor="Center" style="ItemUI" />
-      <!--minsize="350,250" maxsize="420,300"-->
-      <StatusEffect type="OnActive" targettype="Contained" targets="loadable" Condition="2.0">
-        <!-- the statuseffect targets the contained item (a battery cell that's being charged), but the conditional targets the container (this battery) -->
-        <Conditional ChargePercentage="gt 0.01" targetcontainer="true" targetitemcomponent="PowerContainer" />
-      </StatusEffect>
-    </PowerContainer>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="70" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <requireditem items="screwdriveritem" type="Equipped" />
-      <output name="power_out" displayname="connection.powerout" />
-      <input name="power_in" displayname="connection.powerin" />
-      <input name="set_rate" displayname="connection.batterysetrechargespeed" />
-      <output name="charge" displayname="connection.batterychargestatusout" />
-      <output name="charge_%" displayname="connection.batterychargepercentage" />
-      <output name="charge_rate" displayname="connection.batteryrechargespeedout" />
-    </ConnectionPanel>
-    <ItemContainer capacity="3" canbeselected="true" hideitems="true" hudpos="0.5,0.6" maxstacksize="1" uilabel="ChargingDock">
-      <GuiFrame relativesize="0.2,0.2" anchor="Center" relativeoffset="0,0.2" style="ItemUI" />
-      <Containable items="loadable" />
-    </ItemContainer>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="240" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-      <StatusEffect type="InWater" target="This" condition="-0.5" />
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-    </Repairable>
     <Body width="118" height="160" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
     </Holdable>
-    <Price baseprice="175"   sold="false">
-    </Price>
-  </Item>
+    <Price baseprice="175"   sold="false"/>
+  </ImportItem>
+
   <!-- Станция перезарядки -->
   <Item name="" identifier="RIBAchargingdock" isshootable="true" tags="logic, battery, batterycellrecharger" category="Electrical" scale="0.5" description="">
     <Sprite texture="%ModDir%/portable.png" sourcerect="339,314,118,34" depth="0.8" />
