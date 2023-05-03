@@ -2,24 +2,25 @@
 <Items>
 
   <!-- Стрёмный Шкаф для ящиков  -->
-  <Item name="" identifier="RIBAcrateshelf2" isshootable="true" tags="container" linkable="true" pickdistance="150" scale="0.5">
-    <Sprite texture="%ModDir%/portable4.png" depth="0.84" sourcerect="445,649,222,375" canflipx="false" origin="0.5,0.5" />
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="suppliescabinet">
+	
+	<EditAttributes method="replace" isshootable="true" identifier="RIBAcrateshelf2"/>
+	<GetExistingElement element="Sprite(0)">
+		<EditAttributes method="replace" texture="%ModDir%/portable4.png" sourcerect="445,649,222,375" canflipx="false"/>
+	</GetExistingElement>
+	<GetExistingElement element="ItemContainer(0)">
+        <StatusEffect type="OnContained" target="This" itempos="0,130" />
+        <StatusEffect type="Always" target="This" itempos="112,-44" />
+	</GetExistingElement>
+		
     <Body width="187" height="368" density="40" />
-    <ItemContainer capacity="4" canbeselected="true" hideitems="false" itempos="112,-54" iteminterval="0,-91" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
-      <Containable items="crate" />
-      <StatusEffect type="OnContained" target="This" itempos="0,130" />
-      <StatusEffect type="Always" target="This" itempos="112,-44" />
-    </ItemContainer>
     <Holdable selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="35.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
       <RequiredItem items="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
-	  
 	  <StatusEffect target="This" type="Always">
         <Conditional attached="false" targetitemcomponentname="Holdable"/>
         <DropContainedItems/>
       </StatusEffect>
-	  
     </Holdable>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="25" />
@@ -28,80 +29,42 @@
     <Deconstruct time="15">
       <Item identifier="steel" amount="6"/>
     </Deconstruct>
-	
     <Price baseprice="200"   sold="false">
     </Price>
-  </Item>
-
+  </ImportItem>
+  
+  
   <!-- ПомпачкаААА -->
-  <Item name="" identifier="RIBAbigpump" tags="pump,light" isshootable="true" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
-    <Sprite texture="%ModDir%/portable4.png" depth="0.8" sourcerect="0,4,412,204" origin="0.5,0.5" />
+  <ImportItem file="../../Content/Items/Pump/pump.xml"  item="pump">
+	<EditAttributes method="replace" identifier="RIBAbigpump" isshootable="true" />
+	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all),DecorativeSprite(all),LightComponent(all)"/>
+    
+	<GetExistingElement element="Pump(0)">
+		<RemoveElements elements="PumpInEmitter(0)"/>
+		<PumpInEmitter particle="watersplash" particlespersecond="80" position="0,-23" anglemin="180" anglemax="180" velocitymin="200" velocitymax="600" />
+	</GetExistingElement>
+	
+	<Sprite texture="%ModDir%/portable4.png" depth="0.8" sourcerect="0,4,412,204" origin="0.5,0.5" />
     <InfectedSprite texture="%ModDir%/portable4.png" sourcerect="416,4,427,222" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/portable4.png" sourcerect="416,226,427,225" origin="0.5,0.5" />
-    
 	<BrokenSprite texture="%ModDir%/portable4.png" sourcerect="0,204,412,199" depth="0.8" maxcondition="80" fadein="true" />
 	<BrokenSprite texture="%ModDir%/portable4.png" sourcerect="0,403,412,199" depth="0.8" maxcondition="0" fadein="true" />
-	
-	
     <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.79" offset="150,50" sourcerect="850,6,41,41" origin="0.5,0.5" rotationspeed="-360">
       <AnimationConditional Voltage="gt 0.3" targetitemcomponent="Pump" />
       <AnimationConditional CurrFlow="gt 0.0" targetitemcomponent="Pump" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
     <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.78" offset="150,50" sourcerect="907,6,41,41"/>
-	
     <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.79" offset="108,-29" sourcerect="853,60,68,68" origin="0.5,0.5" rotationspeed="1440">
       <AnimationConditional Voltage="gt 0.3" targetitemcomponent="Pump" />
       <AnimationConditional CurrFlow="gt 0.0" targetitemcomponent="Pump" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
     <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.78" offset="108,-29" sourcerect="932,57,79,78"/>
-	
     <LightComponent range="50.0" lightcolor="114,0,6,95" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" />
 	
-    
-    <Pump canbeselected="true" maxflow="600" PowerConsumption="300.0" MinVoltage="0.3" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
-      <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="800.0" volumeproperty="CurrFlow" volume="0.01" loop="true" />
-      <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="800.0" volumeproperty="CurrentBrokenVolume" volume="0.008" loop="true" />
-      <PumpInEmitter particle="watersplash" particlespersecond="80" position="0,-23" anglemin="180" anglemax="180" velocitymin="200" velocitymax="600" />
-      <PumpInEmitter particle="bubbles" particlespersecond="10" position="0,-26" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" />
-      <PumpOutEmitter particle="bubbles" particlespersecond="5" position="157,-150" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" />
-      <PumpOutEmitter particle="bubbles" particlespersecond="5" position="260,-150" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" />
-    </Pump>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="4" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriver" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-      <input name="toggle" displayname="connection.togglestate" />
-      <input name="set_active" displayname="connection.setstate" />
-      <input name="set_speed" displayname="connection.setpumpingspeed" />
-      <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
-      <output name="condition_out" displayname="connection.conditionout" />
-    </ConnectionPanel>
-    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="60" maxdeteriorationdelay="270" MinDeteriorationCondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
-      <RequiredSkill identifier="mechanical" level="55" />
-      <RequiredItem items="wrenchitem" type="Equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
-      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-        <Affliction identifier="lacerations" strength="5" />
-        <Affliction identifier="stun" strength="5" />
-      </StatusEffect>
-    </Repairable>
     <Body width="400" height="200" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <!--Conditional targetcontainer="false"/-->
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
@@ -118,11 +81,9 @@
       <Item identifier="dementonite" amount="4" />
       <Item identifier="plastic" />
     </Deconstruct>
-	
     <Price baseprice="400"   sold="false">
     </Price>
-	
-  </Item>
+  </ImportItem>
   
   <!-- Помпачка -->
   <Item name="" identifier="RIBAsmallpump" tags="pump" isshootable="true" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
@@ -777,7 +738,7 @@
       <RequiredSkill identifier="medical" level="15" />
       <RequiredItem identifier="steel" amount="10" />
       <RequiredItem identifier="silicon" amount="2" />
-      <RequiredItem identifier="paint" />
+      <RequiredItem identifier="redpaint" />
     </Fabricate>
     <Deconstruct time="20">
       <Item identifier="steel" amount="8" />
