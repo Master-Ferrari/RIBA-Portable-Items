@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
  
- 
    <!-- грузовой шкаф для ящиков  -->
   <Item name="" identifier="RIBABuyablecrateshelf2" isshootable="true" tags="cargocontainer" linkable="true" pickdistance="150" scale="0.5">
     <Sprite texture="%ModDir%/portable4.png" depth="0.82" sourcerect="681,649,341,375" canflipx="false" origin="0.5,0.5" />
@@ -39,19 +38,17 @@
     </Price>
 	
   </Item>
-  
-  
-  
+ 
   <!-- ПомпачкаААА -->
-  <Item name="" identifier="RIBABuyableBigpump" tags="pump" isshootable="true" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
-  
+  <ImportItem file="../../Content/Items/Pump/pump.xml"  item="pump">
+	<EditAttributes method="replace" identifier="RIBABuyableBigpump" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all),DecorativeSprite(all),LightComponent(all)"/>
+	
     <Sprite texture="%ModDir%/portable4.png" depth="0.8" sourcerect="416,455,400,192" origin="0.5,0.5" />
     <InfectedSprite texture="%ModDir%/portable4.png" sourcerect="416,4,427,222" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/portable4.png" sourcerect="416,226,427,225" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/portable4.png" sourcerect="16,624,400,192" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/portable4.png" sourcerect="16,832,400,192" depth="0.8" maxcondition="0" />
-	
-	
     <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.79" offset="150,50" sourcerect="850,6,41,41" origin="0.5,0.5" rotationspeed="-360">
       <AnimationConditional Voltage="gt 0.3" targetitemcomponent="Pump" />
       <AnimationConditional CurrFlow="gt 0.0" targetitemcomponent="Pump" />
@@ -59,46 +56,7 @@
     </DecorativeSprite>
     <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.78" offset="150,50" sourcerect="907,6,41,41"/>
 	
-    
-    <Pump canbeselected="true" maxflow="600" PowerConsumption="300.0" MinVoltage="0.3" IsOn="true" msg="ItemMsgInteractSelect">
-      <!-- TODO: define max size-->
-      <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
-      <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="800.0" volumeproperty="CurrFlow" volume="0.01" loop="true" />
-      <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="800.0" volumeproperty="CurrentBrokenVolume" volume="0.008" loop="true" />
-      <PumpInEmitter particle="watersplash" particlespersecond="80" position="0,-26" anglemin="180" anglemax="180" velocitymin="400" velocitymax="500" />
-      <PumpInEmitter particle="bubbles" particlespersecond="10" position="0,-26" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" />
-      <PumpOutEmitter particle="bubbles" particlespersecond="5" position="157,-150" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" />
-      <PumpOutEmitter particle="bubbles" particlespersecond="5" position="260,-150" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" />
-    </Pump>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="70" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-      <input name="toggle" displayname="connection.togglestate" />
-      <input name="set_active" displayname="connection.setstate" />
-      <input name="set_speed" displayname="connection.setpumpingspeed" />
-      <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
-    </ConnectionPanel>
-    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.2" mindeteriorationdelay="60" maxdeteriorationdelay="240" MinDeteriorationCondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
-      <RequiredSkill identifier="mechanical" level="55" />
-      <RequiredItem items="wrenchitem" type="Equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
-      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-        <Affliction identifier="lacerations" strength="5" />
-        <Affliction identifier="stun" strength="5" />
-      </StatusEffect>
-    </Repairable>
+	
     <Price baseprice="1200">
       <Price locationtype="outpost" multiplier="1.1" maxavailable="1" />
       <Price locationtype="city" multiplier="1" maxavailable="1" />
@@ -112,62 +70,36 @@
       <requireditem identifier="Crowbaritem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
-    <Deconstruct time="10">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
+    <Deconstruct time="20">
+      <Item identifier="steel" amount="4"/>
+      <Item identifier="aluminium" amount="3" />
+      <Item identifier="dementonite" amount="4" />
       <Item identifier="plastic" />
-	  
-      <Item identifier="dementonite" amount="2" />
-      <Item identifier="fpgacircuit" />
     </Deconstruct>
-  </Item>
-
-
-
+  </ImportItem>
+  
   <!-- Помпачка -->
-  <Item name="" identifier="RIBABuyablesmallpump" tags="pump" isshootable="true" linkable="true" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Pump/pump.xml"  item="smallpump">
+	<EditAttributes method="replace" identifier="RIBABuyablesmallpump" isshootable="true"   impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
+	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all)"/>
+	
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="688,778,128,74" origin="0.5,0.5" />
     <InfectedSprite texture="%ModDir%/portable.png" sourcerect="555,0,216,129" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/portable.png" sourcerect="339,0,216,129" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="688,852,128,74" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="688,926,128,74" depth="0.8" maxcondition="0" />
-    <Pump canbeselected="true" maxflow="100" PowerConsumption="60.0" MinVoltage="0.3" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
-      <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.005" loop="true" />
-      <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="500.0" volumeproperty="CurrentBrokenVolume" volume="0.004" loop="true" />
-      <PumpInEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="0.6" />
-      <PumpInEmitter particle="watersplash" particlespersecond="50" position="7,-51" anglemin="180" anglemax="180" velocitymin="200" velocitymax="400" scalemin="0.5" scalemax="0.6" />
-      <PumpOutEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
-    </Pump>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="70" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-      <input name="toggle" displayname="connection.togglestate" />
-      <input name="set_active" displayname="connection.setstate" />
-      <input name="set_speed" displayname="connection.setpumpingspeed" />
-      <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
-    </ConnectionPanel>
-    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.2" mindeteriorationdelay="60" maxdeteriorationdelay="240" MinDeteriorationCondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
-      <RequiredSkill identifier="mechanical" level="55" />
-      <RequiredItem items="wrenchitem" type="Equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
-      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-        <Affliction identifier="lacerations" strength="5" />
-        <Affliction identifier="stun" strength="5" />
-      </StatusEffect>
-    </Repairable>
+	
+    <Body width="128" height="74" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+    </Holdable>
+    <Deconstruct time="20">
+      <Item identifier="steel" amount="4"/>
+      <Item identifier="aluminium" amount="3" />
+      <Item identifier="dementonite" amount="4" />
+      <Item identifier="plastic" />
+    </Deconstruct>
     <Price baseprice="200">
       <Price locationtype="outpost" multiplier="1.1" />
       <Price locationtype="city" multiplier="1" />
@@ -175,25 +107,33 @@
       <Price locationtype="military" multiplier="1.2"  maxavailable="1" />
       <Price locationtype="mine" multiplier="1.2" />
     </Price>
-    <Body width="128" height="74" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <!--Conditional targetcontainer="false"/-->
-      <requireditem identifier="Crowbaritem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-    </Holdable>
-    <Deconstruct time="10">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="plastic" />
-	  
-      <Item identifier="dementonite" amount="2" />
-      <Item identifier="fpgacircuit" />
-    </Deconstruct>
-  </Item>
+  </ImportItem>
   
   <!-- Монитор камеры -->
-  
-  <Item name="" description="" identifier="RIBABuyableControlMonitor" tags="periscope" category="Electrical" type="Controller" disableitemusagewhenselected="true" scale="0.360" impactsoundtag="impact_metal_light" isshootable="true" requireaimtouse="false" requireaimtosecondaryuse="false" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Weapons/railgun.xml"  item="periscope">
+	<EditAttributes method="replace" identifier="RIBABuyableControlMonitor" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
+	<RemoveElements elements="Sprite(0),Controller(0)"/>
+	
+    <Sprite texture="%ModDir%/portable.png" depth="0.7" sourcerect="460,348,140,145" origin="0.5,0.5" />
+    <Controller UserPos="-30.0, -0.0" direction="Right" canbeselected="true" msg="ItemMsgInteractSelect">
+      <limbposition limb="LeftHand" position="60,-110" />
+      <limbposition limb="RightHand" position="120,-130" />
+    </Controller>
+	
+    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" flicker="0.3" allowingameediting="false" scale="1.">
+      <sprite texture="%ModDir%/portable.png" depth="0.59" sourcerect="600,348,122,77" origin="0.47,0.77" alpha="1.0" />
+    </LightComponent>
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="colorcomponent" />
+      <Itme identifier="silicon" />
+      <Item identifier="plastic" amount="2" />
+    </Deconstruct>
+    <Body width="140" height="145" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+    </Holdable>
     <Price baseprice="300">
       <Price locationtype="outpost" multiplier="1.8"  sold="false"/>
       <Price locationtype="city" multiplier="1.8" maxavailable="1" />
@@ -201,68 +141,15 @@
       <Price locationtype="military" multiplier="1.9" minavailable="1" />
       <Price locationtype="mine" multiplier="1.5" maxavailable="1"/>
     </Price>
-    <Sprite texture="%ModDir%/portable.png" depth="0.7" sourcerect="460,348,140,145" origin="0.5,0.5" />
-    <Controller UserPos="-30.0, -0.0" direction="Right" canbeselected="true" msg="ItemMsgInteractSelect">
-      <limbposition limb="LeftHand" position="60,-110" />
-      <limbposition limb="RightHand" position="120,-130" />
-    </Controller>
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" flicker="0.3" allowingameediting="false" scale="1.">
-      <sprite texture="%ModDir%/portable.png" depth="0.59" sourcerect="600,348,122,77" origin="0.47,0.77" alpha="1.0" />
-    </LightComponent>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-      <output name="position_out" displayname="connection.turretaimingout" fallbackdisplayname="inputtype.aim" />
-      <output name="trigger_out" displayname="connection.turrettriggerout" fallbackdisplayname="inputtype.shoot" />
-    </ConnectionPanel>
-    <Deconstruct time="10">
-      <Item identifier="fpgacircuit" />
-      <Item identifier="colorcomponent" />
-      <Item identifier="aluminium" />
-      <Item identifier="plastic" />
-    </Deconstruct>
-    <Body width="140" height="145" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <requireditem identifier="Crowbaritem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-    </Holdable>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.15" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <RequiredItem items="screwdriveritem" type="equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-    </Repairable>
-  </Item>
+  </ImportItem>
+
   <!-- Камера -->
-  <Item name="" description="" identifier="RIBABuyableControlCamera" Scale="0.5" rotation="0" category="Electrical" tags="smallitem" focusonselected="true" offsetonselected="500" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" isshootable="true" DamagedByProjectiles="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
-    <Price baseprice="300">
-      <Price locationtype="outpost" multiplier="1.9"  sold="false" />
-      <Price locationtype="city" multiplier="2.3" />
-      <Price locationtype="research" multiplier="1.1" minavailable="1"  />
-      <Price locationtype="military" multiplier="1.9" minavailable="1" />
-      <Price locationtype="mine" multiplier="2.5" maxavailable="1"/>
-    </Price>
+  <ImportItem file="../../Content/Items/Electricity/signalitems.xml"  item="camera">
+	<EditAttributes method="replace" identifier="RIBABuyableControlCamera"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R" rotation="0"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
     <Sprite texture="%ModDir%/portable2.png" depth="0.7" sourcerect="601,426,57,48" origin="0.5,0.5" />
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="control_in" displayname="connection.controlin" />
-    </ConnectionPanel>
-    <Deconstruct time="15">
-      <Item identifier="equalscomponent" />
-      <Item identifier="fpgacircuit" />
-      <Item identifier="silicon" />
-      <Item identifier="plastic" />
-      <Item identifier="phosphorus" />
-    </Deconstruct>
+	
     <Body width="57" height="48" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="Any,LeftHand,RightHand" msg="RIBAItemMsgDetachWrench" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
@@ -275,92 +162,40 @@
         <StatusEffect type="OnSecondaryUse" targettype="This" rotation="0" setvalue="true" />
       </TickBox>
     </CustomInterface>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.05" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <RequiredItem items="screwdriveritem" type="equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="0.1" scalemax="0.2" mincondition="0.0" maxcondition="50.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Affliction identifier="stun" strength="2" />
-        <Affliction identifier="burn" strength="2" />
-      </StatusEffect>
-    </Repairable>
-  </Item>
-  <!-- Вай-фай -->
-  <!-- <Item name="" identifier="RIBABuyableLRwifiComponent" category="Electrical" Tags="smallitem,signal"  -->
-  <!-- cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true"> -->
-  <!-- <Price baseprice="425"> -->
-  <!-- <Price locationtype="outpost" multiplier="1"/> -->
-  <!-- <Price locationtype="city" multiplier="0.9"/> -->
-  <!-- <Price locationtype="research" multiplier="1.25"/> -->
-  <!-- <Price locationtype="military" multiplier="1"/> -->
-  <!-- <Price locationtype="mine" multiplier="1.3"/></Price> -->
-  <!-- <PreferredContainer primary="reactorcab,storagecab"/> -->
-  <!-- <PreferredContainer secondary="wreckreactorcab,wreckstoragecab" minamount="0" maxamount="1" spawnprobability="0.06"/> -->
-  <!-- <Deconstruct time="10"> -->
-  <!-- <Item identifier="wificomponent" /> -->
-  <!-- <Item identifier="equalscomponent" /> -->
-  <!-- <Item identifier="fpgacircuit" /> -->
-  <!-- <Item identifier="tin" /> -->
-  <!-- </Deconstruct> -->
-  <!-- <InventoryIcon texture="Mods/RIBA Portable Items/portable.png" sourcerect="892,809,28,27" origin="0.5,0.5" /> -->
-  <!-- <Sprite texture="Mods/RIBA Portable Items/portable.png" depth="0.75" sourcerect="892,809,28,27" origin="0.5,0.5" spritecolor="1.0,0.6,0.6,1.0" /> -->
-  <!-- <WifiComponent range="80000" canbeselected="true" MinChatMessageInterval="1.0" DiscardDuplicateChatMessages="true" ></WifiComponent> -->
-  <!-- <Body width="28" height="27" density="30" /> -->
-  <!-- <Holdable selectkey="Select" pickkey="Use" aimpos="65,-10" handle1="0,0" attachable="true"  PickingTime="5.0" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench"> -->
-  <!-- <RequiredItem items="wrenchitem" type="Equipped" /> -->
-  <!-- <StatusEffect type="Always" target="Character" SpeedMultiplier="1" setvalue="true"/> -->
-  <!-- </Holdable> -->
-  <!-- <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10"> -->
-  <!-- <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" /> -->
-  <!-- <RequiredItem items="screwdriveritem" type="Equipped" /> -->
-  <!-- <input name="signal_in" displayname="connection.signal" /> -->
-  <!-- <output name="signal_out" displayname="connection.signalout" /> -->
-  <!-- <input name="set_channel" displayname="connection.setchannel" /> -->
-  <!-- </ConnectionPanel> -->
-  <!-- </Item> -->
-  <Item name="" description="" identifier="RIBABuyableStatusMonitor" category="Electrical" aliases="MiniMap" tags="command" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
-    <Price baseprice="600">
-      <Price locationtype="outpost" multiplier="1.9" maxavailable="1"/>
-      <Price locationtype="city" multiplier="2.4" maxavailable="1"/>
-      <Price locationtype="research" multiplier="1.2" />
+    <Price baseprice="300">
+      <Price locationtype="outpost" multiplier="1.9"  sold="false" />
+      <Price locationtype="city" multiplier="2.3" />
+      <Price locationtype="research" multiplier="1.1" minavailable="1"  />
       <Price locationtype="military" multiplier="1.9" minavailable="1" />
-      <Price locationtype="mine" multiplier="0.7" maxavailable="1"/>
+      <Price locationtype="mine" multiplier="2.5" maxavailable="1"/>
     </Price>
+    <Deconstruct time="15">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="silicon" />
+      <Item identifier="plastic" />
+      <Item identifier="phosphorus" />
+    </Deconstruct>
+  </ImportItem>
+
+  <!-- монитор состояния	-->
+  <ImportItem file="../../Content/Items/Command/command.xml"  item="statusmonitor">
+	<EditAttributes method="replace" identifier="RIBABuyableStatusMonitor"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
+	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+	
     <Sprite texture="%ModDir%/portable.png" sourcerect="542,666,146,112" depth="0.7" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="542,778,146,112" depth="0.7" maxcondition="80" fadein="true" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="688,666,146,112" depth="0.7" maxcondition="0" origin="0.5,0.5" />
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false">
-      <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
-      <sprite texture="%ModDir%/portable.png" depth="0.69" sourcerect="542,890,146,112" origin="0.5,0.5" alpha="1.0" />
-    </LightComponent>
-    <MiniMap MinVoltage="0.5" PowerConsumption="100" canbeselected="true" msg="ItemMsgInteractSelect" allowuioverlap="true">
-      <GuiFrame relativesize="0.5,0.5" anchor="Center" style="ItemUI" />
-      <AlternativeLayout relativesize="0.2725,0.3" pivot="BottomLeft" relativeoffset="0.05,-0.001" />
-      <poweronsound file="Content/Items/PowerOnLight3.ogg" range="1000" loop="false" />
-    </MiniMap>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <AlternativeLayout anchor="CenterRight" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <requireditem items="screwdriveritem" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-      <input name="water_data_in" displayname="connection.waterdatain" />
-      <input name="oxygen_data_in" displayname="connection.oxygendatain" />
-    </ConnectionPanel>
+    
+	<GetExistingElement element="LightComponent(0)">
+		<RemoveElements elements="sprite(0)"/>
+		<sprite texture="%ModDir%/portable.png" depth="0.69" sourcerect="542,890,146,112" origin="0.5,0.5" alpha="1.0" />
+    </GetExistingElement>
+	
     <Deconstruct time="10">
       <Item identifier="wificomponent" />
-      <Item identifier="equalscomponent" />
+      <Item identifier="equalscomponent"  />
       <Item identifier="greatercomponent" />
-      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" amount="2" />
       <Item identifier="plastic" />
     </Deconstruct>
     <Body width="146" height="112" density="40" />
@@ -368,22 +203,45 @@
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
     </Holdable>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.15" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <RequiredItem items="screwdriveritem" type="equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-    </Repairable>
-  </Item>
+    <Price baseprice="600">
+      <Price locationtype="outpost" multiplier="1.9" maxavailable="1"/>
+      <Price locationtype="city" multiplier="2.4" maxavailable="1"/>
+      <Price locationtype="research" multiplier="1.2" />
+      <Price locationtype="military" multiplier="1.9" minavailable="1" />
+      <Price locationtype="mine" multiplier="0.7" maxavailable="1"/>
+    </Price>
+  </ImportItem>
+  
   <!-- Щиток -->
-  <Item name="" description="" identifier="RIBABuyableJunctionBox" category="Electrical" tags="logic" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Electricity/poweritems.xml"  item="junctionbox">
+	<EditAttributes method="replace" identifier="RIBABuyableJunctionBox"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
+	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all)"/>
+
+    <Sprite texture="%ModDir%/portable2.png" sourcerect="0,0,113,176" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="113,0,113,176" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="226,0я,113,176" depth="0.8" maxcondition="0" />
+    <InfectedSprite texture="%ModDir%/portable.png" sourcerect="0,352,161,239" origin="0.5,0.5" />
+    <DamagedInfectedSprite texture="%ModDir%/portable.png" sourcerect="161,352,161,239" origin="0.5,0.5" />
+	
+	<GetExistingElement element="LightComponent(0)">
+		<RemoveElements elements="sprite(all)"/>
+        <sprite texture="%ModDir%/portable2.png" sourcerect="0,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+	</GetExistingElement>
+	<GetExistingElement element="LightComponent(1)">
+		<RemoveElements elements="sprite(all)"/>
+        <sprite texture="%ModDir%/portable2.png" sourcerect="113,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+	</GetExistingElement>
+	
+    <Deconstruct time="30">
+      <Item identifier="steel" amount="3" />
+      <Item identifier="copper" amount="2" />
+      <Item identifier="wire" amount="4" />
+    </Deconstruct>
+    <Body width="113" height="176" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
+    </Holdable>
     <Price baseprice="300">
       <Price locationtype="outpost" multiplier="1.4" />
       <Price locationtype="city" multiplier="1.4" />
@@ -391,119 +249,58 @@
       <Price locationtype="military" multiplier="2.2" />
       <Price locationtype="mine" multiplier="2.1" />
     </Price>
-    <Sprite texture="%ModDir%/portable2.png" sourcerect="0,0,113,176" depth="0.8" canflipx="false" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="113,0,113,176" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="226,0я,113,176" depth="0.8" maxcondition="0" />
-    <InfectedSprite texture="%ModDir%/portable.png" sourcerect="0,352,161,239" origin="0.5,0.5" />
-    <DamagedInfectedSprite texture="%ModDir%/portable.png" sourcerect="161,352,161,239" origin="0.5,0.5" />
-    <PowerTransfer canbeselected="true" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.2,0.14" minsize="450,160" anchor="Center" style="ItemUI" />
-      <StatusEffect type="InWater" target="This" condition="-0.25">
-        <Conditional currPowerConsumption="lt -10" />
-      </StatusEffect>
-    </PowerTransfer>
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="1" IsOn="true" castshadows="false" allowingameediting="false">
-      <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
-      <sprite texture="%ModDir%/portable2.png" sourcerect="0,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
-      <IsActive targetitemcomponent="PowerTransfer" overload="eq False" />
-    </LightComponent>
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="1" IsOn="false" castshadows="false" allowingameediting="false" blinkfrequency="1.5">
-      <Upgrade gameversion="0.9.600.0" lightcolor="255,255,255,0" />
-      <sprite texture="%ModDir%/portable2.png" sourcerect="113,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
-      <IsActive targetitemcomponent="PowerTransfer" overload="eq True" />
-    </LightComponent>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="70" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <output name="power" displayname="connection.power" />
-      <output name="signal_0" displayname="connection.signalx~[num]=0" fallbackdisplayname="connection.signalinx~[num]=0" />
-      <output name="signal_1" displayname="connection.signalx~[num]=1" fallbackdisplayname="connection.signalinx~[num]=1" />
-      <output name="signal_2" displayname="connection.signalx~[num]=2" fallbackdisplayname="connection.signalinx~[num]=2" />
-      <output name="signal_3" displayname="connection.signalx~[num]=3" fallbackdisplayname="connection.signalinx~[num]=3" />
-    </ConnectionPanel>
-    <Deconstruct time="30">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="copper" />
-      <Item identifier="copper" />
-    </Deconstruct>
-    <Body width="113" height="176" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <requireditem identifier="Crowbaritem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
-    </Holdable>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.12" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <RequiredItem items="screwdriveritem" type="equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-    </Repairable>
-  </Item>
+  </ImportItem>
+  
   <!-- Лампа -->
-  <Item name="" description="" identifier="RIBABuyableLamp" scale="0.5" category="Electrical" tags="largeitem,light" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
-    <Price baseprice="75">
+  <ImportItem file="../../Content/Items/Electricity/lights.xml"  item="lightfluorescentm04">
+	<EditAttributes method="replace" identifier="RIBABuyableLamp"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
+	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+
+    <Sprite texture="%ModDir%/portable.png" sourcerect="892,846,63,89" depth="0.8" origin="0.5,0.5" />
+	
+	<GetExistingElement element="LightComponent(0)">
+		<RemoveElements elements="LightTexture(0)"/>
+		<sprite texture="%ModDir%/portable2.png" sourcerect="892,935,63,89" alpha="1.0" />
+	</GetExistingElement>
+	
+    <Deconstruct time="10">
+      <Item identifier="tin" />
+      <Item identifier="aluminium" />
+      <Item identifier="phosphorus" amount="2" />
+    </Deconstruct>
+    <Body width="63" height="89" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any, RightHand, LeftHand" msg="ItemMsgDetachWrench" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="1" setvalue="true" />
+    </Holdable>
+    <Price baseprice="125">
       <Price locationtype="outpost" multiplier="1.5" />
       <Price locationtype="city" multiplier="1.7" />
       <Price locationtype="research" multiplier="0.2"  minavailable="4" />
       <Price locationtype="military" multiplier="4.3" maxavailable="2"  />
       <Price locationtype="mine" multiplier="1.2" />
     </Price>
-    <Sprite texture="%ModDir%/portable2.png" sourcerect="892,846,63,89" depth="0.8" origin="0.5,0.5" />
-    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="800.0" powerconsumption="5" ison="True">
-      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
-      <sprite texture="%ModDir%/portable2.png" sourcerect="892,935,63,89" alpha="1.0" />
-    </LightComponent>
-    <Deconstruct time="10">
-      <Item identifier="tin" />
-      <Item identifier="aluminium" />
-      <Item identifier="phosphorus" />
-    </Deconstruct>
-    <Body width="63" height="89" density="40" />
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="power" displayname="connection.power" />
-      <input name="toggle" displayname="connection.togglestate" />
-      <input name="set_state" displayname="connection.setstate" />
-    </ConnectionPanel>
-    <Holdable selectkey="Select" pickkey="Use" slots="Any, RightHand, LeftHand" msg="ItemMsgDetachWrench" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <requireditem identifier="wrenchitem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="1" setvalue="true" />
-    </Holdable>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.05" mindeteriorationdelay="120" maxdeteriorationdelay="480" MinDeteriorationCondition="0" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <RequiredItem items="screwdriveritem" type="equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="0.1" scalemax="0.2" mincondition="0.0" maxcondition="50.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Affliction identifier="stun" strength="2" />
-        <Affliction identifier="burn" strength="2" />
-      </StatusEffect>
-    </Repairable>
-  </Item>
+  </ImportItem>
+  
   <!-- Батарея -->
-  <Item name="" identifier="RIBABuyablebattery" isshootable="true" tags="battery" category="Electrical" Scale="0.5" description="" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Electricity/poweritems.xml"  item="battery">
+	<EditAttributes method="replace" identifier="RIBABuyablebattery"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+
     <Sprite texture="%ModDir%/portable2.png" sourcerect="339,154,118,160" depth="0.8" />
+    <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="457,154,118,160" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="575,154,118,160" depth="0.8" maxcondition="0" />
+	
     <Deconstruct time="50">
-      <Item identifier="batterycell" />
-      <Item identifier="batterycell" />
-      <Item identifier="batterycell" />
+      <Item identifier="batterycell" amount="4" />
       <Item identifier="fpgacircuit" />
       <Item identifier="steel" />
     </Deconstruct>
+    <Body width="118" height="160" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+    </Holdable>
     <Price baseprice="250">
       <Price locationtype="outpost" multiplier="1.1" maxavailable="2" />
       <Price locationtype="city" multiplier="1.9" minavailable="1" />
@@ -511,102 +308,27 @@
       <Price locationtype="military" multiplier="1.4" />
       <Price locationtype="mine" multiplier="1.9" />
     </Price>
-    <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="457,154,118,160" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="575,154,118,160" depth="0.8" maxcondition="0" />
-    <PowerContainer capacity="2000.0" maxrechargespeed="500.0" maxoutput="1000.0" canbeselected="true" indicatorposition="65,33" indicatorsize="34,46" ishorizontal="false" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.25,0.23" minsize="350,200" anchor="Center" style="ItemUI" />
-      <!--minsize="350,250" maxsize="420,300"-->
-      <StatusEffect type="OnActive" targettype="Contained" targets="loadable" Condition="2.0">
-        <!-- the statuseffect targets the contained item (a battery cell that's being charged), but the conditional targets the container (this battery) -->
-        <Conditional ChargePercentage="gt 0.01" targetcontainer="true" targetitemcomponent="PowerContainer" />
-      </StatusEffect>
-    </PowerContainer>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="70" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <requireditem items="screwdriveritem" type="Equipped" />
-      <output name="power_out" displayname="connection.powerout" />
-      <input name="power_in" displayname="connection.powerin" />
-      <input name="set_rate" displayname="connection.batterysetrechargespeed" />
-      <output name="charge" displayname="connection.batterychargestatusout" />
-      <output name="charge_%" displayname="connection.batterychargepercentage" />
-      <output name="charge_rate" displayname="connection.batteryrechargespeedout" />
-    </ConnectionPanel>
-    <ItemContainer capacity="3" canbeselected="true" hideitems="true" hudpos="0.5,0.6" maxstacksize="1" uilabel="ChargingDock">
-      <GuiFrame relativesize="0.2,0.2" anchor="Center" relativeoffset="0,0.2" style="ItemUI" />
-      <Containable items="loadable" />
-    </ItemContainer>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="240" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
-      <StatusEffect type="InWater" target="This" condition="-0.5" />
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-    </Repairable>
-    <Body width="118" height="160" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <requireditem identifier="Crowbaritem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
-    </Holdable>
-    <Deconstruct time="10">
-      <Item identifier="batterycell" />
-      <Item identifier="batterycell" />
-      <Item identifier="batterycell" />
-      <Item identifier="fpgacircuit" />
-      <Item identifier="steel" />
-    </Deconstruct>
-  </Item>
+  </ImportItem>
+  
   <!-- Станция перезарядки -->
-  <Item name="" identifier="RIBABuyablechargingdock" isshootable="true" tags="logic" category="Electrical" scale="0.5" description="">
+  <ImportItem file="../../Content/Items/Electricity/poweritems.xml"  item="chargingdock">
+	<EditAttributes method="replace" identifier="RIBABuyablechargingdock"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
+	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+
     <Sprite texture="%ModDir%/portable2.png" sourcerect="339,314,118,34" depth="0.8" />
-    <Deconstruct time="15">
-      <Item identifier="batterycell" />
-      <Item identifier="aluminium" />
-      <Item identifier="copper" />
-      <Item identifier="copper" />
-    </Deconstruct>
     <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="457,314,118,34" depth="0.8" maxcondition="40" fadein="true" />
     <BrokenSprite texture="%ModDir%/portable2.png" sourcerect="575,314,118,34" depth="0.8" maxcondition="0" />
-    <Powered powerconsumption="200" currpowerconsumption="200" isactive="true">
-      <GuiFrame relativesize="0.18,0.15" minsize="350,160" maxsize="420,192" anchor="Center" relativeoffset="0,-0.1" style="ItemUI" msg="ItemMsgInteractSelect" />
-      <StatusEffect type="OnActive" targettype="Contained" targets="loadable" Condition="2.0">
-        <Conditional Voltage="gt 0.01" targetcontainer="true" targetitemcomponent="Powered" />
-      </StatusEffect>
-    </Powered>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="70" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particleburstinterval="1.05" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-      <input name="power_in" displayname="connection.powerin" />
-    </ConnectionPanel>
-    <ItemContainer capacity="4" canbeselected="true" hideitems="false" maxstacksize="1" itempos="24,10" iteminterval="23,0" itemrotation="-90" uilabel="ChargingDock" containedspritedepth="0.81">
-      <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
-      <Containable items="loadable" />
-      <StatusEffect type="OnContained" target="This" itempos="0,0" />
-      <StatusEffect type="Always" target="This" itempos="24,10" />
-      <StatusEffect type="Always" target="Contained" rotation="-90" SpawnRotationType="Collider" />
-    </ItemContainer>
+	
+    <Deconstruct time="15">
+      <Item identifier="aluminium" />
+      <Item identifier="wire" amount="2" />
+      <Item identifier="copper" amount="2" />
+    </Deconstruct>
+    <Body width="118" height="34" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.75" setvalue="true" />
+    </Holdable>
     <Price baseprice="250">
       <Price locationtype="outpost" multiplier="1.1" minavailable="2" />
       <Price locationtype="city" multiplier="1" minavailable="3" />
@@ -614,19 +336,24 @@
       <Price locationtype="military" multiplier="1.2" />
       <Price locationtype="mine" multiplier="1.2" />
     </Price>
-    <Body width="118" height="34" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <requireditem identifier="Crowbaritem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.75" setvalue="true" />
-    </Holdable>
-  </Item>
+  </ImportItem>
+  
   <!-- Настенный ящик -->
-  <Item name="" identifier="RIBABuyablesuppliescabinet" isshootable="true" tags="container,suppliescontainer" linkable="true" pickdistance="150" scale="0.5">
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="suppliescabinet">
+	<EditAttributes method="replace" identifier="RIBABuyablesuppliescabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
+	<RemoveElements elements="Sprite(0)"/>
+
     <Sprite texture="%ModDir%/portable2.png" depth="0.7" sourcerect="693,154,113,125" origin="0.5,0.5" />
-    <ItemContainer capacity="6" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.18,0.25" anchor="Center" style="ItemUI" />
-      <Containable items="smallitem,mediumitem" />
-    </ItemContainer>
+	
+    <Body width="113" height="125" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" amount="2" />
+      <Item identifier="plastic" />
+    </Deconstruct>
     <Price baseprice="150">
       <Price locationtype="outpost" multiplier="0.4" minavailable="1" />
       <Price locationtype="city" multiplier="0.4" minavailable="1" />
@@ -634,49 +361,45 @@
       <Price locationtype="military" multiplier="2.4" />
       <Price locationtype="mine" multiplier="1.9" />
     </Price>
+  </ImportItem>
+  
+  <!-- Шкаф  -->
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="mediumsteelcabinet">
+	<EditAttributes method="replace" identifier="RIBABuyablemediumsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0)"/>
+
+    <Sprite texture="%ModDir%/portable2.png" depth="0.84" sourcerect="727,306,149,360" origin="0.5,0.5" />
+	
     <Body width="113" height="125" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
     </Holdable>
-    <Deconstruct time="10">
-      <Item identifier="aluminium" />
-      <Item identifier="aluminium" />
-      <Item identifier="plastic" />
+    <Deconstruct time="30">
+      <Item identifier="steel" amount="6" />
     </Deconstruct>
-  </Item>
-  <!-- Шкаф  -->
-  <Item name="" identifier="RIBABuyablemediumsteelcabinet" isshootable="true" tags="locker,container" linkable="true" pickdistance="150" scale="0.5">
-    <Sprite texture="%ModDir%/portable2.png" depth="0.84" sourcerect="727,306,149,360" origin="0.5,0.5" />
-    <ItemContainer capacity="15" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.25,0.35" anchor="Center" style="ItemUI" />
-      <Containable items="smallitem,mediumitem" />
-    </ItemContainer>
     <Price baseprice="320">
       <Price locationtype="outpost" multiplier="1.1" />
       <Price locationtype="city" multiplier="1" />
       <Price locationtype="mine" multiplier="0.9" minavailable="4" />
     </Price>
-    <Body width="149" height="360" density="40" />
+  </ImportItem>
+  
+  <!-- Шкаф с окном -->
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="mediumwindowedsteelcabinet">
+	<EditAttributes method="replace" identifier="RIBABuyablemediumwindowedsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0)"/>
+
+    <Sprite texture="%ModDir%/portable2.png" depth="0.84" sourcerect="876,306,149,360" origin="0.5,0.5" />
+	
+    <Body width="113" height="125" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
     </Holdable>
-    <Deconstruct time="30">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
+    <Deconstruct time="15">
+      <Item identifier="steel" amount="5" />
     </Deconstruct>
-  </Item>
-  <!-- Шкаф с окном -->
-  <Item name="" identifier="RIBABuyablemediumwindowedsteelcabinet" isshootable="true" tags="locker,container" linkable="true" pickdistance="150" scale="0.5">
-    <Sprite texture="%ModDir%/portable2.png" depth="0.84" sourcerect="876,306,149,360" origin="0.5,0.5" />
-    <ItemContainer capacity="15" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.25,0.35" anchor="Center" style="ItemUI" />
-      <Containable items="smallitem,mediumitem" />
-    </ItemContainer>
     <Price baseprice="350">
       <Price locationtype="outpost" multiplier="1.1" minavailable="1" />
       <Price locationtype="city" multiplier="1" minavailable="1" />
@@ -684,26 +407,26 @@
       <Price locationtype="military" multiplier="2.4" />
       <Price locationtype="mine" multiplier="0.9" />
     </Price>
-    <Body width="149" height="360" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <requireditem identifier="wrenchitem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+  </ImportItem>
+  
+  <!-- Шкаф большой -->
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="steelcabinet">
+	<EditAttributes method="replace" identifier="RIBABuyablesteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
+    <Sprite texture="%ModDir%/portable3.png" depth="0.84" sourcerect="499,289,350,359" origin="0.5,0.5" />
+	
+    <Body width="360" height="373" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
     <Deconstruct time="15">
+      <Item identifier="RIBAmediumwindowedsteelcabinet" />
       <Item identifier="steel" />
       <Item identifier="steel" />
       <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="silicon" />
     </Deconstruct>
-  </Item>
-  <!-- Шкаф большой -->
-  <Item name="" identifier="RIBABuyablesteelcabinet" isshootable="true" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.5">
-    <Sprite texture="%ModDir%/portable3.png" depth="0.84" sourcerect="499,289,350,359" origin="0.5,0.5" />
-    <ItemContainer capacity="30" slotsperrow="6" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
-      <Containable items="smallitem,mediumitem" />
-    </ItemContainer>
     <Price baseprice="700">
       <Price locationtype="outpost" multiplier="0.9"/>
       <Price locationtype="city" multiplier="0.8"/>
@@ -711,50 +434,18 @@
       <Price locationtype="military" multiplier="2.2" />
       <Price locationtype="mine" multiplier="0.6" />
     </Price>
-    <Body width="350" height="359" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
-      <requireditem identifier="Crowbaritem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-    </Holdable>
-    <Deconstruct time="25">
-      <Item identifier="RIBAmediumwindowedsteelcabinet" />
-      <Item identifier="RIBAmediumsteelcabinet" />
-    </Deconstruct>
-  </Item>
+  </ImportItem>
+  
   <!-- Водолазный шкаф -->
-  <Item name="" identifier="RIBABuyabledivingsuitlocker" tags="container,divingsuitcontainer,divingsuitcontainerwindow" pickdistance="50" scale="0.5" isshootable="true">
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="divingsuitlocker">
+	<EditAttributes method="replace" identifier="RIBABuyabledivingsuitlocker"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
     <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="826,0,99,256" origin="0.5,0.5" />
-    <!--TODO: add light textures for powered-on state?-->
-    <Powered powerconsumption="10" currpowerconsumption="10" isactive="true">
-      <GuiFrame relativesize="0.18,0.15" minsize="350,160" maxsize="420,192" anchor="Center" relativeoffset="0,-0.1" style="ItemUI" msg="ItemMsgInteractSelect" />
-    </Powered>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="20" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Items/Weapons/ElectricalDischarger.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particleburstinterval="1.05" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-      <input name="power_in" displayname="connection.powerin" />
-    </ConnectionPanel>
-    <ItemContainer hideitems="false" drawinventory="true" capacity="1" slotsperrow="1" itempos="0,0" iteminterval="0,0" canbeselected="true" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
-      <Containable items="deepdiving" excludeditems="deepdivinglarge" />
-    </ItemContainer>
-    <Price baseprice="350">
-      <Price locationtype="outpost" multiplier="1.1" />
-      <Price locationtype="city" multiplier="1" />
-      <Price locationtype="research" multiplier="1.2" />
-      <Price locationtype="military" multiplier="1.2" />
-      <Price locationtype="mine" multiplier="1.2" />
-    </Price>
+	
     <Body width="99" height="256" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" controlpose="true">
+	  <!-- <RequiredItem items="divingsuit" type="Contained" /> -->
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
 	  
@@ -767,24 +458,33 @@
     <Deconstruct time="20">
       <RequiredItem identifier="steel" />
       <RequiredItem identifier="plastic" />
-      <RequiredItem identifier="silicon" />
-      <RequiredItem identifier="silicon" />
+      <RequiredItem identifier="silicon" amount="3" />
     </Deconstruct>
-  </Item>
+    <Price baseprice="350">
+      <Price locationtype="outpost" multiplier="1.1" />
+      <Price locationtype="city" multiplier="1" />
+      <Price locationtype="research" multiplier="1.2" />
+      <Price locationtype="military" multiplier="1.2" />
+      <Price locationtype="mine" multiplier="1.2" />
+    </Price>
+  </ImportItem>
+  
   <!-- МедШкаф -->
-  <Item name="" identifier="RIBABuyablemedcabinet" tags="container,medcontainer" linkable="true" pickdistance="150" waterproof="true" scale="0.5" isshootable="true">
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="medcabinet">
+	<EditAttributes method="replace" identifier="RIBABuyablemedcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
     <Sprite texture="%ModDir%/portable2.png" depth="0.84" sourcerect="338,495,204,320" canflipx="false" />
+	
     <Deconstruct time="20">
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="silicon" />
-      <RequiredItem identifier="silicon" />
+      <Item identifier="steel" amount="8" />
+      <Item identifier="silicon" />
     </Deconstruct>
-    <ItemContainer capacity="30" slotsperrow="6" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.25,0.45" slotsperrow="6" anchor="Center" style="ItemUI" />
-      <Containable items="smallitem,chem,mediumitem" />
-    </ItemContainer>
+    <Body width="204" height="320" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+    </Holdable>
     <Price baseprice="400">
       <Price locationtype="outpost" multiplier="1.9"/>
       <Price locationtype="city" multiplier="1.8"/>
@@ -792,25 +492,15 @@
       <Price locationtype="military" multiplier="1.2" />
       <Price locationtype="mine" multiplier="2.2" />
     </Price>
-    <Body width="204" height="320" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <requireditem identifier="wrenchitem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
-    </Holdable>
-  </Item>
+  </ImportItem>
+  
   <!-- Патроны для рельсы  -->
-  <Item name="" identifier="RIBABuyablerailgunshellrack" isshootable="true" tags="container,railgunammocontainer" pickdistance="120" scale="0.5" canflipx="false" canflipy="false">
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="railgunshellrack">
+	<EditAttributes method="replace" identifier="RIBABuyablerailgunshellrack"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
     <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="333,815,209,209" origin="0.5,0.5" />
-    <ItemContainer hideitems="false" drawinventory="true" capacity="3" slotsperrow="3" itempos="60,-100" iteminterval="50,0" itemrotation="90" canbeselected="true" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
-      <Containable items="railgunshell,nuclearshell,railgunammo" />
-      <StatusEffect type="Always" target="Contained" rotation="90" SpawnRotationType="Collider" />
-      <StatusEffect type="OnContained" target="This" itempos="-60,0" />
-      <StatusEffect type="Always" target="This" itempos="60,-100" />
-    </ItemContainer>
-    <Price baseprice="100">
-      <Price locationtype="military" multiplier="0.2" />
-    </Price>
+	
     <Body width="209" height="209" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
@@ -823,26 +513,23 @@
 	  
     </Holdable>
     <Deconstruct time="10">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
+      <Item identifier="steel" amount="3" />
     </Deconstruct>
-  </Item>
-  <!-- Патроны для коилгана  -->
-  <Item name="" identifier="RIBABuyablecoilgunammoshelf" isshootable="true" tags="container,coilgunammocontainer" linkable="true" pickdistance="150" waterproof="true" scale="0.5">
-    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="187,724,139,300" canflipx="false" origin="0.5,0.5" />
-    <Deconstruct time="10">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-    </Deconstruct>
-    <ItemContainer capacity="3" canbeselected="true" hideitems="false" itempos="70,-52" iteminterval="0,-96" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
-      <Containable items="ammobox,coilgunammo" />
-      <StatusEffect type="OnContained" target="This" itempos="0,105" />
-      <StatusEffect type="Always" target="This" itempos="70,-52" />
-    </ItemContainer>
     <Price baseprice="100">
       <Price locationtype="military" multiplier="0.2" />
     </Price>
+  </ImportItem>
+  
+  <!-- Патроны для коилгана  -->
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="coilgunammoshelf">
+	<EditAttributes method="replace" identifier="RIBABuyablecoilgunammoshelf"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
+    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="187,724,139,300" canflipx="false" origin="0.5,0.5" />
+	
+    <Deconstruct time="10">
+      <Item identifier="steel" amount="3" />
+    </Deconstruct>
     <Body width="139" height="300" density="40" />
     <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
@@ -854,19 +541,33 @@
       </StatusEffect>
 	  
     </Holdable>
-  </Item>
+    <Price baseprice="100">
+      <Price locationtype="military" multiplier="0.2" />
+    </Price>
+  </ImportItem>
+  
   <!-- Токсичный ящик -->
-  <Item name="" identifier="RIBABuyabletoxcabinet" isshootable="true" tags="container,toxcontainer" linkable="true" pickdistance="150" waterproof="true" scale="0.5">
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="toxcabinet">
+	<EditAttributes method="replace" identifier="RIBABuyabletoxcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
     <Sprite texture="%ModDir%/portable2.png" depth="0.84" sourcerect="892,665,110,144" canflipx="false" origin="0.5,0.5" />
-    <Upgrade gameversion="0.10.0.0" scale="0.5" />
-    <ItemContainer capacity="20" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
-      <RequiredItem items="id_medic,id_captain" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
-      <Containable items="smallitem,chem,medical" />
-      <StatusEffect type="OnContained" target="This" itempos="0,110" />
-      <StatusEffect type="OnNotContained" target="This" itempos="92,-46" />
-      <StatusEffect type="Always" target="Contained" rotation="90" SpawnRotationType="Collider" />
-    </ItemContainer>
+	
+	<GetExistingElement element="ItemContainer(0)">
+		<GetExistingElement element="RequiredItem(0)">
+			<EditAttributes method="replace" items="id_medic,id_captain"/>
+		</GetExistingElement>
+	</GetExistingElement>
+	
+    <Body width="110" height="144" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <Deconstruct time="14">
+      <Item identifier="plastic" amount="4" />
+      <Item identifier="silicon" amount="2" />
+    </Deconstruct>
     <Price baseprice="225">
       <Price locationtype="outpost" multiplier="1.9"/>
       <Price locationtype="city" multiplier="1.8"/>
@@ -874,45 +575,25 @@
       <Price locationtype="military" multiplier="1.2" />
       <Price locationtype="mine" multiplier="1.2" />
     </Price>
-    <Body width="110" height="144" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+  </ImportItem>
+  
+  <!-- Ящик для баллонов  -->
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="oxygentankshelf2">
+	<EditAttributes method="replace" identifier="RIBABuyableoxygentankshelf"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
+    <Sprite name="Diving Suit Locker" texture="%ModDir%/portable.png" depth="0.84" sourcerect="628,497,99,82" origin="0.5,0.5" />
+	
+    <Body width="99" height="82" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
     <Deconstruct time="10">
-      <Item identifier="tin" />
+      <Item identifier="steel" amount="2" />
       <Item identifier="aluminium" />
     </Deconstruct>
-  </Item>
-  <!-- Ящик для баллонов  -->
-  <Item name="" identifier="RIBABuyableoxygentankshelf" isshootable="true" tags="container,oxygentankcontainer" pickdistance="50" scale="0.5">
-    <Sprite name="Diving Suit Locker" texture="%ModDir%/portable.png" depth="0.84" sourcerect="628,497,99,82" origin="0.5,0.5" />
-    <Powered powerconsumption="30" currpowerconsumption="30" isactive="true">
-      <GuiFrame relativesize="0.18,0.15" minsize="350,160" maxsize="420,192" anchor="Center" relativeoffset="0,-0.1" style="ItemUI" msg="ItemMsgInteractSelect" />
-    </Powered>
-    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="20" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Items/Weapons/ElectricalDischarger.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particleburstinterval="1.05" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-      <input name="power_in" displayname="connection.powerin" />
-    </ConnectionPanel>
-    <ItemContainer hideitems="false" drawinventory="true" capacity="3" maxstacksize="1" slotsperrow="3" itempos="27,-42" iteminterval="22.5,0" itemrotation="0" canbeselected="true" containedspritedepth="0.83" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.16,0.18" anchor="Center" style="ItemUI" />
-      <Containable items="oxygentank,weldingfuel" excludebroken="false">
-        <StatusEffect type="OnContaining" targettype="Contained" Condition="1.0" Comparison="And">
-          <Conditional Voltage="gt 0.1" targetcontainer="true" targetitemcomponent="Powered" />
-          <Conditional HasTag="oxygensource" />
-        </StatusEffect>
-      </Containable>
-    </ItemContainer>
+    <Price baseprice="100"   sold="false"/>
     <Price baseprice="150">
       <Price locationtype="outpost" multiplier="1.1" />
       <Price locationtype="city" multiplier="1" />
@@ -920,50 +601,44 @@
       <Price locationtype="military" multiplier="1.2" />
       <Price locationtype="mine" multiplier="1.2" />
     </Price>
-    <Body width="99" height="82" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <!--Conditional targetcontainer="false"/-->
-      <requireditem identifier="wrenchitem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-    </Holdable>
-    <Deconstruct time="10">
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="aluminium" />
-    </Deconstruct>
-  </Item>
+  </ImportItem>
+
   <!-- Держатель для оружия  -->
-  <Item name="" identifier="RIBABuyableweaponholder" isshootable="true" tags="weaponholder" pickdistance="50" scale="0.5">
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="weaponholder">
+	<EditAttributes method="replace" identifier="RIBABuyableweaponholder"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate1R"/>
+	<RemoveElements elements="Sprite(0), DecorativeSprite(0)"/>
+	
     <Sprite texture="%ModDir%/portable.png" depth="0.85" sourcerect="642,579,85,86" canflipx="false" origin="0.5,0.5" />
     <DecorativeSprite texture="%ModDir%/portable.png" depth="0.5" sourcerect="67,626,120,30" canflipx="false" origin="0.5,0.5" />
-    <ItemContainer capacity="1" canbeselected="true" drawinventory="true" slotsperrow="1" hideitems="false" itempos="46,-47" iteminterval="0,0" msg="ItemMsgInteractSelect" containedspritedepth="0.84" itemrotation="90">
-      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
-      <Containable items="weapon" />
-      <StatusEffect type="OnContained" target="This" itempos="0,0" />
-      <StatusEffect type="Always" target="This" itempos="46,-47" />
-    </ItemContainer>
-    <Price baseprice="65">
-      <Price locationtype="military" multiplier="0.5" minamount="2" />
-    </Price>
+	
     <Body width="209" height="209" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="Any,LeftHand,RightHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <!--Conditional targetcontainer="false"/-->
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
     </Holdable>
     <Deconstruct time="6">
-      <Item identifier="aluminium" />
+      <Item identifier="aluminium" amount="2" />
     </Deconstruct>
-  </Item>
+    <Price baseprice="65">
+      <Price locationtype="military" multiplier="0.5" minamount="2" />
+    </Price>
+  </ImportItem>
+  
   <!-- Держатель для огнетушителя -->
-  <Item name="" identifier="RIBABuyableextinguisherbracket" isshootable="true" tags="extinguisherholder" scale="0.5" pickdistance="75">
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="extinguisherbracket">
+	<EditAttributes method="replace" identifier="RIBABuyableextinguisherbracket"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
     <Sprite texture="%ModDir%/portable2.png" depth="0.85" sourcerect="955,821,66,203" canflipx="false" origin="0.5,0.5" />
-    <ItemContainer capacity="1" canbeselected="true" drawinventory="true" slotsperrow="1" hideitems="false" itempos="35,-130" iteminterval="0,0" msg="ItemMsgInteractSelect" containedspritedepth="0.84" itemrotation="0">
-      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
-      <Containable items="extinguisher" />
-      <StatusEffect type="OnContained" target="This" itempos="0,-25" />
-      <StatusEffect type="Always" target="This" itempos="35,-130" />
-    </ItemContainer>
+	
+    <Body width="66" height="203" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <Deconstruct time="8">
+      <Item identifier="carbon" amount="2" />
+    </Deconstruct>
     <Price baseprice="60">
       <Price locationtype="outpost" multiplier="1.1" minavailable="1" />
       <Price locationtype="city" multiplier="1"/>
@@ -971,38 +646,36 @@
       <Price locationtype="military" multiplier="1.2" />
       <Price locationtype="mine" multiplier="0.7" />
     </Price>
-    <Body width="66" height="203" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <!--Conditional targetcontainer="false"/-->
-      <requireditem identifier="wrenchitem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
-    </Holdable>
-    <Deconstruct time="6">
-      <Item identifier="aluminium" />
-    </Deconstruct>
-  </Item>
-  <!-- Стальной ящик -->
-  <Item name="" identifier="RIBABuyablemetalcrate" tags="crate" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy">
-    <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,128,64,64" />-->
+  </ImportItem>
+  
+  <!--  ящик -->
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="metalcrate">
+	<EditAttributes method="replace" identifier="RIBABuyablemetalcrate"  isshootable="true"  impactsoundtag="impact_metal_heavy"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
     <Sprite texture="%ModDir%/portable.png" depth="0.54" sourcerect="187,641,146,83" origin="0.5,0.5" />
-    <Body width="146" height="83" density="50" />
-    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
-    <ItemContainer capacity="20" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
-      <Containable items="smallitem,mediumitem" />
-    </ItemContainer>
+	
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
     <Deconstruct time="20">
       <Item identifier="steel" />
     </Deconstruct>
-  </Item>
-  <!-- Фабрикатор  -->
-  <Item name="" identifier="RIBABuyablefabricator" category="Machine" tags="fabricator" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
-    <Price baseprice="3000">
-      <Price locationtype="outpost" multiplier="1.5"  sold="false"/>
-      <Price locationtype="city" multiplier="1.6"  minavailable="1"/>
-      <Price locationtype="research" multiplier="0.6" />
-      <Price locationtype="military" multiplier="1.8" />
-      <Price locationtype="mine" multiplier="0.8" />
+    <Price baseprice="50">
+      <Price locationtype="outpost" multiplier="1.1" minavailable="1" />
+      <Price locationtype="city" multiplier="1"/>
+      <Price locationtype="research" multiplier="1.2" />
+      <Price locationtype="military" multiplier="1.2" />
+      <Price locationtype="mine" multiplier="0.7" />
     </Price>
+  </ImportItem>
+  
+  <!-- Фабрикатор  -->
+  <ImportItem file="../../Content/Items/Fabricators/fabricators.xml"  item="fabricator">
+	<EditAttributes method="replace" identifier="RIBABuyablefabricator"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0), BrokenSprite(all), DecorativeSprite(all)"/>
+	
     <Sprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="0,624,336,400" depth="0.75" />
     <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="336,624,336,400" depth="0.75" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="672,624,336,400" depth="0.75" maxcondition="0" />
@@ -1018,36 +691,10 @@
       <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false">
-      <sprite texture="Content/Items/Command/navigatorLights.png" depth="0.025" sourcerect="351,624,336,400" alpha="1.0" />
-    </LightComponent>
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" blinkfrequency="1" allowingameediting="false">
-      <sprite texture="Content/Items/Command/navigatorLights.png" depth="0.025" sourcerect="688,624,336,400" alpha="1.0" />
-    </LightComponent>
-    <Fabricator drawhudwhenequipped="false" canbeselected="false" powerconsumption="500.0" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
-      <sound file="Content/Items/Fabricators/Fabricator.ogg" type="OnActive" range="1000.0" loop="true" />
-      <poweronsound file="Content/Items/PowerOnLight1.ogg" range="600" loop="false" />
-      <StatusEffect type="InWater" target="This" condition="-0.5" />
-      <StatusEffect type="Always" target="This" canbeselected="true">
-        <Conditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
-      </StatusEffect>
-    </Fabricator>
-    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="70" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-    </ConnectionPanel>
+	
     <Body width="335" height="390" density="40" />
     <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-100" handle1="-150,0" handle2="-150,0" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
-      <requireditem identifier="Crowbaritem" type="Equipped" />
+      <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
 	  
 	  <StatusEffect target="This" type="Always">
@@ -1057,30 +704,78 @@
 	  
     </Holdable>
     <Deconstruct time="35">
-      <Item identifier="fpgacircuit" />
+      <Item identifier="fpgacircuit" amount="2"/>
       <Item identifier="terminal" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
+      <Item identifier="steel" amount="4"/>
       <Item identifier="RIBAStatusMonitor" />
     </Deconstruct>
-    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
-      <RequiredSkill identifier="mechanical" level="55" />
-      <RequiredItem items="wrenchitem" type="Equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
-      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-        <Affliction identifier="lacerations" strength="5" />
-        <Affliction identifier="stun" strength="5" />
-      </StatusEffect>
-    </Repairable>
-    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
-    <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
-  </Item>
+    <Price baseprice="3000">
+      <Price locationtype="outpost" multiplier="1.5"  sold="false"/>
+      <Price locationtype="city" multiplier="1.6"  minavailable="1"/>
+      <Price locationtype="research" multiplier="0.6" />
+      <Price locationtype="military" multiplier="1.8" />
+      <Price locationtype="mine" multiplier="0.8" />
+    </Price>
+  </ImportItem>
+
   <!-- Деконстрактор  -->
-  <Item name="" identifier="RIBABuyabledeconstructor" tags="deconstructor" category="Machine" scale="0.49" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <ImportItem file="../../Content/Items/Fabricators/fabricators.xml"  item="deconstructor">
+	<EditAttributes method="replace" identifier="RIBABuyabledeconstructor"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0),BrokenSprite(all),DecorativeSprite(all)"/>
+	
+	<Sprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,304,256,320" />
+	<BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="272,304,256,320" depth="0.8" maxcondition="80" fadein="true" />
+	<BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="544,304,256,320" depth="0.8" maxcondition="0" />
+	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.84" sourcerect="866,484,156,105" />
+	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.83" offset="-27,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
+		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+		<IsActiveConditional Condition="gt 0.0" />
+	</DecorativeSprite>
+	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.82" offset="-29,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-718">
+		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+		<IsActiveConditional Condition="gt 0.0" />
+	</DecorativeSprite>
+	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.81" offset="-30,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-720">
+		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+		<IsActiveConditional Condition="gt 0.0" />
+	</DecorativeSprite>
+	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.83" offset="38,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="715">
+		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+		<IsActiveConditional Condition="gt 0.0" />
+	</DecorativeSprite>
+	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.82" offset="40,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="718">
+		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+		<IsActiveConditional Condition="gt 0.0" />
+	</DecorativeSprite>
+	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.81" offset="41,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed=" 720">
+		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+		<IsActiveConditional Condition="gt 0.0" />
+	</DecorativeSprite>
+	
+    <Deconstruct time="35">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="terminal" />
+      <Item identifier="steel" amount="2"/>
+      <Item identifier="titaniumaluminiumalloy" amount="1"/>
+      <Item identifier="RIBAStatusMonitor" />
+    </Deconstruct>
+	<Body width="250" height="320" density="40" />
+	<Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+		<requireditem identifier="Crowbar" type="Equipped" />
+		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+	
+		<StatusEffect target="This" type="Always">
+			<Conditional attached="false" targetitemcomponentname="Holdable"/>
+			<DropContainedItems/>
+		</StatusEffect>
+	
+	</Holdable>
     <Price baseprice="1500">
       <Price locationtype="outpost" multiplier="1.5"  sold="false" />
       <Price locationtype="city" multiplier="1.3"  minavailable="1"  />
@@ -1088,62 +783,17 @@
       <Price locationtype="military" multiplier="2.2" />
       <Price locationtype="mine" multiplier="0.4" sold="false" />
     </Price>
-    <Deconstruct time="35">
-      <Item identifier="fpgacircuit" />
-      <Item identifier="terminal" />
-      <Item identifier="steel" />
-      <Item identifier="steel" />
-      <Item identifier="RIBAStatusMonitor" />
-    </Deconstruct>
-    <Body width="250" height="320" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
-      <requireditem identifier="Crowbaritem" type="Equipped" />
-      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-	  
-	  <StatusEffect target="This" type="Always">
-        <Conditional attached="false" targetitemcomponentname="Holdable"/>
-        <DropContainedItems/>
-      </StatusEffect>
-	  
-    </Holdable>
-    <Sprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,304,256,320" />
-    <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="272,304,256,320" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="544,304,256,320" depth="0.8" maxcondition="0" />
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false">
-      <sprite texture="Content/Items/Command/navigatorLights.png" depth="0.025" sourcerect="0,665,256,320" origin="0.5,0.5" alpha="1.0" />
-    </LightComponent>
-    <DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.84" sourcerect="866,484,156,105" />
-    <DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.83" offset="-27,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
-      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
-      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
-      <IsActiveConditional Condition="gt 0.0" />
-    </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.82" offset="-29,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-718">
-      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
-      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
-      <IsActiveConditional Condition="gt 0.0" />
-    </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.81" offset="-30,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-720">
-      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
-      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
-      <IsActiveConditional Condition="gt 0.0" />
-    </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.83" offset="38,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="715">
-      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
-      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
-      <IsActiveConditional Condition="gt 0.0" />
-    </DecorativeSprite>'
-    
-        <DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.82" offset="40,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="718"><AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" /><AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" /><IsActiveConditional Condition="gt 0.0" /></DecorativeSprite><DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.81" offset="41,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed=" 720"><AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" /><AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" /><IsActiveConditional Condition="gt 0.0" /></DecorativeSprite><Deconstructor drawhudwhenequipped="false" canbeselected="false" powerconsumption="500.0" msg="ItemMsgInteractSelect"><GuiFrame relativesize="0.25,0.25" style="ItemUI" anchor="Center" /><sound file="Content/Items/Fabricators/Deconstructor.ogg" type="OnActive" range="1000.0" loop="true" /><poweronsound file="Content/Items/PowerOnLight3.ogg" range="600" loop="false" /><StatusEffect type="InWater" target="This" condition="-0.5" /><StatusEffect type="Always" target="This" canbeselected="true"><Conditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" /></StatusEffect></Deconstructor><ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver"><GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" /><RequiredSkill identifier="electrical" level="70" /><StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand"><Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" /><Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" /><Affliction identifier="stun" strength="5" /><Affliction identifier="burn" strength="5" /></StatusEffect><RequiredItem items="screwdriveritem" type="Equipped" /><input name="power_in" displayname="connection.powerin" /></ConnectionPanel><Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10"><GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" /><RequiredSkill identifier="mechanical" level="55" /><RequiredItem items="wrenchitem" type="equipped" /><ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" /><ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" /><ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" /><StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand"><Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" /><Affliction identifier="lacerations" strength="5" /><Affliction identifier="stun" strength="5" /></StatusEffect></Repairable><ItemContainer capacity="3" canbeselected="true" hideitems="true" hudpos="0.5, 0.4" slotsperrow="3" uilabel="" allowuioverlap="true" /><ItemContainer capacity="5" canbeselected="true" hideitems="true" hudpos="0.5, 0.8" slotsperrow="5" uilabel="" allowuioverlap="true" /></Item>
+  </ImportItem>
+  
   <!-- Медфабрикатор  -->
-  <Item name="" identifier="RIBABuyablemedfabricator" tags="medicalfabricator,donttakeitems" category="Machine" linkable="true" allowedlinks="deconstructor,medcabinet,locker" scale="0.5" description="" damagedbyexplosions="true" impactsoundtag="impact_metal_light" isshootable="true" explosiondamagemultiplier="0.2">
-    <Price baseprice="2000">
-      <Price locationtype="outpost" multiplier="2.0"  sold="false"/>
-      <Price locationtype="city" multiplier="2.1"  sold="false" />
-      <Price locationtype="research" multiplier="1.0" maxavailable="1"/>
-      <Price locationtype="military" multiplier="2.0"  sold="false" />
-      <Price locationtype="mine" multiplier="2.0"  sold="false" />
-    </Price>
+  <ImportItem file="../../Content/Items/Fabricators/fabricators.xml"  item="medicalfabricator">
+	<EditAttributes method="replace" identifier="RIBABuyablemedfabricator"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+	
+    <Sprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,0,336,288" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="336,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="672,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="0" />
+	
     <Deconstruct time="35">
       <Item identifier="fpgacircuit" />
       <Item identifier="terminal" />
@@ -1153,7 +803,7 @@
     </Deconstruct>
     <Body width="330" height="200" density="40" />
     <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="300,-60" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
-      <requireditem identifier="Crowbaritem" type="Equipped" />
+      <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
 	  
 	  <StatusEffect target="This" type="Always">
@@ -1162,60 +812,27 @@
       </StatusEffect>
 	  
     </Holdable>
-    <Sprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,0,336,288" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="336,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="672,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="0" />
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false">
-      <sprite texture="Content/Items/Command/navigatorLights.png" depth="0.025" sourcerect="688,339,336,288" alpha="1.0" />
-    </LightComponent>
-    <Fabricator drawhudwhenequipped="false" canbeselected="false" powerconsumption="100.0" msg="ItemMsgInteractSelect">
-      <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
-      <sound file="Content/Items/Fabricators/Fabricator.ogg" type="OnActive" range="1000.0" loop="true" />
-      <poweronsound file="Content/Items/PowerOnLight2.ogg" range="600" loop="false" />
-      <StatusEffect type="InWater" target="This" condition="-0.5" />
-      <StatusEffect type="Always" target="This" canbeselected="true">
-        <Conditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
-      </StatusEffect>
-    </Fabricator>
-    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-    </ConnectionPanel>
-    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="mechanical" level="55" />
-      <RequiredItem items="wrenchitem" type="equipped" />
-      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
-      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
-      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
-        <Affliction identifier="lacerations" strength="5" />
-        <Affliction identifier="stun" strength="5" />
-      </StatusEffect>
-    </Repairable>микрофон днс
-		<ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" /><ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" /></Item>
-  <!-- Исследорвательский терминал -->
-  <Item name="" identifier="RIBAop_researchterminal" tags="geneticresearchstation" width="494" height="297" texturescale="1.0,1.0" scale="0.5" category="Decorative" damagedbyexplosions="true" impactsoundtag="impact_metal_light" isshootable="true" explosiondamagemultiplier="0.2">
-    <sprite texture="%ModDir%/portable3.png" sourcerect="0,724,494,297" depth="0.79" premultiplyalpha="false" origin="0.5,0.5" />
-    <LightComponent range="0.0" powerconsumption="5" lightcolor="255,255,255,111" IsOn="true" castshadows="false" allowingameediting="false">
-      <sprite texture="%ModDir%/portable3.png" sourcerect="0,574,494,145" depth="0.1" origin="0.5,0.93" alpha="1.0" />
-    </LightComponent>
-    <Price baseprice="10000">
-      <Price locationtype="outpost" multiplier="1.4"  sold="false"/>
-      <Price locationtype="city" multiplier="1.5"  sold="false" />
-      <Price locationtype="research" multiplier="0.8" maxavailable="1"/>
-      <Price locationtype="military" multiplier="1.7"  sold="false" />
-      <Price locationtype="mine" multiplier="1.0"  sold="false" />
+    <Price baseprice="2000">
+      <Price locationtype="outpost" multiplier="2.0"  sold="false"/>
+      <Price locationtype="city" multiplier="2.1"  sold="false" />
+      <Price locationtype="research" multiplier="1.0" maxavailable="1"/>
+      <Price locationtype="military" multiplier="2.0"  sold="false" />
+      <Price locationtype="mine" multiplier="2.0"  sold="false" />
     </Price>
+  </ImportItem>
+  
+  <!-- Исследорвательский терминал -->
+  <ImportItem file="../../Content/Items/Genetic/genetic.xml"  item="op_researchterminal">
+	<EditAttributes method="replace" identifier="RIBAop_researchterminal"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
+	<RemoveElements elements="Sprite(0)"/>
+	
+    <sprite texture="%ModDir%/portable3.png" sourcerect="0,724,494,297" depth="0.79" premultiplyalpha="false" origin="0.5,0.5" />
+	
+	<GetExistingElement element="LightComponent(0)">
+		<RemoveElements elements="sprite(all)"/>
+        <sprite texture="%ModDir%/portable3.png" sourcerect="0,574,494,145" depth="0.1" origin="0.5,0.93" alpha="1.0" />
+	</GetExistingElement>
+	
     <Body width="330" height="200" density="40" />
     <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="300,-60" handle1="-140,120" handle2="-140,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbaritem" type="Equipped" />
@@ -1227,30 +844,14 @@
       <poweronsound file="Content/Items/PowerOnLight3.ogg" range="600" loop="false" />
       <StatusEffect type="InWater" target="This" condition="-0.5" />
     </Deconstructor>
-    <ItemContainer capacity="2" maxstacksize="1" canbeselected="true" hideitems="true" hudpos="0.5, 0.4" slotsperrow="3" uilabel="" allowuioverlap="true">
-      <Containable items="geneticmaterial,stabilozine,unidentifiedgeneticmaterial" />
-    </ItemContainer>
-    <ItemContainer capacity="1" maxstacksize="1" canbeselected="true" hideitems="true" hudpos="0.5, 0.8" slotsperrow="5" uilabel="" allowuioverlap="true">
-      <Containable items="geneticmaterial,stabilozine,unidentifiedgeneticmaterial" />
-    </ItemContainer>
-    <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.0" canbeselected="false">
-      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="80" />
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-    </Repairable>
-    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
-      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-      <RequiredSkill identifier="electrical" level="55" />
-      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
-        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-        <Affliction identifier="stun" strength="4" />
-        <Affliction identifier="burn" strength="5" />
-      </StatusEffect>
-      <RequiredItem items="screwdriveritem" type="Equipped" />
-      <input name="power_in" displayname="connection.powerin" />
-      <output name="condition_out" displayname="connection.conditionout" />
-    </ConnectionPanel>
-  </Item>
+	
+    <Price baseprice="10000">
+      <Price locationtype="outpost" multiplier="1.4"  sold="false"/>
+      <Price locationtype="city" multiplier="1.5"  sold="false" />
+      <Price locationtype="research" multiplier="0.8" maxavailable="1"/>
+      <Price locationtype="military" multiplier="1.7"  sold="false" />
+      <Price locationtype="mine" multiplier="1.0"  sold="false" />
+    </Price>
+  </ImportItem>
+  
 </Items>
