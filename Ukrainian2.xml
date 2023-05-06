@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Ukrainian" nowhitespace="false" translatedname="Українська">
+  <entityname.RIBABuyableTextdisplay>Текстовий дисплей (Новий)</entityname.RIBABuyableTextdisplay>
+  <entitydescription.RIBABuyableTextdisplay>Відображає текст і тільки текст</entitydescription.RIBABuyableTextdisplay>
+  <entityname.RIBABuyableControlMonitor>Дисплей (Новий)</entityname.RIBABuyableControlMonitor>
+  <entitydescription.RIBABuyableControlMonitor>Для перегляду «брудних» фільмів</entitydescription.RIBABuyableControlMonitor>
+  <entityname.RIBABuyableControlCamera>Камера (Нова)</entityname.RIBABuyableControlCamera>
+  <entitydescription.RIBABuyableControlCamera>Для фільмування «брудних» фільмів</entitydescription.RIBABuyableControlCamera>
+  <!-- <entityname.RIBABuyableLRwifiComponent>Component "Wireless+"</entityname.RIBABuyableLRwifiComponent> -->
+  <!-- <entitydescription.RIBABuyableLRwifiComponent>Causes cancer, but it's not certain</entitydescription.RIBABuyableLRwifiComponent> -->
+  <entityname.RIBABuyableStatusMonitor>Монітор стану (Новий)</entityname.RIBABuyableStatusMonitor>
+  <entitydescription.RIBABuyableStatusMonitor>Щоб дивитися фільм про потоп</entitydescription.RIBABuyableStatusMonitor>
+  <entityname.RIBABuyableTerminal>Термінал (Новий)</entityname.RIBABuyableTerminal>
+  <entitydescription.RIBABuyableTerminal>640кб має бути достатньо для будь-кого!</entitydescription.RIBABuyableTerminal>
+  <entityname.RIBABuyableJunctionBox>Розподільна коробка (Нова)</entityname.RIBABuyableJunctionBox>
+  <entitydescription.RIBABuyableJunctionBox>При спробі ремонту кусається</entitydescription.RIBABuyableJunctionBox>
+  <entityname.RIBABuyableLamp>Лампа (Нова)</entityname.RIBABuyableLamp>
+  <entitydescription.RIBABuyableLamp>Щоб допомогти найкращому другу знайти вночі туалет</entitydescription.RIBABuyableLamp>
+  <entityname.RIBABuyablebattery>Аккумулятор (Новий)</entityname.RIBABuyablebattery>
+  <entitydescription.RIBABuyablebattery>Містить потенціал</entitydescription.RIBABuyablebattery>
+  <entityname.RIBABuyablechargingdock>Зарядна станція (Нова)</entityname.RIBABuyablechargingdock>
+  <entitydescription.RIBABuyablechargingdock>Погодуйте свої батарейки</entitydescription.RIBABuyablechargingdock>
+  <entityname.RIBABuyablesuppliescabinet>Шафа для приладдя (Нова)</entityname.RIBABuyablesuppliescabinet>
+  <entitydescription.RIBABuyablesuppliescabinet>Зазвичай містить вічно зникаючі на підводному човні предмети</entitydescription.RIBABuyablesuppliescabinet>
+  <entityname.RIBABuyablemediumsteelcabinet>Середня сталева шафа (Нова)</entityname.RIBABuyablemediumsteelcabinet>
+  <entitydescription.RIBABuyablemediumsteelcabinet>Сильна та сталева</entitydescription.RIBABuyablemediumsteelcabinet>
+  <entityname.RIBABuyablemediumwindowedsteelcabinet>Середня сталева шафа з вікном (Нова)</entityname.RIBABuyablemediumwindowedsteelcabinet>
+  <entitydescription.RIBABuyablemediumwindowedsteelcabinet>Вікно в Нарнію</entitydescription.RIBABuyablemediumwindowedsteelcabinet>
+  <entityname.RIBABuyabledivingsuitlocker>Шафа для водолазного скафандра (Нова)</entityname.RIBABuyabledivingsuitlocker>
+  <entitydescription.RIBABuyabledivingsuitlocker>Зберігає костюм для побачень з рибами</entitydescription.RIBABuyabledivingsuitlocker>
+  <entityname.RIBABuyablemedcabinet>Шафа для медикаментів (Нова)</entityname.RIBABuyablemedcabinet>
+  <entitydescription.RIBABuyablemedcabinet>Нам треба 5 мішочків табаку, 12 доз етанолу...</entitydescription.RIBABuyablemedcabinet>
+  <entityname.RIBABuyablerailgunshellrack>Стійка для снарядів рейкотрона (Нова)</entityname.RIBABuyablerailgunshellrack>
+  <entitydescription.RIBABuyablerailgunshellrack>Тільки для старих FPS гравців</entitydescription.RIBABuyablerailgunshellrack>
+  <entityname.RIBABuyablecoilgunammoshelf>Стелаж для боєприпасів (Новий)</entityname.RIBABuyablecoilgunammoshelf>
+  <entitydescription.RIBABuyablecoilgunammoshelf>Тільки для послідовників Домініону, ми не схвалюємо заворушень</entitydescription.RIBABuyablecoilgunammoshelf>
+  <entityname.RIBABuyablecrateshelf>Полиця для ящиків (Нова)</entityname.RIBABuyablecrateshelf>
+  <entitydescription.RIBABuyablecrateshelf>Коробка для коробок... Зручно.</entitydescription.RIBABuyablecrateshelf>
+  <entityname.RIBABuyablecrateshelf2>Вантажний контейнер (Маленький)</entityname.RIBABuyablecrateshelf2>
+  <entitydescription.RIBABuyablecrateshelf2>Заповнюється самостійно! Приносить додатковий прибуток!!!</entitydescription.RIBABuyablecrateshelf2>
+  <entityname.RIBABuyabletoxcabinet>Шафа для токсинів (Нова)</entityname.RIBABuyabletoxcabinet>
+  <entitydescription.RIBABuyabletoxcabinet>Ви не можете бути отруєним, якщо ви токсичний</entitydescription.RIBABuyabletoxcabinet>
+  <entityname.RIBABuyableoxygentankshelf>Стійка для кисневих балонів (Нова)</entityname.RIBABuyableoxygentankshelf>
+  <entitydescription.RIBABuyableoxygentankshelf>Містить інгридієнти для коктелів</entitydescription.RIBABuyableoxygentankshelf>
+  <entityname.RIBABuyableweaponholder>Стійка для зброї (Нова)</entityname.RIBABuyableweaponholder>
+  <entitydescription.RIBABuyableweaponholder>Кожному космічному ковбою потрібна своя кобура. Побачимося пізніше.</entitydescription.RIBABuyableweaponholder>
+  <entityname.RIBABuyableextinguisherbracket>Кронштейн для вогнегасника (Новий)</entityname.RIBABuyableextinguisherbracket>
+  <entitydescription.RIBABuyableextinguisherbracket>It's fine</entitydescription.RIBABuyableextinguisherbracket>
+  <entityname.RIBABuyablemetalcrate>Металевий ящик (Новий)</entityname.RIBABuyablemetalcrate>
+  <entitydescription.RIBABuyablemetalcrate>Вам справді потрібен опис до цього предмета?</entitydescription.RIBABuyablemetalcrate>
+  <entityname.RIBABuyablesmallpump>Маленький насос (Новий)</entityname.RIBABuyablesmallpump>
+  <entitydescription.RIBABuyablesmallpump>В 10 разів гіаше за "портативний", але без батарейок!</entitydescription.RIBABuyablesmallpump>
+  <entityname.RIBABuyableBigpump>Великий насос (Новий)</entityname.RIBABuyableBigpump>
+  <entitydescription.RIBABuyableBigpump>Класичний "відкачуй-закачуй"</entitydescription.RIBABuyableBigpump>
+  <entityname.RIBABuyablehandheldterminal>Ship log </entityname.RIBABuyablehandheldterminal>
+  <entitydescription.RIBABuyablehandheldterminal>Remembers gaudy fanfiction</entitydescription.RIBABuyablehandheldterminal>
+  <entityname.RIBABuyablemedfabricator>Медичний фабрикатор (Новий)</entityname.RIBABuyablemedfabricator>
+  <entitydescription.RIBABuyablemedfabricator>Традиційна медицина</entitydescription.RIBABuyablemedfabricator>
+  <entityname.RIBABuyabledeconstructor>Деконструктор (Новий)</entityname.RIBABuyabledeconstructor>
+  <entitydescription.RIBABuyabledeconstructor>Настав час покінчити з цим</entitydescription.RIBABuyabledeconstructor>
+  <entityname.RIBABuyablefabricator>Фабрикатор (Новий)</entityname.RIBABuyablefabricator>
+  <entitydescription.RIBABuyablefabricator>Необхідно для створення саморобок</entitydescription.RIBABuyablefabricator>
+  <entityname.RIBAop_researchterminal>Дослідницька станція</entityname.RIBAop_researchterminal>
+  <entitydescription.RIBAop_researchterminal>Українська домашня біолабараторія для генетичних досліджень. Тільки для розумних хлопчиків.</entitydescription.RIBAop_researchterminal>
+  <entityname.RIBAsecuresteelcabinet>Захищена сталева шафа</entityname.RIBAsecuresteelcabinet>
+  <entitydescription.RIBAsecuresteelcabinet>Сейф з доступом для капітана та служби безпеки</entitydescription.RIBAsecuresteelcabinet>
+  <entityname.RIBAengineermetalcrate>Захищена коробка для проводів</entityname.RIBAengineermetalcrate>
+  <entitydescription.RIBAengineermetalcrate>Портативний сейф з доступом для капітана та інженера</entitydescription.RIBAengineermetalcrate>
+  <entityname.RIBAmechanicmetalcrate>Захищена коробка для інструментів</entityname.RIBAmechanicmetalcrate>
+  <entitydescription.RIBAmechanicmetalcrate>Портативний сейф з доступом для капітана та механіка</entitydescription.RIBAmechanicmetalcrate>
+  <entityname.RIBABuyablesteelcabinet>Велика сталева шафа (Нова)</entityname.RIBABuyablesteelcabinet>
+  <entitydescription.RIBABuyablesteelcabinet>Настільки ж велике, як і зарозумілість капітана</entitydescription.RIBABuyablesteelcabinet>
+  <RIBABuyableItemMsgDetachCrowbar>[[use]]  Не так просто демонтувати  (Ломик)</RIBABuyableItemMsgDetachCrowbar>
+  <RIBABuyableItemMsgDetachWrench>[[use]]  Не так просто демонтувати  (Розвідний ключWrench)</RIBABuyableItemMsgDetachWrench>
+  <RIBABuyableFixingtothefloor>Приєднання до підлоги</RIBABuyableFixingtothefloor>
+</infotexts>
