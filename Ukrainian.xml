@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Ukrainian" nowhitespace="false" translatedname="Українська">
+  <entityname.RIBATextdisplay>Текстовий дисплей (Саморобний) </entityname.RIBATextdisplay>
+  <entitydescription.RIBATextdisplay>Відображає текст і тільки текст</entitydescription.RIBATextdisplay>
+  <entityname.RIBAControlMonitor>Дисплей (Саморобний)</entityname.RIBAControlMonitor>
+  <entitydescription.RIBAControlMonitor>Для перегляду «брудних» фільмів</entitydescription.RIBAControlMonitor>
+  <entityname.RIBAControlCamera>Камера (Саморобна)</entityname.RIBAControlCamera>
+  <entitydescription.RIBAControlCamera>Для фільмування «брудних» фільмів</entitydescription.RIBAControlCamera>
+  <entityname.RIBALRwifiComponent>Компонент "Безпровідний+"</entityname.RIBALRwifiComponent>
+  <entitydescription.RIBALRwifiComponent>Викликає рак, але це не точно</entitydescription.RIBALRwifiComponent>
+  <entityname.RIBAStatusMonitor>Монітор стану (Саморобний)</entityname.RIBAStatusMonitor>
+  <entitydescription.RIBAStatusMonitor>Щоб дивитися фільм про потоп</entitydescription.RIBAStatusMonitor>
+  <entityname.RIBATerminal>Термінал (Саморобний)</entityname.RIBATerminal>
+  <entitydescription.RIBATerminal>640кб має бути достатньо для будь-кого!</entitydescription.RIBATerminal>
+  <entityname.RIBAJunctionBox>Розподільна коробка (Саморобна)</entityname.RIBAJunctionBox>
+  <entitydescription.RIBAJunctionBox>При спробі ремонту кусається</entitydescription.RIBAJunctionBox>
+  <entityname.RIBALamp>Лампа (Саморобна)</entityname.RIBALamp>
+  <entitydescription.RIBALamp>Щоб допомогти найкращому другу знайти вночі туалет </entitydescription.RIBALamp>
+  <!--entityname.RIBAsupercapacitor>Конденсатор DIY</entityname.RIBAsupercapacitor>
+<entitydescription.RIBAsupercapacitor>Конденсатор DIY</entitydescription.RIBAsupercapacitor-->
+  <entityname.RIBAbattery>Аккумулятор (Саморобний)</entityname.RIBAbattery>
+  <entitydescription.RIBAbattery>Містить потенціал</entitydescription.RIBAbattery>
+  <entityname.RIBAchargingdock>Зарядна станція (Саморобна)</entityname.RIBAchargingdock>
+  <entitydescription.RIBAchargingdock>Погодуйте свої батарейки</entitydescription.RIBAchargingdock>
+  <entityname.RIBAsuppliescabinet>Шафа для приладдя (Саморобна)</entityname.RIBAsuppliescabinet>
+  <entitydescription.RIBAsuppliescabinet>Зазвичай містить вічно зникаючі на підводному човні предмети</entitydescription.RIBAsuppliescabinet>
+  <entityname.RIBAmediumsteelcabinet>Середня сталева шафа (Саморобна)</entityname.RIBAmediumsteelcabinet>
+  <entitydescription.RIBAmediumsteelcabinet>Сильна та сталева</entitydescription.RIBAmediumsteelcabinet>
+  <entityname.RIBAmediumwindowedsteelcabinet>Середня сталева шафа з вікном (Саморобна)</entityname.RIBAmediumwindowedsteelcabinet>
+  <entitydescription.RIBAmediumwindowedsteelcabinet>Вікно в Нарнію</entitydescription.RIBAmediumwindowedsteelcabinet>
+  <entityname.RIBAdivingsuitlocker>Шафа для водолазного скафандра (Саморобна)</entityname.RIBAdivingsuitlocker>
+  <entitydescription.RIBAdivingsuitlocker>Зберігає костюм для побачень з рибами</entitydescription.RIBAdivingsuitlocker>
+  <entityname.RIBAmedcabinet>Шафа для медикаментів (Саморобна)</entityname.RIBAmedcabinet>
+  <entitydescription.RIBAmedcabinet>Нам треба 5 мішочків табаку, 12 доз етанолу... </entitydescription.RIBAmedcabinet>
+  <entityname.RIBArailgunshellrack>Стійка для снарядів рейкотрона (Саморобна)</entityname.RIBArailgunshellrack>
+  <entitydescription.RIBArailgunshellrack>Тільки для старих FPS гравців</entitydescription.RIBArailgunshellrack>
+  <entityname.RIBAcoilgunammoshelf>Стелаж для боєприпасів (Саморобний)</entityname.RIBAcoilgunammoshelf>
+  <entitydescription.RIBAcoilgunammoshelf>Тільки для послідовників Домініону, ми не схвалюємо заворушень</entitydescription.RIBAcoilgunammoshelf>
+  <entityname.RIBAcrateshelf>Полиця для ящиків (Саморобна)</entityname.RIBAcrateshelf>
+  <entitydescription.RIBAcrateshelf>Коробка для коробок... Зручно.</entitydescription.RIBAcrateshelf>
+  <entityname.RIBAcrateshelf2>Полиця для ящиків (Саморобна)</entityname.RIBAcrateshelf2>
+  <entitydescription.RIBAcrateshelf2>Коробка для коробок... Зручно.</entitydescription.RIBAcrateshelf2>
+  <entityname.RIBAtoxcabinet>Шафа для токсинів (Саморобна)</entityname.RIBAtoxcabinet>
+  <entitydescription.RIBAtoxcabinet>Ви не можете бути отруєним, якщо ви токсичний</entitydescription.RIBAtoxcabinet>
+  <entityname.RIBAoxygentankshelf>Стійка для кисневих балонів (Саморобна)</entityname.RIBAoxygentankshelf>
+  <entitydescription.RIBAoxygentankshelf>Містить інгридієнти для коктелів</entitydescription.RIBAoxygentankshelf>
+  <entityname.RIBAweaponholder>Стійка для зброї (Саморобна)</entityname.RIBAweaponholder>
+  <entitydescription.RIBAweaponholder>Кожному космічному ковбою потрібна своя кобура. Побачимося пізніше.</entitydescription.RIBAweaponholder>
+  <entityname.RIBAextinguisherbracket>Кронштейн для вогнегасника (Саморобний)</entityname.RIBAextinguisherbracket>
+  <entitydescription.RIBAextinguisherbracket>It's fine</entitydescription.RIBAextinguisherbracket>
+  <entityname.RIBAmetalcrate>Металевий ящик (Саморобний)</entityname.RIBAmetalcrate>
+  <entitydescription.RIBAmetalcrate>Вам справді потрібен опис до цього предмета?</entitydescription.RIBAmetalcrate>
+  <entityname.RIBAsmallpump>Маленький насос (Саморобний)</entityname.RIBAsmallpump>
+  <entitydescription.RIBAsmallpump>Не музикант</entitydescription.RIBAsmallpump>
+  <entityname.RIBAbigpump>Великий насос (Саморобний)</entityname.RIBAbigpump>
+  <entitydescription.RIBAbigpump>Має вбудований блендер (ні)</entitydescription.RIBAbigpump>
+  <entityname.RIBAhandheldterminal>Handmade notebook</entityname.RIBAhandheldterminal>
+  <entitydescription.RIBAhandheldterminal>Remembers gaudy fanfiction</entitydescription.RIBAhandheldterminal>
+  <entityname.RIBAmedfabricator>Медичний фабрикатор (Саморобний)</entityname.RIBAmedfabricator>
+  <entitydescription.RIBAmedfabricator>Традиційна медицина</entitydescription.RIBAmedfabricator>
+  <entityname.RIBAdeconstructor>Деконструктор (Саморобний)</entityname.RIBAdeconstructor>
+  <entitydescription.RIBAdeconstructor>Настав час покінчити з цим</entitydescription.RIBAdeconstructor>
+  <entityname.RIBAfabricator>Фабрикатор DIY</entityname.RIBAfabricator>
+  <entitydescription.RIBAfabricator>DIY DIY DIY DIY DIY</entitydescription.RIBAfabricator>
+  <entityname.RIBAsteelcabinet>Велика сталева шафа (Саморобна)</entityname.RIBAsteelcabinet>
+  <entitydescription.RIBAsteelcabinet>Завбільшки з зарплату капітана</entitydescription.RIBAsteelcabinet>
+  <entityname.RIBAbigsteelcabinet>Велика сталева шафа (Саморобна)</entityname.RIBAbigsteelcabinet>
+  <entitydescription.RIBAbigsteelcabinet>Ну, шафа..</entitydescription.RIBAbigsteelcabinet>
+  <RIBAItemMsgDetachCrowbar>[[use]]  Не так просто демонтувати  (Ломик)</RIBAItemMsgDetachCrowbar>
+  <RIBAItemMsgDetachWrench>[[use]]  Не так просто демонтувати  (Розвідний ключ)</RIBAItemMsgDetachWrench>
+  <RIBAFixingtothefloor>Приєднання до підлоги</RIBAFixingtothefloor>
+</infotexts>
