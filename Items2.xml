@@ -855,12 +855,12 @@
   </ImportItem>
   
   <!-- Кроватки -->
-  <Item name="RIBABuyableBunk1" identifier="RIBABuyableBunk1" width="430" height="219" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255">
+  <Item name="RIBABuyableBunk1" identifier="RIBABuyableBunk1" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
 
     <sprite texture="%ModDir%/portable5.png" sourcerect="0,0,430,219" depth="0.85" origin="0.5,0.5" />
 	
 	<Body width="430" height="219" density="25" />
-	<Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+	<Holdable selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20,60" handle1="35,-60" handle2="35,-60" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
 		<requireditem identifier="Crowbar" type="Equipped" />
 		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
@@ -889,12 +889,12 @@
     </Price>
   </Item>
   
-  <Item name="RIBABuyableBunk2" identifier="RIBABuyableBunk2" width="385" height="146" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255">
+  <Item name="RIBABuyableBunk2" identifier="RIBABuyableBunk2" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
 
     <sprite texture="%ModDir%/portable5.png" sourcerect="430,0,385,146" depth="0.85" origin="0.5,0.5" />
 	
 	<Body width="385" height="146" density="25" />
-	<Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+	<Holdable selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="25,45" handle1="30,-30" handle2="30,-30" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
 		<requireditem identifier="Crowbar" type="Equipped" />
 		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
@@ -925,12 +925,12 @@
     </Price>
   </Item>
   
-  <Item name="RIBABuyableBunk3" identifier="RIBABuyableBunk3" width="408" height="186" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255">
+  <Item name="RIBABuyableBunk3" identifier="RIBABuyableBunk3" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
 
     <sprite texture="%ModDir%/portable5.png" sourcerect="489,765,408,186" depth="0.85" origin="0.5,0.5" />
 	
 	<Body width="408" height="186" density="25" />
-	<Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+	<Holdable selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="0,40" handle1="30,-30" handle2="30,-30" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
 		<requireditem identifier="Crowbar" type="Equipped" />
 		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>

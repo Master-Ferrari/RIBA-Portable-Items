@@ -924,12 +924,12 @@
   </ImportItem>
 
   <!-- кроватки -->
-  <Item name="RIBABunk1" identifier="RIBABunk1" width="385" height="95" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255">
+  <Item name="RIBABunk1" identifier="RIBABunk1" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
 
     <sprite texture="%ModDir%/portable5.png" sourcerect="430,146,385,95" depth="0.85" origin="0.5,0.5" />
 	
 	<Body width="385" height="95" density="25" />
-	<Holdable selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+	<Holdable selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20, 15" handle1="30,-30" handle2="30,-30" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
 		<requireditem identifier="Crowbar" type="Equipped" />
 		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
