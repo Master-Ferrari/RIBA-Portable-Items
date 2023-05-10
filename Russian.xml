@@ -69,4 +69,6 @@
   <RIBAItemMsgDetachCrowbar>[[use]] Это так просто не выдрать (Лом)</RIBAItemMsgDetachCrowbar>
   <RIBAItemMsgDetachWrench>[[use]] Это так просто не выдрать (Гаечный ключ)</RIBAItemMsgDetachWrench>
   <RIBAFixingtothefloor>Крепление к полу</RIBAFixingtothefloor>
+  
+  <RIBAItemMsgDetach>[[use]] Это можно взять</RIBAItemMsgDetach>
 </infotexts>

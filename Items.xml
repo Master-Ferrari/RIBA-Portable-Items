@@ -886,7 +886,7 @@
     <Price baseprice="1500"   sold="false"/>
   </ImportItem>
 
-  <!-- Сейф сб -->
+  <!-- Сейф сб --> 
   <ImportItem file="../../Content/Items/Containers/containers.xml"  item="securesteelcabinet">
 	<EditAttributes method="replace" identifier="RIBAsecuresteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
@@ -922,6 +922,62 @@
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
     </Holdable>
   </ImportItem>
+
+  <!-- кроватки -->
+  <Item name="RIBABunk1" identifier="RIBABunk1" width="385" height="95" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255">
+
+    <sprite texture="%ModDir%/portable5.png" sourcerect="430,146,385,95" depth="0.85" origin="0.5,0.5" />
+	
+	<Body width="385" height="95" density="25" />
+	<Holdable selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+		<requireditem identifier="Crowbar" type="Equipped" />
+		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+    </Holdable>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+    </Deconstruct>
+	
+    <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
+      <limbposition limb="Head" position="-16,20" />
+      <limbposition limb="Torso" position="94,30" />
+      <limbposition limb="Waist" position="234,20" />
+      <limbposition limb="RightFoot" position="454,20" />
+      <limbposition limb="LeftFoot" position="454,20" />
+      <limbposition limb="RightHand" position="234,20" allowusinglimb="false" />
+      <limbposition limb="LeftHand" position="234,20" allowusinglimb="false" />
+	  
+	  <ImportElement file="../../Content/Items/Misc/misc.xml" item="bunk" element="Controller(0)/StatusEffect(0)"/>
+      <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+    </Controller>
+	
+    <Price baseprice="200"   sold="false"/>
+  </Item>
+  
+  <!-- Стульчки -->
+  <Item name="RIBAChair1" identifier="RIBAChair1" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
+    <sprite texture="%ModDir%/portable5.png" sourcerect="663,246,153,269" depth="0.85" premultiplyalpha="false" origin="0.5,0.55" />
+	
+	<ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
+      <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+	</ImportElement>
+	
+	<Body width="153" height="269" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetach" PickingTime="5.0" holdpos="100,-60" handle1="0,0" handle2="0,0" aimable="false" attachable="true" attachedbydefault="true">
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.9" setvalue="true" />
+    </Holdable>
+	
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="organicfiber" amount="4" />
+      <RequiredItem identifier="steel" amount="2"/>
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="organicfiber" amount="2" />
+      <Item identifier="steel" amount="2"/>
+    </Deconstruct>
+	
+    <Price baseprice="200" sold="false"/>
+  </Item>
 
 
 </Items>
