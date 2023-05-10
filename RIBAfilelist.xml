@@ -7,6 +7,8 @@
   <Item file="%ModDir%/Items.xml" />
   <Item file="%ModDir%/Items2.xml" />
   <Item file="%ModDir%/Items3.xml" />
+  <Item file="%ModDir%/Items4.xml" />
+  <Talents file="%ModDir%/Talents.xml" />
   <Other file="%ModDir%/portable.png" />
   <Other file="%ModDir%/portable2.png" />
   <Other file="%ModDir%/portable3.png" />

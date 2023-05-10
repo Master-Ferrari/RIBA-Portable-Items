@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+
+
+  <Talent identifier="RIBA_pi_1">
+    <Icon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
+    </Description>
+    <AddedRecipe itemidentifier="makeshiftshelf" />
+	
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="5" />
+      </Abilities>
+    </AbilityGroupEffect>
+	
+  </Talent>
+  
+  
+  
+</Talents>

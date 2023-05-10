@@ -61,45 +61,51 @@
   <!-- АЙДИКАРТЫ -->
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBAMedicCard" name="MedicCard" Tags="smallitem,id_medic,med,doc,id_medical,idcard,jobid:medicaldoctor"/>	
-	<RemoveElements elements="Sprite(0),InventoryIcon(0)"/>
+	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
+	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBAMechanicCard" name="MechanicCard" Tags="smallitem,id_mechanic,mechanic,mech,idcard,jobid:mechanic"/>	
-	<RemoveElements elements="Sprite(0),InventoryIcon(0)"/>
+	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
+	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBAEngineerCard" name="EngineerCard" Tags="smallitem,id_engineer,engineer,engi,idcard,jobid:engineer"/>	
-	<RemoveElements elements="Sprite(0),InventoryIcon(0)"/>
+	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
+	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBACaptainCard" name="CaptainCard" Tags="smallitem,id_captain,captain,cap,com,idcard,jobid:captain"/>	
-	<RemoveElements elements="Sprite(0),InventoryIcon(0)"/>
+	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
+	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBASecurityCard" name="SecurityCard" Tags="smallitem,id_security,security,sec,idcard,jobid:securityofficer"/>	
-	<RemoveElements elements="Sprite(0),InventoryIcon(0)"/>
+	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
+	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBAAssistantCard" name="AssistantCard" Tags="smallitem,id_assistant,assistant,idcard,jobid:assistant"/>	
-	<RemoveElements elements="Sprite(0),InventoryIcon(0)"/>
+	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
+	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
 
   <!-- Терминалы -->
@@ -285,5 +291,93 @@
     </ConnectionPanel>
   </Item>
   
+  <!-- анал истории -->
+  <Item name="" identifier="RIBAengineermetalcrate" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbelt" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+    <Price baseprice="50">
+      <Price locationtype="outpost" multiplier="1" />
+      <Price locationtype="city" multiplier="0.9" />
+      <Price locationtype="research" multiplier="1.1" />
+      <Price locationtype="military" multiplier="1.1" />
+      <Price locationtype="mine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="engcab" />
+    <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.05" />
+    <PreferredContainer primary="outpostcrewcabinet" minamount="0" maxamount="1" spawnprobability="0.5" />
+    <!-- <Deconstruct time="10"> -->
+    <!-- <Item identifier="steel" /> -->
+    <!-- </Deconstruct> -->
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="50" />
+      <RequiredSkill identifier="electical" level="30" /> 
+      <RequiredItem identifier="titanium" amount="3" />
+      <RequiredItem identifier="memorycomponent" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="titanium" amount="3" />
+    </Deconstruct>
+    <!-- <Price baseprice="25" > -->
+    <!-- <Price locationtype="outpost" multiplier="1" minavailable="4" /> -->
+    <!-- <Price locationtype="city" multiplier="0.9" minavailable="6" /> -->
+    <!-- <Price locationtype="research" multiplier="1.25" minavailable="1" /> -->
+    <!-- <Price locationtype="military" multiplier="1.25" minavailable="1" /> -->
+    <!-- <Price locationtype="mine" multiplier="1.25" minavailable="8" /> -->
+    <!-- </Price> -->
+    <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="125,442,127,73" origin="0.5,0.6" />
+    <Sprite texture="%ModDir%/portable2.png" sourcerect="125,442,127,73" origin="0.5,0.5" depth="0.6" />
+    <!--<Sprite texture="Content/Items/Containers/crates.png" depth="0.54" sourcerect="1,0,68,39"/>-->
+    <Body width="90" height="60" density="20" />
+    <MeleeWeapon slots="RightHand,LeftHand" controlpose="true" aimpos="45,10" handle1="0,18" holdangle="90" reload="1" range="50" combatpriority="6" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="10" itemdamage="5" targetimpulse="2">
+        <Affliction identifier="blunttrauma" strength="2" />
+        <Affliction identifier="stun" strength="0.6" />
+        <Sound file="Content/Items/Weapons/Smack2.ogg" range="800" />
+      </Attack>
+    </MeleeWeapon>
+    <ItemContainer capacity="16" keepopenwhenequipped="true" movableframe="true">
+      <RequiredItem items="id_engineer,id_captain" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <Containable items="smallitem" excludeditems="toolbelt,toolbox" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </ItemContainer>
+    <aitarget sightrange="1000" soundrange="1000" fadeouttime="2" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="" identifier="RIBAmechanicmetalcrate" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbelt" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+    <Price baseprice="50">
+      <Price locationtype="outpost" multiplier="1" />
+      <Price locationtype="city" multiplier="0.9" />
+      <Price locationtype="research" multiplier="1.1" />
+      <Price locationtype="military" multiplier="1.1" />
+      <Price locationtype="mine" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="engcab" />
+    <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.05" />
+    <PreferredContainer primary="outpostcrewcabinet" minamount="0" maxamount="1" spawnprobability="0.5" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="50" />
+      <RequiredSkill identifier="electical" level="30" /> 
+      <RequiredItem identifier="titanium" amount="3" />
+      <RequiredItem identifier="memorycomponent" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="titanium" amount="3" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="125,369,127,73" origin="0.5,0.6" />
+    <Sprite texture="%ModDir%/portable2.png" sourcerect="125,366,127,73" origin="0.5,0.5" depth="0.6" />
+    <Body width="90" height="60" density="20" />
+    <MeleeWeapon slots="RightHand,LeftHand" controlpose="true" aimpos="45,10" handle1="0,18" holdangle="90" reload="1" range="50" combatpriority="6" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="10" itemdamage="5" targetimpulse="2">
+        <Affliction identifier="blunttrauma" strength="2" />
+        <Affliction identifier="stun" strength="0.6" />
+        <Sound file="Content/Items/Weapons/Smack2.ogg" range="800" />
+      </Attack>
+    </MeleeWeapon>
+    <ItemContainer capacity="16" keepopenwhenequipped="true" movableframe="true">
+      <RequiredItem items="id_mechanic,id_captain" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <Containable items="smallitem" excludeditems="toolbelt,toolbox" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </ItemContainer>
+    <aitarget sightrange="1000" soundrange="1000" fadeouttime="2" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
   
 </Items>
