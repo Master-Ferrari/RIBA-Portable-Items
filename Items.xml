@@ -278,11 +278,11 @@
 	<EditAttributes method="replace" identifier="RIBALamp"  isshootable="true"    impactsoundtag="impact_metal_light"  />
 	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
 
-    <Sprite texture="%ModDir%/portable.png" sourcerect="892,846,63,89" depth="0.8" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/portable.png" sourcerect="893,846,62,90" depth="0.8" origin="0.5,0.5" />
 	
 	<GetExistingElement element="LightComponent(0)">
 		<RemoveElements elements="LightTexture(0)"/>
-		<sprite texture="%ModDir%/portable.png" sourcerect="892,935,63,89" alpha="1.0" />
+		<sprite texture="%ModDir%/portable.png" sourcerect="893,936,62,90" alpha="1.0" />
 	</GetExistingElement>
 	
     <Deconstruct time="10">
@@ -355,8 +355,8 @@
       <Item identifier="copper" amount="2" />
     </Deconstruct>
     <Body width="118" height="34" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <requireditem identifier="crowbar" type="Equipped" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="Wrench" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.75" setvalue="true" />
     </Holdable>
 	<Price baseprice="175"   sold="false"/>
