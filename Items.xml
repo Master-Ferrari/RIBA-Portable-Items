@@ -886,7 +886,7 @@
     <Price baseprice="1500"   sold="false"/>
   </ImportItem>
 
-  <!-- Сейф сб --> 
+  <!-- Сейф сб --> <!-- покупательный -->
   <ImportItem file="../../Content/Items/Containers/containers.xml"  item="securesteelcabinet">
 	<EditAttributes method="replace" identifier="RIBAsecuresteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
@@ -933,8 +933,14 @@
 		<requireditem identifier="Crowbar" type="Equipped" />
 		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredItem identifier="organicfiber" amount="8" />
+      <RequiredItem identifier="steel" amount="4"/>
+    </Fabricate>
     <Deconstruct time="10">
-      <Item identifier="steel" />
+      <Item identifier="organicfiber" amount="6" />
+      <Item identifier="steel" amount="4"/>
     </Deconstruct>
 	
     <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
@@ -950,7 +956,7 @@
       <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
     </Controller>
 	
-    <Price baseprice="200"   sold="false"/>
+    <Price baseprice="400"   sold="false"/>
   </Item>
   
   <!-- Стульчки -->
@@ -979,5 +985,36 @@
     <Price baseprice="200" sold="false"/>
   </Item>
 
+  <!-- занавеска -->
+  <ImportItem file="../../Content/Map/Outposts/OutpostItems.xml"  item="opdeco_medcurtain">
+	<EditAttributes method="replace" identifier="RIBAMedCurtain" name="RIBAMedCurtain" isshootable="true"  impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0),DecorativeSprite(all)"/>
+	
+	<InventoryIcon texture="%ModDir%/portable5.png" sourcerect="0,245,374,363" />
+    <Sprite texture="%ModDir%/portable5.png" sourcerect="0,981,410,18" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/portable5.png" sourcerect="0,245,374,363" depth="0.48" premultiplyalpha="false" origin="0.5,0.035">
+      <Conditional targetitemcomponent="Controller" State="eq true" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/portable5.png" sourcerect="377,245,115,363" depth="0.48" premultiplyalpha="false" origin="1.5,0.035">
+      <Conditional targetitemcomponent="Controller" State="ne true" />
+    </DecorativeSprite>
+	
+    <Body width="374" height="366" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" PickingTime="10.0" attachable="true" slots="RightHand+LeftHand" aimable="true" controlpose="true" holdpos="30,10" handle1="-15,0" handle2="-15,0" aimpos="65,-10" msg="RIBAItemMsgDetachWrench" attachedbydefault="true">
+      <requireditem identifier="Wrench" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="organicfiber" amount="6" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="RIBAmediumwindowedsteelcabinet" />
+      <Item identifier="steel" />
+      <Item identifier="organicfiber" amount="4" />
+    </Deconstruct>
+    <Price baseprice="80" sold="false"/>
+  </ImportItem>
+  
 
 </Items>

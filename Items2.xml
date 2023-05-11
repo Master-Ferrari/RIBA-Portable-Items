@@ -856,17 +856,17 @@
   
   <!-- Кроватки -->
   <Item name="RIBABuyableBunk1" identifier="RIBABuyableBunk1" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
-
     <sprite texture="%ModDir%/portable5.png" sourcerect="0,0,430,219" depth="0.85" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/portable3.png" sourcerect="0,0,320,160" depth="0.86" origin="0.5,0.5" offset="-10,0" />
 	
-	<Body width="430" height="219" density="25" />
+	<Body width="430" height="219" density="25" /> <!-- крафтельный -->
 	<Holdable selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20,60" handle1="35,-60" handle2="35,-60" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
 		<requireditem identifier="Crowbar" type="Equipped" />
 		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
     <Deconstruct time="40">
-      <Item identifier="organicfiber" amount="8" />
-      <Item identifier="steel" amount="8" />
+      <Item identifier="organicfiber" amount="6" />
+      <Item identifier="steel" amount="7" />
     </Deconstruct>
     <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
       <limbposition limb="Head" position="-6,-120" />
@@ -876,9 +876,7 @@
       <limbposition limb="LeftFoot" position="464,-120" />
       <limbposition limb="RightHand" position="244,-120" allowusinglimb="false" />
       <limbposition limb="LeftHand" position="244,-120" allowusinglimb="false" />
-	  
 	  <ImportElement file="../../Content/Items/Misc/misc.xml" item="bunk" element="Controller(0)/StatusEffect(0)"/>
-	  
     </Controller>
     <Price baseprice="500">
       <Price locationtype="outpost" multiplier="0.4"  maxavailable="4"/>
@@ -887,6 +885,13 @@
       <Price locationtype="military" multiplier="1.7" sold="false" />
       <Price locationtype="mine" multiplier="1.0"  maxavailable="4" />
     </Price>
+	
+    <Fabricate suitablefabricators="fabricator" requiredtime="35">
+      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredItem identifier="organicfiber" amount="8" />
+      <RequiredItem identifier="steel" amount="8"/>
+    </Fabricate>
+	
   </Item>
   
   <Item name="RIBABuyableBunk2" identifier="RIBABuyableBunk2" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
@@ -959,6 +964,95 @@
       <Price locationtype="research" multiplier="1.0" maxavailable="2"/>
       <Price locationtype="military" multiplier="1.3"  maxavailable="1" />
       <Price locationtype="mine" multiplier="1.8"  sold="false" />
+    </Price>
+  </Item>
+  
+  <!-- прикроватный ящичек --> <!-- крафтельный -->
+  <Item name="RIBAbunkcabinet1" identifier="RIBAbunkcabinet1" isshootable="true" tags="container,suppliescontainer" linkable="true" pickdistance="150" scale="0.5">
+    <Sprite texture="%ModDir%/portable5.png" depth="0.7" sourcerect="819,3,92,142" origin="0.5,0.5" />
+	
+    <ItemContainer capacity="2" slotsperrow="2" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+	
+	  <SlotIcon slotindex="2" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
+	  <SlotIcon slotindex="3" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
+	  <SlotIcon slotindex="4" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
+	  <SlotIcon slotindex="5" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
+	  <SlotIcon slotindex="6" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
+	  <SlotIcon slotindex="7" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
+	  
+      <GuiFrame relativesize="0.15,0.45" anchor="Center" style="ItemUI" />
+      <Containable items="smallitem,mediumitem" />
+	  
+	  <SubContainer capacity="6" maxstacksize="64" hideitems="true">
+		<Containable items="clothing" />
+      </SubContainer>
+	  
+    </ItemContainer>
+	
+    <!-- <ItemContainer capacity="2" slotsperrow="2" keepopenwhenequipped="false" movableframe="false" maxstacksize="64" hideitems="true"> -->
+	  <!-- <SlotIcon slotindex="2" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/> -->
+	  <!-- <SlotIcon slotindex="3" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/> -->
+	  <!-- <SlotIcon slotindex="4" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/> -->
+	  <!-- <SlotIcon slotindex="5" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/> -->
+	  <!-- <SlotIcon slotindex="6" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/> -->
+	  <!-- <SlotIcon slotindex="7" texture="%ModDir%/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/> -->
+	  <!-- <Containable items="smallitem,mediumitem" excludeditems="clothing" /> -->
+	  <!-- <SubContainer capacity="6" maxstacksize="64" hideitems="true"> -->
+		<!-- <Containable items="clothing" /> -->
+      <!-- </SubContainer> -->
+    <!-- </ItemContainer> -->
+	
+    <Body width="92" height="142" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="aluminium" amount="2" />
+      <RequiredItem identifier="plastic" amount="4" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" amount="1" />
+      <Item identifier="plastic" amount="3" />
+    </Deconstruct>
+	
+    <Price baseprice="150">
+      <Price locationtype="outpost" multiplier="0.4"  maxavailable="4"/>
+      <Price locationtype="city" multiplier="0.5"  maxavailable="4" />
+      <Price locationtype="research" multiplier="1.8" sold="false" />
+      <Price locationtype="military" multiplier="1.7" sold="false" />
+      <Price locationtype="mine" multiplier="1.0"  maxavailable="4" />
+    </Price>
+  </Item>
+  
+  <Item name="RIBAbunkcabinet2" identifier="RIBAbunkcabinet2" isshootable="true" tags="container,suppliescontainer" linkable="true" pickdistance="150" scale="0.5">
+    <Sprite texture="%ModDir%/portable5.png" depth="0.7" sourcerect="926,3,92,142" origin="0.5,0.5" />
+    <ItemContainer capacity="6" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.18,0.25" anchor="Center" style="ItemUI" />
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <Body width="92" height="142" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="aluminium" amount="4" />
+      <RequiredItem identifier="plastic" amount="3" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" amount="2" />
+      <Item identifier="plastic" amount="2" />
+    </Deconstruct>
+	
+    <Price baseprice="150">
+      <Price locationtype="outpost" multiplier="0.4"  maxavailable="4"/>
+      <Price locationtype="city" multiplier="0.5"  maxavailable="4" />
+      <Price locationtype="research" multiplier="1.8" sold="false" />
+      <Price locationtype="military" multiplier="1.7" sold="false" />
+      <Price locationtype="mine" multiplier="1.0"  maxavailable="4" />
     </Price>
   </Item>
   
@@ -1039,5 +1133,39 @@
     </Price>
   </Item>
   
+  <!-- занавеска -->
+  <ImportItem file="../../Content/Map/Outposts/OutpostItems.xml"  item="opdeco_medcurtain">
+	<EditAttributes method="replace" identifier="RIBABuyableMedCurtain" name="RIBABuyableMedCurtain" isshootable="true"  impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<RemoveElements elements="Sprite(0),DecorativeSprite(all)"/>
+	
+	<InventoryIcon texture="%ModDir%/portable5.png" sourcerect="0,611,374,366" />
+    <Sprite texture="%ModDir%/portable5.png" sourcerect="0,981,410,18" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/portable5.png" sourcerect="0,611,374,366" depth="0.48" premultiplyalpha="false" origin="0.5,0.035">
+      <Conditional targetitemcomponent="Controller" State="eq true" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/portable5.png" sourcerect="377,611,102,366" depth="0.48" premultiplyalpha="false" origin="1.5,0.035">
+      <Conditional targetitemcomponent="Controller" State="ne true" />
+    </DecorativeSprite>
+	
+    <Body width="374" height="366" density="40" />
+	
+	  
+    <Holdable selectkey="Select" pickkey="Use" PickingTime="10.0" attachable="true" slots="RightHand+LeftHand" aimable="true" controlpose="true" holdpos="30,10" handle1="-15,0" handle2="-15,0" aimpos="65,-10" msg="RIBAItemMsgDetachWrench" attachedbydefault="true">
+      <requireditem identifier="Wrench" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    </Holdable>
+    <Deconstruct time="15">
+      <Item identifier="RIBAmediumwindowedsteelcabinet" />
+      <Item identifier="steel" />
+      <Item identifier="organicfiber" amount="4" />
+    </Deconstruct>
+    <Price baseprice="100">
+      <Price locationtype="outpost" multiplier="0.9"/>
+      <Price locationtype="city" multiplier="0.8"/>
+      <Price locationtype="research" multiplier="1.2" />
+      <Price locationtype="military" multiplier="2.2" />
+      <Price locationtype="mine" multiplier="0.6" />
+    </Price>
+  </ImportItem>
   
 </Items>
