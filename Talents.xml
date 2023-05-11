@@ -1,22 +1,120 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Talents>
 
-
-  <Talent identifier="RIBA_pi_1">
+  <Talent identifier="RIBA_RecipeBook_Electrical">
     <Icon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
     <Description tag="talentdescription.unlockrecipe">
       <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
     </Description>
     <AddedRecipe itemidentifier="makeshiftshelf" />
-	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
         <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="5" />
       </Abilities>
     </AbilityGroupEffect>
-	
+  </Talent>
+  <Talent identifier="RIBA_RecipeBook_Machine">
+    <Icon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
+    </Description>
+    <AddedRecipe itemidentifier="makeshiftshelf" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="5" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="RIBA_RecipeBook_Decorative">
+    <Icon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
+    </Description>
+    <AddedRecipe itemidentifier="makeshiftshelf" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="5" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="RIBA_RecipeBook_Supplies">
+    <Icon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
+    </Description>
+    <AddedRecipe itemidentifier="makeshiftshelf" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="5" />
+      </Abilities>
+    </AbilityGroupEffect>
   </Talent>
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <Override>
+    <Talent identifier="submarineofthings">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,7" sheetelementsize="128,128" />
+      <Description tag="talentdescription.cruising" />
+      <AddedRecipe itemidentifier="fpgacircuit" />
+      <AddedRecipe itemidentifier="button" />
+      <AddedRecipe itemidentifier="switch" />
+      <AddedRecipe itemidentifier="lever" />
+      <AddedRecipe itemidentifier="andcomponent" />
+      <AddedRecipe itemidentifier="equalscomponent" />
+      <AddedRecipe itemidentifier="greatercomponent" />
+      <AddedRecipe itemidentifier="addercomponent" />
+      <AddedRecipe itemidentifier="colorcomponent" />
+      <AddedRecipe itemidentifier="subtractcomponent" />
+      <AddedRecipe itemidentifier="multiplycomponent" />
+      <AddedRecipe itemidentifier="dividecomponent" />
+      <AddedRecipe itemidentifier="powcomponent" />
+      <AddedRecipe itemidentifier="orcomponent" />
+      <AddedRecipe itemidentifier="xorcomponent" />
+      <AddedRecipe itemidentifier="notcomponent" />
+      <AddedRecipe itemidentifier="concatcomponent" />
+      <AddedRecipe itemidentifier="sincomponent" />
+      <AddedRecipe itemidentifier="coscomponent" />
+      <AddedRecipe itemidentifier="tancomponent" />
+      <AddedRecipe itemidentifier="asincomponent" />
+      <AddedRecipe itemidentifier="acoscomponent" />
+      <AddedRecipe itemidentifier="atancomponent" />
+      <AddedRecipe itemidentifier="roundcomponent" />
+      <AddedRecipe itemidentifier="ceilcomponent" />
+      <AddedRecipe itemidentifier="floorcomponent" />
+      <AddedRecipe itemidentifier="factorialcomponent" />
+      <AddedRecipe itemidentifier="abscomponent" />
+      <AddedRecipe itemidentifier="squarerootcomponent" />
+      <AddedRecipe itemidentifier="modulocomponent" />
+      <AddedRecipe itemidentifier="relaycomponent" />
+      <AddedRecipe itemidentifier="delaycomponent" />
+      <AddedRecipe itemidentifier="memorycomponent" />
+      <AddedRecipe itemidentifier="oxygendetector" />
+      <AddedRecipe itemidentifier="waterdetector" />
+      <AddedRecipe itemidentifier="smokedetector" />
+      <AddedRecipe itemidentifier="motiondetector" />
+      <AddedRecipe itemidentifier="signalcheckcomponent" />
+      <AddedRecipe itemidentifier="regexcomponent" />
+      <AddedRecipe itemidentifier="oscillator" />
+      <AddedRecipe itemidentifier="wificomponent" />
+      <AddedRecipe itemidentifier="emergencysiren" />
+      <AddedRecipe itemidentifier="alarmbuzzer" />
+      <AddedRecipe itemidentifier="terminal" />
+    </Talent>
+  </Override>
 </Talents>

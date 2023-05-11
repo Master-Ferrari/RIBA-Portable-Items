@@ -2,18 +2,54 @@
 <Items>
 
   <!-- Стрёмный Шкаф для ящиков  -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="suppliescabinet">
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="crateshelf">
 	<EditAttributes method="replace" isshootable="true" identifier="RIBAcrateshelf2" impactsoundtag="impact_metal_heavy" />
-	<GetExistingElement element="Sprite(0)">
-		<EditAttributes method="replace" texture="%ModDir%/portable4.png" sourcerect="445,649,222,375" canflipx="false"/>
-	</GetExistingElement>
+	<RemoveElements elements="Sprite(0)"/>
+
+    <Sprite           texture="%ModDir%/portable4.png" sourcerect="445,649,222,375" depth="0.82" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/portable4.png" sourcerect="445,649,222,375" depth="0.79" origin="0.5,0.5" />
+	
 	<GetExistingElement element="ItemContainer(0)">
+		<EditAttributes method="replace" capacity="4" itempos="112,-54" iteminterval="0,-91" containedspritedepths="0.8,0.81,0.8,0.81"/>
         <StatusEffect type="OnContained" target="This" itempos="0,130" />
         <StatusEffect type="Always" target="This" itempos="112,-44" />
 	</GetExistingElement>
 		
     <Body width="187" height="368" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="35.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
+      <RequiredItem items="wrenchitem" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+	  <StatusEffect target="This" type="Always">
+        <Conditional attached="false" targetitemcomponentname="Holdable"/>
+        <DropContainedItems/>
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredItem identifier="steel" amount="8"/>
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="steel" amount="6"/>
+    </Deconstruct>
+    <Price baseprice="200"   sold="false">
+    </Price>
+  </ImportItem>
+  
+  <!-- Маленький Стрёмный Шкаф для ящиков  -->
+  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="crateshelf">
+	<EditAttributes method="replace" isshootable="true" identifier="RIBAcrateshelf3" name="RIBAcrateshelf3" impactsoundtag="impact_metal_heavy" />
+	<RemoveElements elements="Sprite(0)"/>
+
+    <Sprite           texture="%ModDir%/portable3.png" sourcerect="283,428,212,139" depth="0.82" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/portable3.png" sourcerect="283,428,212,139" depth="0.79" origin="0.5,0.5" />
+	
+	<GetExistingElement element="ItemContainer(0)">
+		<EditAttributes method="replace" capacity="1" itempos="105,-68" iteminterval="0,-91" containedspritedepths="0.8,0.81,0.8,0.81"/>
+        <StatusEffect type="OnContained" target="This" itempos="0,130" />
+        <StatusEffect type="Always" target="This" itempos="112,-44" />
+	</GetExistingElement>
+		
+    <Body width="212" height="139" density="40" />
     <Holdable selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="35.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
       <RequiredItem items="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />

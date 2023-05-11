@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
 
-  <Item name="Riba_Recipe" identifier="Riba_Recipe" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="1" scale="0.5" impactsoundtag="impact_soft">
+  <Item name="Riba_Recipe_Electronics" identifier="Riba_Recipe" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="1" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
     <InventoryIcon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
     <Sprite texture="%ModDir%/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
     <Body width="28" height="36" density="20" />
-	
     <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-910.0" />
       <StatusEffect type="Always" target="This" Condition="900.0" />
@@ -16,9 +15,7 @@
         <GiveTalentInfo talentidentifiers="RIBA_pi_1" />
         <TalentTrigger effectidentifier="standanddeliver" />
       </StatusEffect>
-      <!-- <StatusEffect type="OnPicked" target="This" Condition="100" disabledeltatime="true"/> -->
     </Holdable>
-	
     <Price baseprice="600" minleveldifficulty="20" buyingpricemodifier="2.5" minavailable="1">
       <Price storeidentifier="merchantoutpost" />
       <Price storeidentifier="merchantcity" />
@@ -26,16 +23,6 @@
       <Price storeidentifier="merchantmilitary" />
       <Price storeidentifier="merchantmine" />
     </Price>
-	
-  </Item>
-  
-  <Item name="riba2342" identifier="riba2342" category="Alien" tags="aliencontainer" linkable="true" pickdistance="150" scale="0.5">
-    <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" depth="0.84" sourcerect="0,1022,464,340" origin="0.5,0.5" />
-    <BrokenSprite texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="1040,1022,464,340" depth="0.799" origin="0.5,0.5" scale="true" />
-    <ItemContainer capacity="9" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect" itemsperrow="3">
-      <GuiFrame relativesize="0.2,0.5" anchor="Center" style="ItemUI" />
-      <Containable items="smallitem,mediumitem" />
-    </ItemContainer>
   </Item>
   
 </Items>
