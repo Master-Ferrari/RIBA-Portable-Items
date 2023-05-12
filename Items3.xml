@@ -3,7 +3,7 @@
 <!-- НЕДОСТУПНЫЕ ПРЕДМЕТЫ -->
 
   <!-- Шкаф для ящиков  -->
-  <Item name="" identifier="RIBABuyablecrateshelf" isshootable="true" tags="container" linkable="true" pickdistance="150" scale="0.5">
+  <Item name="" identifier="RIBABuyablecrateshelf" isshootable="true" tags="container" linkable="true" pickdistance="150" scale="0.5" hideinmenus="true">
     <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="0,656,187,368" canflipx="false" origin="0.5,0.5" />
     <Body width="187" height="368" density="40" />
     <ItemContainer capacity="4" canbeselected="true" hideitems="false" itempos="92,-48" iteminterval="0,-94" msg="ItemMsgInteractSelect">
@@ -30,7 +30,7 @@
     </Deconstruct>
   </Item>
   <!-- Шкаф для ящиков  -->
-  <Item name="" identifier="RIBAcrateshelf" isshootable="true" tags="container" linkable="true" pickdistance="150" scale="0.5">
+  <Item name="" identifier="RIBAcrateshelf" isshootable="true" tags="container" linkable="true" pickdistance="150" scale="0.5" hideinmenus="true">
     <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="0,656,187,368" canflipx="false" origin="0.5,0.5" />
     <Body width="187" height="368" density="40" />
     <ItemContainer capacity="4" canbeselected="true" hideitems="false" itempos="92,-48" iteminterval="0,-94" msg="ItemMsgInteractSelect">
@@ -60,7 +60,7 @@
   </Item>
   <!-- АЙДИКАРТЫ -->
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
-	<EditAttributes method="replace" identifier="RIBAMedicCard" name="MedicCard" Tags="smallitem,id_medic,med,doc,id_medical,idcard,jobid:medicaldoctor"/>	
+	<EditAttributes method="replace" identifier="RIBAMedicCard" name="MedicCard" Tags="smallitem,id_medic,med,doc,id_medical,idcard,jobid:medicaldoctor" hideinmenus="true"/>	
 	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
@@ -68,7 +68,7 @@
 	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
-	<EditAttributes method="replace" identifier="RIBAMechanicCard" name="MechanicCard" Tags="smallitem,id_mechanic,mechanic,mech,idcard,jobid:mechanic"/>	
+	<EditAttributes method="replace" identifier="RIBAMechanicCard" name="MechanicCard" Tags="smallitem,id_mechanic,mechanic,mech,idcard,jobid:mechanic" hideinmenus="true"/>	
 	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
@@ -76,7 +76,7 @@
 	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
-	<EditAttributes method="replace" identifier="RIBAEngineerCard" name="EngineerCard" Tags="smallitem,id_engineer,engineer,engi,idcard,jobid:engineer"/>	
+	<EditAttributes method="replace" identifier="RIBAEngineerCard" name="EngineerCard" Tags="smallitem,id_engineer,engineer,engi,idcard,jobid:engineer" hideinmenus="true"/>	
 	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
@@ -84,7 +84,7 @@
 	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
-	<EditAttributes method="replace" identifier="RIBACaptainCard" name="CaptainCard" Tags="smallitem,id_captain,captain,cap,com,idcard,jobid:captain"/>	
+	<EditAttributes method="replace" identifier="RIBACaptainCard" name="CaptainCard" Tags="smallitem,id_captain,captain,cap,com,idcard,jobid:captain" hideinmenus="true"/>	
 	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
@@ -92,7 +92,7 @@
 	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
-	<EditAttributes method="replace" identifier="RIBASecurityCard" name="SecurityCard" Tags="smallitem,id_security,security,sec,idcard,jobid:securityofficer"/>	
+	<EditAttributes method="replace" identifier="RIBASecurityCard" name="SecurityCard" Tags="smallitem,id_security,security,sec,idcard,jobid:securityofficer" hideinmenus="true"/>	
 	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
@@ -100,7 +100,7 @@
 	<Price baseprice="10"   sold="false"></Price>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
-	<EditAttributes method="replace" identifier="RIBAAssistantCard" name="AssistantCard" Tags="smallitem,id_assistant,assistant,idcard,jobid:assistant"/>	
+	<EditAttributes method="replace" identifier="RIBAAssistantCard" name="AssistantCard" Tags="smallitem,id_assistant,assistant,idcard,jobid:assistant" hideinmenus="true"/>	
 	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
@@ -110,7 +110,7 @@
 
   <!-- Терминалы -->
   <ImportItem file="../../Content/Items/Electricity/signalitems.xml"  item="terminal">
-	<EditAttributes method="replace" identifier="RIBABuyableTerminal"  isshootable="true"  impactsoundtag="impact_metal_light"/>
+	<EditAttributes method="replace" identifier="RIBABuyableTerminal"  isshootable="true"  impactsoundtag="impact_metal_light" hideinmenus="true"/>
 	<RemoveElements elements="Sprite(0)"/>
 	
     <Sprite texture="%ModDir%/portable2.png" depth="0.7" sourcerect="322,352,138,112" origin="0.5,0.5" />
@@ -133,7 +133,7 @@
 	</ImportItem>
 	
   <ImportItem file="../../Content/Items/Electricity/signalitems.xml"  item="terminal">
-	<EditAttributes method="replace" identifier="RIBATerminal"  isshootable="true"  impactsoundtag="impact_metal_light"/>
+	<EditAttributes method="replace" identifier="RIBATerminal"  isshootable="true"  impactsoundtag="impact_metal_light" hideinmenus="true"/>
 	<RemoveElements elements="Sprite(0)"/>
 	
     <Sprite texture="%ModDir%/portable.png" depth="0.7" sourcerect="322,352,138,112" origin="0.5,0.5" />
@@ -164,7 +164,7 @@
 	</ImportItem>
   
   <!-- Текстовая панель -->
-  <Item name="" description="" identifier="RIBABuyableTextdisplay" category="Electrical" tags="smallitem" cargocontaineridentifier="metalcrate" scale="1" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <Item name="" description="" identifier="RIBABuyableTextdisplay" category="Electrical" tags="smallitem" cargocontaineridentifier="metalcrate" scale="1" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2" hideinmenus="true">
     <Price baseprice="300" sold="false">
       <!-- <Price locationtype="outpost" multiplier="1.1" minavailable="2" /> -->
       <!-- <Price locationtype="city" multiplier="1" minavailable="3" /> -->
@@ -208,7 +208,7 @@
   </Item>
   
   <!-- Текстовая панель -->
-  <Item name="" description="" identifier="RIBATextdisplay" category="Electrical" tags="smallitem" cargocontaineridentifier="metalcrate" scale="1" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+  <Item name="" description="" identifier="RIBATextdisplay" category="Electrical" tags="smallitem" cargocontaineridentifier="metalcrate" scale="1" impactsoundtag="impact_metal_light" isshootable="true" damagedbyexplosions="true" explosiondamagemultiplier="0.2" hideinmenus="true">
     <Sprite texture="%ModDir%/portable.png" depth="0.6" sourcerect="542,611,64,25" />
     <ItemLabel text="connect me" canbeselected="true" scrollable="true" padding="7,2,6,4" textcolor="1,1,1,1" color="1.0,0.5,0.5,1.0">
       <LightComponent range="10.0" lightcolor="0.1,1.0,0.1,0.1" IsOn="true" castshadows="false">
@@ -255,7 +255,7 @@
   </Item>
   
   <!-- Вай-фай -->
-  <Item name="" identifier="RIBALRwifiComponent" category="Electrical" Tags="smallitem,signal" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+  <Item name="" identifier="RIBALRwifiComponent" category="Electrical" Tags="smallitem,signal" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" hideinmenus="true">
     <PreferredContainer primary="reactorcab,storagecab" />
     <PreferredContainer secondary="wreckreactorcab,wreckstoragecab" minamount="0" maxamount="1" spawnprobability="0.06" />
     <Deconstruct time="10">
@@ -292,7 +292,7 @@
   </Item>
   
   <!-- анал истории -->
-  <Item name="" identifier="RIBAengineermetalcrate" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbelt" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+  <Item name="" identifier="RIBAengineermetalcrate" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbelt" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_heavy" RequireAimToUse="True" hideinmenus="true">
     <Price baseprice="50">
       <Price locationtype="outpost" multiplier="1" />
       <Price locationtype="city" multiplier="0.9" />
@@ -341,7 +341,7 @@
     <aitarget sightrange="1000" soundrange="1000" fadeouttime="2" />
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
-  <Item name="" identifier="RIBAmechanicmetalcrate" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbelt" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+  <Item name="" identifier="RIBAmechanicmetalcrate" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbelt" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_heavy" RequireAimToUse="True" hideinmenus="true">
     <Price baseprice="50">
       <Price locationtype="outpost" multiplier="1" />
       <Price locationtype="city" multiplier="0.9" />
