@@ -293,25 +293,22 @@
   
   <!-- анал истории -->
   <Item name="" identifier="RIBAengineermetalcrate" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbelt" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_heavy" RequireAimToUse="True" hideinmenus="true">
-    <Price baseprice="50">
-      <Price locationtype="outpost" multiplier="1" />
-      <Price locationtype="city" multiplier="0.9" />
-      <Price locationtype="research" multiplier="1.1" />
-      <Price locationtype="military" multiplier="1.1" />
-      <Price locationtype="mine" multiplier="1" />
-    </Price>
+    <!-- <Price baseprice="50"> -->
+      <!-- <Price locationtype="outpost" multiplier="1" /> -->
+      <!-- <Price locationtype="city" multiplier="0.9" /> -->
+      <!-- <Price locationtype="research" multiplier="1.1" /> -->
+      <!-- <Price locationtype="military" multiplier="1.1" /> -->
+      <!-- <Price locationtype="mine" multiplier="1" /> -->
+    <!-- </Price> -->
     <PreferredContainer primary="engcab" />
     <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.05" />
     <PreferredContainer primary="outpostcrewcabinet" minamount="0" maxamount="1" spawnprobability="0.5" />
-    <!-- <Deconstruct time="10"> -->
-    <!-- <Item identifier="steel" /> -->
-    <!-- </Deconstruct> -->
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredSkill identifier="mechanical" level="50" />
-      <RequiredSkill identifier="electical" level="30" /> 
-      <RequiredItem identifier="titanium" amount="3" />
-      <RequiredItem identifier="memorycomponent" />
-    </Fabricate>
+    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="20"> -->
+      <!-- <RequiredSkill identifier="mechanical" level="50" /> -->
+      <!-- <RequiredSkill identifier="electical" level="30" />  -->
+      <!-- <RequiredItem identifier="titanium" amount="3" /> -->
+      <!-- <RequiredItem identifier="memorycomponent" /> -->
+    <!-- </Fabricate> -->
     <Deconstruct time="20">
       <Item identifier="titanium" amount="3" />
     </Deconstruct>
@@ -322,6 +319,7 @@
     <!-- <Price locationtype="military" multiplier="1.25" minavailable="1" /> -->
     <!-- <Price locationtype="mine" multiplier="1.25" minavailable="8" /> -->
     <!-- </Price> -->
+    <Price baseprice="100" sold="false"/>
     <InventoryIcon texture="%ModDir%/portable2.png" sourcerect="125,442,127,73" origin="0.5,0.6" />
     <Sprite texture="%ModDir%/portable2.png" sourcerect="125,442,127,73" origin="0.5,0.5" depth="0.6" />
     <!--<Sprite texture="Content/Items/Containers/crates.png" depth="0.54" sourcerect="1,0,68,39"/>-->
@@ -342,22 +340,23 @@
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
   <Item name="" identifier="RIBAmechanicmetalcrate" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbelt" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_heavy" RequireAimToUse="True" hideinmenus="true">
-    <Price baseprice="50">
-      <Price locationtype="outpost" multiplier="1" />
-      <Price locationtype="city" multiplier="0.9" />
-      <Price locationtype="research" multiplier="1.1" />
-      <Price locationtype="military" multiplier="1.1" />
-      <Price locationtype="mine" multiplier="1" />
-    </Price>
+    <!-- <Price baseprice="50"> -->
+      <!-- <Price locationtype="outpost" multiplier="1" /> -->
+      <!-- <Price locationtype="city" multiplier="0.9" /> -->
+      <!-- <Price locationtype="research" multiplier="1.1" /> -->
+      <!-- <Price locationtype="military" multiplier="1.1" /> -->
+      <!-- <Price locationtype="mine" multiplier="1" /> -->
+    <!-- </Price> -->
+    <Price baseprice="100" sold="false"/>
     <PreferredContainer primary="engcab" />
     <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.05" />
     <PreferredContainer primary="outpostcrewcabinet" minamount="0" maxamount="1" spawnprobability="0.5" />
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredSkill identifier="mechanical" level="50" />
-      <RequiredSkill identifier="electical" level="30" /> 
-      <RequiredItem identifier="titanium" amount="3" />
-      <RequiredItem identifier="memorycomponent" />
-    </Fabricate>
+    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="20"> -->
+      <!-- <RequiredSkill identifier="mechanical" level="50" /> -->
+      <!-- <RequiredSkill identifier="electical" level="30" />  -->
+      <!-- <RequiredItem identifier="titanium" amount="3" /> -->
+      <!-- <RequiredItem identifier="memorycomponent" /> -->
+    <!-- </Fabricate> -->
     <Deconstruct time="20">
       <Item identifier="titanium" amount="3" />
     </Deconstruct>
