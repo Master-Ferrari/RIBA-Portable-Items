@@ -17,14 +17,20 @@
 	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
-        
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAControlCamera" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAStatusMonitor" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBALamp" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAbattery" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAchargingdock" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlCamera" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAStatusMonitor" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBALamp" stattype="MaxAttachableCount" value="5" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAbattery" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAchargingdock" stattype="MaxAttachableCount" value="3" />
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAControlMonitor" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAControlCamera" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAStatusMonitor" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAJunctionBox" stattype="MaxAttachableCount" value="4" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBALamp" stattype="MaxAttachableCount" value="4" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAbattery" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAchargingdock" stattype="MaxAttachableCount" value="2" /> -->
       
 	  </Abilities>
     </AbilityGroupEffect>
@@ -44,11 +50,16 @@
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
         
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAbigpump" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAsmallpump" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAfabricator" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAdeconstructor" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAmedfabricator" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAbigpump" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAsmallpump" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAfabricator" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAdeconstructor" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAmedfabricator" stattype="MaxAttachableCount" value="1" />
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAbigpump" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAsmallpump" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAfabricator" stattype="MaxAttachableCount" value="1" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAdeconstructor" stattype="MaxAttachableCount" value="1" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAmedfabricator" stattype="MaxAttachableCount" value="1" /> -->
       
 	  </Abilities>
     </AbilityGroupEffect>
@@ -67,10 +78,13 @@
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
         
-        <CharacterAbilityGivePermanentStat statidentifier="RIBABunk1" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAChair1" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAMedCurtain" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBABuyableBunk1" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAbunk" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAChair" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAMedCurtain" stattype="MaxAttachableCount" value="2" />
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBABunk1" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAChair1" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAMedCurtain" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBABuyableBunk1" stattype="MaxAttachableCount" value="2" /> -->
       
 	  </Abilities>
     </AbilityGroupEffect>
@@ -103,96 +117,132 @@
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
         
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAcrateshelf2" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAcrateshelf3" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAsuppliescabinet" stattype="MaxAttachableCount" value="3" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAmediumsteelcabinet" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAmediumwindowedsteelcabinet" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAsteelcabinet" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAbigsteelcabinet" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAdivingsuitlocker" stattype="MaxAttachableCount" value="3" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAmedcabinet" stattype="MaxAttachableCount" value="3" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBArailgunshellrack" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAcoilgunammoshelf" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAtoxcabinet" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAoxygentankshelf" stattype="MaxAttachableCount" value="3" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAweaponholder" stattype="MaxAttachableCount" value="3" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAextinguisherbracket" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAsecuresteelcabinet" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAbunkcabinet2" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="RIBAbunkcabinet1" stattype="MaxAttachableCount" value="1" />
-      
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAcrateshelf_4slots" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAcrateshelf_1slot" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAsuppliescabinet" stattype="MaxAttachableCount" value="5" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAmediumsteelcabinet" stattype="MaxAttachableCount" value="3" />
+		<CharacterAbilityGivePermanentStat statidentifier="BIBAsteelcabinet" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAdivingsuitlocker" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBArailgunshellrack" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAcoilgunammoshelf" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAtoxcabinet" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAoxygentankshelf" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAweaponholder" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAextinguisherbracket" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAsecuresteelcabinet" stattype="MaxAttachableCount" value="1" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAbunkcabinet" stattype="MaxAttachableCount" value="5" />
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAcrateshelf2" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAcrateshelf3" stattype="MaxAttachableCount" value="4" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAsuppliescabinet" stattype="MaxAttachableCount" value="3" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAmediumsteelcabinet" stattype="MaxAttachableCount" value="1" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAmediumwindowedsteelcabinet" stattype="MaxAttachableCount" value="1" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAsteelcabinet" stattype="MaxAttachableCount" value="1" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAbigsteelcabinet" stattype="MaxAttachableCount" value="1" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAdivingsuitlocker" stattype="MaxAttachableCount" value="3" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAmedcabinet" stattype="MaxAttachableCount" value="3" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBArailgunshellrack" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAcoilgunammoshelf" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAtoxcabinet" stattype="MaxAttachableCount" value="1" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAoxygentankshelf" stattype="MaxAttachableCount" value="3" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAweaponholder" stattype="MaxAttachableCount" value="3" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAextinguisherbracket" stattype="MaxAttachableCount" value="2" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAsecuresteelcabinet" stattype="MaxAttachableCount" value="1" /> -->
+		<!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAbunkcabinet2" stattype="MaxAttachableCount" value="1" /> -->
+        <!-- <CharacterAbilityGivePermanentStat statidentifier="RIBAbunkcabinet1" stattype="MaxAttachableCount" value="1" /> -->
+      
       
 	  </Abilities>
     </AbilityGroupEffect>
   </Talent>
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <Override>
-    <Talent identifier="submarineofthings">
-      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,7" sheetelementsize="128,128" />
-      <Description tag="talentdescription.cruising" />
-      <AddedRecipe itemidentifier="fpgacircuit" />
-      <AddedRecipe itemidentifier="button" />
-      <AddedRecipe itemidentifier="switch" />
-      <AddedRecipe itemidentifier="lever" />
-      <AddedRecipe itemidentifier="andcomponent" />
-      <AddedRecipe itemidentifier="equalscomponent" />
-      <AddedRecipe itemidentifier="greatercomponent" />
-      <AddedRecipe itemidentifier="addercomponent" />
-      <AddedRecipe itemidentifier="colorcomponent" />
-      <AddedRecipe itemidentifier="subtractcomponent" />
-      <AddedRecipe itemidentifier="multiplycomponent" />
-      <AddedRecipe itemidentifier="dividecomponent" />
-      <AddedRecipe itemidentifier="powcomponent" />
-      <AddedRecipe itemidentifier="orcomponent" />
-      <AddedRecipe itemidentifier="xorcomponent" />
-      <AddedRecipe itemidentifier="notcomponent" />
-      <AddedRecipe itemidentifier="concatcomponent" />
-      <AddedRecipe itemidentifier="sincomponent" />
-      <AddedRecipe itemidentifier="coscomponent" />
-      <AddedRecipe itemidentifier="tancomponent" />
-      <AddedRecipe itemidentifier="asincomponent" />
-      <AddedRecipe itemidentifier="acoscomponent" />
-      <AddedRecipe itemidentifier="atancomponent" />
-      <AddedRecipe itemidentifier="roundcomponent" />
-      <AddedRecipe itemidentifier="ceilcomponent" />
-      <AddedRecipe itemidentifier="floorcomponent" />
-      <AddedRecipe itemidentifier="factorialcomponent" />
-      <AddedRecipe itemidentifier="abscomponent" />
-      <AddedRecipe itemidentifier="squarerootcomponent" />
-      <AddedRecipe itemidentifier="modulocomponent" />
-      <AddedRecipe itemidentifier="relaycomponent" />
-      <AddedRecipe itemidentifier="delaycomponent" />
-      <AddedRecipe itemidentifier="memorycomponent" />
-      <AddedRecipe itemidentifier="oxygendetector" />
-      <AddedRecipe itemidentifier="waterdetector" />
-      <AddedRecipe itemidentifier="smokedetector" />
-      <AddedRecipe itemidentifier="motiondetector" />
-      <AddedRecipe itemidentifier="signalcheckcomponent" />
-      <AddedRecipe itemidentifier="regexcomponent" />
-      <AddedRecipe itemidentifier="oscillator" />
-      <AddedRecipe itemidentifier="wificomponent" />
-      <AddedRecipe itemidentifier="emergencysiren" />
-      <AddedRecipe itemidentifier="alarmbuzzer" />
-      <AddedRecipe itemidentifier="terminal" />
+    <Talent identifier="logisticssystems">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,4" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.handhelditemfinder,entityname.makeshiftshelf" color="gui.orange"/>
+    </Description>
+    <Description tag="talentdescription.letitdrainreminder">
+      <Replace tag="[itemcount]" value="3" color="gui.green"/>
+    </Description>
+	  
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="4" />
+		
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlCamera" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAStatusMonitor" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBALamp" stattype="MaxAttachableCount" value="5" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAbattery" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAchargingdock" stattype="MaxAttachableCount" value="3" />
+		
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAbigpump" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAsmallpump" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAfabricator" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAdeconstructor" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAmedfabricator" stattype="MaxAttachableCount" value="1" />
+		
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAbunk" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAChair" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAMedCurtain" stattype="MaxAttachableCount" value="2" />
+		
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAcrateshelf_4slots" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAcrateshelf_1slot" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAsuppliescabinet" stattype="MaxAttachableCount" value="5" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAmediumsteelcabinet" stattype="MaxAttachableCount" value="3" />
+		<CharacterAbilityGivePermanentStat statidentifier="BIBAsteelcabinet" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAdivingsuitlocker" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBArailgunshellrack" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAcoilgunammoshelf" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAtoxcabinet" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAoxygentankshelf" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAweaponholder" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAextinguisherbracket" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAsecuresteelcabinet" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAbunkcabinet" stattype="MaxAttachableCount" value="5" />
+		
+      </Abilities>
+    </AbilityGroupEffect>
+	
+    <AddedRecipe itemidentifier="makeshiftshelf"/>
+    <AddedRecipe itemidentifier="handhelditemfinder"/>
+	
+	<AddedRecipe itemidentifier="RIBAControlMonitor" />
+	<AddedRecipe itemidentifier="RIBAControlCamera" />
+	<AddedRecipe itemidentifier="RIBAStatusMonitor" />
+	<AddedRecipe itemidentifier="RIBAJunctionBox" />
+	<AddedRecipe itemidentifier="RIBALamp" />
+	<AddedRecipe itemidentifier="RIBAbattery" />
+	<AddedRecipe itemidentifier="RIBAchargingdock" />
+	<AddedRecipe itemidentifier="RIBAbigpump" />
+	<AddedRecipe itemidentifier="RIBAsmallpump" />
+	<AddedRecipe itemidentifier="RIBAfabricator" />
+	<AddedRecipe itemidentifier="RIBAdeconstructor" />
+	<AddedRecipe itemidentifier="RIBAmedfabricator" />
+	<AddedRecipe itemidentifier="RIBABunk1" />
+	<AddedRecipe itemidentifier="RIBAChair1" />
+	<AddedRecipe itemidentifier="RIBAMedCurtain" />
+	<AddedRecipe itemidentifier="RIBABuyableBunk1" />
+	<AddedRecipe itemidentifier="RIBAcrateshelf2" />
+	<AddedRecipe itemidentifier="RIBAcrateshelf3" />
+	<AddedRecipe itemidentifier="RIBAsuppliescabinet" />
+	<AddedRecipe itemidentifier="RIBAmediumsteelcabinet" />
+	<AddedRecipe itemidentifier="RIBAmediumwindowedsteelcabinet" />
+	<AddedRecipe itemidentifier="RIBAsteelcabinet" />
+	<AddedRecipe itemidentifier="RIBAbigsteelcabinet" />
+	<AddedRecipe itemidentifier="RIBAdivingsuitlocker" />
+	<AddedRecipe itemidentifier="RIBAmedcabinet" />
+	<AddedRecipe itemidentifier="RIBArailgunshellrack" />
+	<AddedRecipe itemidentifier="RIBAcoilgunammoshelf" />
+	<AddedRecipe itemidentifier="RIBAtoxcabinet" />
+	<AddedRecipe itemidentifier="RIBAoxygentankshelf" />
+	<AddedRecipe itemidentifier="RIBAweaponholder" />
+	<AddedRecipe itemidentifier="RIBAextinguisherbracket" />
+	<AddedRecipe itemidentifier="RIBAsecuresteelcabinet" />
+	<AddedRecipe itemidentifier="RIBAbunkcabinet2" />
+	<AddedRecipe itemidentifier="RIBAbunkcabinet1" />
+	
     </Talent>
   </Override>
 </Talents>
