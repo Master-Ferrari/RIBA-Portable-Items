@@ -15,4 +15,5 @@
   <Other file="%ModDir%/portable4.png" />
   <Other file="%ModDir%/portable5.png" />
   <Other file="%ModDir%/FabricatorsAndDeconstructors.png" />
+  <Other file="%ModDir%/Lua/Autorun/init.lua" />
 </contentpackage>
