@@ -6,11 +6,27 @@
     <Description tag="talentdescription.unlockrecipe">
       <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
     </Description>
-    <AddedRecipe itemidentifier="makeshiftshelf" />
+	
+    <AddedRecipe itemidentifier="RIBAControlMonitor" />
+    <AddedRecipe itemidentifier="RIBAControlCamera" />
+    <AddedRecipe itemidentifier="RIBAStatusMonitor" />
+    <AddedRecipe itemidentifier="RIBAJunctionBox" />
+    <AddedRecipe itemidentifier="RIBALamp" />
+    <AddedRecipe itemidentifier="RIBAbattery" />
+    <AddedRecipe itemidentifier="RIBAchargingdock" />
+	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
-        <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="5" />
-      </Abilities>
+        
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAControlCamera" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAStatusMonitor" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBALamp" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAbattery" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAchargingdock" stattype="MaxAttachableCount" value="2" />
+      
+	  </Abilities>
     </AbilityGroupEffect>
   </Talent>
   <Talent identifier="RIBA_RecipeBook_Machine">
@@ -18,11 +34,23 @@
     <Description tag="talentdescription.unlockrecipe">
       <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
     </Description>
-    <AddedRecipe itemidentifier="makeshiftshelf" />
+        
+    <AddedRecipe itemidentifier="RIBAbigpump" />
+    <AddedRecipe itemidentifier="RIBAsmallpump" />
+    <AddedRecipe itemidentifier="RIBAfabricator" />
+    <AddedRecipe itemidentifier="RIBAdeconstructor" />
+    <AddedRecipe itemidentifier="RIBAmedfabricator" />
+	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
-        <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="5" />
-      </Abilities>
+        
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAbigpump" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAsmallpump" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAfabricator" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAdeconstructor" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAmedfabricator" stattype="MaxAttachableCount" value="1" />
+      
+	  </Abilities>
     </AbilityGroupEffect>
   </Talent>
   <Talent identifier="RIBA_RecipeBook_Decorative">
@@ -30,11 +58,21 @@
     <Description tag="talentdescription.unlockrecipe">
       <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
     </Description>
-    <AddedRecipe itemidentifier="makeshiftshelf" />
+	
+    <AddedRecipe itemidentifier="RIBABunk1" />
+    <AddedRecipe itemidentifier="RIBAChair1" />
+    <AddedRecipe itemidentifier="RIBAMedCurtain" />
+    <AddedRecipe itemidentifier="RIBABuyableBunk1" />
+	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
-        <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="5" />
-      </Abilities>
+        
+        <CharacterAbilityGivePermanentStat statidentifier="RIBABunk1" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAChair1" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAMedCurtain" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBABuyableBunk1" stattype="MaxAttachableCount" value="2" />
+      
+	  </Abilities>
     </AbilityGroupEffect>
   </Talent>
   <Talent identifier="RIBA_RecipeBook_Supplies">
@@ -42,11 +80,51 @@
     <Description tag="talentdescription.unlockrecipe">
       <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
     </Description>
-    <AddedRecipe itemidentifier="makeshiftshelf" />
+	
+    <AddedRecipe itemidentifier="RIBAcrateshelf2" />
+    <AddedRecipe itemidentifier="RIBAcrateshelf3" />
+    <AddedRecipe itemidentifier="RIBAsuppliescabinet" />
+    <AddedRecipe itemidentifier="RIBAmediumsteelcabinet" />
+    <AddedRecipe itemidentifier="RIBAmediumwindowedsteelcabinet" />
+    <AddedRecipe itemidentifier="RIBAsteelcabinet" />
+    <AddedRecipe itemidentifier="RIBAbigsteelcabinet" />
+    <AddedRecipe itemidentifier="RIBAdivingsuitlocker" />
+    <AddedRecipe itemidentifier="RIBAmedcabinet" />
+    <AddedRecipe itemidentifier="RIBArailgunshellrack" />
+    <AddedRecipe itemidentifier="RIBAcoilgunammoshelf" />
+    <AddedRecipe itemidentifier="RIBAtoxcabinet" />
+    <AddedRecipe itemidentifier="RIBAoxygentankshelf" />
+    <AddedRecipe itemidentifier="RIBAweaponholder" />
+    <AddedRecipe itemidentifier="RIBAextinguisherbracket" />
+    <AddedRecipe itemidentifier="RIBAsecuresteelcabinet" />
+    <AddedRecipe itemidentifier="RIBAbunkcabinet2" />
+    <AddedRecipe itemidentifier="RIBAbunkcabinet1" />
+	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
-        <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="5" />
-      </Abilities>
+        
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAcrateshelf2" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAcrateshelf3" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAsuppliescabinet" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAmediumsteelcabinet" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAmediumwindowedsteelcabinet" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAsteelcabinet" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAbigsteelcabinet" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAdivingsuitlocker" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAmedcabinet" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBArailgunshellrack" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAcoilgunammoshelf" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAtoxcabinet" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAoxygentankshelf" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAweaponholder" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAextinguisherbracket" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAsecuresteelcabinet" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAbunkcabinet2" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="RIBAbunkcabinet1" stattype="MaxAttachableCount" value="1" />
+      
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAbunkcabinet" stattype="MaxAttachableCount" value="5" />
+      
+	  </Abilities>
     </AbilityGroupEffect>
   </Talent>
   
