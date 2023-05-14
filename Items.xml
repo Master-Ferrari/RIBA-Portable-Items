@@ -14,7 +14,7 @@
 	</GetExistingElement>
 		
     <Body width="187" height="368" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="25.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="25.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
       <RequiredItem items="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
 	  <StatusEffect target="This" type="Always">
@@ -24,7 +24,7 @@
 	  <StatusEffect target="This" type="OnUse">
         <LuaHook name="RIBA.OnUse" />
       </StatusEffect>
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="25" />
       <RequiredItem identifier="steel" amount="8"/>
@@ -49,14 +49,14 @@
 	</GetExistingElement>
 		
     <Body width="212" height="139" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="15.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="15.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
       <RequiredItem items="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
 	  <StatusEffect target="This" type="Always">
         <Conditional attached="false" targetitemcomponentname="Holdable"/>
         <DropContainedItems/>
       </StatusEffect>
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="25" />
       <RequiredItem identifier="steel" amount="8"/>
@@ -98,10 +98,10 @@
     <LightComponent range="50.0" lightcolor="114,0,6,95" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" />
 	
     <Body width="400" height="200" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="80" />
       <RequiredItem identifier="steel" amount="6"/>
@@ -130,10 +130,10 @@
     <BrokenSprite texture="%ModDir%/portable.png" sourcerect="688,926,128,74" depth="0.8" maxcondition="0" />
 	
     <Body width="128" height="74" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="70" />
       <RequiredItem identifier="steel" amount="6"/>
@@ -179,10 +179,10 @@
       <RequiredItem identifier="plastic" amount="3" />
     </Fabricate>
     <Body width="140" height="145" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Price baseprice="200"   sold="false"/>
 	
   </ImportItem>
@@ -221,9 +221,9 @@
       <Item identifier="phosphorus" />
     </Deconstruct>
     <Body width="57" height="48" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="Any,LeftHand,RightHand" msg="RIBAItemMsgDetachWrench" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="Any,LeftHand,RightHand" msg="RIBAItemMsgDetachWrench" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
-    </Holdable>
+    </Holdable >
 	
     <Price baseprice="200"   sold="false">
     </Price>
@@ -261,10 +261,10 @@
       <RequiredItem identifier="plastic" amount="2" />
     </Fabricate>
     <Body width="146" height="112" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Price baseprice="400"   sold="false"/>
   </ImportItem>
 
@@ -300,10 +300,10 @@
       <RequiredItem identifier="wire" amount="5" />
     </Fabricate>
     <Body width="113" height="176" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Price baseprice="200"   sold="false"/>
 	
   </ImportItem>
@@ -332,10 +332,10 @@
       <RequiredItem identifier="phosphorus" amount="3" />
     </Fabricate>
     <Body width="63" height="89" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="Any, RightHand, LeftHand" msg="ItemMsgDetachWrench" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="Any, RightHand, LeftHand" msg="ItemMsgDetachWrench" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="1" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Price baseprice="75"   sold="false"/>
 	
   </ImportItem>
@@ -361,10 +361,10 @@
       <Item identifier="steel" />
     </Deconstruct>
     <Body width="118" height="160" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Price baseprice="175"   sold="false"/>
   </ImportItem>
 
@@ -390,10 +390,10 @@
       <Item identifier="copper" amount="2" />
     </Deconstruct>
     <Body width="118" height="34" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="Wrench" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.75" setvalue="true" />
-    </Holdable>
+    </Holdable >
 	<Price baseprice="175"   sold="false"/>
   </ImportItem>
 
@@ -405,10 +405,10 @@
     <Sprite texture="%ModDir%/portable.png" depth="0.7" sourcerect="693,154,113,125" origin="0.5,0.5" />
 	
     <Body width="113" height="125" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="20" />
       <RequiredItem identifier="aluminium" amount="3" />
@@ -429,10 +429,10 @@
     <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="727,306,149,360" origin="0.5,0.5" />
 	
     <Body width="113" height="125" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="30" />
       <RequiredItem identifier="steel" amount="8" />
@@ -451,10 +451,10 @@
     <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="876,306,149,360" origin="0.5,0.5" />
 	
     <Body width="113" height="125" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="30" />
       <RequiredItem identifier="steel" amount="6" />
@@ -481,10 +481,10 @@
       <RequiredItem identifier="steel" />
     </Fabricate>
     <Body width="360" height="373" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Deconstruct time="15">
       <Item identifier="RIBAmediumwindowedsteelcabinet" />
       <Item identifier="steel" />
@@ -513,10 +513,10 @@
       <RequiredItem identifier="steel" />
     </Fabricate>
     <Body width="332" height="268" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Deconstruct time="15">
       <Item identifier="RIBAmediumwindowedsteelcabinet" />
       <Item identifier="steel" />
@@ -534,7 +534,7 @@
     <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="826,0,99,256" origin="0.5,0.5" />
 	
     <Body width="99" height="256" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" controlpose="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" controlpose="true">
 	  <!-- <RequiredItem items="divingsuit" type="Contained" /> -->
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
@@ -544,7 +544,7 @@
         <DropContainedItems/>
       </StatusEffect>
 	  
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="60" />
       <RequiredItem identifier="aluminium" />
@@ -579,10 +579,10 @@
       <Item identifier="silicon" />
     </Deconstruct>
     <Body width="204" height="320" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-    </Holdable>
+    </Holdable >
 	<Price baseprice="300"   sold="false"/>
   </ImportItem>
   
@@ -594,7 +594,7 @@
     <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="333,815,209,209" origin="0.5,0.5" />
 	
     <Body width="209" height="209" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
 	  
@@ -603,7 +603,7 @@
         <DropContainedItems/>
       </StatusEffect>
 	  
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredSkill identifier="mechanical" level="35" />
       <RequiredSkill identifier="weapons" level="20" />
@@ -631,7 +631,7 @@
       <Item identifier="steel" amount="3" />
     </Deconstruct>
     <Body width="139" height="300" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
 	  
@@ -640,7 +640,7 @@
         <DropContainedItems/>
       </StatusEffect>
 	  
-    </Holdable>
+    </Holdable >
     <Price baseprice="50"   sold="false"/>
 	
   </ImportItem>
@@ -659,10 +659,10 @@
 	</GetExistingElement>
 	
     <Body width="110" height="144" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="40">
       <RequiredSkill identifier="mechanical" level="70" />
       <RequiredSkill identifier="medical" level="30" />
@@ -684,10 +684,10 @@
 	<Sprite name="Diving Suit Locker" texture="%ModDir%/portable.png" depth="0.84" sourcerect="628,497,99,82" origin="0.5,0.5" />
 	
     <Body width="99" height="82" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="45" />
       <RequiredItem identifier="steel" amount="3" />
@@ -709,10 +709,10 @@
     <DecorativeSprite texture="%ModDir%/portable.png" depth="0.5" sourcerect="67,626,120,30" canflipx="false" origin="0.5,0.5" />
 	
     <Body width="209" height="209" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="10">
       <RequiredSkill identifier="mechanical" level="40" />
       <RequiredSkill identifier="weapons" level="40" />
@@ -732,10 +732,10 @@
     <Sprite texture="%ModDir%/portable.png" depth="0.85" sourcerect="955,821,66,203" canflipx="false" origin="0.5,0.5" />
 	
     <Body width="66" height="203" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredSkill identifier="mechanical" level="40" />
       <RequiredItem identifier="carbon" amount="3" />
@@ -785,7 +785,7 @@
     </DecorativeSprite>
 	
     <Body width="335" height="390" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-100" handle1="-150,0" handle2="-150,0" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-100" handle1="-150,0" handle2="-150,0" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
 	  
@@ -794,7 +794,7 @@
         <DropContainedItems/>
       </StatusEffect>
 	  
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="180">
       <RequiredSkill identifier="mechanical" level="90" />
       <RequiredSkill identifier="electrical" level="60" />
@@ -869,7 +869,7 @@
       <Item identifier="RIBAStatusMonitor" />
     </Deconstruct>
 	<Body width="250" height="320" density="40" />
-	<Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+	<Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
 		<requireditem identifier="Crowbar" type="Equipped" />
 		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
 	
@@ -878,7 +878,7 @@
 			<DropContainedItems/>
 		</StatusEffect>
 	
-	</Holdable>
+	</Holdable >
 	<Price baseprice="1000"   sold="false"></Price>
   </ImportItem>
   
@@ -908,7 +908,7 @@
       <Item identifier="RIBAStatusMonitor" />
     </Deconstruct>
     <Body width="330" height="200" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="300,-60" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="300,-60" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
 	  
@@ -917,11 +917,11 @@
         <DropContainedItems/>
       </StatusEffect>
 	  
-    </Holdable>
+    </Holdable >
     <Price baseprice="1500"   sold="false"/>
   </ImportItem>
 
-  <!-- Сейф сб --> <!-- покупательный -->
+  <!-- Сейф сб -->
   <ImportItem file="../../Content/Items/Containers/containers.xml"  item="securesteelcabinet">
 	<EditAttributes method="replace" identifier="RIBAsecuresteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
@@ -934,13 +934,6 @@
 		</GetExistingElement>
 	</GetExistingElement>
 	
-    <Price baseprice="400">
-      <Price locationtype="outpost" multiplier="1" />
-      <Price locationtype="city" multiplier="0.9" />
-      <Price locationtype="research" multiplier="1.1" />
-      <Price locationtype="military" multiplier="1.1" />
-      <Price locationtype="mine" multiplier="1" />
-    </Price>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="20" />
       <RequiredItem identifier="titanium" amount="4" />
@@ -952,10 +945,11 @@
       <Item identifier="memorycomponent" />
     </Deconstruct>
     <Body width="113" height="125" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
-    </Holdable>
+    </Holdable >
+    <Price baseprice="450"   sold="false"/>
   </ImportItem>
 
   <!-- кроватки -->
@@ -964,10 +958,10 @@
     <sprite texture="%ModDir%/portable5.png" sourcerect="430,146,385,95" depth="0.85" origin="0.5,0.5" />
 	
 	<Body width="385" height="95" density="25" />
-	<Holdable selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20, 15" handle1="30,-30" handle2="30,-30" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+	<Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20, 15" handle1="30,-30" handle2="30,-30" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
 		<requireditem identifier="Crowbar" type="Equipped" />
 		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="30">
       <RequiredSkill identifier="mechanical" level="30" />
       <RequiredItem identifier="organicfiber" amount="8" />
@@ -1003,9 +997,9 @@
 	</ImportElement>
 	
 	<Body width="153" height="269" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetach" PickingTime="5.0" holdpos="100,-60" handle1="0,0" handle2="0,0" aimable="false" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetach" PickingTime="5.0" holdpos="100,-60" handle1="0,0" handle2="0,0" aimable="false" attachable="true" attachedbydefault="true">
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.9" setvalue="true" />
-    </Holdable>
+    </Holdable >
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="10">
       <RequiredSkill identifier="mechanical" level="20" />
@@ -1035,10 +1029,10 @@
     </DecorativeSprite>
 	
     <Body width="374" height="366" density="40" />
-    <Holdable selectkey="Select" pickkey="Use" PickingTime="10.0" attachable="true" slots="RightHand+LeftHand" aimable="true" controlpose="true" holdpos="30,10" handle1="-15,0" handle2="-15,0" aimpos="65,-10" msg="RIBAItemMsgDetachWrench" attachedbydefault="true">
+    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="10.0" attachable="true" slots="RightHand+LeftHand" aimable="true" controlpose="true" holdpos="30,10" handle1="-15,0" handle2="-15,0" aimpos="65,-10" msg="RIBAItemMsgDetachWrench" attachedbydefault="true">
       <requireditem identifier="Wrench" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
-    </Holdable>
+    </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredItem identifier="organicfiber" amount="6" />
       <RequiredItem identifier="steel" />
