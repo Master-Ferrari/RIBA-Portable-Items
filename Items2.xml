@@ -862,7 +862,7 @@
     </Holdable>
     <Deconstruct time="40">
       <Item identifier="organicfiber" amount="6" />
-      <Item identifier="steel" amount="7" />
+      <Item identifier="steel" amount="8" />
     </Deconstruct>
     <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
       <limbposition limb="Head" position="-6,-120" />
@@ -882,11 +882,11 @@
       <Price locationtype="mine" multiplier="1.0"  maxavailable="4" />
     </Price>
 	
-    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="35"> -->
-      <!-- <RequiredSkill identifier="mechanical" level="30" /> -->
-      <!-- <RequiredItem identifier="organicfiber" amount="8" /> -->
-      <!-- <RequiredItem identifier="steel" amount="8"/> -->
-    <!-- </Fabricate> -->
+    <Fabricate suitablefabricators="fabricator" requiredtime="35">
+      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredItem identifier="organicfiber" amount="8" />
+      <RequiredItem identifier="steel" amount="12"/>
+    </Fabricate>
 	
   </Item>
   

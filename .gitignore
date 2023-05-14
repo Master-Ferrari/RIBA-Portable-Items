@@ -3,3 +3,5 @@ Cover.png
 Cover2.png
 Cover3.png
 *.psd
+.vscode/*
+RIBA Portable Items Origin.code-workspace
