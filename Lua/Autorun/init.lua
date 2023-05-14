@@ -55,6 +55,7 @@ local BibaTable = {
 
     ["RIBAcrateshelf2"] = "BIBAcrateshelf_4slots",
     ["RIBABuyablecrateshelf"] = "BIBAcrateshelf_4slots",
+    ["RIBABuyablecrateshelf2"] = "BIBAcrateshelf_4slots",
     ["RIBAcrateshelf"] = "BIBAcrateshelf_4slots",
 
     ["RIBAcrateshelf3"] = "BIBAcrateshelf_1slot",
@@ -93,13 +94,12 @@ local BibaTable = {
 
     ["RIBAextinguisherbracket"] = "BIBAextinguisherbracket",
     ["RIBABuyableextinguisherbracket"] = "BIBAextinguisherbracket",
-      
+
     ["RIBAsecuresteelcabinet"] = "BIBAsecuresteelcabinet",
     ["RIBABuyablesecuresteelcabinet"] = "BIBAsecuresteelcabinet",
-
 }
 
-function GetBibaName(name)
+local function GetBibaName(name)
     return BibaTable[name] or nil
 end
 
@@ -115,7 +115,7 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
     local nPs = GetBibaName(instance.item.Name)
     if nPs ~= nil then
 
-        instance.LimitedAttachable = false
+        -- instance.LimitedAttachable = false
 
         local maxBItems = ptable["character"].info.GetSavedStatValue(StatTypes.MaxAttachableCount, nPs)
 
@@ -132,37 +132,35 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
             end
         end
         
-        print("  -  ")
-        print("Current PseudonymItems: " .. CurrentPseudonymItems)
-        print("Max     PseudonymItems: " .. maxBItems)
-        print(" ")
-        print("         Name: " .. instance.item.Name)
-        print("PseudonymName: " .. GetBibaName(instance.item.Name) )
+        print("Current PseudonymItems:    " .. CurrentPseudonymItems)
+        print("Max PseudonymItems:    " .. maxBItems)
+        print("         Name:    " .. instance.item.Name)
+        print("PseudonymName:    " .. GetBibaName(instance.item.Name) )
         print("  -  ")
 
-        local holdableComponent = item.GetComponent(Components.Holdable)
-
-        if CurrentPseudonymItems >= maxBItems  then
-            instance.LimitedAttachable = true
-            if maxBItems == 0 then
-                NextMessage="Книжки читать надо!"
+        local attached = instance.Attached
+        if instance.Attached == false then
+            if CurrentPseudonymItems >= maxBItems  then
+                instance.LimitedAttachable = true
+                if maxBItems == 0 then
+                    NextMessage="Книжки читать надо!"
+                else
+                    NextMessage="Больше ставить нельзя! ("..maxBItems.."/"..maxBItems..")"
+                end
+                NextMessageColor=Color.Red
             else
-                NextMessage="Больше ставить нельзя! ("..maxBItems.."/"..maxBItems..")"
+                instance.LimitedAttachable = false
             end
-            NextMessageColor=Color.Red
-        else
-            instance.LimitedAttachable = false
-        end
 
-        if CurrentPseudonymItems+1 == maxBItems then
-            NextMessage="Это был последний предмет такого типа! Больше ставить нельзя! ("..maxBItems.."/"..maxBItems..")"
-            NextMessageColor=Color.Yellow
-        end
+            if CurrentPseudonymItems+1 == maxBItems then
+                NextMessage="Это был последний предмет такого типа! Больше ставить нельзя! ("..maxBItems.."/"..maxBItems..")"
+                NextMessageColor=Color.Yellow
+            end
 
-        if CurrentPseudonymItems+1 < maxBItems then
-            ptable["character"].AddMessage("("..(CurrentPseudonymItems+1).."/"..maxBItems..")", Color.GreenYellow, true, "ribames1", 3)
+            if CurrentPseudonymItems+1 < maxBItems then
+                ptable["character"].AddMessage("("..(CurrentPseudonymItems+1).."/"..maxBItems..")", Color.GreenYellow, true, "ribames1", 3)
+            end
         end
-    
     end
 end, Hook.HookMethodType.Before)
 
