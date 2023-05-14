@@ -62,18 +62,16 @@ local BibaTable = {
     ["RIBAsuppliescabinet"] = "BIBAsuppliescabinet",
     ["RIBABuyablesuppliescabinet"] = "BIBAsuppliescabinet",
 
-    ["RIBAmediumsteelcabinet"] = "BIBAmediumsteelcabinet", --slim cabinets
+    ["RIBAmediumsteelcabinet"] = "BIBAmediumsteelcabinet",
     ["RIBABuyablemediumsteelcabinet"] = "BIBAmediumsteelcabinet",
     ["RIBAmediumwindowedsteelcabinet"] = "BIBAmediumsteelcabinet",
     ["RIBABuyablemediumwindowedsteelcabinet"] = "BIBAmediumsteelcabinet",
 
-    ["RIBAsteelcabinet"] = "BIBAsteelcabinet", --large cabinets
+    ["RIBAsteelcabinet"] = "BIBAsteelcabinet",
     ["RIBABuyablesteelcabinet"] = "BIBAsteelcabinet",
     ["RIBAbigsteelcabinet"] = "BIBAsteelcabinet",
-    -- ["RIBABuyablebigsteelcabinet"] = "BIBAsteelcabinet",
     ["RIBAmedcabinet"] = "BIBAsteelcabinet",
     ["RIBABuyablemedcabinet"] = "BIBAsteelcabinet",
-    -- Buyable
 
     ["RIBAdivingsuitlocker"] = "BIBAdivingsuitlocker",
     ["RIBABuyabledivingsuitlocker"] = "BIBAdivingsuitlocker",
@@ -95,7 +93,7 @@ local BibaTable = {
 
     ["RIBAextinguisherbracket"] = "BIBAextinguisherbracket",
     ["RIBABuyableextinguisherbracket"] = "BIBAextinguisherbracket",
-    
+      
     ["RIBAsecuresteelcabinet"] = "BIBAsecuresteelcabinet",
     ["RIBABuyablesecuresteelcabinet"] = "BIBAsecuresteelcabinet",
 
@@ -141,6 +139,8 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
         print("         Name: " .. instance.item.Name)
         print("PseudonymName: " .. GetBibaName(instance.item.Name) )
         print("  -  ")
+
+        local holdableComponent = item.GetComponent(Components.Holdable)
 
         if CurrentPseudonymItems >= maxBItems  then
             instance.LimitedAttachable = true
