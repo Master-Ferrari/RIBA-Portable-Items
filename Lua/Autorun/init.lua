@@ -1,6 +1,4 @@
-if not CLIENT then return end
-
-local BibaTable = {
+BibaTable = {
     ["RIBAbunkcabinet1"] = "BIBAbunkcabinet",
     ["RIBAbunkcabinet2"] = "BIBAbunkcabinet",
 
@@ -96,14 +94,12 @@ local BibaTable = {
     ["RIBABuyableextinguisherbracket"] = "BIBAextinguisherbracket",
 
     ["RIBAsecuresteelcabinet"] = "BIBAsecuresteelcabinet",
-    ["RIBABuyablesecuresteelcabinet"] = "BIBAsecuresteelcabinet",
+    ["RIBABuyablesecuresteelcabinet"] = "BIBAsecuresteelcabinet"
 }
 
-local function GetBibaName(name)
-    return BibaTable[name] or nil
-end
+if not CLIENT then return end
 
-
+local Config = dofile(table.pack(...)[1] .. "/Lua/Config.lua")
 
 local NextMessage = ""
 local NextMessageColor = Color.Red
@@ -111,10 +107,15 @@ local NextMessageColor = Color.Red
 
 Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
 -- предупреждалку для всех предметов риба и не риба
-
-    local nPs = GetBibaName(instance.item.Name)
+    print("1")
+    local itemName = instance.Item.Prefab.Identifier.Value
+    print(itemName)
+    local nPs = BibaTable[itemName]
+    print(nPs)
+    -- print("2 ".. itemName)
     if nPs ~= nil then
 
+        print("3")
         -- instance.LimitedAttachable = false
 
         local maxBItems = ptable["character"].info.GetSavedStatValue(StatTypes.MaxAttachableCount, nPs)
@@ -124,7 +125,7 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
             local holdableComponent = i.GetComponent(Components.Holdable)
             if holdableComponent ~= nil and holdableComponent.Attached then
 
-                local iPs = GetBibaName(i.Name)
+                local iPs = GetBibaName(i.Prefab.Identifier.Value)
 
                 if iPs~=nil and iPs==nPs then
                     CurrentPseudonymItems = CurrentPseudonymItems + 1
@@ -134,8 +135,8 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
         
         print("Current PseudonymItems:    " .. CurrentPseudonymItems)
         print("Max PseudonymItems:    " .. maxBItems)
-        print("         Name:    " .. instance.item.Name)
-        print("PseudonymName:    " .. GetBibaName(instance.item.Name) )
+        print("         Name:    " .. itemName)
+        print("PseudonymName:    " .. GetBibaName(itemName) )
         print("  -  ")
 
         local attached = instance.Attached
@@ -170,4 +171,6 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
         GUI.AddMessage(NextMessage, NextMessageColor)
         NextMessage = ""
     end
+    
+    print("4")
     end, Hook.HookMethodType.After)
