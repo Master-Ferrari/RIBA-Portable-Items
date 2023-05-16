@@ -1,118 +1,42 @@
-BibaTable = {
-    ["RIBAbunkcabinet1"] = "BIBAbunkcabinet",
-    ["RIBAbunkcabinet2"] = "BIBAbunkcabinet",
+RIBA = {}
+RIBA.Path = table.pack(...)[1]
+RIBA.Bibs = json.parse(File.Read(RIBA.Path .. "/bibs.json"))
+-- RIBA.Language = GameMain.Client.Language
 
-    ["RIBAControlMonitor"] = "BIBAControlMonitor",
-    ["RIBABuyableControlMonitor"] = "BIBAControlMonitor",
 
-    ["RIBAControlCamera"] = "BIBAControlCamera",
-    ["RIBABuyableControlCamera"] = "BIBAControlCamera",
+RIBA.Language = function ()
+    local lang = tostring(GameSettings.CurrentConfig.Language.Value)
+    if RIBA.Bibs["Text"][lang]~=nil then
+        return lang
+    end
+    return "English"
+end
+RIBA.Text = function (text)
+    return RIBA.Bibs["Text"][RIBA.Language()][text]
+end
+RIBA.Biba = function (item)
+    return RIBA.Bibs["Bibs"][item]
+end
 
-    ["RIBAStatusMonitor"] = "BIBAStatusMonitor",
-    ["RIBABuyableStatusMonitor"] = "BIBAStatusMonitor",
-
-    ["RIBAJunctionBox"] = "BIBAJunctionBox",
-    ["RIBABuyableJunctionBox"] = "BIBAJunctionBox",
-
-    ["RIBALamp"] = "BIBALamp",
-    ["RIBABuyableLamp"] = "BIBALamp",
-
-    ["RIBAbattery"] = "BIBAbattery",
-    ["RIBABuyablebattery"] = "BIBAbattery",
-
-    ["RIBAchargingdock"] = "BIBAchargingdock",
-    ["RIBABuyablechargingdock"] = "BIBAchargingdock",
-
-    ["RIBAbigpump"] = "BIBAbigpump",
-    ["RIBABuyablebigpump"] = "BIBAbigpump",
-
-    ["RIBAsmallpump"] = "BIBAsmallpump",
-    ["RIBABuyablesmallpump"] = "BIBAsmallpump",
-
-    ["RIBAfabricator"] = "BIBAfabricator",
-    ["RIBABuyablefabricator"] = "BIBAfabricator",
-
-    ["RIBAdeconstructor"] = "BIBAdeconstructor",
-    ["RIBABuyabledeconstructor"] = "BIBAdeconstructor",
-
-    ["RIBAmedfabricator"] = "BIBAmedfabricator",
-    ["RIBABuyablemedfabricator"] = "BIBAmedfabricator",
-
-    ["RIBABunk1"] = "BIBAbunk",
-    ["RIBABuyableBunk1"] = "BIBAbunk",
-    ["RIBABuyableBunk2"] = "BIBAbunk",
-    ["RIBABuyableBunk3"] = "BIBAbunk",
-
-    ["RIBAChair1"] = "BIBAChair",
-    ["RIBABuyableChair1"] = "BIBAChair",
-    ["RIBABuyableChair2"] = "BIBAChair",
-    ["RIBABuyableChair3"] = "BIBAChair",
-
-    ["RIBAMedCurtain"] = "BIBAMedCurtain",
-    ["RIBABuyableMedCurtain"] = "BIBAMedCurtain",
-
-    ["RIBAcrateshelf2"] = "BIBAcrateshelf_4slots",
-    ["RIBABuyablecrateshelf"] = "BIBAcrateshelf_4slots",
-    ["RIBABuyablecrateshelf2"] = "BIBAcrateshelf_4slots",
-    ["RIBAcrateshelf"] = "BIBAcrateshelf_4slots",
-
-    ["RIBAcrateshelf3"] = "BIBAcrateshelf_1slot",
-
-    ["RIBAsuppliescabinet"] = "BIBAsuppliescabinet",
-    ["RIBABuyablesuppliescabinet"] = "BIBAsuppliescabinet",
-
-    ["RIBAmediumsteelcabinet"] = "BIBAmediumsteelcabinet",
-    ["RIBABuyablemediumsteelcabinet"] = "BIBAmediumsteelcabinet",
-    ["RIBAmediumwindowedsteelcabinet"] = "BIBAmediumsteelcabinet",
-    ["RIBABuyablemediumwindowedsteelcabinet"] = "BIBAmediumsteelcabinet",
-
-    ["RIBAsteelcabinet"] = "BIBAsteelcabinet",
-    ["RIBABuyablesteelcabinet"] = "BIBAsteelcabinet",
-    ["RIBAbigsteelcabinet"] = "BIBAsteelcabinet",
-    ["RIBAmedcabinet"] = "BIBAsteelcabinet",
-    ["RIBABuyablemedcabinet"] = "BIBAsteelcabinet",
-
-    ["RIBAdivingsuitlocker"] = "BIBAdivingsuitlocker",
-    ["RIBABuyabledivingsuitlocker"] = "BIBAdivingsuitlocker",
-
-    ["RIBArailgunshellrack"] = "BIBArailgunshellrack",
-    ["RIBABuyablerailgunshellrack"] = "BIBArailgunshellrack",
-
-    ["RIBAcoilgunammoshelf"] = "BIBAcoilgunammoshelf",
-    ["RIBABuyablecoilgunammoshelf"] = "BIBAcoilgunammoshelf",
-
-    ["RIBAtoxcabinet"] = "BIBAtoxcabinet",
-    ["RIBABuyabletoxcabinet"] = "BIBAtoxcabinet",
-
-    ["RIBAoxygentankshelf"] = "BIBAoxygentankshelf",
-    ["RIBABuyableoxygentankshelf"] = "BIBAoxygentankshelf",
-
-    ["RIBAweaponholder"] = "BIBAweaponholder",
-    ["RIBABuyableweaponholder"] = "BIBAweaponholder",
-
-    ["RIBAextinguisherbracket"] = "BIBAextinguisherbracket",
-    ["RIBABuyableextinguisherbracket"] = "BIBAextinguisherbracket",
-
-    ["RIBAsecuresteelcabinet"] = "BIBAsecuresteelcabinet",
-    ["RIBABuyablesecuresteelcabinet"] = "BIBAsecuresteelcabinet"
-}
+print(RIBA.Language())
 
 if not CLIENT then return end
 
-local Config = dofile(table.pack(...)[1] .. "/Lua/Config.lua")
 
 local NextMessage = ""
 local NextMessageColor = Color.Red
-
 
 Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
 -- предупреждалку для всех предметов риба и не риба
     print("1")
     local itemName = instance.Item.Prefab.Identifier.Value
     print(itemName)
-    local nPs = BibaTable[itemName]
+    
+    local nPs = RIBA.Biba(itemName)
     print(nPs)
-    -- print("2 ".. itemName)
+    
+    print("2 ".. itemName)
+
     if nPs ~= nil then
 
         print("3")
@@ -125,7 +49,7 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
             local holdableComponent = i.GetComponent(Components.Holdable)
             if holdableComponent ~= nil and holdableComponent.Attached then
 
-                local iPs = GetBibaName(i.Prefab.Identifier.Value)
+                local iPs = RIBA.Biba(i.Prefab.Identifier.Value)
 
                 if iPs~=nil and iPs==nPs then
                     CurrentPseudonymItems = CurrentPseudonymItems + 1
@@ -136,7 +60,7 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
         print("Current PseudonymItems:    " .. CurrentPseudonymItems)
         print("Max PseudonymItems:    " .. maxBItems)
         print("         Name:    " .. itemName)
-        print("PseudonymName:    " .. GetBibaName(itemName) )
+        print("PseudonymName:    " .. RIBA.Biba(itemName) )
         print("  -  ")
 
         local attached = instance.Attached
@@ -144,9 +68,9 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
             if CurrentPseudonymItems >= maxBItems  then
                 instance.LimitedAttachable = true
                 if maxBItems == 0 then
-                    NextMessage="Книжки читать надо!"
+                    NextMessage=RIBA.Text("books")
                 else
-                    NextMessage="Больше ставить нельзя! ("..maxBItems.."/"..maxBItems..")"
+                    NextMessage=RIBA.Text("cantattach").." ("..maxBItems.."/"..maxBItems..")"
                 end
                 NextMessageColor=Color.Red
             else
