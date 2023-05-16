@@ -11,9 +11,9 @@
       "cantattachwarning": "It was the last permissible item of this type! You can't attach it anymore!"
     },
     "Ukrainian":{
-      "books": "Книжки читати треба!",
-      "cantattach": "Більше ставити не можна!",
-      "cantattachwarning": "Це був останній предмет такого типу! Більше ставити не можна!"
+      "books": "Треба читати книги!",
+      "cantattach": "Не можна більше ставити!",
+      "cantattachwarning": "Це останній предмет такого типу! Не можна більше ставити!"
     }
   },
   "Bibs": {

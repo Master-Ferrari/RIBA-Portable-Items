@@ -6,8 +6,8 @@
 	<EditAttributes method="replace" isshootable="true" identifier="RIBAcrateshelf2" impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 
-    <Sprite           texture="%ModDir%/portable4.png" sourcerect="445,649,222,375" depth="0.82" origin="0.5,0.5" />
-    <DecorativeSprite texture="%ModDir%/portable4.png" sourcerect="445,649,222,375" depth="0.79" origin="0.5,0.5" />
+    <Sprite           texture="%ModDir%/Media/portable4.png" sourcerect="445,649,222,375" depth="0.82" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Media/portable4.png" sourcerect="445,649,222,375" depth="0.79" origin="0.5,0.5" />
 	
 	<GetExistingElement element="ItemContainer(0)">
 		<EditAttributes method="replace" capacity="4" itempos="112,-54" iteminterval="0,-91" containedspritedepths="0.8,0.81,0.8,0.81"/>
@@ -41,8 +41,8 @@
 	<EditAttributes method="replace" isshootable="true" identifier="RIBAcrateshelf3" name="RIBAcrateshelf3" impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 
-    <Sprite           texture="%ModDir%/portable3.png" sourcerect="283,428,212,139" depth="0.82" origin="0.5,0.5" />
-    <DecorativeSprite texture="%ModDir%/portable3.png" sourcerect="283,428,212,139" depth="0.79" origin="0.5,0.5" />
+    <Sprite           texture="%ModDir%/Media/portable3.png" sourcerect="283,428,212,139" depth="0.82" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Media/portable3.png" sourcerect="283,428,212,139" depth="0.79" origin="0.5,0.5" />
 	
 	<GetExistingElement element="ItemContainer(0)">
 		<EditAttributes method="replace" capacity="1" itempos="110,-68" iteminterval="0,-91" containedspritedepths="0.8,0.81,0.8,0.81"/>
@@ -78,23 +78,23 @@
 		<PumpInEmitter particle="watersplash" particlespersecond="80" position="0,-23" anglemin="180" anglemax="180" velocitymin="200" velocitymax="600" />
 	</GetExistingElement>
 	
-	<Sprite texture="%ModDir%/portable4.png" depth="0.8" sourcerect="0,4,412,204" origin="0.5,0.5" />
-    <InfectedSprite texture="%ModDir%/portable4.png" sourcerect="416,4,427,222" origin="0.5,0.5" />
-    <DamagedInfectedSprite texture="%ModDir%/portable4.png" sourcerect="416,226,427,225" origin="0.5,0.5" />
-	<BrokenSprite texture="%ModDir%/portable4.png" sourcerect="0,204,412,199" depth="0.8" maxcondition="80" fadein="true" />
-	<BrokenSprite texture="%ModDir%/portable4.png" sourcerect="0,403,412,199" depth="0.8" maxcondition="0" fadein="true" />
-    <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.79" offset="150,50" sourcerect="850,6,41,41" origin="0.5,0.5" rotationspeed="-360">
+	<Sprite texture="%ModDir%/Media/portable4.png" depth="0.8" sourcerect="0,4,412,204" origin="0.5,0.5" />
+    <InfectedSprite texture="%ModDir%/Media/portable4.png" sourcerect="416,4,427,222" origin="0.5,0.5" />
+    <DamagedInfectedSprite texture="%ModDir%/Media/portable4.png" sourcerect="416,226,427,225" origin="0.5,0.5" />
+	<BrokenSprite texture="%ModDir%/Media/portable4.png" sourcerect="0,204,412,199" depth="0.8" maxcondition="80" fadein="true" />
+	<BrokenSprite texture="%ModDir%/Media/portable4.png" sourcerect="0,403,412,199" depth="0.8" maxcondition="0" fadein="true" />
+    <DecorativeSprite texture="%ModDir%/Media/portable4.png"  depth="0.79" offset="150,50" sourcerect="850,6,41,41" origin="0.5,0.5" rotationspeed="-360">
       <AnimationConditional Voltage="gt 0.3" targetitemcomponent="Pump" />
       <AnimationConditional CurrFlow="gt 0.0" targetitemcomponent="Pump" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.78" offset="150,50" sourcerect="907,6,41,41"/>
-    <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.79" offset="108,-29" sourcerect="853,60,68,68" origin="0.5,0.5" rotationspeed="1440">
+    <DecorativeSprite texture="%ModDir%/Media/portable4.png"  depth="0.78" offset="150,50" sourcerect="907,6,41,41"/>
+    <DecorativeSprite texture="%ModDir%/Media/portable4.png"  depth="0.79" offset="108,-29" sourcerect="853,60,68,68" origin="0.5,0.5" rotationspeed="1440">
       <AnimationConditional Voltage="gt 0.3" targetitemcomponent="Pump" />
       <AnimationConditional CurrFlow="gt 0.0" targetitemcomponent="Pump" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/portable4.png"  depth="0.78" offset="108,-29" sourcerect="932,57,79,78"/>
+    <DecorativeSprite texture="%ModDir%/Media/portable4.png"  depth="0.78" offset="108,-29" sourcerect="932,57,79,78"/>
     <LightComponent range="50.0" lightcolor="114,0,6,95" powerconsumption="5" IsOn="true" castshadows="false" allowingameediting="false" />
 	
     <Body width="400" height="200" density="40" />
@@ -123,11 +123,11 @@
 	<EditAttributes method="replace" identifier="RIBAsmallpump" isshootable="true"/>
 	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" depth="0.8" sourcerect="688,778,128,74" origin="0.5,0.5" />
-    <InfectedSprite texture="%ModDir%/portable.png" sourcerect="555,0,216,129" origin="0.5,0.5" />
-    <DamagedInfectedSprite texture="%ModDir%/portable.png" sourcerect="339,0,216,129" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="688,852,128,74" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="688,926,128,74" depth="0.8" maxcondition="0" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.8" sourcerect="688,778,128,74" origin="0.5,0.5" />
+    <InfectedSprite texture="%ModDir%/Media/portable.png" sourcerect="555,0,216,129" origin="0.5,0.5" />
+    <DamagedInfectedSprite texture="%ModDir%/Media/portable.png" sourcerect="339,0,216,129" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="688,852,128,74" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="688,926,128,74" depth="0.8" maxcondition="0" />
 	
     <Body width="128" height="74" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -155,14 +155,14 @@
 	<EditAttributes method="replace" identifier="RIBAControlMonitor" isshootable="true" impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0),Controller(0)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" depth="0.7" sourcerect="460,348,140,145" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.7" sourcerect="460,348,140,145" origin="0.5,0.5" />
     <Controller UserPos="-30.0, -0.0" direction="Right" canbeselected="true" msg="ItemMsgInteractSelect">
       <limbposition limb="LeftHand" position="60,-110" />
       <limbposition limb="RightHand" position="120,-130" />
     </Controller>
 	
     <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" flicker="0.3" allowingameediting="false" scale="1.">
-      <sprite texture="%ModDir%/portable.png" depth="0.59" sourcerect="600,348,122,77" origin="0.47,0.77" alpha="1.0" />
+      <sprite texture="%ModDir%/Media/portable.png" depth="0.59" sourcerect="600,348,122,77" origin="0.47,0.77" alpha="1.0" />
     </LightComponent>
     <Deconstruct time="10">
       <Item identifier="fpgacircuit" />
@@ -190,13 +190,13 @@
   <!-- Камера -->
   <Item name="" identifier="RIBAControlCamera" tags="searchlight" category="Machine" focusonselected="true" offsetonselected="500" linkable="false" Scale="0.5">
     <Upgrade gameversion="0.9.5.0" scale="0.5" />
-    <Sprite texture="%ModDir%/portable.png" depth="0.7" sourcerect="831,823,45,45" origin="0.5,0.5" />
-    <InventoryIcon texture="%ModDir%/portable.png" depth="0.7" sourcerect="601,426,90,45" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.7" sourcerect="831,823,45,45" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Media/portable.png" depth="0.7" sourcerect="601,426,90,45" origin="0.5,0.5" />
     <Turret hudtint="120,70,0,70" rotationlimits="-91,271" canbeselected="false" linkable="false" barrelpos="22,22" reload="10" powerconsumption="10000.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="5" springdampinghighskill="5" rotationspeedlowskill="4.5" rotationspeedhighskill="4.5">
       <LightComponent range="500" castshadows="True" drawbehindsubs="False" ison="True" flicker="0.6" flickerspeed="0.1" pulsefrequency="1.5" pulseamount="0.1" blinkfrequency="0" lightcolor="55,255,150,80" isactive="True" minvoltage="0.5" powerconsumption="5" vulnerabletoemp="True" pickingtime="0" canbepicked="False" allowingameediting="False" msg="" ignorecontinuoustoggle="true">
         <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
       </LightComponent>
-      <BarrelSprite texture="%ModDir%/portable.png" sourcerect="833,667,45,90" depth="0.65" origin="0.44, 0.81" />
+      <BarrelSprite texture="%ModDir%/Media/portable.png" sourcerect="833,667,45,90" depth="0.65" origin="0.44, 0.81" />
     </Turret>
     <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
       <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
@@ -234,13 +234,13 @@
 	<EditAttributes method="replace" identifier="RIBAStatusMonitor"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" sourcerect="542,666,146,112" depth="0.7" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="542,778,146,112" depth="0.7" maxcondition="80" fadein="true" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="688,666,146,112" depth="0.7" maxcondition="0" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" sourcerect="542,666,146,112" depth="0.7" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="542,778,146,112" depth="0.7" maxcondition="80" fadein="true" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="688,666,146,112" depth="0.7" maxcondition="0" origin="0.5,0.5" />
     
 	<GetExistingElement element="LightComponent(0)">
 		<RemoveElements elements="sprite(0)"/>
-		<sprite texture="%ModDir%/portable.png" depth="0.69" sourcerect="542,890,146,112" origin="0.5,0.5" alpha="1.0" />
+		<sprite texture="%ModDir%/Media/portable.png" depth="0.69" sourcerect="542,890,146,112" origin="0.5,0.5" alpha="1.0" />
     </GetExistingElement>
 	
 	
@@ -273,19 +273,19 @@
 	<EditAttributes method="replace" identifier="RIBAJunctionBox"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all)"/>
 
-    <Sprite texture="%ModDir%/portable.png" sourcerect="0,0,113,176" depth="0.8" canflipx="false" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="113,0,113,176" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="226,0я,113,176" depth="0.8" maxcondition="0" />
-    <InfectedSprite texture="%ModDir%/portable.png" sourcerect="0,352,161,239" origin="0.5,0.5" />
-    <DamagedInfectedSprite texture="%ModDir%/portable.png" sourcerect="161,352,161,239" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" sourcerect="0,0,113,176" depth="0.8" canflipx="false" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="113,0,113,176" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="226,0я,113,176" depth="0.8" maxcondition="0" />
+    <InfectedSprite texture="%ModDir%/Media/portable.png" sourcerect="0,352,161,239" origin="0.5,0.5" />
+    <DamagedInfectedSprite texture="%ModDir%/Media/portable.png" sourcerect="161,352,161,239" origin="0.5,0.5" />
 	
 	<GetExistingElement element="LightComponent(0)">
 		<RemoveElements elements="sprite(all)"/>
-		<sprite texture="%ModDir%/portable.png" sourcerect="0,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+		<sprite texture="%ModDir%/Media/portable.png" sourcerect="0,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
 	</GetExistingElement>
 	<GetExistingElement element="LightComponent(1)">
 		<RemoveElements elements="sprite(all)"/>
-		<sprite texture="%ModDir%/portable.png" sourcerect="113,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+		<sprite texture="%ModDir%/Media/portable.png" sourcerect="113,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
 	</GetExistingElement>
 	
     <Deconstruct time="30">
@@ -313,11 +313,11 @@
 	<EditAttributes method="replace" identifier="RIBALamp"  isshootable="true"    impactsoundtag="impact_metal_light"  />
 	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
 
-    <Sprite texture="%ModDir%/portable.png" sourcerect="893,846,62,90" depth="0.8" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" sourcerect="893,846,62,90" depth="0.8" origin="0.5,0.5" />
 	
 	<GetExistingElement element="LightComponent(0)">
 		<RemoveElements elements="LightTexture(0)"/>
-		<sprite texture="%ModDir%/portable.png" sourcerect="893,936,62,90" alpha="1.0" />
+		<sprite texture="%ModDir%/Media/portable.png" sourcerect="893,936,62,90" alpha="1.0" />
 	</GetExistingElement>
 	
     <Deconstruct time="10">
@@ -345,9 +345,9 @@
 	<EditAttributes method="replace" identifier="RIBAbattery"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
 
-    <Sprite texture="%ModDir%/portable.png" sourcerect="339,154,118,160" depth="0.8" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="457,154,118,160" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="575,154,118,160" depth="0.8" maxcondition="0" />
+    <Sprite texture="%ModDir%/Media/portable.png" sourcerect="339,154,118,160" depth="0.8" />
+    <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="457,154,118,160" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="575,154,118,160" depth="0.8" maxcondition="0" />
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
       <RequiredSkill identifier="electrical" level="60" />
@@ -373,9 +373,9 @@
 	<EditAttributes method="replace" identifier="RIBAchargingdock"  isshootable="true"    impactsoundtag="impact_metal_light"  />
 	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
 
-    <Sprite texture="%ModDir%/portable.png" sourcerect="339,314,118,34" depth="0.8" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="457,314,118,34" depth="0.8" maxcondition="40" fadein="true" />
-    <BrokenSprite texture="%ModDir%/portable.png" sourcerect="575,314,118,34" depth="0.8" maxcondition="0" />
+    <Sprite texture="%ModDir%/Media/portable.png" sourcerect="339,314,118,34" depth="0.8" />
+    <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="457,314,118,34" depth="0.8" maxcondition="40" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="575,314,118,34" depth="0.8" maxcondition="0" />
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="electrical" level="60" />
@@ -402,7 +402,7 @@
 	<EditAttributes method="replace" identifier="RIBAsuppliescabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 
-    <Sprite texture="%ModDir%/portable.png" depth="0.7" sourcerect="693,154,113,125" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.7" sourcerect="693,154,113,125" origin="0.5,0.5" />
 	
     <Body width="113" height="125" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -426,7 +426,7 @@
 	<EditAttributes method="replace" identifier="RIBAmediumsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 
-    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="727,306,149,360" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="727,306,149,360" origin="0.5,0.5" />
 	
     <Body width="113" height="125" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -448,7 +448,7 @@
 	<EditAttributes method="replace" identifier="RIBAmediumwindowedsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 
-    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="876,306,149,360" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="876,306,149,360" origin="0.5,0.5" />
 	
     <Body width="113" height="125" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -471,7 +471,7 @@
 	<EditAttributes method="replace" identifier="RIBAsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable3.png" depth="0.84" sourcerect="497,651,360,373" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable3.png" depth="0.84" sourcerect="497,651,360,373" origin="0.5,0.5" />
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="30" />
@@ -499,7 +499,7 @@
 	<EditAttributes method="replace" identifier="RIBAbigsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable3.png" depth="0.84" sourcerect="2,236,268,332" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable3.png" depth="0.84" sourcerect="2,236,268,332" origin="0.5,0.5" />
 	
 	<GetExistingElement element="ItemContainer(0)">
 		<EditAttributes method="replace" capacity="24" />
@@ -531,7 +531,7 @@
 	<EditAttributes method="replace" identifier="RIBAdivingsuitlocker"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="826,0,99,256" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="826,0,99,256" origin="0.5,0.5" />
 	
     <Body width="99" height="256" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" controlpose="true">
@@ -565,7 +565,7 @@
 	<EditAttributes method="replace" identifier="RIBAmedcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="338,495,204,320" canflipx="false" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="338,495,204,320" canflipx="false" />
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="60" />
@@ -591,7 +591,7 @@
 	<EditAttributes method="replace" identifier="RIBArailgunshellrack"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="333,815,209,209" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="333,815,209,209" origin="0.5,0.5" />
 	
     <Body width="209" height="209" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -620,7 +620,7 @@
 	<EditAttributes method="replace" identifier="RIBAcoilgunammoshelf"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="187,724,139,300" canflipx="false" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="187,724,139,300" canflipx="false" origin="0.5,0.5" />
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredSkill identifier="mechanical" level="35" />
@@ -650,7 +650,7 @@
 	<EditAttributes method="replace" identifier="RIBAtoxcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" depth="0.84" sourcerect="892,665,110,144" canflipx="false" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="892,665,110,144" canflipx="false" origin="0.5,0.5" />
 	
 	<GetExistingElement element="ItemContainer(0)">
 		<GetExistingElement element="RequiredItem(0)">
@@ -681,7 +681,7 @@
 	<EditAttributes method="replace" identifier="RIBAoxygentankshelf"  isshootable="true"    impactsoundtag="impact_metal_light"  />
 	<RemoveElements elements="Sprite(0)"/>
 	
-	<Sprite name="Diving Suit Locker" texture="%ModDir%/portable.png" depth="0.84" sourcerect="628,497,99,82" origin="0.5,0.5" />
+	<Sprite name="Diving Suit Locker" texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="628,497,99,82" origin="0.5,0.5" />
 	
     <Body width="99" height="82" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -705,8 +705,8 @@
 	<EditAttributes method="replace" identifier="RIBAweaponholder"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0), DecorativeSprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" depth="0.85" sourcerect="642,579,85,86" canflipx="false" origin="0.5,0.5" />
-    <DecorativeSprite texture="%ModDir%/portable.png" depth="0.5" sourcerect="67,626,120,30" canflipx="false" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.85" sourcerect="642,579,85,86" canflipx="false" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Media/portable.png" depth="0.5" sourcerect="67,626,120,30" canflipx="false" origin="0.5,0.5" />
 	
     <Body width="209" height="209" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -729,7 +729,7 @@
 	<EditAttributes method="replace" identifier="RIBAextinguisherbracket"  isshootable="true"    impactsoundtag="impact_metal_light"  />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" depth="0.85" sourcerect="955,821,66,203" canflipx="false" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.85" sourcerect="955,821,66,203" canflipx="false" origin="0.5,0.5" />
 	
     <Body width="66" height="203" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -751,7 +751,7 @@
 	<EditAttributes method="replace" identifier="RIBAmetalcrate"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable.png" depth="0.54" sourcerect="187,641,146,83" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.54" sourcerect="187,641,146,83" origin="0.5,0.5" />
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredSkill identifier="mechanical" level="25" />
@@ -768,17 +768,17 @@
 	<EditAttributes method="replace" identifier="RIBAfabricator"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0), BrokenSprite(all), DecorativeSprite(all)"/>
 	
-    <Sprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="0,624,336,400" depth="0.75" />
-    <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="336,624,336,400" depth="0.75" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="672,624,336,400" depth="0.75" maxcondition="0" />
-    <DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.754" offset="-103,99" sourcerect="908,301,116,87" />
-    <DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.751" offset="-103,99" sourcerect="825,395,114,83" />
-    <DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.753" offset="-72,129" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
+    <Sprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="0,624,336,400" depth="0.75" />
+    <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="336,624,336,400" depth="0.75" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="672,624,336,400" depth="0.75" maxcondition="0" />
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.754" offset="-103,99" sourcerect="908,301,116,87" />
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.751" offset="-103,99" sourcerect="825,395,114,83" />
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.753" offset="-72,129" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
       <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
       <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.753" offset="-117,71" sourcerect="805,537,54,54" origin="0.5,0.5" rotationspeed="400">
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.753" offset="-117,71" sourcerect="805,537,54,54" origin="0.5,0.5" rotationspeed="400">
       <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
       <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
       <IsActiveConditional Condition="gt 0.0" />
@@ -817,36 +817,36 @@
 	<EditAttributes method="replace" identifier="RIBAdeconstructor"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0),BrokenSprite(all),DecorativeSprite(all)"/>
 	
-	<Sprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,304,256,320" />
-	<BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="272,304,256,320" depth="0.8" maxcondition="80" fadein="true" />
-	<BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="544,304,256,320" depth="0.8" maxcondition="0" />
-	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.84" sourcerect="866,484,156,105" />
-	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.83" offset="-27,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
+	<Sprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,304,256,320" />
+	<BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="272,304,256,320" depth="0.8" maxcondition="80" fadein="true" />
+	<BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="544,304,256,320" depth="0.8" maxcondition="0" />
+	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.84" sourcerect="866,484,156,105" />
+	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.83" offset="-27,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
 		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
 		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
 		<IsActiveConditional Condition="gt 0.0" />
 	</DecorativeSprite>
-	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.82" offset="-29,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-718">
+	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.82" offset="-29,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-718">
 		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
 		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
 		<IsActiveConditional Condition="gt 0.0" />
 	</DecorativeSprite>
-	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.81" offset="-30,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-720">
+	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.81" offset="-30,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-720">
 		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
 		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
 		<IsActiveConditional Condition="gt 0.0" />
 	</DecorativeSprite>
-	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.83" offset="38,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="715">
+	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.83" offset="38,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="715">
 		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
 		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
 		<IsActiveConditional Condition="gt 0.0" />
 	</DecorativeSprite>
-	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.82" offset="40,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="718">
+	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.82" offset="40,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="718">
 		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
 		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
 		<IsActiveConditional Condition="gt 0.0" />
 	</DecorativeSprite>
-	<DecorativeSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.81" offset="41,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed=" 720">
+	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.81" offset="41,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed=" 720">
 		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
 		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
 		<IsActiveConditional Condition="gt 0.0" />
@@ -887,9 +887,9 @@
 	<EditAttributes method="replace" identifier="RIBAmedfabricator"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
 	
-    <Sprite texture="%ModDir%/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,0,336,288" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="336,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/FabricatorsAndDeconstructors.png" sourcerect="672,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="0" />
+    <Sprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,0,336,288" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="336,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="672,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="0" />
 	
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
@@ -926,7 +926,7 @@
 	<EditAttributes method="replace" identifier="RIBAsecuresteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/portable2.png" depth="0.84" sourcerect="5,362,105,160" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Media/portable2.png" depth="0.84" sourcerect="5,362,105,160" origin="0.5,0.5" />
 	
 	<GetExistingElement element="ItemContainer(0)">
 		<GetExistingElement element="RequiredItem(0)">
@@ -955,7 +955,7 @@
   <!-- кроватки -->
   <Item name="RIBABunk1" identifier="RIBABunk1" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
 
-    <sprite texture="%ModDir%/portable5.png" sourcerect="430,146,385,95" depth="0.85" origin="0.5,0.5" />
+    <sprite texture="%ModDir%/Media/portable5.png" sourcerect="430,146,385,95" depth="0.85" origin="0.5,0.5" />
 	
 	<Body width="385" height="95" density="25" />
 	<Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20, 15" handle1="30,-30" handle2="30,-30" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
@@ -990,7 +990,7 @@
   
   <!-- Стульчки -->
   <Item name="RIBAChair1" identifier="RIBAChair1" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
-    <sprite texture="%ModDir%/portable5.png" sourcerect="663,246,153,269" depth="0.85" premultiplyalpha="false" origin="0.5,0.55" />
+    <sprite texture="%ModDir%/Media/portable5.png" sourcerect="663,246,153,269" depth="0.85" premultiplyalpha="false" origin="0.5,0.55" />
 	
 	<ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
       <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
@@ -1019,12 +1019,12 @@
 	<EditAttributes method="replace" identifier="RIBAMedCurtain" name="RIBAMedCurtain" isshootable="true"  impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate2R"/>
 	<RemoveElements elements="Sprite(0),DecorativeSprite(all)"/>
 	
-	<InventoryIcon texture="%ModDir%/portable5.png" sourcerect="0,245,374,363" />
-    <Sprite texture="%ModDir%/portable5.png" sourcerect="0,981,410,18" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
-    <DecorativeSprite texture="%ModDir%/portable5.png" sourcerect="0,245,374,363" depth="0.48" premultiplyalpha="false" origin="0.5,0.035">
+	<InventoryIcon texture="%ModDir%/Media/portable5.png" sourcerect="0,245,374,363" />
+    <Sprite texture="%ModDir%/Media/portable5.png" sourcerect="0,981,410,18" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Media/portable5.png" sourcerect="0,245,374,363" depth="0.48" premultiplyalpha="false" origin="0.5,0.035">
       <Conditional targetitemcomponent="Controller" State="eq true" />
     </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/portable5.png" sourcerect="377,245,115,363" depth="0.48" premultiplyalpha="false" origin="1.5,0.035">
+    <DecorativeSprite texture="%ModDir%/Media/portable5.png" sourcerect="377,245,115,363" depth="0.48" premultiplyalpha="false" origin="1.5,0.035">
       <Conditional targetitemcomponent="Controller" State="ne true" />
     </DecorativeSprite>
 	

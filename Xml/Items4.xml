@@ -3,8 +3,8 @@
 
   <Item name="RIBARecipeBookElectrical" identifier="RIBARecipeBookElectrical" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="1" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
-    <InventoryIcon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
-    <Sprite texture="%ModDir%/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
     <Body width="28" height="36" density="20" />
     <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-910.0" />
@@ -27,8 +27,8 @@
   
   <Item name="RIBARecipeBookMachine" identifier="RIBARecipeBookMachine" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="1" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
-    <InventoryIcon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
-    <Sprite texture="%ModDir%/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
     <Body width="28" height="36" density="20" />
     <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-910.0" />
@@ -51,8 +51,8 @@
   
   <Item name="RIBARecipeBookDecorative" identifier="RIBARecipeBookDecorative" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="1" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
-    <InventoryIcon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
-    <Sprite texture="%ModDir%/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
     <Body width="28" height="36" density="20" />
     <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-910.0" />
@@ -75,8 +75,8 @@
   
   <Item name="RIBARecipeBookSupplies" identifier="RIBARecipeBookSupplies" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="1" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
-    <InventoryIcon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
-    <Sprite texture="%ModDir%/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
     <Body width="28" height="36" density="20" />
     <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-910.0" />

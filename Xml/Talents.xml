@@ -2,7 +2,7 @@
 <Talents>
 
   <Talent identifier="RIBA_RecipeBook_Electrical">
-    <Icon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
+    <Icon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
     <Description tag="talentdescription.unlockrecipe">
       <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
     </Description>
@@ -36,7 +36,7 @@
     </AbilityGroupEffect>
   </Talent>
   <Talent identifier="RIBA_RecipeBook_Machine">
-    <Icon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
+    <Icon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
     <Description tag="talentdescription.unlockrecipe">
       <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
     </Description>
@@ -65,7 +65,7 @@
     </AbilityGroupEffect>
   </Talent>
   <Talent identifier="RIBA_RecipeBook_Decorative">
-    <Icon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
+    <Icon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
     <Description tag="talentdescription.unlockrecipe">
       <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
     </Description>
@@ -90,7 +90,7 @@
     </AbilityGroupEffect>
   </Talent>
   <Talent identifier="RIBA_RecipeBook_Supplies">
-    <Icon texture="%ModDir%/portable3.png" sourcerect="985,969,39,55" />
+    <Icon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
     <Description tag="talentdescription.unlockrecipe">
       <Replace tag="[itemname]" value="entityname.makeshiftshelf" color="gui.orange" />
     </Description>

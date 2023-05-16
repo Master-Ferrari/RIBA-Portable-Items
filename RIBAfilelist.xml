@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <contentpackage name="RIBA Portable Items" modversion="5.0" corepackage="False" steamworkshopid="2382545579" gameversion="1.0.9.0" altnames="RIBA Portable Items">
-  <Text file="%ModDir%/Ukrainian.xml" />
-  <Text file="%ModDir%/Ukrainian2.xml" />
-  <Text file="%ModDir%/Russian.xml" />
-  <Text file="%ModDir%/Russian2.xml" />
-  <Text file="%ModDir%/English.xml" />
-  <Text file="%ModDir%/English2.xml" />
-  <Item file="%ModDir%/Items.xml" />
-  <Item file="%ModDir%/Items2.xml" />
-  <Item file="%ModDir%/Items3.xml" />
-  <Item file="%ModDir%/Items4.xml" />
-  <Talents file="%ModDir%/Talents.xml" />
-  <Other file="%ModDir%/portable.png" />
-  <Other file="%ModDir%/portable2.png" />
-  <Other file="%ModDir%/portable3.png" />
-  <Other file="%ModDir%/portable4.png" />
-  <Other file="%ModDir%/portable5.png" />
-  <Other file="%ModDir%/FabricatorsAndDeconstructors.png" />
+  <Text file="%ModDir%/Localization/Ukrainian.xml" />
+  <Text file="%ModDir%/Localization/Ukrainian2.xml" />
+  <Text file="%ModDir%/Localization/Russian.xml" />
+  <Text file="%ModDir%/Localization/Russian2.xml" />
+  <Text file="%ModDir%/Localization/English.xml" />
+  <Text file="%ModDir%/Localization/English2.xml" />
+  <Item file="%ModDir%/Xml/Items.xml" />
+  <Item file="%ModDir%/Xml/Items2.xml" />
+  <Item file="%ModDir%/Xml/Items3.xml" />
+  <Item file="%ModDir%/Xml/Items4.xml" />
+  <Talents file="%ModDir%/Xml/Talents.xml" />
+  <Other file="%ModDir%/Media/portable.png" />
+  <Other file="%ModDir%/Media/portable2.png" />
+  <Other file="%ModDir%/Media/portable3.png" />
+  <Other file="%ModDir%/Media/portable4.png" />
+  <Other file="%ModDir%/Media/portable5.png" />
+  <Other file="%ModDir%/Media/FabricatorsAndDeconstructors.png" />
   <Other file="%ModDir%/Lua/Autorun/init.lua" />
-  <Other file="%ModDir%/bibs.json" />
+  <Other file="%ModDir%/Lua/data.json" />
 </contentpackage>
