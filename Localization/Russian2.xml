@@ -73,4 +73,5 @@
   <RIBABuyableItemMsgDetachCrowbar>[[use]] Это так просто не выдрать (Лом)</RIBABuyableItemMsgDetachCrowbar>
   <RIBABuyableItemMsgDetachWrench>[[use]] Это так просто не выдрать (Гаечный ключ)</RIBABuyableItemMsgDetachWrench>
   <RIBABuyableFixingtothefloor>Крепление к полу</RIBABuyableFixingtothefloor>
+  <RIBAdeattachedBlockMessage>Без крепления к стене использовать невозможно!</RIBAdeattachedBlockMessage>
 </infotexts>

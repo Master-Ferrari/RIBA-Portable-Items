@@ -772,6 +772,12 @@
 		</StatusEffect>
 	
 	</Holdable>
+	
+	
+	<GetExistingElement element="Deconstructor(0)">
+	  <RequiredItem items="riba_biba" type="Picked" msg="RIBAdeattachedBlockMessage" ignoreineditor="true" />
+	</GetExistingElement>
+	
     <Price baseprice="1500">
       <Price locationtype="outpost" multiplier="1.5"  sold="false" />
       <Price locationtype="city" multiplier="1.3"  minavailable="1"  />
@@ -904,10 +910,6 @@
       <limbposition limb="RightHand" position="244,-120" allowusinglimb="false" />
       <limbposition limb="LeftHand" position="244,-120" allowusinglimb="false" />
 	  <ImportElement file="../../Content/Items/Misc/misc.xml" item="bunk" element="Controller(0)/StatusEffect(0)"/>
-	  
-	  <StatusEffect type="OnContained" target="This" setvalue="true" canbeselected="true" />
-      <StatusEffect type="OnNotContained" target="This" setvalue="true" canbeselected="false" />
-	
     </Controller>
     <Price baseprice="500">
       <Price locationtype="outpost" multiplier="0.4"  maxavailable="4"/>

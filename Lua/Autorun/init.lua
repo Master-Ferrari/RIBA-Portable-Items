@@ -11,26 +11,35 @@ RIBA.Language = function ()
     end
     return "English"
 end
+
 RIBA.Text = function (text)
     return RIBA.Bibs["Text"][RIBA.Language()][text]
 end
+
 RIBA.Biba = function (item)
     return RIBA.Bibs["Bibs"][item]
 end
+
+RIBA.BigMessageNext = {"", Color.Red}
 RIBA.BigMessage = function ()
-    if RIBA.NextMessage ~= "" then
+    if RIBA.BigMessageNext[1] ~= "" then
         GUI.ClearMessages()
-        GUI.AddMessage(RIBA.NextMessage, RIBA.NextMessageColor)
-        RIBA.NextMessage = ""
+        GUI.AddMessage(RIBA.BigMessageNext[1], RIBA.BigMessageNext[2])
+        RIBA.BigMessageNext = {"", Color.Red}
+    end
+end
+
+RIBA.Component = function (item, name)
+    for _, component in ipairs(item.Components) do
+        if component.Name == name then
+            return component
+        end
     end
 end
 
 -- print(RIBA.Language())
 
 if not CLIENT then return end
-
-RIBA.NextMessage = ""
-RIBA.NextMessageColor = Color.Red
 
 Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
 -- предупреждалку для всех предметов риба и не риба
@@ -76,41 +85,68 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
             if CurrentPseudonymItems >= maxBItems  then
                 instance.LimitedAttachable = true
                 if maxBItems == 0 then
-                    RIBA.NextMessage=RIBA.Text("books")
+                    RIBA.BigMessageNext = {RIBA.Text("books"), Color.Red}
                 else
-                    RIBA.NextMessage=RIBA.Text("cantattach").." ("..maxBItems.."/"..maxBItems..")"
+                    RIBA.BigMessageNext = {RIBA.Text("cantattach").." ("..maxBItems.."/"..maxBItems..")", Color.Red}
                 end
-                RIBA.NextMessageColor=Color.Red
             else
                 instance.LimitedAttachable = false
             end
 
             if CurrentPseudonymItems+1 == maxBItems then
-                RIBA.NextMessage=RIBA.Text("cantattachwarning") .." ("..maxBItems.."/"..maxBItems..")"
-                RIBA.NextMessageColor=Color.Yellow
+                RIBA.BigMessageNext = {RIBA.Text("cantattachwarning") .." ("..maxBItems.."/"..maxBItems..")", Color.Yellow}
             end
 
-            if CurrentPseudonymItems+1 <= maxBItems then
-                ptable["character"].AddMessage("("..(CurrentPseudonymItems+1).."/"..maxBItems..")", Color.GreenYellow, true, "ribamessage1", 3)
+            if CurrentPseudonymItems+1 == maxBItems then
+                ptable["character"].AddMessage("("..(CurrentPseudonymItems+1).."/"..maxBItems..")", Color.Yellow, true, "ribamessage1", 3)
+            end
+
+            if CurrentPseudonymItems+1 < maxBItems then
+                ptable["character"].AddMessage("("..(CurrentPseudonymItems+1).."/"..maxBItems..")", Color.Green, true, "ribamessage1", 3)
             end
         end
     end
 end, Hook.HookMethodType.Before)
 
 Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
-    RIBA.BigMessage()
     
-    instance.Item.Controller.canbeselected = true
+    -- instance.Item.Components.canbeselected = true
+    -- print("Use. canbeselected = "..instance.Item.Components.Controller.canbeselected)
     -- print("4")
+
+    
+    RIBA.BigMessage()
 end, Hook.HookMethodType.After)
 
-Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "DeattachFromWall", function(instance, ptable)
-    
-    instance.Item.Controller.canbeselected = false
-    RIBA.BigMessage()
+Hook.Patch("ololo","Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
+    print(ptable["msg"])
+    -- if tostring(ptable["msg"])=="biba_riba" then
 
     
+    local itemName = instance.Item.Prefab.Identifier.Value
+    print(itemName)
+
+    if instance.Name == "Deconstructor" then
+        local attached = RIBA.Component(instance.Item, "Holdable").Attached
+
+        if attached then
+            -- RIBA.Component(instance.Item, "Deconstructor").IsActive = true;
+            ptable.PreventExecution = true
+            return true
+        else
+            RIBA.BigMessageNext = {RIBA.Text("cantusewhendeattached"), Color.Red}
+            -- RIBA.Component(instance.Item, "Deconstructor").IsActive =false;
+            -- RIBA.BigMessageNext = {"Без крепления к стене использовать невозможно!", Color.PaleVioletRed}
+        end
+        -- instance.Item.Components.canbeselected = false
+        -- RIBA.BigMessage()
+        -- print("DeattachFromWall. canbeselected = "..instance.Item.Components.Controller.canbeselected)
+    end
     -- print("4")
-end, Hook.HookMethodType.After)
+end, Hook.HookMethodType.Before)
 
+
+Hook.Patch("ololo","Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
+    -- RIBA.BigMessage()
+end, Hook.HookMethodType.After)
 
