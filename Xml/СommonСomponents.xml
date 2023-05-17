@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+  <Item name="RIBAdummy" identifier="RIBAdummy" >
+    <lulalua>
+		<RequiredItem items="riba_biba" type="Picked" msg="RIBAdeattachedBlockMessage" ignoreineditor="true" RIBA_Costyl="true"/>
+    </lulalua>
+  </Item>
+  
+</Items>

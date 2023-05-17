@@ -3,7 +3,6 @@ RIBA.Path = table.pack(...)[1]
 RIBA.Bibs = json.parse(File.Read(RIBA.Path .. "/lua/data.json"))
 -- RIBA.Language = GameMain.Client.Language
 
-
 RIBA.Language = function ()
     local lang = tostring(GameSettings.CurrentConfig.Language.Value)
     if RIBA.Bibs["Text"][lang]~=nil then
@@ -36,6 +35,25 @@ RIBA.Component = function (item, name)
         end
     end
 end
+
+RIBA.removePrefixAndSuffix = function (input, prefix, suffix)
+    local success, result = pcall(function()
+      local startIdx = string.find(input, prefix) -- Находим индекс начала префикса
+      if startIdx then
+        startIdx = startIdx + string.len(prefix) -- Смещаем начало на конец префикса
+        local endIdx = string.find(input, suffix, startIdx) -- Находим индекс конца суффикса
+        if endIdx then
+          return string.sub(input, startIdx, endIdx - 1) -- Извлекаем подстроку между префиксом и суффиксом
+        end
+      end
+      return nil
+    end)
+    if success then
+      return result
+    else
+      return nil
+    end
+  end
 
 -- print(RIBA.Language())
 
@@ -118,15 +136,42 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
     RIBA.BigMessage()
 end, Hook.HookMethodType.After)
 
+
+
+
+
+
 Hook.Patch("ololo","Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
-    print(ptable["msg"])
+    -- print(ptable["msg"])
     -- if tostring(ptable["msg"])=="biba_riba" then
 
-    
-    local itemName = instance.Item.Prefab.Identifier.Value
-    print(itemName)
+    -- local compName = tostring(instance.originalElement.GetAttribute("RIBA_Costyl"))
+    -- local compName = tostring(instance.originalElement.Name)
+    -- print(compName)
+    -- print(compName)
 
-    if instance.Name == "Deconstructor" then
+    
+    local success, result = pcall(function()
+        local RIPCostyl = tostring(instance.originalElement.GetChildElement("RequiredItem").GetAttribute("RIBA_Costyl"))
+        return RIBA.removePrefixAndSuffix(RIPCostyl, 'RIBA_Costyl="', '"')=="true"
+    end)
+    local RIPCostyl = success and result or false
+
+    -- local RequiredItemElements = instance.Item.Prefab.ConfigElement.GetChildElements("RequiredItem")
+    
+    -- local RIPCostyl = tostring(instance.Item.Prefab.ConfigElement.GetAttribute("RIBA_Costyl"))
+    -- print("1: "..RIPCostyl)
+    -- print("2: "..RIPCostyl)
+
+    if RIPCostyl then --RIP means RequiredItems Parent
+        
+        print(RIPCostyl)
+
+        -- local itemName = instance.Item.Prefab.Identifier.Value
+        -- print(itemName)
+        
+
+        -- if instance.Name == RIPCostyl then
         local attached = RIBA.Component(instance.Item, "Holdable").Attached
 
         if attached then

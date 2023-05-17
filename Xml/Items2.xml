@@ -774,8 +774,9 @@
 	</Holdable>
 	
 	
+	<EditAttributes method="replace" RIBA_Costyl="preventUseRIP:Deconstructor"/>
 	<GetExistingElement element="Deconstructor(0)">
-	  <RequiredItem items="riba_biba" type="Picked" msg="RIBAdeattachedBlockMessage" ignoreineditor="true" />
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
 	</GetExistingElement>
 	
     <Price baseprice="1500">
