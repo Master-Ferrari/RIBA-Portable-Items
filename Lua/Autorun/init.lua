@@ -84,15 +84,12 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
             else
                 instance.LimitedAttachable = false
             end
-
             if CurrentPseudonymItems+1 == maxBItems then
                 RIBA.BigMessageNext = {RIBA.Text("cantattachwarning") .." ("..maxBItems.."/"..maxBItems..")", Color.Yellow}
             end
-
             if CurrentPseudonymItems+1 == maxBItems then
                 ptable["character"].AddMessage("("..(CurrentPseudonymItems+1).."/"..maxBItems..")", Color.Yellow, true, "ribamessage1", 3)
             end
-
             if CurrentPseudonymItems+1 < maxBItems then
                 ptable["character"].AddMessage("("..(CurrentPseudonymItems+1).."/"..maxBItems..")", Color.Green, true, "ribamessage1", 3)
             end
