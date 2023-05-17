@@ -53,27 +53,19 @@ RIBA.removePrefixAndSuffix = function (input, prefix, suffix)
       return nil
     end
   end
-
-
 if not CLIENT then return end
 
 Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
 -- предупреждалку для всех предметов риба и не риба
     local itemName = instance.Item.Prefab.Identifier.Value
-    
     local nPs = RIBA.Biba(itemName)
-
     if nPs ~= nil then
-
         local maxBItems = ptable["character"].info.GetSavedStatValue(StatTypes.MaxAttachableCount, nPs)
-
         local CurrentPseudonymItems = 0
         for _, i in ipairs(Item.ItemList) do
             local holdableComponent = i.GetComponent(Components.Holdable)
             if holdableComponent ~= nil and holdableComponent.Attached then
-
                 local iPs = RIBA.Biba(i.Prefab.Identifier.Value)
-
                 if iPs~=nil and iPs==nPs then
                     CurrentPseudonymItems = CurrentPseudonymItems + 1
                 end
@@ -109,23 +101,18 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
 end, Hook.HookMethodType.Before)
 
 Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
-
     RIBA.BigMessage()
 end, Hook.HookMethodType.After)
 
 Hook.Patch("ololo","Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
-    
     local success, result = pcall(function()
         local RIPCostyl = tostring(instance.originalElement.GetChildElement("RequiredItem").GetAttribute("RIBA_Costyl"))
         return RIBA.removePrefixAndSuffix(RIPCostyl, 'RIBA_Costyl="', '"')=="true"
     end)
     local RIPCostyl = success and result or false
-
     if RIPCostyl then --RIP means RequiredItems Parent
-        
         print(RIPCostyl)
         local attached = RIBA.Component(instance.Item, "Holdable").Attached
-
         if attached then
             ptable.PreventExecution = true
             return true
