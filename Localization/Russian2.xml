@@ -23,7 +23,7 @@
   <entityname.RIBABuyablesuppliescabinet>Хозяйственный шкаф (новый)</entityname.RIBABuyablesuppliescabinet>
   <entitydescription.RIBABuyablesuppliescabinet>Обычно хранит в себе вечно исчезающие предметы</entitydescription.RIBABuyablesuppliescabinet>
   <entityname.RIBABuyablemediumsteelcabinet>Средний стальной шкаф (новый)</entityname.RIBABuyablemediumsteelcabinet>
-  <entitydescription.RIBABuyablemediumsteelcabinet>Крепок как сталь!</entitydescription.RIBABuyablemediumsteelcabinet>
+  <entitydescription.RIBABuyablemediumsteelcabinet>Крепкий как сталь!</entitydescription.RIBABuyablemediumsteelcabinet>
   <entityname.RIBABuyablemediumwindowedsteelcabinet>Средний стальной шкаф с окном (новый)</entityname.RIBABuyablemediumwindowedsteelcabinet>
   <entitydescription.RIBABuyablemediumwindowedsteelcabinet>Окно в Нарнию</entitydescription.RIBABuyablemediumwindowedsteelcabinet>
   <entityname.RIBABuyabledivingsuitlocker>Шкаф для подводного снаряжения (новый)</entityname.RIBABuyabledivingsuitlocker>
@@ -70,8 +70,45 @@
   <entitydescription.RIBAmechanicmetalcrate>Сейф с доступом для капитана и механика</entitydescription.RIBAmechanicmetalcrate>
   <entityname.RIBABuyablesteelcabinet>Большой стальной шкаф (новый)</entityname.RIBABuyablesteelcabinet>
   <entitydescription.RIBABuyablesteelcabinet>Большой как капитанское чсв</entitydescription.RIBABuyablesteelcabinet>
-  <RIBABuyableItemMsgDetachCrowbar>[[use]] Это так просто не выдрать (Лом)</RIBABuyableItemMsgDetachCrowbar>
-  <RIBABuyableItemMsgDetachWrench>[[use]] Это так просто не выдрать (Гаечный ключ)</RIBABuyableItemMsgDetachWrench>
-  <RIBABuyableFixingtothefloor>Крепление к полу</RIBABuyableFixingtothefloor>
-  <RIBAdeattachedBlockMessage>Без крепления к стене использовать невозможно!</RIBAdeattachedBlockMessage>
+  
+  <entityname.RIBABuyableBunk1>RIBABuyableBunk1</entityname.RIBABuyableBunk1>
+  <entitydescription.RIBABuyableBunk1>RIBABuyableBunk1</entitydescription.RIBABuyableBunk1>
+  
+  <entityname.RIBABuyableBunk2>RIBABuyableBunk2</entityname.RIBABuyableBunk2>
+  <entitydescription.RIBABuyableBunk2>RIBABuyableBunk2</entitydescription.RIBABuyableBunk2>
+  
+  <entityname.RIBABuyableBunk3>RIBABuyableBunk3</entityname.RIBABuyableBunk3>
+  <entitydescription.RIBABuyableBunk3>RIBABuyableBunk3</entitydescription.RIBABuyableBunk3>
+  
+  <entityname.RIBAbunkcabinet1>RIBAbunkcabinet1</entityname.RIBAbunkcabinet1>
+  <entitydescription.RIBAbunkcabinet1>RIBAbunkcabinet1</entitydescription.RIBAbunkcabinet1>
+  
+  <entityname.RIBAbunkcabinet2>RIBAbunkcabinet2</entityname.RIBAbunkcabinet2>
+  <entitydescription.RIBAbunkcabinet2>RIBAbunkcabinet2</entitydescription.RIBAbunkcabinet2>
+  
+  <entityname.RIBABuyableChair1>RIBABuyableChair1</entityname.RIBABuyableChair1>
+  <entitydescription.RIBABuyableChair1>RIBABuyableChair1</entitydescription.RIBABuyableChair1>
+  
+  <entityname.RIBABuyableChair2>RIBABuyableChair2</entityname.RIBABuyableChair2>
+  <entitydescription.RIBABuyableChair2>RIBABuyableChair2</entitydescription.RIBABuyableChair2>
+  
+  <entityname.RIBABuyableChair3>RIBABuyableChair3</entityname.RIBABuyableChair3>
+  <entitydescription.RIBABuyableChair3>RIBABuyableChair3</entitydescription.RIBABuyableChair3>
+  
+  <entityname.RIBABuyableMedCurtain>RIBABuyableMedCurtain</entityname.RIBABuyableMedCurtain>
+  <entitydescription.RIBABuyableMedCurtain>RIBABuyableMedCurtain</entitydescription.RIBABuyableMedCurtain>
+  
+  
+  <entityname.RIBARecipeBookElectrical>RIBARecipeBookElectrical</entityname.RIBARecipeBookElectrical>
+  <entitydescription.RIBARecipeBookElectrical>RIBARecipeBookElectrical</entitydescription.RIBARecipeBookElectrical>
+  
+  <entityname.RIBARecipeBookMachine>RIBARecipeBookMachine</entityname.RIBARecipeBookMachine>
+  <entitydescription.RIBARecipeBookMachine>RIBARecipeBookMachine</entitydescription.RIBARecipeBookMachine>
+  
+  <entityname.RIBARecipeBookDecorative>RIBARecipeBookDecorative</entityname.RIBARecipeBookDecorative>
+  <entitydescription.RIBARecipeBookDecorative>RIBARecipeBookDecorative</entitydescription.RIBARecipeBookDecorative>
+  
+  <entityname.RIBARecipeBookSupplies>RIBARecipeBookSupplies</entityname.RIBARecipeBookSupplies>
+  <entitydescription.RIBARecipeBookSupplies>RIBARecipeBookSupplies</entitydescription.RIBARecipeBookSupplies>
+  
 </infotexts>

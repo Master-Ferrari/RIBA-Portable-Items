@@ -25,7 +25,7 @@
   <entityname.RIBAsuppliescabinet>Хозяйственный шкаф DIY</entityname.RIBAsuppliescabinet>
   <entitydescription.RIBAsuppliescabinet>Обычно хранит в себе вечно исчезающие предметы</entitydescription.RIBAsuppliescabinet>
   <entityname.RIBAmediumsteelcabinet>Средний стальной шкаф DIY</entityname.RIBAmediumsteelcabinet>
-  <entitydescription.RIBAmediumsteelcabinet>Крепок как сталь!</entitydescription.RIBAmediumsteelcabinet>
+  <entitydescription.RIBAmediumsteelcabinet>Крепкий как сталь!</entitydescription.RIBAmediumsteelcabinet>
   <entityname.RIBAmediumwindowedsteelcabinet>Средний стальной шкаф с окном DIY</entityname.RIBAmediumwindowedsteelcabinet>
   <entitydescription.RIBAmediumwindowedsteelcabinet>Окно в Нарнию</entitydescription.RIBAmediumwindowedsteelcabinet>
   <entityname.RIBAdivingsuitlocker>Шкаф для подводного снаряжения DIY</entityname.RIBAdivingsuitlocker>
@@ -66,9 +66,22 @@
   <entitydescription.RIBAsteelcabinet>Большой как капитанский оклад</entitydescription.RIBAsteelcabinet>
   <entityname.RIBAbigsteelcabinet>Стальной шкаф DIY</entityname.RIBAbigsteelcabinet>
   <entitydescription.RIBAbigsteelcabinet>ну и шкаф</entitydescription.RIBAbigsteelcabinet>
+  
+  <entityname.RIBABunk1>RIBABunk1</entityname.RIBABunk1>
+  <entitydescription.RIBABunk1>RIBABunk1</entitydescription.RIBABunk1>
+  
+  <entityname.RIBAChair1>RIBAChair1</entityname.RIBAChair1>
+  <entitydescription.RIBAChair1>RIBAChair1</entitydescription.RIBAChair1>
+  
+  <entityname.RIBAMedCurtain>RIBAMedCurtain</entityname.RIBAMedCurtain>
+  <entitydescription.RIBAMedCurtain>RIBAMedCurtain</entitydescription.RIBAMedCurtain>
+  
   <RIBAItemMsgDetachCrowbar>[[use]] Это так просто не выдрать (Лом)</RIBAItemMsgDetachCrowbar>
   <RIBAItemMsgDetachWrench>[[use]] Это так просто не выдрать (Гаечный ключ)</RIBAItemMsgDetachWrench>
   <RIBAFixingtothefloor>Крепление к полу</RIBAFixingtothefloor>
   
   <RIBAItemMsgDetach>[[use]] Это можно взять</RIBAItemMsgDetach>
+  <RIBAdeattachedBlockMessage>Без крепления к стене использовать невозможно!</RIBAdeattachedBlockMessage>
+  
+  
 </infotexts>
