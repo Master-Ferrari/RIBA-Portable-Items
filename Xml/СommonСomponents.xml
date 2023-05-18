@@ -3,7 +3,14 @@
 
   <Item name="RIBAdummy" identifier="RIBAdummy" >
     <lulalua>
+	
 		<RequiredItem items="riba_biba" type="Picked" msg="RIBAdeattachedBlockMessage" ignoreineditor="true" RIBA_Costyl="true"/>
+		
+	    <StatusEffect target="This" type="Always">
+          <Conditional attached="false" targetitemcomponentname="Holdable"/>
+          <DropContainedItems/>
+        </StatusEffect>
+		
     </lulalua>
   </Item>
   
