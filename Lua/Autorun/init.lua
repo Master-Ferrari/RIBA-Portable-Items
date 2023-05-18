@@ -53,6 +53,40 @@ RIBA.removePrefixAndSuffix = function (input, prefix, suffix)
       return nil
     end
   end
+
+  Hook.Patch("ololo","Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
+
+
+    local success, result = pcall(function()
+        local isCostylElementString = tostring(instance.originalElement.GetChildElement("RequiredItem").GetAttribute("RIBA_Costyl"))
+        return RIBA.removePrefixAndSuffix(isCostylElementString, '"', '"')=="true"
+    end)
+    local isCostylElement = success and result or false --isНАШ
+
+    if isCostylElement then
+        local attached = RIBA.Component(instance.Item, "Holdable").Attached
+        print(tostring(instance.originalElement.Name))
+        if tostring(instance.originalElement.Name) == "ItemContainer" then
+            if not attached then
+                -- print("container not attached")
+                ptable.PreventExecution = true
+                return false
+            else
+                -- print("container attached")
+                ptable.PreventExecution = true
+                return true
+            end
+        else
+            if attached then
+                ptable.PreventExecution = true
+                return true
+            end
+        end
+    end
+
+end, Hook.HookMethodType.Before)
+
+
 if not CLIENT then return end
 
 Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
@@ -101,20 +135,3 @@ Hook.Patch("ololo","Barotrauma.Items.Components.Holdable", "Use", function(insta
     RIBA.BigMessage()
 end, Hook.HookMethodType.After)
 
-Hook.Patch("ololo","Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
-    local success, result = pcall(function()
-        local RIPCostyl = tostring(instance.originalElement.GetChildElement("RequiredItem").GetAttribute("RIBA_Costyl"))
-        return RIBA.removePrefixAndSuffix(RIPCostyl, 'RIBA_Costyl="', '"')=="true"
-    end)
-    local RIPCostyl = success and result or false
-    if RIPCostyl then --RIP means RequiredItems Parent
-        print(RIPCostyl)
-        local attached = RIBA.Component(instance.Item, "Holdable").Attached
-        if attached then
-            ptable.PreventExecution = true
-            return true
-        else
-            RIBA.BigMessageNext = {RIBA.Text("cantusewhendeattached"), Color.Red}
-        end
-    end
-end, Hook.HookMethodType.Before)
