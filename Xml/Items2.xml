@@ -10,8 +10,7 @@
     <ItemContainer capacity="4" canbeselected="true" hideitems="false" itempos="173,-54" iteminterval="0,-91" msg="ItemMsgInteractSelect" containedspritedepths="0.8,0.81,0.8,0.81">
       <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
       <Containable items="crate" />
-      <!-- <StatusEffect type="OnContained" target="This" itempos="0,130" /> -->
-      <!-- <StatusEffect type="Always" target="This" itempos="112,-44" /> -->
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
     </ItemContainer>
 	
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" aimpos="110,-15"  controlpose="true" holdpos="130,-45" attachable="true" aimable="false" PickingTime="40.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" handle1="-160,50" handle2="-160,20" >
@@ -19,10 +18,7 @@
 	  
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
       
-	  <StatusEffect target="This" type="Always">
-        <Conditional attached="false" targetitemcomponentname="Holdable"/>
-        <DropContainedItems/>
-      </StatusEffect>
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
 	  
     </Holdable>
 	
@@ -315,6 +311,9 @@
 	<EditAttributes method="replace" identifier="RIBABuyablechargingdock"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
 	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
 
+
+
+
     <Sprite texture="%ModDir%/Media/portable2.png" sourcerect="339,314,118,34" depth="0.8" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="457,314,118,34" depth="0.8" maxcondition="40" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="575,314,118,34" depth="0.8" maxcondition="0" />
@@ -365,14 +364,18 @@
   
   <!-- Шкаф  -->
   <ImportItem file="../../Content/Items/Containers/containers.xml"  item="mediumsteelcabinet">
-	<EditAttributes method="replace" identifier="RIBABuyablemediumsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<EditAttributes method="replace" identifier="RIBABuyablemediumsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" RIBA_Costyl="true"/>
 	<RemoveElements elements="Sprite(0)"/>
 
+	<GetExistingElement element="ItemContainer(0)">
+	  <RequiredItem item="asda" Optional="true" type="Contained" matchonempty="true" ignoreineditor="true" RIBA_Costyl="true"/>
+	</GetExistingElement>
+	
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.84" sourcerect="727,306,149,360" origin="0.5,0.5" />
 	
     <Body width="113" height="125" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
-      <requireditem identifier="wrenchitem" type="Equipped" />
+      <RequiredItem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
     </Holdable>
     <Deconstruct time="30">
@@ -390,6 +393,10 @@
 	<EditAttributes method="replace" identifier="RIBABuyablemediumwindowedsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
 	<RemoveElements elements="Sprite(0)"/>
 
+	<GetExistingElement element="ItemContainer(0)">
+	  <requireditem item="adsda" Optional="true" type="Contained" matchonempty="false" ignoreineditor="true" RIBA_Costyl="true"/>
+	</GetExistingElement>
+	
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.84" sourcerect="876,306,149,360" origin="0.5,0.5" />
 	
     <Body width="113" height="125" density="40" />
@@ -774,7 +781,6 @@
 	</Holdable>
 	
 	
-	<EditAttributes method="replace" RIBA_Costyl="preventUseRIP:Deconstructor"/>
 	<GetExistingElement element="Deconstructor(0)">
 	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
 	</GetExistingElement>
@@ -889,9 +895,13 @@
   </ImportItem>
   
   <!-- Кроватки -->
-  <Item name="RIBABuyableBunk1" identifier="RIBABuyableBunk1" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
+  <Item name="" identifier="RIBABuyableBunk1" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="0,0,430,219" depth="0.85" origin="0.5,0.5" />
     <DecorativeSprite texture="%ModDir%/Media/portable3.png" sourcerect="0,0,320,160" depth="0.86" origin="0.5,0.5" offset="-10,0" />
+	
+	<GetExistingElement element="Controller(0)">
+	  <requireditem item="adsda" Optional="true" type="Contained" matchonempty="false" ignoreineditor="true" RIBA_Costyl="true"/>
+	</GetExistingElement>
 	
 	<Body width="430" height="219" density="25" /> <!-- крафтельный -->
 	<Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20,60" handle1="35,-60" handle2="35,-60" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
@@ -928,7 +938,7 @@
 	
   </Item>
   
-  <Item name="RIBABuyableBunk2" identifier="RIBABuyableBunk2" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
+  <Item name="" identifier="RIBABuyableBunk2" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
 
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="430,0,385,146" depth="0.85" origin="0.5,0.5" />
 	
@@ -964,7 +974,7 @@
     </Price>
   </Item>
   
-  <Item name="RIBABuyableBunk3" identifier="RIBABuyableBunk3" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
+  <Item name="" identifier="RIBABuyableBunk3" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
 
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="489,765,408,186" depth="0.85" origin="0.5,0.5" />
 	
@@ -1002,7 +1012,7 @@
   </Item>
   
   <!-- прикроватный ящичек --> <!-- крафтельный -->
-  <Item name="RIBAbunkcabinet1" identifier="RIBAbunkcabinet1" isshootable="true" tags="container,suppliescontainer" linkable="true" pickdistance="150" scale="0.5">
+  <Item name="" identifier="RIBAbunkcabinet1" isshootable="true" tags="container,suppliescontainer" linkable="true" pickdistance="150" scale="0.5">
     <Sprite texture="%ModDir%/Media/portable5.png" depth="0.7" sourcerect="819,3,92,142" origin="0.5,0.5" />
 	
     <ItemContainer capacity="2" slotsperrow="2" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
@@ -1060,7 +1070,7 @@
     </Price>
   </Item>
   
-  <Item name="RIBAbunkcabinet2" identifier="RIBAbunkcabinet2" isshootable="true" tags="container,suppliescontainer" linkable="true" pickdistance="150" scale="0.5">
+  <Item name="" identifier="RIBAbunkcabinet2" isshootable="true" tags="container,suppliescontainer" linkable="true" pickdistance="150" scale="0.5">
     <Sprite texture="%ModDir%/Media/portable5.png" depth="0.7" sourcerect="926,3,92,142" origin="0.5,0.5" />
     <ItemContainer capacity="6" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
       <GuiFrame relativesize="0.18,0.25" anchor="Center" style="ItemUI" />
@@ -1091,7 +1101,7 @@
   </Item>
   
   <!-- стульчики -->
-  <Item name="RIBABuyableChair1" identifier="RIBABuyableChair1" width="169" height="269" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
+  <Item name="" identifier="RIBABuyableChair1" width="169" height="269" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="494,246,169,269" depth="0.85" premultiplyalpha="false" origin="0.5,0.6" />
 	
 	<ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
@@ -1116,7 +1126,7 @@
     </Price>
   </Item>
   
-  <Item name="RIBABuyableChair2" identifier="RIBABuyableChair2" width="146" height="242" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
+  <Item name="" identifier="RIBABuyableChair2" width="146" height="242" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="500,521,146,242" depth="0.85" premultiplyalpha="false" origin="0.5,0.6" />
 	
 	<ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
@@ -1141,7 +1151,7 @@
     </Price>
   </Item>
   
-  <Item name="RIBABuyableChair3" identifier="RIBABuyableChair3" width="146" height="242" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
+  <Item name="" identifier="RIBABuyableChair3" width="146" height="242" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="646,521,146,242" depth="0.85" premultiplyalpha="false" origin="0.5,0.5" />
 	
 	<ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
@@ -1169,7 +1179,7 @@
   
   <!-- занавеска -->
   <ImportItem file="../../Content/Map/Outposts/OutpostItems.xml"  item="opdeco_medcurtain">
-	<EditAttributes method="replace" identifier="RIBABuyableMedCurtain" name="RIBABuyableMedCurtain" isshootable="true"  impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate2R"/>
+	<EditAttributes method="replace" identifier="RIBABuyableMedCurtain" name="" isshootable="true"  impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate2R"/>
 	<RemoveElements elements="Sprite(0),DecorativeSprite(all)"/>
 	
 	<InventoryIcon texture="%ModDir%/Media/portable5.png" sourcerect="0,611,374,366" />
