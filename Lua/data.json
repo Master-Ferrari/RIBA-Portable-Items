@@ -3,17 +3,23 @@
     "Russian":{
       "books": "Книжки читать надо!",
       "cantattach": "Больше ставить нельзя!",
-      "cantattachwarning": "Это был последний предмет такого типа! Больше ставить нельзя!"
+      "cantattachwarning": "Это был последний предмет такого типа! Больше ставить нельзя!",
+      "blocked": "Нет доступа!",
+      "deattachedBlockMessage": "Без крепления к стене использовать невозможно!"
     },
     "English":{
       "books": "Books must be read!",
       "cantattach": "You can't attach it anymore!",
-      "cantattachwarning": "It was the last permissible item of this type! You can't attach it anymore!"
+      "cantattachwarning": "It was the last permissible item of this type! You can't attach it anymore!",
+      "blocked": "Нет доступа!",
+      "deattachedBlockMessage": "Без крепления к стене использовать невозможно!"
     },
     "Ukrainian":{
       "books": "Треба читати книги!",
       "cantattach": "Не можна більше ставити!",
-      "cantattachwarning": "Це останній предмет такого типу! Не можна більше ставити!"
+      "cantattachwarning": "Це останній предмет такого типу! Не можна більше ставити!",
+      "blocked": "Нет доступа!",
+      "deattachedBlockMessage": "Без крепления к стене использовать невозможно!"
     }
   },
   "Bibs": {

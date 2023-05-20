@@ -11,19 +11,17 @@
 	
 	<GetExistingElement element="ItemContainer(0)">
 		<EditAttributes method="replace" capacity="4" itempos="112,-54" iteminterval="0,-91" containedspritedepths="0.8,0.81,0.8,0.81"/>
+     	<ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
 	</GetExistingElement>
 		
     <Body width="187" height="368" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="25.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
       <RequiredItem items="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
-	  <StatusEffect target="This" type="Always">
-        <Conditional attached="false" targetitemcomponentname="Holdable"/>
-        <DropContainedItems/>
-      </StatusEffect>
 	  <StatusEffect target="This" type="OnUse">
         <LuaHook name="RIBA.OnUse" />
       </StatusEffect>
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="25" />
@@ -46,16 +44,14 @@
 	
 	<GetExistingElement element="ItemContainer(0)">
 		<EditAttributes method="replace" capacity="1" itempos="110,-68" iteminterval="0,-91" containedspritedepths="0.8,0.81,0.8,0.81"/>
+     	<ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
 	</GetExistingElement>
 		
     <Body width="212" height="139" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" aimpos="65,-10" holdpos="0,0" attachable="true" aimable="false" PickingTime="15.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench">
       <RequiredItem items="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
-	  <StatusEffect target="This" type="Always">
-        <Conditional attached="false" targetitemcomponentname="Holdable"/>
-        <DropContainedItems/>
-      </StatusEffect>
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="25" />
@@ -348,6 +344,9 @@
     <Sprite texture="%ModDir%/Media/portable.png" sourcerect="339,154,118,160" depth="0.8" />
     <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="457,154,118,160" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="575,154,118,160" depth="0.8" maxcondition="0" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
       <RequiredSkill identifier="electrical" level="60" />
@@ -364,6 +363,7 @@
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Price baseprice="175"   sold="false"/>
   </ImportItem>
@@ -376,6 +376,9 @@
     <Sprite texture="%ModDir%/Media/portable.png" sourcerect="339,314,118,34" depth="0.8" />
     <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="457,314,118,34" depth="0.8" maxcondition="40" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="575,314,118,34" depth="0.8" maxcondition="0" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="electrical" level="60" />
@@ -393,6 +396,7 @@
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="Wrench" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.75" setvalue="true" />
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
 	<Price baseprice="175"   sold="false"/>
   </ImportItem>
@@ -403,6 +407,9 @@
 	<RemoveElements elements="Sprite(0)"/>
 
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.7" sourcerect="693,154,113,125" origin="0.5,0.5" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Body width="113" height="125" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -427,6 +434,9 @@
 	<RemoveElements elements="Sprite(0)"/>
 
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="727,306,149,360" origin="0.5,0.5" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Body width="113" height="125" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -449,6 +459,9 @@
 	<RemoveElements elements="Sprite(0)"/>
 
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="876,306,149,360" origin="0.5,0.5" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Body width="113" height="125" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -472,6 +485,9 @@
 	<RemoveElements elements="Sprite(0)"/>
 	
     <Sprite texture="%ModDir%/Media/portable3.png" depth="0.84" sourcerect="497,651,360,373" origin="0.5,0.5" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="30" />
@@ -503,6 +519,7 @@
 	
 	<GetExistingElement element="ItemContainer(0)">
 		<EditAttributes method="replace" capacity="24" />
+	    <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
 	</GetExistingElement>
 
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
@@ -532,18 +549,16 @@
 	<RemoveElements elements="Sprite(0)"/>
 	
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="826,0,99,256" origin="0.5,0.5" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Body width="99" height="256" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" controlpose="true">
 	  <!-- <RequiredItem items="divingsuit" type="Contained" /> -->
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
-	  
-	  <StatusEffect target="This" type="Always">
-        <Conditional attached="false" targetitemcomponentname="Holdable"/>
-        <DropContainedItems/>
-      </StatusEffect>
-	  
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="60" />
@@ -566,6 +581,9 @@
 	<RemoveElements elements="Sprite(0)"/>
 	
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="338,495,204,320" canflipx="false" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="60" />
@@ -592,17 +610,15 @@
 	<RemoveElements elements="Sprite(0)"/>
 	
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="333,815,209,209" origin="0.5,0.5" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Body width="209" height="209" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-	  
-	  <StatusEffect target="This" type="Always">
-        <Conditional attached="false" targetitemcomponentname="Holdable"/>
-        <DropContainedItems/>
-      </StatusEffect>
-	  
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredSkill identifier="mechanical" level="35" />
@@ -621,6 +637,9 @@
 	<RemoveElements elements="Sprite(0)"/>
 	
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="187,724,139,300" canflipx="false" origin="0.5,0.5" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredSkill identifier="mechanical" level="35" />
@@ -634,12 +653,7 @@
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-	  
-	  <StatusEffect target="This" type="Always">
-        <Conditional attached="false" targetitemcomponentname="Holdable"/>
-        <DropContainedItems/>
-      </StatusEffect>
-	  
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Price baseprice="50"   sold="false"/>
 	
@@ -650,12 +664,12 @@
 	<EditAttributes method="replace" identifier="RIBAtoxcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
 	<RemoveElements elements="Sprite(0)"/>
 	
-    <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="892,665,110,144" canflipx="false" origin="0.5,0.5" />
-	
+    <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="892,665,110,144" canflipx="false" origin="0.5,0.5" />	
 	<GetExistingElement element="ItemContainer(0)">
-		<GetExistingElement element="RequiredItem(0)">
-			<EditAttributes method="replace" items="id_medic,id_captain"/>
-		</GetExistingElement>
+		<RemoveElements elements="RequiredItem(0)"/>
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)">
+		<EditAttributes method="replace" RIBA_RequiredItems="id_medic,idcard:captain" />
+	  </ImportElement>
 	</GetExistingElement>
 	
     <Body width="110" height="144" density="40" />
@@ -682,11 +696,15 @@
 	<RemoveElements elements="Sprite(0)"/>
 	
 	<Sprite name="Diving Suit Locker" texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="628,497,99,82" origin="0.5,0.5" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Body width="99" height="82" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="mechanical" level="45" />
@@ -707,11 +725,15 @@
 	
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.85" sourcerect="642,579,85,86" canflipx="false" origin="0.5,0.5" />
     <DecorativeSprite texture="%ModDir%/Media/portable.png" depth="0.5" sourcerect="67,626,120,30" canflipx="false" origin="0.5,0.5" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Body width="209" height="209" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="10">
       <RequiredSkill identifier="mechanical" level="40" />
@@ -730,11 +752,15 @@
 	<RemoveElements elements="Sprite(0)"/>
 	
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.85" sourcerect="955,821,66,203" canflipx="false" origin="0.5,0.5" />
+	<GetExistingElement element="ItemContainer(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Body width="66" height="203" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredSkill identifier="mechanical" level="40" />
@@ -783,17 +809,15 @@
       <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
+	<GetExistingElement element="Fabricator(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
     <Body width="335" height="390" density="40" />
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-100" handle1="-150,0" handle2="-150,0" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-	  
-	  <StatusEffect target="This" type="Always">
-        <Conditional attached="false" targetitemcomponentname="Holdable"/>
-        <DropContainedItems/>
-      </StatusEffect>
-	  
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Fabricate suitablefabricators="fabricator" requiredtime="180">
       <RequiredSkill identifier="mechanical" level="90" />
@@ -851,6 +875,9 @@
 		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
 		<IsActiveConditional Condition="gt 0.0" />
 	</DecorativeSprite>
+	<GetExistingElement element="Deconstructor(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
 	<Fabricate suitablefabricators="fabricator" requiredtime="60">
 		<RequiredSkill identifier="mechanical" level="90" />
@@ -872,12 +899,7 @@
 	<Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
 		<requireditem identifier="Crowbar" type="Equipped" />
 		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-	
-		<StatusEffect target="This" type="Always">
-			<Conditional attached="false" targetitemcomponentname="Holdable"/>
-			<DropContainedItems/>
-		</StatusEffect>
-	
+	    <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
 	</Holdable >
 	<Price baseprice="1000"   sold="false"></Price>
   </ImportItem>
@@ -890,6 +912,9 @@
     <Sprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,0,336,288" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="336,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="672,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="0" />
+	<GetExistingElement element="Fabricator(0)">
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+	</GetExistingElement>
 	
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
@@ -911,12 +936,7 @@
     <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="300,-60" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-	  
-	  <StatusEffect target="This" type="Always">
-        <Conditional attached="false" targetitemcomponentname="Holdable"/>
-        <DropContainedItems/>
-      </StatusEffect>
-	  
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable >
     <Price baseprice="1500"   sold="false"/>
   </ImportItem>
@@ -929,9 +949,10 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.84" sourcerect="5,362,105,160" origin="0.5,0.5" />
 	
 	<GetExistingElement element="ItemContainer(0)">
-		<GetExistingElement element="RequiredItem(0)">
-			<EditAttributes method="replace" items="id_security,id_captain"/>
-		</GetExistingElement>
+		<RemoveElements elements="RequiredItem(0)"/>
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)">
+		<EditAttributes method="replace" RIBA_RequiredItems="idcard:security,idcard:captain" />
+	  </ImportElement>
 	</GetExistingElement>
 	
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
@@ -982,7 +1003,7 @@
       <limbposition limb="LeftHand" position="234,20" allowusinglimb="false" />
 	  
 	  <ImportElement file="../../Content/Items/Misc/misc.xml" item="bunk" element="Controller(0)/StatusEffect(0)"/>
-      <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
     </Controller>
 	
     <Price baseprice="400"   sold="false"/>
@@ -993,7 +1014,7 @@
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="663,246,153,269" depth="0.85" premultiplyalpha="false" origin="0.5,0.55" />
 	
 	<ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
-      <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
 	</ImportElement>
 	
 	<Body width="153" height="269" density="40" />
