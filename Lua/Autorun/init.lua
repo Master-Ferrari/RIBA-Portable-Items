@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field, redundant-parameter, return-type-mismatch
 RIBA = {}
 RIBA.Path = table.pack(...)[1]
 RIBA.Bibs = json.parse(File.Read(RIBA.Path .. "/lua/data.json"))
@@ -18,46 +19,64 @@ RIBA.Biba = function(item)
     return RIBA.Bibs["Bibs"][item]
 end
 
-local timers = {}                       -- таблица для хранения таймеров
+local timers = {}                   
 RIBA.isTimerExpired = function(name)
-    local currentTime = os.time()       -- получаем текущее время
-    local expirationTime = timers[name] -- получаем время окончания таймера
-    if expirationTime and currentTime >= expirationTime then
-        return true  -- таймер истек
-    else
-        return false -- таймер не истек или не существует
-    end
+    print(math.floor(os.time()))
+    return (not timers[name]) or (math.floor(os.time()) >= timers[name]) --(если таймер не установлен) или (сейчас больше чем время срок)
 end
 RIBA.setTimer = function(name, duration)
-    timers[name] = os.time() + duration -- сохраняем время окончания таймера
-    print("os.time()")
+    timers[name] = math.floor(os.time()) + duration -- сохраняем время окончания таймера
 end
 
-RIBA.BigMessage = {}
-RIBA.BigMessage.Next = { "", Color.Red }
-RIBA.BigMessage.Last = { "", Color.Red }
-RIBA.BigMessage.SetNext = function(msg, clr, timer)
-    print("SetNext1")
-    if RIBA.isTimerExpired("BigMessage") then
-        print("SetNext2")
-        RIBA.setTimer("BigMessage", timer)
+RIBA.BigMessage = {
+    maxQueueSize = 3, -- Максимальный размер очереди
+    coolDownDuration = 2,
+    similarNameCooldownDuration = 30,
+    queue = {},              -- Очередь кулдаунов
+    similarNameCooldowns = {},  -- Таблица разноимённых последних пройденных таймеров и времени их инициализации +30
+    actualCoolDown = 0
+}
+
+function RIBA.BigMessage.SetNext(msg, clr, name)
+    if not CLIENT then return end
+    local currentTime = os.time()
+    local nextTime = currentTime + RIBA.BigMessage.coolDownDuration
+        -- Уходим, если доебались уже в край (в maxQueueSize)
+    local queueSize = #RIBA.BigMessage.queue
+    if queueSize >= RIBA.BigMessage.maxQueueSize then --есть ли места в очереди
+        return
     end
-    RIBA.BigMessage.Next = { msg, clr }
-end
-RIBA.BigMessage.Print = function()
-    local success, result = pcall(function()
-        local msg, clr = RIBA.BigMessage.Next[1], RIBA.BigMessage.Next[2]
-        if RIBA.isTimerExpired("BigMessage") then
-            print("isTimerExpired1")
-            if msg ~= RIBA.BigMessage.Last[1] or clr ~= RIBA.BigMessage.Last[2] then
-                print("isTimerExpired2")
-                RIBA.BigMessage.Last = {msg, clr}
-                GUI.ClearMessages()
-                GUI.AddMessage(msg, clr)
-            end
+        -- Если от прошлого одноимённого таймера прошло менее 30 секунд, то мы уходим 
+    if RIBA.BigMessage.similarNameCooldowns[name]~=nil then
+        if RIBA.BigMessage.similarNameCooldowns[name] > currentTime then
+            return
         end
-    end)
+    end
+
+    if queueSize > 0 then
+        local lastTime = RIBA.BigMessage.queue[queueSize].time
+        nextTime = lastTime + RIBA.BigMessage.coolDownDuration
+    end
+
+    table.insert(RIBA.BigMessage.queue, { msg = msg, clr = clr, name = name, time = nextTime })
+    RIBA.BigMessage.similarNameCooldowns[name] = currentTime + RIBA.BigMessage.similarNameCooldownDuration
+
 end
+
+function RIBA.BigMessage.Print()
+    if not CLIENT then return end
+    local currentTime = os.time()
+    if RIBA.BigMessage.queue[1]~=nil then
+        local nextMessage = RIBA.BigMessage.queue[1]
+        if math.floor(nextMessage.time-currentTime) <= 0 then --время прило (и есть куда)
+            GUI.ClearMessages()
+            GUI.AddMessage(nextMessage.msg, nextMessage.clr)
+            RIBA.BigMessage.actualCoolDown = nextMessage.time
+            table.remove(RIBA.BigMessage.queue, 1)
+        end
+    end
+end
+
 
 RIBA.Component = function(item, name)
     for _, component in ipairs(item.Components) do
@@ -95,14 +114,6 @@ RIBA.GetAttributeValueFromInstance = function(instance, targetElement, targetAtt
     local isCostylElement = success and result or nil
     return isCostylElement
 end
-
--- RIBA.GetElementFromItem = function(item, targetElement)
---     local success, result = pcall(function()
---         return tostring(item.GetComponent(Components.Holdable))
---     end)
---     local isCostylElement = success and result or nil
---     return isCostylElement
--- end
 
 RIBA.splitStringByComma = function(inputString)
     local success, result = pcall(function()
@@ -170,9 +181,7 @@ RIBA.idcardSearch = function(strings, character) -- ввод типа RibaRequir
                             for _, value in ipairs(values) do --поиск синонимов в персонаже
                                 local idcard = character.Inventory.FindItemByTag(value, false)
                                 if idcard ~= nil then
-                                    print("idcard4")
                                     if idcard.GetComponent(Components.IdCard)~= nil then
-                                        print("GetChildElement")
                                         -- table.remove(strings, i)
                                         return true
                                     end
@@ -208,9 +217,9 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
         end
 
         if not hasMatch then
-            print("нет ключа - закрываем")
+            -- print("нет ключа - закрываем")
             ptable.PreventExecution = true -- нет ключа - закрываем
-            RIBA.BigMessage.SetNext(RIBA.Text("blocked"), Color.Red, 5)
+            RIBA.BigMessage.SetNext(RIBA.Text("blocked"), Color.Red, "blocked")
             return false
         end
     end
@@ -218,12 +227,12 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
     if isBlockWhenDeattached then
         local attached = RIBA.Component(instance.Item, "Holdable").Attached
         if not attached then
-            print("контейнер не на стене - закрываем")
+            -- print("контейнер не на стене - закрываем")
             ptable.PreventExecution = true --контейнер не на стене - закрываем
-            RIBA.BigMessage.SetNext(RIBA.Text("deattachedBlockMessage"), Color.Red, 5)
+            RIBA.BigMessage.SetNext(RIBA.Text("deattachedBlockMessage"), Color.Red, "deattachedBlockMessage")
             return false
         else
-            print("контейнер на стене - открываем")
+            -- print("контейнер на стене - открываем")
             ptable.PreventExecution = true --контейнер на стене - открываем
             return true
         end
@@ -258,16 +267,15 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(inst
             if CurrentPseudonymItems >= maxBItems then
                 instance.LimitedAttachable = true
                 if maxBItems == 0 then
-                    RIBA.BigMessage.SetNext(RIBA.Text("books"), Color.Red, 5)
+                    RIBA.BigMessage.SetNext(RIBA.Text("books"), Color.Red, "books")
                 else
-                    RIBA.BigMessage.SetNext(RIBA.Text("cantattach") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Red, 5)
+                    RIBA.BigMessage.SetNext(RIBA.Text("cantattach") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Red, "cantattach")
                 end
             else
                 instance.LimitedAttachable = false
             end
             if CurrentPseudonymItems + 1 == maxBItems then
-                RIBA.BigMessage.SetNext(
-                RIBA.Text("cantattachwarning") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Yellow, 5)
+                RIBA.BigMessage.SetNext(RIBA.Text("cantattachwarning") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Yellow, "cantattachwarning")
             end
             if CurrentPseudonymItems + 1 == maxBItems then
                 ptable["character"].AddMessage("(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Yellow, true, "ribamessage1", 3)
@@ -282,3 +290,4 @@ end, Hook.HookMethodType.Before)
 Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
     RIBA.BigMessage.Print()
 end, Hook.HookMethodType.After)
+
