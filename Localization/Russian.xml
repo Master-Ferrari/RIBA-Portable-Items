@@ -83,5 +83,21 @@
   <RIBAItemMsgDetach>[[use]] Это можно взять</RIBAItemMsgDetach>
   <RIBAdeattachedBlockMessage>Без крепления к стене использовать невозможно!</RIBAdeattachedBlockMessage>
   
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlCamera" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAStatusMonitor" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBALamp" stattype="MaxAttachableCount" value="5" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAbattery" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAchargingdock" stattype="MaxAttachableCount" value="3" />
+		
+  <BIBAControlMonitor>Монитор видеосигналов</BIBAControlMonitor>
+  <BIBAControlCamera>Камера</BIBAControlCamera>
+  <BIBAStatusMonitor>Монитор состояния</BIBAStatusMonitor>
+  <BIBAJunctionBox>Соединительная коробка</BIBAJunctionBox>
+  <BIBALamp>Лампа</BIBALamp>
+  <BIBAbattery>Настенная батарея</BIBAbattery>
+  <BIBAchargingdock>Зарядка аккумуляторов</BIBAchargingdock>
+  
   
 </infotexts>

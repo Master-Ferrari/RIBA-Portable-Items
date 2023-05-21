@@ -99,8 +99,8 @@
   <entitydescription.RIBABuyableMedCurtain>RIBABuyableMedCurtain</entitydescription.RIBABuyableMedCurtain>
   
   
-  <entityname.RIBARecipeBookElectrical>RIBARecipeBookElectrical</entityname.RIBARecipeBookElectrical>
-  <entitydescription.RIBARecipeBookElectrical>RIBARecipeBookElectrical</entitydescription.RIBARecipeBookElectrical>
+  <entityname.RIBARecipeBookElectrical>Журнал самоделок: Электрика</entityname.RIBARecipeBookElectrical>
+  <entitydescription.RIBARecipeBookElectrical>Первый номер журнала, рассказывающий и показывающий, как, имея лишь фабрикатор и лицензию на изготовление по нашим чертежам, можно собрать множество полезных вещиц.</entitydescription.RIBARecipeBookElectrical>
   
   <entityname.RIBARecipeBookMachine>RIBARecipeBookMachine</entityname.RIBARecipeBookMachine>
   <entitydescription.RIBARecipeBookMachine>RIBARecipeBookMachine</entitydescription.RIBARecipeBookMachine>
@@ -110,5 +110,12 @@
   
   <entityname.RIBARecipeBookSupplies>RIBARecipeBookSupplies</entityname.RIBARecipeBookSupplies>
   <entitydescription.RIBARecipeBookSupplies>RIBARecipeBookSupplies</entitydescription.RIBARecipeBookSupplies>
+  
+  <ribadescription.unlockrecipe>Доступны рецепты ‖color:gui.Yellow‖р‖end‖‖color:gui.Green‖а‖end‖‖color:gui.Yellow‖з‖end‖‖color:gui.Green‖н‖end‖‖color:gui.Yellow‖ы‖end‖‖color:gui.Green‖х ‖end‖‖color:gui.Yellow‖н‖end‖‖color:gui.Green‖и‖end‖‖color:gui.Yellow‖ш‖end‖‖color:gui.Green‖т‖end‖‖color:gui.Yellow‖я‖end‖‖color:gui.Green‖к‖end‖‖color:gui.Yellow‖о‖end‖‖color:gui.Green‖в‖end‖ : </ribadescription.unlockrecipe>
+  
+  <talentdescription.ribadummy>[1] [2] [3]</talentdescription.ribadummy>
+  <talentname.RIBA_RecipeBook_Electrical>Самоделкин-Электрик</talentname.RIBA_RecipeBook_Electrical>
+  
+  
   
 </infotexts>

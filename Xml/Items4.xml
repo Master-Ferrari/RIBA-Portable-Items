@@ -1,10 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
 
-  <Item name="RIBARecipeBookElectrical" identifier="RIBARecipeBookElectrical" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="1" scale="0.5" impactsoundtag="impact_soft">
+  <Item name="" identifier="RIBARecipeBookSupplies" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="8" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
-    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,37,54" />
     <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
+    <Body width="28" height="36" density="20" />
+    <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-910.0" />
+      <StatusEffect type="Always" target="This" Condition="900.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="100" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Sound file="Content/Sounds/UI/UImsg.ogg" range="500" />
+        <GiveTalentInfo talentidentifiers="RIBA_RecipeBook_Supplies" />
+        <TalentTrigger effectidentifier="standanddeliver" />
+      </StatusEffect>
+    </Holdable>
+    <Price baseprice="600" minleveldifficulty="20" buyingpricemodifier="2.5" minavailable="1">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" />
+      <Price storeidentifier="merchantresearch" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+    </Price>
+  </Item>
+  
+  <Item name="" identifier="RIBARecipeBookElectrical" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="8" scale="0.5" impactsoundtag="impact_soft">
+    <PreferredContainer primary="storagecab,crewcab" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,904,37,54" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,911,33,39" origin="0.8,0.8" depth="0.6" />
     <Body width="28" height="36" density="20" />
     <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-910.0" />
@@ -25,10 +49,10 @@
     </Price>
   </Item>
   
-  <Item name="RIBARecipeBookMachine" identifier="RIBARecipeBookMachine" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="1" scale="0.5" impactsoundtag="impact_soft">
+  <Item name="" identifier="RIBARecipeBookMachine" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="8" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
-    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
-    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,839,37,54" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,846,33,39" depth="0.6" />
     <Body width="28" height="36" density="20" />
     <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-910.0" />
@@ -49,10 +73,10 @@
     </Price>
   </Item>
   
-  <Item name="RIBARecipeBookDecorative" identifier="RIBARecipeBookDecorative" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="1" scale="0.5" impactsoundtag="impact_soft">
+  <Item name="" identifier="RIBARecipeBookDecorative" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="8" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
-    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
-    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,774,37,54" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,781,33,39" depth="0.6" />
     <Body width="28" height="36" density="20" />
     <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-910.0" />
@@ -61,30 +85,6 @@
         <Conditional Condition="lte 0" />
         <Sound file="Content/Sounds/UI/UImsg.ogg" range="500" />
         <GiveTalentInfo talentidentifiers="RIBA_RecipeBook_Decorative" />
-        <TalentTrigger effectidentifier="standanddeliver" />
-      </StatusEffect>
-    </Holdable>
-    <Price baseprice="600" minleveldifficulty="20" buyingpricemodifier="2.5" minavailable="1">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
-    </Price>
-  </Item>
-  
-  <Item name="RIBARecipeBookSupplies" identifier="RIBARecipeBookSupplies" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="1" scale="0.5" impactsoundtag="impact_soft">
-    <PreferredContainer primary="storagecab,crewcab" />
-    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,39,55" />
-    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
-    <Body width="28" height="36" density="20" />
-    <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
-      <StatusEffect type="OnSecondaryUse" target="This" Condition="-910.0" />
-      <StatusEffect type="Always" target="This" Condition="900.0" />
-      <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="100" disabledeltatime="true">
-        <Conditional Condition="lte 0" />
-        <Sound file="Content/Sounds/UI/UImsg.ogg" range="500" />
-        <GiveTalentInfo talentidentifiers="RIBA_RecipeBook_Supplies" />
         <TalentTrigger effectidentifier="standanddeliver" />
       </StatusEffect>
     </Holdable>
