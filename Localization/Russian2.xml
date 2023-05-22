@@ -80,11 +80,11 @@
   <entityname.RIBABuyableBunk3>RIBABuyableBunk3</entityname.RIBABuyableBunk3>
   <entitydescription.RIBABuyableBunk3>RIBABuyableBunk3</entitydescription.RIBABuyableBunk3>
   
-  <entityname.RIBAbunkcabinet1>RIBAbunkcabinet1</entityname.RIBAbunkcabinet1>
-  <entitydescription.RIBAbunkcabinet1>RIBAbunkcabinet1</entitydescription.RIBAbunkcabinet1>
+  <entityname.RIBAbunkcabinet1>Небольшой шкаф для одежды</entityname.RIBAbunkcabinet1>
+  <entitydescription.RIBAbunkcabinet1>Отлично подходит к капсульной койке!</entitydescription.RIBAbunkcabinet1>
   
-  <entityname.RIBAbunkcabinet2>RIBAbunkcabinet2</entityname.RIBAbunkcabinet2>
-  <entitydescription.RIBAbunkcabinet2>RIBAbunkcabinet2</entitydescription.RIBAbunkcabinet2>
+  <entityname.RIBAbunkcabinet2>Небольшой шкаф</entityname.RIBAbunkcabinet2>
+  <entitydescription.RIBAbunkcabinet2>Отлично подходит к капсульной койке!</entitydescription.RIBAbunkcabinet2>
   
   <entityname.RIBABuyableChair1>RIBABuyableChair1</entityname.RIBABuyableChair1>
   <entitydescription.RIBABuyableChair1>RIBABuyableChair1</entitydescription.RIBABuyableChair1>
@@ -99,23 +99,25 @@
   <entitydescription.RIBABuyableMedCurtain>RIBABuyableMedCurtain</entitydescription.RIBABuyableMedCurtain>
   
   
-  <entityname.RIBARecipeBookElectrical>Журнал самоделок: Электрика</entityname.RIBARecipeBookElectrical>
-  <entitydescription.RIBARecipeBookElectrical>Первый номер журнала, рассказывающий и показывающий, как, имея лишь фабрикатор и лицензию на изготовление по нашим чертежам, можно собрать множество полезных вещиц.</entitydescription.RIBARecipeBookElectrical>
+  <entityname.RIBARecipeBookSupplies>"Сделай САМ": Склады</entityname.RIBARecipeBookSupplies>
+  <entitydescription.RIBARecipeBookSupplies>Первый номер журнала RIBA(тм), рассказывающий и показывающий, как повесить полку, собрать стеллажи, шкаф и мусор с пола.</entitydescription.RIBARecipeBookSupplies>
   
-  <entityname.RIBARecipeBookMachine>RIBARecipeBookMachine</entityname.RIBARecipeBookMachine>
-  <entitydescription.RIBARecipeBookMachine>RIBARecipeBookMachine</entitydescription.RIBARecipeBookMachine>
+  <entityname.RIBARecipeBookElectrical>"Сделай САМ": Электрика</entityname.RIBARecipeBookElectrical>
+  <entitydescription.RIBARecipeBookElectrical>Второй номер журнала RIBA(тм), рассказывающий и показывающий, как, имея лишь фабрикатор и лицензию на изготовление по нашим чертежам, можно собрать множество полезных вещиц.</entitydescription.RIBARecipeBookElectrical>
   
-  <entityname.RIBARecipeBookDecorative>RIBARecipeBookDecorative</entityname.RIBARecipeBookDecorative>
-  <entitydescription.RIBARecipeBookDecorative>RIBARecipeBookDecorative</entitydescription.RIBARecipeBookDecorative>
+  <entityname.RIBARecipeBookMachine>"Сделай САМ": Механика</entityname.RIBARecipeBookMachine>
+  <entitydescription.RIBARecipeBookMachine>Третий номер журнала RIBA(тм), рассказывающий и показывающий, как, имея лишь фабрикатор создать фабрикатор... Так..</entitydescription.RIBARecipeBookMachine>
   
-  <entityname.RIBARecipeBookSupplies>RIBARecipeBookSupplies</entityname.RIBARecipeBookSupplies>
-  <entitydescription.RIBARecipeBookSupplies>RIBARecipeBookSupplies</entitydescription.RIBARecipeBookSupplies>
+  <entityname.RIBARecipeBookDecorative>"Сделай САМ": Фурнитура</entityname.RIBARecipeBookDecorative>
+  <entitydescription.RIBARecipeBookDecorative>Четвёртый номер журнала RIBA(тм), рассказывающий и показывающий, что на полу лучше не спать.</entitydescription.RIBARecipeBookDecorative>
   
   <ribadescription.unlockrecipe>Доступны рецепты ‖color:gui.Yellow‖р‖end‖‖color:gui.Green‖а‖end‖‖color:gui.Yellow‖з‖end‖‖color:gui.Green‖н‖end‖‖color:gui.Yellow‖ы‖end‖‖color:gui.Green‖х ‖end‖‖color:gui.Yellow‖н‖end‖‖color:gui.Green‖и‖end‖‖color:gui.Yellow‖ш‖end‖‖color:gui.Green‖т‖end‖‖color:gui.Yellow‖я‖end‖‖color:gui.Green‖к‖end‖‖color:gui.Yellow‖о‖end‖‖color:gui.Green‖в‖end‖ : </ribadescription.unlockrecipe>
   
   <talentdescription.ribadummy>[1] [2] [3]</talentdescription.ribadummy>
-  <talentname.RIBA_RecipeBook_Electrical>Самоделкин-Электрик</talentname.RIBA_RecipeBook_Electrical>
   
-  
-  
+  <talentname.RIBA_RecipeBook_Supplies>Заведующий складом</talentname.RIBA_RecipeBook_Supplies>
+  <talentname.RIBA_RecipeBook_Electrical>Радиотехник</talentname.RIBA_RecipeBook_Electrical>
+  <talentname.RIBA_RecipeBook_Machine>Инженер-конструктор</talentname.RIBA_RecipeBook_Machine>
+  <talentname.RIBA_RecipeBook_Decorative>Дизайнер</talentname.RIBA_RecipeBook_Decorative>
+    
 </infotexts>

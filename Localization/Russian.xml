@@ -67,14 +67,14 @@
   <entityname.RIBAbigsteelcabinet>Стальной шкаф DIY</entityname.RIBAbigsteelcabinet>
   <entitydescription.RIBAbigsteelcabinet>ну и шкаф</entitydescription.RIBAbigsteelcabinet>
   
-  <entityname.RIBABunk1>RIBABunk1</entityname.RIBABunk1>
-  <entitydescription.RIBABunk1>RIBABunk1</entitydescription.RIBABunk1>
+  <entityname.RIBABunk1>Койка</entityname.RIBABunk1>
+  <entitydescription.RIBABunk1>Превозносит условия жизни до тюремных</entitydescription.RIBABunk1>
   
-  <entityname.RIBAChair1>RIBAChair1</entityname.RIBAChair1>
-  <entitydescription.RIBAChair1>RIBAChair1</entitydescription.RIBAChair1>
+  <entityname.RIBAChair1>Стул</entityname.RIBAChair1>
+  <entitydescription.RIBAChair1>Твёрдый</entitydescription.RIBAChair1>
   
-  <entityname.RIBAMedCurtain>RIBAMedCurtain</entityname.RIBAMedCurtain>
-  <entitydescription.RIBAMedCurtain>RIBAMedCurtain</entitydescription.RIBAMedCurtain>
+  <entityname.RIBAMedCurtain>Ширма</entityname.RIBAMedCurtain>
+  <entitydescription.RIBAMedCurtain>Из-за кулис выходит...</entitydescription.RIBAMedCurtain>
   
   <RIBAItemMsgDetachCrowbar>[[use]] Это так просто не выдрать (Лом)</RIBAItemMsgDetachCrowbar>
   <RIBAItemMsgDetachWrench>[[use]] Это так просто не выдрать (Гаечный ключ)</RIBAItemMsgDetachWrench>
@@ -82,15 +82,23 @@
   
   <RIBAItemMsgDetach>[[use]] Это можно взять</RIBAItemMsgDetach>
   <RIBAdeattachedBlockMessage>Без крепления к стене использовать невозможно!</RIBAdeattachedBlockMessage>
-  
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlCamera" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAStatusMonitor" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBALamp" stattype="MaxAttachableCount" value="5" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAbattery" stattype="MaxAttachableCount" value="3" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAchargingdock" stattype="MaxAttachableCount" value="3" />
 		
+  <!-- названия категорий ассистента -->
+  <BIBAcrateshelf_4slots>Стеллаж для четырёх ящиков</BIBAcrateshelf_4slots>
+  <BIBAcrateshelf_1slot>Полка для одного ящика</BIBAcrateshelf_1slot>
+  <BIBAsuppliescabinet>Хозяйственный шкаф</BIBAsuppliescabinet>
+  <BIBAmediumsteelcabinet>Средний шкаф</BIBAmediumsteelcabinet>
+  <BIBAsteelcabinet>Большой шкаф</BIBAsteelcabinet>
+  <BIBAdivingsuitlocker>Шкаф для подводного снаряжения</BIBAdivingsuitlocker>
+  <BIBArailgunshellrack>Стойка для снарядов рельсотрона</BIBArailgunshellrack>
+  <BIBAcoilgunammoshelf>Полка с боеприпасами для пушки</BIBAcoilgunammoshelf>
+  <BIBAtoxcabinet>Шкаф для хранения токсинов</BIBAtoxcabinet>
+  <BIBAoxygentankshelf>Полка для хранения кислородных баллонов</BIBAoxygentankshelf>
+  <BIBAweaponholder>Оружейная стойка</BIBAweaponholder>
+  <BIBAextinguisherbracket>Стойка огнетушителя</BIBAextinguisherbracket>
+  <BIBAsecuresteelcabinet>Защищённый стальной шкаф</BIBAsecuresteelcabinet>
+  <BIBAbunkcabinet>Небольшие металлические шкафы</BIBAbunkcabinet>
+  <!-- названия категорий эектрика -->
   <BIBAControlMonitor>Монитор видеосигналов</BIBAControlMonitor>
   <BIBAControlCamera>Камера</BIBAControlCamera>
   <BIBAStatusMonitor>Монитор состояния</BIBAStatusMonitor>
@@ -98,6 +106,23 @@
   <BIBALamp>Лампа</BIBALamp>
   <BIBAbattery>Настенная батарея</BIBAbattery>
   <BIBAchargingdock>Зарядка аккумуляторов</BIBAchargingdock>
+  <!-- названия категорий механика -->
+  <BIBAbigpump>Большая помпа</BIBAbigpump>
+  <BIBAsmallpump>Маленькая помпа</BIBAsmallpump>
+  <BIBAfabricator>Фабрикатор</BIBAfabricator>
+  <BIBAdeconstructor>Деконстрактор</BIBAdeconstructor>
+  <BIBAmedfabricator>Медицинский фабрикатор</BIBAmedfabricator>
+  <!-- названия категорий декоративных предметов -->
+  <BIBAbunk>Койка</BIBAbunk>
+  <BIBAChair>Сиденье</BIBAChair>
+  <BIBAMedCurtain>Ширма</BIBAMedCurtain>
+  
+  
+  <BIBAmaxcount1> (по одной штуке на лодку)</BIBAmaxcount1>
+  <BIBAmaxcount2> (по две штуки на лодку)</BIBAmaxcount2>
+  <BIBAmaxcount3> (по три штуки на лодку)</BIBAmaxcount3>
+  <BIBAmaxcount4> (по четыре штуки на лодку)</BIBAmaxcount4>
+  <BIBAmaxcount5> (по пять штук на лодку)</BIBAmaxcount5>
   
   
 </infotexts>
