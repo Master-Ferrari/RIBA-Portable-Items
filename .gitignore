@@ -4,6 +4,7 @@ Cover2.png
 Cover3.png
 *.psd
 .vscode/*
+Media/backup/*
 RIBA Portable Items Origin.code-workspace
 RIBAXMLL.url
 Lua/Autorun/init lock.lua
