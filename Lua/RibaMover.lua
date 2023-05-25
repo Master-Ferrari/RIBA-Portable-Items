@@ -1,4 +1,5 @@
 if SERVER then
+
     Hook.Add("loaded", "RIBAMove", function()
         Networking.Receive("MoveMSG", function(msg, sender)
             local Item = Entity.FindEntityByID(tonumber(msg.ReadString()))
@@ -91,11 +92,13 @@ RIBA.decoratorUI = function(sprite, depthInt)
     end
 
 
-    local menuContent = GUI.Frame(GUI.RectTransform(Vector2(0.15, 0.1), menu.RectTransform, GUI.Anchor.BottomCenter), "", Color(255,255,255,255)) -- основное окно
+    local menuContent = GUI.Frame(GUI.RectTransform(Vector2(0.15, 0.1), menu.RectTransform, GUI.Anchor.Center))
+
+    -- local menuContent = GUI.Frame(GUI.RectTransform(Vector2(0.15, 0.1), menu.RectTransform, GUI.Anchor.BottomCenter), "", Color(255,255,255,255)) -- основное окно
     menuContent.RectTransform.AbsoluteOffset = Point(0, 110)
     -- menuContent.Color = Color(112,150,124,255)
-    menuContent.Color = Color(0,0,0,0)
-    menuContent.HoverColor = Color(0,0,0,0)
+    -- menuContent.Color = Color(0,0,0,0)
+    -- menuContent.HoverColor = Color(0,0,0,0)
 
     local menuH = GUI.ListBox(GUI.RectTransform(Vector2(1, 1), menuContent.RectTransform, GUI.Anchor.BottomCenter), true) -- содержимое горизонталь
 
@@ -161,19 +164,19 @@ RIBA.decoratorUI = function(sprite, depthInt)
 
     local leftButton = GUI.Button(GUI.RectTransform(Vector2(0.25, 1), menuHVH2.Content.RectTransform), "L", GUI.Alignment.Center, "GUIButtonSmall")
     leftButton.OnClicked = function ()
-        RIBA.moveAttached(-10,0,FocusedItem)
+        RIBA.Move(-10,0,FocusedItem)
     end
     local rightButton = GUI.Button(GUI.RectTransform(Vector2(0.25, 1), menuHVH2.Content.RectTransform), "R", GUI.Alignment.Center, "GUIButtonSmall")
     rightButton.OnClicked = function ()
-        RIBA.moveAttached(10,0,FocusedItem)
+        RIBA.Move(10,0,FocusedItem)
     end
     local upButton = GUI.Button(GUI.RectTransform(Vector2(0.25, 1), menuHVH2.Content.RectTransform), "U", GUI.Alignment.Center, "GUIButtonSmall")
     upButton.OnClicked = function ()
-        RIBA.moveAttached(0,10,FocusedItem)
+        RIBA.Move(0,10,FocusedItem)
     end
     local downButton = GUI.Button(GUI.RectTransform(Vector2(0.25, 1), menuHVH2.Content.RectTransform), "D", GUI.Alignment.Center, "GUIButtonSmall")
     downButton.OnClicked = function ()
-        RIBA.moveAttached(0,-10,FocusedItem)
+        RIBA.Move(0,-10,FocusedItem)
     end
 
     menu.Visible = true
