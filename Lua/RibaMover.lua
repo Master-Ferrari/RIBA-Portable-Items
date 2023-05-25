@@ -4,16 +4,22 @@ if SERVER then
             local Item = Entity.FindEntityByID(tonumber(msg.ReadString()))
             local H = msg.ReadInt16()
             local V = msg.ReadInt16()
-
-            for _, character in pairs(Character.CharacterList) do
-                if character.Name == sender.Name then
-                    
-                    Item.Move(Vector2(H, V), false)
-                end
-            end
-
+            Item.Move(Vector2(H, V), false)
         end)
     end)
+
+    Hook.Add("loaded", "RIBAFlip", function()
+        Networking.Receive("FlipMSG", function(msg, sender)
+            local Item = Entity.FindEntityByID(tonumber(msg.ReadString()))
+            local X = msg.ReadBoolean()
+            if X then
+                Item.FlipX(false)
+            else
+                Item.FlipY(false)
+            end
+        end)
+    end)
+
     return
 end
 
@@ -21,10 +27,10 @@ end
 
 
 RIBA.moveAttached = function(H, V, Item)
-    local attachable = RIBA.GetAttributeValueFromItem(Item, "Holdable", "attachable")=="true"
-    if attachable then
-        local attached = RIBA.Component(Item, "Holdable").Attached
-        if attached then
+    -- local attachable = RIBA.GetAttributeValueFromItem(Item, "Holdable", "attachable")=="true"
+    -- if attachable then
+    --     local attached = RIBA.Component(Item, "Holdable").Attached
+    --     if attached then
             if (Game.IsSingleplayer) then
                 Item.Move(Vector2(H, V), false)
             else
@@ -34,23 +40,35 @@ RIBA.moveAttached = function(H, V, Item)
                 netMsg.WriteInt16(V)
                 Networking.Send(netMsg)
                 Item.Move(Vector2(H, V), false)
-
-
-
-                -- Item.UpdateTransform()
-                -- Item.Update(0, Camera )
-                -- local holdComponent = RIBA.Component(Item, "Holdable")
-                -- holdComponent.DeattachFromWall()
-                -- Item.parentInventory.CreateNetworkEvent()
-                -- Item.PositionUpdateInterval = 0.1
-                
-                -- Item.body.ResetDynamics()
-                -- Item.UpdateTransform()
-                -- holdComponent.AttachToWall()
-
             end
-        end
-    end
+    --     end
+    -- end
+end
+
+RIBA.flipAttached = function(X, Item)
+    -- local attachable = RIBA.GetAttributeValueFromItem(Item, "Holdable", "attachable")=="true"
+    -- if attachable then
+    --     local attached = RIBA.Component(Item, "Holdable").Attached
+    --     if attached then
+            if (Game.IsSingleplayer) then
+                if X then
+                    Item.FlipX(false)
+                else
+                    Item.FlipY(false)
+                end
+            else
+                local netMsg = Networking.Start("FlipMSG");
+                netMsg.WriteString(tostring(Item.ID))
+                netMsg.WriteBoolean(X)
+                Networking.Send(netMsg)
+                if X then
+                    Item.FlipX(false)
+                else
+                    Item.FlipY(false)
+                end
+            end
+    --     end
+    -- end
 end
 
 FocusedItem = nil
@@ -89,42 +107,71 @@ RIBA.decoratorUI = function(sprite, depthInt)
     menuHV.Color = Color(0,0,0,0)
     menuHV.HoverColor = Color(0,0,0,0)
 
+    local menuHVH0 = GUI.ListBox(GUI.RectTransform(Vector2(1, 0.4), menuHV.Content.RectTransform, GUI.Anchor.TopCenter), true, Color(0,0,0,0)) -- содержимое вертикаль
+    -- menuHVH0.Color = Color(0,0,0,0)
+    -- menuHVH0.HoverColor = Color(0,0,0,0)
+    -- menuHVH0.OutlineColor = Color(0,0,0,0)
+    menuHVH0.Padding = Vector4(0, 0, 0, 0)
+    menuHVH0.Spacing = 7
+    menuHVH0.PadBottom = false
+    menuHVH0.CanBeFocused = false
 
-    local numberInput = GUI.NumberInput(GUI.RectTransform(Vector2(1, 0.45), menuHV.Content.RectTransform), NumberType.Int) -- крутилка
-    numberInput.MinValueInt = 001
-    numberInput.MaxValueInt = 900
-    numberInput.valueStep = 10
+    local depthInput = GUI.NumberInput(GUI.RectTransform(Vector2(0.46, 0.5), menuHVH0.Content.RectTransform), NumberType.Int) -- крутилка
+    depthInput.MinValueInt = 001
+    depthInput.MaxValueInt = 900
+    depthInput.valueStep = 10
     if depthInt ~= nil then
-        numberInput.IntValue = depthInt
+        depthInput.IntValue = depthInt
     end
-    numberInput.OnValueChanged = function ()
-        FocusedItem.SpriteDepth = math.round(numberInput.IntValue/1000.0, 3)
+    depthInput.OnValueChanged = function ()
+        FocusedItem.SpriteDepth = math.round(depthInput.IntValue/1000.0, 3)
+    end
+
+    local gradInput = GUI.NumberInput(GUI.RectTransform(Vector2(0.46, 0.5), menuHVH0.Content.RectTransform), NumberType.Int) -- крутилка
+    gradInput.MinValueInt = 001
+    gradInput.MaxValueInt = 900
+    gradInput.valueStep = 10
+    if depthInt ~= nil then
+        gradInput.IntValue = depthInt
+    end
+    gradInput.OnValueChanged = function ()
+        FocusedItem.SpriteDepth = math.round(gradInput.IntValue/1000.0, 3)
     end
     
-    local menuHVH = GUI.ListBox(GUI.RectTransform(Vector2(0.95, 0.45), menuHV.Content.RectTransform, GUI.Anchor.TopCenter), true, Color(0,0,0,0)) -- содержимое вертикаль
-    menuHVH.Color = Color(0,0,0,0)
-    menuHVH.HoverColor = Color(0,0,0,0)
-    menuHVH.CanBeFocused = false
+    local menuHVH1 = GUI.ListBox(GUI.RectTransform(Vector2(0.95, 0.25), menuHV.Content.RectTransform, GUI.Anchor.TopCenter), true, Color(0,0,0,0)) -- содержимое вертикаль
+    menuHVH1.Color = Color(0,0,0,0)
+    menuHVH1.HoverColor = Color(0,0,0,0)
+    menuHVH1.Padding = Vector4(0, 0, 0, 0)
+    menuHVH1.CanBeFocused = false
 
-    local FlipXButton = GUI.Button(GUI.RectTransform(Vector2(0.35, 1.2), menuHVH.Content.RectTransform), "FlipX", GUI.Alignment.Center, "GUIButtonSmall")
+    local FlipXButton = GUI.Button(GUI.RectTransform(Vector2(0.5, 1), menuHVH1.Content.RectTransform), "FlipX", GUI.Alignment.Center, "GUIButtonSmall")
     FlipXButton.OnClicked = function ()
-        -- RIBA.BigMessage.SetNext("Я НЕ ЗНАЮЮЮ!", Color.OrangeRed, "RibaDecorator")
-        -- RIBA.BigMessage.Print()
-        FocusedItem.FlipX(false)
+        RIBA.flipAttached(true, FocusedItem)
     end
-    local leftButton = GUI.Button(GUI.RectTransform(Vector2(0.16, 1.2), menuHVH.Content.RectTransform), "L", GUI.Alignment.Center, "GUIButtonSmall")
+    local FlipXButton = GUI.Button(GUI.RectTransform(Vector2(0.5, 1), menuHVH1.Content.RectTransform), "FlipY", GUI.Alignment.Center, "GUIButtonSmall")
+    FlipXButton.OnClicked = function ()
+        RIBA.flipAttached(false, FocusedItem)
+    end
+    
+    local menuHVH2 = GUI.ListBox(GUI.RectTransform(Vector2(0.95, 0.25), menuHV.Content.RectTransform, GUI.Anchor.TopCenter), true, Color(0,0,0,0)) -- содержимое вертикаль
+    menuHVH2.Color = Color(0,0,0,0)
+    menuHVH2.HoverColor = Color(0,0,0,0)
+    menuHVH2.Padding = Vector4(0, 0, 0, 0)
+    menuHVH2.CanBeFocused = false
+
+    local leftButton = GUI.Button(GUI.RectTransform(Vector2(0.25, 1), menuHVH2.Content.RectTransform), "L", GUI.Alignment.Center, "GUIButtonSmall")
     leftButton.OnClicked = function ()
         RIBA.moveAttached(-10,0,FocusedItem)
     end
-    local rightButton = GUI.Button(GUI.RectTransform(Vector2(0.16, 1.2), menuHVH.Content.RectTransform), "R", GUI.Alignment.Center, "GUIButtonSmall")
+    local rightButton = GUI.Button(GUI.RectTransform(Vector2(0.25, 1), menuHVH2.Content.RectTransform), "R", GUI.Alignment.Center, "GUIButtonSmall")
     rightButton.OnClicked = function ()
         RIBA.moveAttached(10,0,FocusedItem)
     end
-    local upButton = GUI.Button(GUI.RectTransform(Vector2(0.16, 1.2), menuHVH.Content.RectTransform), "U", GUI.Alignment.Center, "GUIButtonSmall")
+    local upButton = GUI.Button(GUI.RectTransform(Vector2(0.25, 1), menuHVH2.Content.RectTransform), "U", GUI.Alignment.Center, "GUIButtonSmall")
     upButton.OnClicked = function ()
         RIBA.moveAttached(0,10,FocusedItem)
     end
-    local downButton = GUI.Button(GUI.RectTransform(Vector2(0.16, 1.2), menuHVH.Content.RectTransform), "D", GUI.Alignment.Center, "GUIButtonSmall")
+    local downButton = GUI.Button(GUI.RectTransform(Vector2(0.25, 1), menuHVH2.Content.RectTransform), "D", GUI.Alignment.Center, "GUIButtonSmall")
     downButton.OnClicked = function ()
         RIBA.moveAttached(0,-10,FocusedItem)
     end
