@@ -29,7 +29,7 @@ end
 RIBA.BigMessage = {
     maxQueueSize = 4, -- Максимальный размер очереди
     coolDownDuration = 1,
-    similarNameCooldownDuration = 5,
+    similarNameCooldownDuration = 15,
     queue = {},              -- Очередь кулдаунов
     similarNameCooldowns = {},  -- Таблица разноимённых последних пройденных таймеров и времени их инициализации +30
     actualCoolDown = 0

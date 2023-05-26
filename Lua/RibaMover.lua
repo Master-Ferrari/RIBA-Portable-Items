@@ -177,7 +177,7 @@ RIBA.decoratorUI = function(FocusedItem)
 
     local depthInput = GUI.NumberInput(GUI.RectTransform(Vector2(0.46, 0.5), menuHVH0.Content.RectTransform), NumberType.Int) -- крутилка
     depthInput.MinValueInt = 001
-    depthInput.MaxValueInt = 900
+    depthInput.MaxValueInt = 899
     depthInput.valueStep = 10
     local depthInt = math.floor(FocusedItem.SpriteDepth*1000.0)
     if depthInt ~= nil then
