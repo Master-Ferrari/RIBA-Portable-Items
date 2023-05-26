@@ -24,8 +24,16 @@ if SERVER then
     Hook.Add("loaded", "RIBADepth", function()
         Networking.Receive("DepthMSG", function(msg, sender)
             local Item = Entity.FindEntityByID(tonumber(msg.ReadString()))
-            local newSpriteDepth = msg.ReadInt16()
-            Item.SpriteDepth = newSpriteDepth
+            local newDepth = msg.ReadInt16()
+            Item.SpriteDepth = newDepth
+        end)
+    end)
+
+    Hook.Add("loaded", "RIBARotate", function()
+        Networking.Receive("RotateMSG", function(msg, sender)
+            local Item = Entity.FindEntityByID(tonumber(msg.ReadString()))
+            local newRotate = msg.ReadInt16()
+            Item.Rotation = newRotate
         end)
     end)
 
@@ -34,6 +42,19 @@ end
 
 -- GetPositionUpdateInterval
 
+
+RIBA.RotateAttached = function(value, Item)
+    if true then
+        if (not Game.IsSingleplayer) then
+            local netMsg = Networking.Start("RotateMSG");
+            netMsg.WriteString(tostring(Item.ID))
+            netMsg.WriteInt16(value)
+            Networking.Send(netMsg)
+        end
+        FocusedItem.Rotation = value
+        print(value)
+    end
+end
 
 RIBA.DepthAttached = function(value, Item)
     if true then
@@ -44,6 +65,7 @@ RIBA.DepthAttached = function(value, Item)
             netMsg.WriteInt16(newSpriteDepth)
             Networking.Send(netMsg)
         end
+        print(newSpriteDepth)
         FocusedItem.SpriteDepth = newSpriteDepth
     end
 end
@@ -93,13 +115,12 @@ RIBA.flipAttached = function(X, Item)
     -- end
 end
 
-FocusedItem = nil
 
 -- our main frame where we will put our custom GUI
 local frame = GUI.Frame(GUI.RectTransform(Vector2(1, 1)), nil)  --ваще весь экран
 frame.CanBeFocused = false
 
-RIBA.decoratorUI = function(sprite, depthInt)
+RIBA.decoratorUI = function(FocusedItem)
     -- menu frame
     local menu = GUI.Frame(GUI.RectTransform(Vector2(1, 1), frame.RectTransform, GUI.Anchor.Center), nil)  --наш слой на экране
     menu.CanBeFocused = false
@@ -126,6 +147,14 @@ RIBA.decoratorUI = function(sprite, depthInt)
 
     local imageFrame = GUI.Frame(GUI.RectTransform(Point(100, 100), menuH.Content.RectTransform, GUI.Anchor.CenterLeft), "GUITextBox", Color(0,0,0,0), "InnerFrame")  ---иконка
     imageFrame.RectTransform.RelativeOffset = Vector2(0.062, 0)
+    
+    local sprite = FocusedItem.Prefab.InventoryIcon
+    if sprite == nil then
+        sprite = FocusedItem.Prefab.Sprite
+    end 
+    if sprite==nil then
+        sprite = ItemPrefab.GetItemPrefab("poop").Sprite
+    end
     local image = GUI.Image(GUI.RectTransform(Point(100, 100), imageFrame.RectTransform, GUI.Anchor.Center), sprite)
     imageFrame.CanBeFocused = false
     
@@ -150,6 +179,7 @@ RIBA.decoratorUI = function(sprite, depthInt)
     depthInput.MinValueInt = 001
     depthInput.MaxValueInt = 900
     depthInput.valueStep = 10
+    local depthInt = math.floor(FocusedItem.SpriteDepth*1000.0)
     if depthInt ~= nil then
         depthInput.IntValue = depthInt
     end
@@ -157,15 +187,16 @@ RIBA.decoratorUI = function(sprite, depthInt)
         RIBA.DepthAttached(depthInput.IntValue, FocusedItem)
     end
 
-    local gradInput = GUI.NumberInput(GUI.RectTransform(Vector2(0.46, 0.4), menuHVH0.Content.RectTransform), NumberType.Int) -- крутилка
-    gradInput.MinValueInt = 001
-    gradInput.MaxValueInt = 900
-    gradInput.valueStep = 10
-    if depthInt ~= nil then
-        gradInput.IntValue = depthInt
+    local degreesInput = GUI.NumberInput(GUI.RectTransform(Vector2(0.46, 0.4), menuHVH0.Content.RectTransform), NumberType.Int) -- крутилка
+    degreesInput.MinValueInt = 000
+    degreesInput.MaxValueInt = 360
+    degreesInput.valueStep = 1
+    local degreesInt = math.floor(FocusedItem.Rotation)
+    if degreesInt ~= nil then
+        degreesInput.IntValue = degreesInt
     end
-    gradInput.OnValueChanged = function ()
-        FocusedItem.SpriteDepth = math.round(gradInput.IntValue/1000.0, 3)
+    degreesInput.OnValueChanged = function ()
+        RIBA.RotateAttached(degreesInput.IntValue, FocusedItem)
     end
 
     --Отражалки
@@ -242,18 +273,8 @@ Hook.Add("RibaDecorator", "RibaDecorator", function(statusEffect, delta, item)
 
     FocusedItem = Character.Controlled.FocusedItem
     
-    -- local sprite = ItemPrefab.GetItemPrefab(FocusedItem.Name).InventoryIcon
-    local sprite = FocusedItem.Prefab.InventoryIcon
-    if sprite == nil then
-        sprite = FocusedItem.Prefab.Sprite
-    end 
-    if sprite==nil then
-        sprite = ItemPrefab.GetItemPrefab("poop").Sprite
-    end
 
-    local depthInt = math.floor(FocusedItem.SpriteDepth*1000.0)
-
-    RIBA.decoratorUI(sprite, depthInt)
+    RIBA.decoratorUI(FocusedItem)
     
 
 end)
