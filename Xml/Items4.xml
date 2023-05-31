@@ -96,32 +96,24 @@
       <Price storeidentifier="merchantmine" />
     </Price>
   </Item>
-  
-  
 
-  <Item name="RIBAdecorator" identifier="RIBAdecorator" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,pistolitem,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
 
-    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,64,64,64" origin="0.5,0.5" />
-    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,418,76,41" depth="0.55" origin="0.5,0.5" />
-    <Body width="72" height="40" density="25" />
-    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
-	
-    <RangedWeapon barrelpos="29,11" spread="0" unskilledspread="2" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2" reload="0.5">
-      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
-      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-      <Sound file="Content/Items/Weapons/Revolver1.ogg" type="OnUse" range="3000" selectionmode="Random" />
-      <Sound file="Content/Items/Weapons/Revolver2.ogg" type="OnUse" range="3000" />
-      <Sound file="Content/Items/Weapons/Revolver3.ogg" type="OnUse" range="3000" />
-      <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
-      <StatusEffect type="OnUse">
-        <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
-      </StatusEffect>
-      <StatusEffect type="OnUse" target="Character">
-        <LuaHook name="RIBAdecorator" />
-      </StatusEffect>
-    </RangedWeapon>
-	
-  </Item>
+  <Override>
+    
+    <ImportItem file="../RIBA Mover/Xml/Items.xml"  item="RIBAMover">
+    <!-- <EditAttributes method="replace" /> -->
+    <RemoveElements elements="Fabricate(0), Deconstruct(0), Price(0)"/>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="25" />
+        <RequiredItem identifier="steel" amount="8"/>
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="steel" amount="6"/>
+      </Deconstruct>
+      <Price baseprice="200"   sold="false">
+      </Price>
+    </ImportItem>
   
-  
+  </Override>
+
 </Items>
