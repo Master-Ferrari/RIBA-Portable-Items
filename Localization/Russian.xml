@@ -76,6 +76,9 @@
   <entityname.RIBAMedCurtain>Ширма</entityname.RIBAMedCurtain>
   <entitydescription.RIBAMedCurtain>Из-за кулис выходит...</entitydescription.RIBAMedCurtain>
   
+  <entityname.RIBAsonarmonitor>Монитор сонара</entityname.RIBAsonarmonitor>
+  <entitydescription.RIBAsonarmonitor>Можно погромче?</entitydescription.RIBAsonarmonitor>
+  
   <RIBAItemMsgDetachCrowbar>[[use]] Это так просто не выдрать (Лом)</RIBAItemMsgDetachCrowbar>
   <RIBAItemMsgDetachWrench>[[use]] Это так просто не выдрать (Гаечный ключ)</RIBAItemMsgDetachWrench>
   <RIBAFixingtothefloor>Крепление к полу</RIBAFixingtothefloor>
@@ -106,6 +109,7 @@
   <BIBALamp>Лампа</BIBALamp>
   <BIBAbattery>Настенная батарея</BIBAbattery>
   <BIBAchargingdock>Зарядка аккумуляторов</BIBAchargingdock>
+  <BIBAsonarmonitor>Монитор сонара</BIBAsonarmonitor>
   <!-- названия категорий механика -->
   <BIBAbigpump>Большая помпа</BIBAbigpump>
   <BIBAsmallpump>Маленькая помпа</BIBAsmallpump>
