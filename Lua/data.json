@@ -118,6 +118,15 @@
     "RIBABuyableextinguisherbracket" : "BIBAextinguisherbracket",
 
     "RIBAsecuresteelcabinet" : "BIBAsecuresteelcabinet",
-    "RIBABuyablesecuresteelcabinet" : "BIBAsecuresteelcabinet"
+    "RIBABuyablesecuresteelcabinet" : "BIBAsecuresteelcabinet",
+
+    "RIBAshuttlenavterminal" : "BIBAshuttlenavterminal",
+    "RIBABuyableshuttlenavterminal" : "BIBAshuttlenavterminal",
+
+    "RIBAsonarmonitor" : "BIBAsonarmonitor",
+    "RIBABuyablesonarmonitor" : "BIBAsonarmonitor",
+
+    "RIBAsonartransducer" : "BIBAsonartransducer",
+    "RIBABuyablesonartransducer" : "BIBAsonartransducer"
   } 
 }
