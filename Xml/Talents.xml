@@ -88,6 +88,11 @@
     <Description tag="talentdescription.ribadummy">
       <Replace tag="[1]" value="BIBAControlMonitor, BIBAControlCamera, BIBAStatusMonitor " color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount2"/>
+      <Replace tag="[3]" value=","/>
+    </Description>
+    <Description tag="talentdescription.ribadummy">
+      <Replace tag="[1]" value="BIBAsonarmonitor " color="gui.orange"/>
+      <Replace tag="[2]" value="BIBAmaxcount1"/>
       <Replace tag="[3]" value="."/>
     </Description>
 	
@@ -97,6 +102,7 @@
     <AddedRecipe itemidentifier="RIBAJunctionBox" />
     <AddedRecipe itemidentifier="RIBAbattery" />
     <AddedRecipe itemidentifier="RIBAchargingdock" />
+    <AddedRecipe itemidentifier="RIBAsonarmonitor" />
 	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
@@ -106,6 +112,7 @@
         <CharacterAbilityGivePermanentStat statidentifier="BIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAbattery" stattype="MaxAttachableCount" value="3" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAchargingdock" stattype="MaxAttachableCount" value="3" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAsonarmonitor" stattype="MaxAttachableCount" value="1" />
       
 	  </Abilities>
     </AbilityGroupEffect>
