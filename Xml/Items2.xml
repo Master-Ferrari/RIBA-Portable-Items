@@ -719,9 +719,9 @@
 	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
     </Holdable>
     <Deconstruct time="35">
-      <Item identifier="fpgacircuit" amount="2"/>
+      <Item identifier="fpgacircuit" amount="3"/>
       <Item identifier="terminal" />
-      <Item identifier="steel" amount="4"/>
+      <Item identifier="steel" amount="8"/>
       <Item identifier="RIBAStatusMonitor" />
     </Deconstruct>
     <Price baseprice="3000">
@@ -1185,6 +1185,7 @@
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="10.0" attachable="true" slots="RightHand+LeftHand" aimable="true" controlpose="true" holdpos="30,10" handle1="-15,0" handle2="-15,0" aimpos="65,-10" msg="RIBAItemMsgDetachWrench" attachedbydefault="true">
       <requireditem identifier="Wrench" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
     </Holdable>
     <Deconstruct time="15">
       <Item identifier="RIBAmediumwindowedsteelcabinet" />
@@ -1199,5 +1200,34 @@
       <Price locationtype="mine" multiplier="0.6" />
     </Price>
   </ImportItem>
+  
+  <!-- монитор сонара  -->
+  <!-- <ImportItem file="../../Content/Items/Command/command.xml"  item="sonarmonitor"> -->
+	<!-- <EditAttributes method="replace" identifier="RIBABuyablesonarmonitor"  isshootable="true"  impactsoundtag="impact_metal_heavy" /> -->
+	<!-- <RemoveElements elements="Sprite(0), BrokenSprite(all), DecorativeSprite(all)"/> -->
+	
+    <!-- <Sprite texture="%ModDir%/Media/portable6.png" depth="0.8" sourcerect="0,0,384,212" origin="0.5,0.5" /> -->
+    <!-- <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="0,320,384,212" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" /> -->
+    <!-- <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="0,640,384,212" depth="0.8" maxcondition="0" origin="0.5,0.5" /> -->
+	
+    <!-- <Body width="384" height="212" density="40" /> -->
+	<!-- <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20,60" handle1="35,-60" handle2="35,-60" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true"> -->
+		<!-- <requireditem identifier="Crowbar" type="Equipped" /> -->
+		<!-- <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" /> -->
+	    <!-- <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/> -->
+    <!-- </Holdable> -->
+    <!-- <Deconstruct time="35"> -->
+      <!-- <Item identifier="fpgacircuit" amount="3"/> -->
+      <!-- <Item identifier="steel" amount="4"/> -->
+      <!-- <Item identifier="RIBAStatusMonitor" /> -->
+    <!-- </Deconstruct> -->
+    <!-- <Price baseprice="2000"> -->
+      <!-- <Price locationtype="outpost" multiplier="1.5"  sold="false"/> -->
+      <!-- <Price locationtype="city" multiplier="1.6" maxavailable="1"/> -->
+      <!-- <Price locationtype="research" multiplier="0.6" maxavailable="1"/> -->
+      <!-- <Price locationtype="military" multiplier="0.8" minavailable="1" maxavailable="1"/> -->
+      <!-- <Price locationtype="mine" multiplier="0.8" maxavailable="1"/> -->
+    <!-- </Price> -->
+  <!-- </ImportItem> -->
   
 </Items>

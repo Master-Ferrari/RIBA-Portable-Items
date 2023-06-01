@@ -97,23 +97,4 @@
     </Price>
   </Item>
 
-
-  <Override>
-    
-    <ImportItem file="../RIBA Mover/Xml/Items.xml"  item="RIBAMover">
-    <!-- <EditAttributes method="replace" /> -->
-    <RemoveElements elements="Fabricate(0), Deconstruct(0), Price(0)"/>
-      <Fabricate suitablefabricators="fabricator" requiredtime="20">
-        <RequiredSkill identifier="mechanical" level="25" />
-        <RequiredItem identifier="steel" amount="8"/>
-      </Fabricate>
-      <Deconstruct time="15">
-        <Item identifier="steel" amount="6"/>
-      </Deconstruct>
-      <Price baseprice="200"   sold="false">
-      </Price>
-    </ImportItem>
-  
-  </Override>
-
 </Items>

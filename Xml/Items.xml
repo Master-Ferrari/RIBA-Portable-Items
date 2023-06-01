@@ -1068,106 +1068,35 @@
     <Price baseprice="80" sold="false"/>
   </ImportItem>
   
-  
-  
-  
-  
-  
-  <!-- шатл терминал  -->
-  <!-- <ImportItem file="../../Content/Items/Command/command.xml"  item="shuttlenavterminal"> -->
-	<!-- <EditAttributes method="replace" identifier="RIBAshuttlenavterminal"  isshootable="true"  impactsoundtag="impact_metal_heavy" /> -->
+  <!-- монитор сонара  -->
+  <!-- <ImportItem file="../../Content/Items/Command/command.xml"  item="sonarmonitor"> -->
+	<!-- <EditAttributes method="replace" identifier="RIBAsonarmonitor"  isshootable="true"  impactsoundtag="impact_metal_heavy" /> -->
 	<!-- <RemoveElements elements="Sprite(0), BrokenSprite(all), DecorativeSprite(all)"/> -->
 	
-    <!-- <Sprite texture="%ModDir%/Media/portable6.png" depth="0.8" sourcerect="400,0,288,240" origin="0.5,0.5" /> -->
-    <!-- <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="400,256,288,240" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" /> -->
-    <!-- <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="400,512,288,240" depth="0.8" maxcondition="0" origin="0.5,0.5" /> -->
+    <!-- <Sprite texture="%ModDir%/Media/portable6.png" depth="0.8" sourcerect="0,0,384,212" origin="0.5,0.5" /> -->
+    <!-- <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="0,320,384,212" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" /> -->
+    <!-- <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="0,640,384,212" depth="0.8" maxcondition="0" origin="0.5,0.5" /> -->
 	
-	<!-- <ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)"> -->
-	  <!-- <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/> -->
-	<!-- </ImportElement> -->
 	
-    <!-- <Body width="288" height="240" density="40" /> -->
-    <!-- <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-100" handle1="-150,0" handle2="-150,0" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true"> -->
-      <!-- <requireditem identifier="Crowbar" type="Equipped" /> -->
-      <!-- <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" /> -->
-    <!-- </Holdable > -->
-    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="80"> -->
+    <!-- <Body width="384" height="212" density="40" /> -->
+	<!-- <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20,60" handle1="35,-60" handle2="35,-60" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true"> -->
+		<!-- <requireditem identifier="Crowbar" type="Equipped" /> -->
+		<!-- <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" /> -->
+	    <!-- <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/> -->
+    <!-- </Holdable> -->
+    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="50"> -->
       <!-- <RequiredSkill identifier="mechanical" level="80" /> -->
       <!-- <RequiredSkill identifier="electrical" level="60" /> -->
       <!-- <RequiredItem identifier="fpgacircuit" amount="4" /> -->
-      <!-- <RequiredItem identifier="terminal" amount="2" /> -->
-      <!-- <RequiredItem identifier="steel" amount="8" /> -->
+      <!-- <RequiredItem identifier="steel" amount="6" /> -->
       <!-- <RequiredItem identifier="RIBAStatusMonitor" /> -->
     <!-- </Fabricate> -->
     <!-- <Deconstruct time="35"> -->
       <!-- <Item identifier="fpgacircuit" amount="3"/> -->
-      <!-- <Item identifier="terminal" /> -->
-      <!-- <Item identifier="steel" amount="6"/> -->
+      <!-- <Item identifier="steel" amount="4"/> -->
       <!-- <Item identifier="RIBAStatusMonitor" /> -->
     <!-- </Deconstruct> -->
-	<!-- <Price baseprice="2000"   sold="false"/> -->
-  <!-- </ImportItem> -->
-  
-  <!-- монитор сонара  -->
-  <ImportItem file="../../Content/Items/Command/command.xml"  item="sonarmonitor">
-	<EditAttributes method="replace" identifier="RIBAsonarmonitor"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
-	<RemoveElements elements="Sprite(0), BrokenSprite(all), DecorativeSprite(all)"/>
-	
-    <Sprite texture="%ModDir%/Media/portable6.png" depth="0.8" sourcerect="0,0,384,212" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="0,320,384,212" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="0,640,384,212" depth="0.8" maxcondition="0" origin="0.5,0.5" />
-	
-	
-    <Body width="384" height="212" density="40" />
-	<Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20,60" handle1="35,-60" handle2="35,-60" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
-		<requireditem identifier="Crowbar" type="Equipped" />
-		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-	    <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-    </Holdable>
-    <Fabricate suitablefabricators="fabricator" requiredtime="50">
-      <RequiredSkill identifier="mechanical" level="80" />
-      <RequiredSkill identifier="electrical" level="60" />
-      <RequiredItem identifier="fpgacircuit" amount="4" />
-      <RequiredItem identifier="steel" amount="6" />
-      <RequiredItem identifier="RIBAStatusMonitor" />
-    </Fabricate>
-    <Deconstruct time="35">
-      <Item identifier="fpgacircuit" amount="3"/>
-      <Item identifier="steel" amount="4"/>
-      <Item identifier="RIBAStatusMonitor" />
-    </Deconstruct>
-	<Price baseprice="1000"   sold="false"/>
-  </ImportItem>
-  
-  <!-- Сонара  -->
-  <!-- <ImportItem file="../../Content/Items/Command/command.xml"  item="sonartransducer"> -->
-	<!-- <EditAttributes method="replace" identifier="RIBAsonartransducer"  isshootable="true"  impactsoundtag="impact_metal_heavy" /> -->
-	<!-- <RemoveElements elements="Sprite(0), BrokenSprite(all), DecorativeSprite(all)"/> -->
-	
-    <!-- <Sprite texture="%ModDir%/Media/portable6.png" sourcerect="416,784,192,96" depth="0.8" origin="0.5,0.5" /> -->
-	
-	<!-- <ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)"> -->
-	  <!-- <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/> -->
-	<!-- </ImportElement> -->
-	
-    <!-- <Body width="192" height="96" density="40" /> -->
-    <!-- <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-100" handle1="-150,0" handle2="-150,0" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true"> -->
-      <!-- <requireditem identifier="Crowbar" type="Equipped" /> -->
-      <!-- <StatusEffect type="Always" target="Character" SpeedMultiplier="0.4" setvalue="true" /> -->
-    <!-- </Holdable > -->
-    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="30"> -->
-      <!-- <RequiredSkill identifier="mechanical" level="80" /> -->
-      <!-- <RequiredSkill identifier="electrical" level="60" /> -->
-      <!-- <RequiredItem identifier="fpgacircuit" amount="2" /> -->
-      <!-- <RequiredItem identifier="steel" amount="4" /> -->
-      <!-- <RequiredItem identifier="phosphorus" amount="3" /> -->
-    <!-- </Fabricate> -->
-    <!-- <Deconstruct time="35"> -->
-      <!-- <Item identifier="fpgacircuit" amount="1"/> -->
-      <!-- <Item identifier="steel" amount="4"/>> -->
-      <!-- <Item identifier="phosphorus" amount="2" /> -->
-    <!-- </Deconstruct> -->
-	<!-- <Price baseprice="900"   sold="false"/> -->
+	<!-- <Price baseprice="1000"   sold="false"/> -->
   <!-- </ImportItem> -->
   
 
