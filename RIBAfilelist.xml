@@ -16,6 +16,7 @@
   <Other file="%ModDir%/Media/portable3.png" />
   <Other file="%ModDir%/Media/portable4.png" />
   <Other file="%ModDir%/Media/portable5.png" />
+  <Other file="%ModDir%/Media/portable6.png" />
   <Other file="%ModDir%/Media/FabricatorsAndDeconstructors.png" />
   <Other file="%ModDir%/Lua/Autorun/init.lua" />
   <Other file="%ModDir%/Lua/RibaStuff.lua" />
