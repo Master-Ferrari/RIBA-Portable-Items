@@ -1,36 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Talents>
-
   <Talent identifier="RIBA_RecipeBook_Supplies">
     <Icon texture="%ModDir%/Media/portable3.png" sourcerect="903,644,119,119" />
-	
-    <Description tag="ribadescription.unlockrecipe" />	
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.unlockrecipe" />
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAsuppliescabinet, BIBAbunkcabinet " color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount5"/>
       <Replace tag="[3]" value=", "/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAcrateshelf_1slot, BIBAdivingsuitlocker, BIBAoxygentankshelf, BIBAweaponholder" color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount4"/>
       <Replace tag="[3]" value=", "/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAcrateshelf_4slots, BIBAmediumsteelcabinet " color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount3"/>
       <Replace tag="[3]" value=", "/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAsteelcabinet, BIBArailgunshellrack, BIBAcoilgunammoshelf, BIBAextinguisherbracket" color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount2"/>
       <Replace tag="[3]" value=", "/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAtoxcabinet, BIBAsecuresteelcabinet " color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount1"/>
       <Replace tag="[3]" value="."/>
     </Description>
-	
     <AddedRecipe itemidentifier="RIBAcrateshelf2" />
     <AddedRecipe itemidentifier="RIBAcrateshelf3" />
     <AddedRecipe itemidentifier="RIBAsuppliescabinet" />
@@ -49,15 +46,13 @@
     <AddedRecipe itemidentifier="RIBAsecuresteelcabinet" />
     <AddedRecipe itemidentifier="RIBAbunkcabinet2" />
     <AddedRecipe itemidentifier="RIBAbunkcabinet1" />
-	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
-        
         <CharacterAbilityGivePermanentStat statidentifier="BIBAcrateshelf_4slots" stattype="MaxAttachableCount" value="3" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAcrateshelf_1slot" stattype="MaxAttachableCount" value="4" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAsuppliescabinet" stattype="MaxAttachableCount" value="5" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAmediumsteelcabinet" stattype="MaxAttachableCount" value="3" />
-		<CharacterAbilityGivePermanentStat statidentifier="BIBAsteelcabinet" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAsteelcabinet" stattype="MaxAttachableCount" value="2" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAdivingsuitlocker" stattype="MaxAttachableCount" value="4" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBArailgunshellrack" stattype="MaxAttachableCount" value="2" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAcoilgunammoshelf" stattype="MaxAttachableCount" value="2" />
@@ -67,43 +62,39 @@
         <CharacterAbilityGivePermanentStat statidentifier="BIBAextinguisherbracket" stattype="MaxAttachableCount" value="2" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAsecuresteelcabinet" stattype="MaxAttachableCount" value="1" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAbunkcabinet" stattype="MaxAttachableCount" value="5" />
-		
-	  </Abilities>
+      </Abilities>
     </AbilityGroupEffect>
   </Talent>
   <Talent identifier="RIBA_RecipeBook_Electrical">
     <Icon texture="%ModDir%/Media/portable3.png" sourcerect="903,516,119,119" />
-	
-    <Description tag="ribadescription.unlockrecipe" />	
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.unlockrecipe" />
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAJunctionBox " color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount4"/>
       <Replace tag="[3]" value=", "/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAbattery, BIBAchargingdock " color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount3"/>
       <Replace tag="[3]" value=", "/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAControlMonitor, BIBAControlCamera, BIBAStatusMonitor " color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount2"/>
       <Replace tag="[3]" value=","/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAsonarmonitor " color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount1"/>
       <Replace tag="[3]" value="."/>
     </Description>
-	
-	<AddedRecipe itemidentifier="RIBAControlMonitor" />
+    <AddedRecipe itemidentifier="RIBAControlMonitor" />
     <AddedRecipe itemidentifier="RIBAControlCamera" />
     <AddedRecipe itemidentifier="RIBAStatusMonitor" />
     <AddedRecipe itemidentifier="RIBAJunctionBox" />
     <AddedRecipe itemidentifier="RIBAbattery" />
     <AddedRecipe itemidentifier="RIBAchargingdock" />
     <AddedRecipe itemidentifier="RIBAsonarmonitor" />
-	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
         <CharacterAbilityGivePermanentStat statidentifier="BIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
@@ -113,191 +104,290 @@
         <CharacterAbilityGivePermanentStat statidentifier="BIBAbattery" stattype="MaxAttachableCount" value="3" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAchargingdock" stattype="MaxAttachableCount" value="3" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAsonarmonitor" stattype="MaxAttachableCount" value="1" />
-      
-	  </Abilities>
+      </Abilities>
     </AbilityGroupEffect>
   </Talent>
   <Talent identifier="RIBA_RecipeBook_Machine">
     <Icon texture="%ModDir%/Media/portable3.png" sourcerect="903,388,119,119" />
-	
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAsmallpump" color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount3"/>
       <Replace tag="[3]" value=", "/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAbigpump" color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount2"/>
       <Replace tag="[3]" value=", "/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAfabricator, BIBAdeconstructor, BIBAmedfabricator" color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount2"/>
       <Replace tag="[3]" value="."/>
     </Description>
-        
     <AddedRecipe itemidentifier="RIBAbigpump" />
     <AddedRecipe itemidentifier="RIBAsmallpump" />
     <AddedRecipe itemidentifier="RIBAfabricator" />
     <AddedRecipe itemidentifier="RIBAdeconstructor" />
     <AddedRecipe itemidentifier="RIBAmedfabricator" />
-	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
-        
         <CharacterAbilityGivePermanentStat statidentifier="BIBAbigpump" stattype="MaxAttachableCount" value="2" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAsmallpump" stattype="MaxAttachableCount" value="3" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAfabricator" stattype="MaxAttachableCount" value="1" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAdeconstructor" stattype="MaxAttachableCount" value="1" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAmedfabricator" stattype="MaxAttachableCount" value="1" />
-      
-	  </Abilities>
+      </Abilities>
     </AbilityGroupEffect>
   </Talent>
   <Talent identifier="RIBA_RecipeBook_Decorative">
     <Icon texture="%ModDir%/Media/portable3.png" sourcerect="903,260,119,119" />
-	
-    <Description tag="ribadescription.unlockrecipe" />	
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.unlockrecipe" />
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBALamp " color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount5"/>
       <Replace tag="[3]" value=", "/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAbunk, BIBAChair" color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount4"/>
       <Replace tag="[3]" value=", "/>
     </Description>
-    <Description tag="talentdescription.ribadummy">
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAMedCurtain" color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount2"/>
       <Replace tag="[3]" value="."/>
     </Description>
-	
     <AddedRecipe itemidentifier="RIBABunk1" />
     <AddedRecipe itemidentifier="RIBAChair1" />
     <AddedRecipe itemidentifier="RIBAMedCurtain" />
     <AddedRecipe itemidentifier="RIBABuyableBunk1" />
     <AddedRecipe itemidentifier="RIBALamp" />
-	
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
-        
         <CharacterAbilityGivePermanentStat statidentifier="BIBALamp" stattype="MaxAttachableCount" value="5" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAbunk" stattype="MaxAttachableCount" value="4" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAChair" stattype="MaxAttachableCount" value="4" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAMedCurtain" stattype="MaxAttachableCount" value="2" />
-      
-	  </Abilities>
-    </AbilityGroupEffect>
-  </Talent>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <Override>
-    <Talent identifier="logisticssystems">
-    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,4" sheetelementsize="128,128"/>
-	
-    <Description tag="talentdescription.unlockrecipe">
-      <Replace tag="[itemname]" value="entityname.handhelditemfinder,entityname.makeshiftshelf" color="gui.orange"/>
-    </Description>
-    <Description tag="talentdescription.letitdrainreminder">
-      <Replace tag="[itemcount]" value="3" color="gui.green"/>
-    </Description>
-	  
-    <AbilityGroupEffect abilityeffecttype="None">
-      <Abilities>
-        <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="4" />
-		
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlCamera" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAStatusMonitor" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBALamp" stattype="MaxAttachableCount" value="5" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAbattery" stattype="MaxAttachableCount" value="3" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAchargingdock" stattype="MaxAttachableCount" value="3" />
-		
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAbigpump" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAsmallpump" stattype="MaxAttachableCount" value="3" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAfabricator" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAdeconstructor" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAmedfabricator" stattype="MaxAttachableCount" value="1" />
-		
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAbunk" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAChair" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAMedCurtain" stattype="MaxAttachableCount" value="2" />
-		
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAcrateshelf_4slots" stattype="MaxAttachableCount" value="3" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAcrateshelf_1slot" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAsuppliescabinet" stattype="MaxAttachableCount" value="5" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAmediumsteelcabinet" stattype="MaxAttachableCount" value="3" />
-		<CharacterAbilityGivePermanentStat statidentifier="BIBAsteelcabinet" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAdivingsuitlocker" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBArailgunshellrack" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAcoilgunammoshelf" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAtoxcabinet" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAoxygentankshelf" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAweaponholder" stattype="MaxAttachableCount" value="4" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAextinguisherbracket" stattype="MaxAttachableCount" value="2" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAsecuresteelcabinet" stattype="MaxAttachableCount" value="1" />
-        <CharacterAbilityGivePermanentStat statidentifier="BIBAbunkcabinet" stattype="MaxAttachableCount" value="5" />
-		
       </Abilities>
     </AbilityGroupEffect>
-	
-    <AddedRecipe itemidentifier="makeshiftshelf"/>
-    <AddedRecipe itemidentifier="handhelditemfinder"/>
-	
-	<AddedRecipe itemidentifier="RIBAControlMonitor" />
-	<AddedRecipe itemidentifier="RIBAControlCamera" />
-	<AddedRecipe itemidentifier="RIBAStatusMonitor" />
-	<AddedRecipe itemidentifier="RIBAJunctionBox" />
-	<AddedRecipe itemidentifier="RIBALamp" />
-	<AddedRecipe itemidentifier="RIBAbattery" />
-	<AddedRecipe itemidentifier="RIBAchargingdock" />
-	<AddedRecipe itemidentifier="RIBAbigpump" />
-	<AddedRecipe itemidentifier="RIBAsmallpump" />
-	<AddedRecipe itemidentifier="RIBAfabricator" />
-	<AddedRecipe itemidentifier="RIBAdeconstructor" />
-	<AddedRecipe itemidentifier="RIBAmedfabricator" />
-	<AddedRecipe itemidentifier="RIBABunk1" />
-	<AddedRecipe itemidentifier="RIBAChair1" />
-	<AddedRecipe itemidentifier="RIBAMedCurtain" />
-	<AddedRecipe itemidentifier="RIBABuyableBunk1" />
-	<AddedRecipe itemidentifier="RIBAcrateshelf2" />
-	<AddedRecipe itemidentifier="RIBAcrateshelf3" />
-	<AddedRecipe itemidentifier="RIBAsuppliescabinet" />
-	<AddedRecipe itemidentifier="RIBAmediumsteelcabinet" />
-	<AddedRecipe itemidentifier="RIBAmediumwindowedsteelcabinet" />
-	<AddedRecipe itemidentifier="RIBAsteelcabinet" />
-	<AddedRecipe itemidentifier="RIBAbigsteelcabinet" />
-	<AddedRecipe itemidentifier="RIBAdivingsuitlocker" />
-	<AddedRecipe itemidentifier="RIBAmedcabinet" />
-	<AddedRecipe itemidentifier="RIBArailgunshellrack" />
-	<AddedRecipe itemidentifier="RIBAcoilgunammoshelf" />
-	<AddedRecipe itemidentifier="RIBAtoxcabinet" />
-	<AddedRecipe itemidentifier="RIBAoxygentankshelf" />
-	<AddedRecipe itemidentifier="RIBAweaponholder" />
-	<AddedRecipe itemidentifier="RIBAextinguisherbracket" />
-	<AddedRecipe itemidentifier="RIBAsecuresteelcabinet" />
-	<AddedRecipe itemidentifier="RIBAbunkcabinet2" />
-	<AddedRecipe itemidentifier="RIBAbunkcabinet1" />
-	
+  </Talent>
+  <Override>
+    <Talent identifier="logisticssystems">
+      <Icon texture="%ModDir%/Media/portable3.png" sourcerect="768,127,128,128"/>
+      <Description tag="ribadescription.unlockrecipe" />
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAsuppliescabinet, BIBAbunkcabinet " color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount5"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAcrateshelf_1slot, BIBAdivingsuitlocker, BIBAoxygentankshelf, BIBAweaponholder" color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount4"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAcrateshelf_4slots, BIBAmediumsteelcabinet " color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount3"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAsteelcabinet, BIBArailgunshellrack, BIBAcoilgunammoshelf, BIBAextinguisherbracket" color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount2"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAtoxcabinet, BIBAsecuresteelcabinet " color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount1"/>
+        <Replace tag="[3]" value="."/>
+      </Description>
+      <Description tag="ribadescription.booksum" />
+      <Description tag="ribadescription.aaand" />
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="entityname.makeshiftshelf " color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount3"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="entityname.handhelditemfinder" color="gui.orange"/>
+        <Replace tag="[2]" value=""/>
+        <Replace tag="[3]" value="."/>
+      </Description>
+      <AddedRecipe itemidentifier="RIBAcrateshelf2" />
+      <AddedRecipe itemidentifier="RIBAcrateshelf3" />
+      <AddedRecipe itemidentifier="RIBAsuppliescabinet" />
+      <AddedRecipe itemidentifier="RIBAmediumsteelcabinet" />
+      <AddedRecipe itemidentifier="RIBAmediumwindowedsteelcabinet" />
+      <AddedRecipe itemidentifier="RIBAsteelcabinet" />
+      <AddedRecipe itemidentifier="RIBAbigsteelcabinet" />
+      <AddedRecipe itemidentifier="RIBAdivingsuitlocker" />
+      <AddedRecipe itemidentifier="RIBAmedcabinet" />
+      <AddedRecipe itemidentifier="RIBArailgunshellrack" />
+      <AddedRecipe itemidentifier="RIBAcoilgunammoshelf" />
+      <AddedRecipe itemidentifier="RIBAtoxcabinet" />
+      <AddedRecipe itemidentifier="RIBAoxygentankshelf" />
+      <AddedRecipe itemidentifier="RIBAweaponholder" />
+      <AddedRecipe itemidentifier="RIBAextinguisherbracket" />
+      <AddedRecipe itemidentifier="RIBAsecuresteelcabinet" />
+      <AddedRecipe itemidentifier="RIBAbunkcabinet2" />
+      <AddedRecipe itemidentifier="RIBAbunkcabinet1" />
+      <AddedRecipe itemidentifier="makeshiftshelf"/>
+      <AddedRecipe itemidentifier="handhelditemfinder"/>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAcrateshelf_4slots" stattype="MaxAttachableCount" value="3" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAcrateshelf_1slot" stattype="MaxAttachableCount" value="4" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAsuppliescabinet" stattype="MaxAttachableCount" value="5" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAmediumsteelcabinet" stattype="MaxAttachableCount" value="3" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAsteelcabinet" stattype="MaxAttachableCount" value="2" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAdivingsuitlocker" stattype="MaxAttachableCount" value="4" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBArailgunshellrack" stattype="MaxAttachableCount" value="2" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAcoilgunammoshelf" stattype="MaxAttachableCount" value="2" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAtoxcabinet" stattype="MaxAttachableCount" value="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAoxygentankshelf" stattype="MaxAttachableCount" value="4" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAweaponholder" stattype="MaxAttachableCount" value="4" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAextinguisherbracket" stattype="MaxAttachableCount" value="2" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAsecuresteelcabinet" stattype="MaxAttachableCount" value="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAbunkcabinet" stattype="MaxAttachableCount" value="5" />
+          <CharacterAbilityGivePermanentStat statidentifier="makeshiftshelf" stattype="MaxAttachableCount" value="3" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <Talent identifier="inspirationalleader">
+      <Icon texture="%ModDir%/Media/portable3.png" sourcerect="896,0,128,128"/>
+      <Description tag="ribadescription.unlockrecipe" />
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBALamp " color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount5"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAbunk, BIBAChair" color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount4"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAMedCurtain" color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount2"/>
+        <Replace tag="[3]" value="."/>
+      </Description>
+      <Description tag="ribadescription.booksum" />
+      <Description tag="ribadescription.aaand" />
+      <Description tag="talentdescription.appliestoallcrew"/>
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="25" color="gui.green"/>
+        <Replace tag="[stattype]" value="stattypenames.skillgainspeed" color="gui.orange"/>
+      </Description>
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="inspirationalleader" strength="1.0"/>
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="BIBALamp" stattype="MaxAttachableCount" value="5" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAbunk" stattype="MaxAttachableCount" value="4" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAChair" stattype="MaxAttachableCount" value="4" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAMedCurtain" stattype="MaxAttachableCount" value="2" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="RIBABunk1" />
+      <AddedRecipe itemidentifier="RIBAChair1" />
+      <AddedRecipe itemidentifier="RIBAMedCurtain" />
+      <AddedRecipe itemidentifier="RIBABuyableBunk1" />
+      <AddedRecipe itemidentifier="RIBALamp" />
+    </Talent>
+    <Talent identifier="modularrepairs">
+      <Icon texture="%ModDir%/Media/portable3.png" sourcerect="896,128,128,128"/>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.repairpack" color="gui.orange"/>
+      </Description>
+      <Description tag="ribadescription.aaand" />
+      <Description tag="ribadescription.unlockrecipe" />
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAsmallpump" color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount3"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAbigpump" color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount2"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAfabricator, BIBAdeconstructor, BIBAmedfabricator" color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount2"/>
+        <Replace tag="[3]" value="."/>
+      </Description>
+      <Description tag="ribadescription.booksum" />
+      <AddedRecipe itemidentifier="RIBAbigpump" />
+      <AddedRecipe itemidentifier="RIBAsmallpump" />
+      <AddedRecipe itemidentifier="RIBAfabricator" />
+      <AddedRecipe itemidentifier="RIBAdeconstructor" />
+      <AddedRecipe itemidentifier="RIBAmedfabricator" />
+      <AddedRecipe itemidentifier="repairpack"/>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAbigpump" stattype="MaxAttachableCount" value="2" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAsmallpump" stattype="MaxAttachableCount" value="3" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAfabricator" stattype="MaxAttachableCount" value="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAdeconstructor" stattype="MaxAttachableCount" value="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAmedfabricator" stattype="MaxAttachableCount" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <Talent identifier="samplecollection">
+      <Icon texture="%ModDir%/Media/portable3.png" sourcerect="766,0,128,128"/>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.cargoscooter" color="gui.orange"/>
+      </Description>
+      <Description tag="ribadescription.aaand" />
+      <Description tag="ribadescription.unlockrecipe" />
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAJunctionBox " color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount4"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAbattery, BIBAchargingdock " color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount3"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAControlMonitor, BIBAControlCamera, BIBAStatusMonitor " color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount2"/>
+        <Replace tag="[3]" value=","/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAsonarmonitor " color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount1"/>
+        <Replace tag="[3]" value="."/>
+      </Description>
+      <Description tag="ribadescription.booksum" />
+      <AddedRecipe itemidentifier="RIBAControlMonitor" />
+      <AddedRecipe itemidentifier="RIBAControlCamera" />
+      <AddedRecipe itemidentifier="RIBAStatusMonitor" />
+      <AddedRecipe itemidentifier="RIBAJunctionBox" />
+      <AddedRecipe itemidentifier="RIBAbattery" />
+      <AddedRecipe itemidentifier="RIBAchargingdock" />
+      <AddedRecipe itemidentifier="RIBAsonarmonitor" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAControlCamera" stattype="MaxAttachableCount" value="2" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAStatusMonitor" stattype="MaxAttachableCount" value="2" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAbattery" stattype="MaxAttachableCount" value="3" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAchargingdock" stattype="MaxAttachableCount" value="3" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAsonarmonitor" stattype="MaxAttachableCount" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="cargoscooter"/>
     </Talent>
   </Override>
 </Talents>

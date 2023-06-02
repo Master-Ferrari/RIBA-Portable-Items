@@ -117,11 +117,22 @@
   
   <ribadescription.unlockrecipe>Доступны рецепты ‖color:gui.Yellow‖р‖end‖‖color:gui.Green‖а‖end‖‖color:gui.Yellow‖з‖end‖‖color:gui.Green‖н‖end‖‖color:gui.Yellow‖ы‖end‖‖color:gui.Green‖х ‖end‖‖color:gui.Yellow‖н‖end‖‖color:gui.Green‖и‖end‖‖color:gui.Yellow‖ш‖end‖‖color:gui.Green‖т‖end‖‖color:gui.Yellow‖я‖end‖‖color:gui.Green‖к‖end‖‖color:gui.Yellow‖о‖end‖‖color:gui.Green‖в‖end‖ : </ribadescription.unlockrecipe>
   
-  <talentdescription.ribadummy>[1] [2] [3]</talentdescription.ribadummy>
+  <ribadescription.ribadummy>[1] [2] [3]</ribadescription.ribadummy>
+  
+  <ribadescription.aaand>А так же!</ribadescription.aaand>
+  
+  <ribadescription.booksum>Суммируется с эффектом от книги.</ribadescription.booksum>
   
   <talentname.RIBA_RecipeBook_Supplies>Заведующий складом</talentname.RIBA_RecipeBook_Supplies>
   <talentname.RIBA_RecipeBook_Electrical>Радиотехник</talentname.RIBA_RecipeBook_Electrical>
   <talentname.RIBA_RecipeBook_Machine>Инженер-конструктор</talentname.RIBA_RecipeBook_Machine>
   <talentname.RIBA_RecipeBook_Decorative>Дизайнер</talentname.RIBA_RecipeBook_Decorative>
+  
+  <Override>
+  <talentname.logisticssystems>Начальник склада</talentname.logisticssystems>  
+  <talentname.samplecollection>Ведущий радиотехник</talentname.samplecollection>
+  <talentname.modularrepairs>Конструктор-инженер</talentname.modularrepairs>
+  <talentname.inspirationalleader>Художественный руководитель</talentname.inspirationalleader>
+  </Override>
     
 </infotexts>
