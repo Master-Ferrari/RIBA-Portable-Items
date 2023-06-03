@@ -69,4 +69,49 @@
   <RIBAItemMsgDetachCrowbar>[[use]]  It's not so easy to demontage  (Crowbar)</RIBAItemMsgDetachCrowbar>
   <RIBAItemMsgDetachWrench>[[use]]  It's not so easy to demontage  (Wrench)</RIBAItemMsgDetachWrench>
   <RIBAFixingtothefloor>Mounting to the floor</RIBAFixingtothefloor>
+  <entityname.RIBABunk1>Bunk</entityname.RIBABunk1>
+  <entitydescription.RIBABunk1>Elevates living conditions to prison-like</entitydescription.RIBABunk1>
+  <entityname.RIBAChair1>Stool</entityname.RIBAChair1>
+  <entitydescription.RIBAChair1>hardy</entitydescription.RIBAChair1>
+  <entityname.RIBAMedCurtain>Screen</entityname.RIBAMedCurtain>
+  <entitydescription.RIBAMedCurtain>Coming out from behind the scenes...</entitydescription.RIBAMedCurtain>
+  <entityname.RIBAsonarmonitor>Sonar monitor</entityname.RIBAsonarmonitor>
+  <entitydescription.RIBAsonarmonitor>Can we turn it up?</entitydescription.RIBAsonarmonitor>
+  <RIBAItemMsgDetach>[[use]] This can be taken</RIBAItemMsgDetach>
+  <RIBAdeattachedBlockMessage>Impossible to use without wall-mounting!</RIBAdeattachedBlockMessage>
+  <BIBAcrateshelf_4slots>Four-slot crate shelf</BIBAcrateshelf_4slots>
+  <BIBAcrateshelf_1slot>One-slot crate shelf</BIBAcrateshelf_1slot>
+  <BIBAsuppliescabinet>Utility cabinet</BIBAsuppliescabinet>
+  <BIBAmediumsteelcabinet>Medium cabinet</BIBAmediumsteelcabinet>
+  <BIBAsteelcabinet>Large cabinet</BIBAsteelcabinet>
+  <BIBAdivingsuitlocker>Diving suit locker</BIBAdivingsuitlocker>
+  <BIBArailgunshellrack>Railgun shell rack</BIBArailgunshellrack>
+  <BIBAcoilgunammoshelf>Coilgun ammo shelf</BIBAcoilgunammoshelf>
+  <BIBAtoxcabinet>Toxin storage cabinet</BIBAtoxcabinet>
+  <BIBAoxygentankshelf>Oxygen tank shelf</BIBAoxygentankshelf>
+  <BIBAweaponholder>Weapon rack</BIBAweaponholder>
+  <BIBAextinguisherbracket>Fire extinguisher bracket</BIBAextinguisherbracket>
+  <BIBAsecuresteelcabinet>Secure steel cabinet</BIBAsecuresteelcabinet>
+  <BIBAbunkcabinet>Small metal cabinets</BIBAbunkcabinet>
+  <BIBAControlMonitor>Video signal monitor</BIBAControlMonitor>
+  <BIBAControlCamera>Control сamera</BIBAControlCamera>
+  <BIBAStatusMonitor>Status monitor</BIBAStatusMonitor>
+  <BIBAJunctionBox>Junction box</BIBAJunctionBox>
+  <BIBALamp>Lamp</BIBALamp>
+  <BIBAbattery>Wall-mounted battery</BIBAbattery>
+  <BIBAchargingdock>Battery charger</BIBAchargingdock>
+  <BIBAsonarmonitor>Sonar monitor</BIBAsonarmonitor>
+  <BIBAbigpump>Big pump</BIBAbigpump>
+  <BIBAsmallpump>Small pump</BIBAsmallpump>
+  <BIBAfabricator>Fabricator</BIBAfabricator>
+  <BIBAdeconstructor>Deconstructor</BIBAdeconstructor>
+  <BIBAmedfabricator>Medical fabricator</BIBAmedfabricator>
+  <BIBAbunk>Bunk</BIBAbunk>
+  <BIBAChair>Seat</BIBAChair>
+  <BIBAMedCurtain>Screen</BIBAMedCurtain>
+  <BIBAmaxcount1> (one per sub)</BIBAmaxcount1>
+  <BIBAmaxcount2> (two per sub)</BIBAmaxcount2>
+  <BIBAmaxcount3> (three per sub)</BIBAmaxcount3>
+  <BIBAmaxcount4> (four per sub)</BIBAmaxcount4>
+  <BIBAmaxcount5> (five per sub)</BIBAmaxcount5>
 </infotexts>

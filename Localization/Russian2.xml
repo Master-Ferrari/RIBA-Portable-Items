@@ -71,14 +71,14 @@
   <entityname.RIBABuyablesteelcabinet>Большой стальной шкаф (новый)</entityname.RIBABuyablesteelcabinet>
   <entitydescription.RIBABuyablesteelcabinet>Большой как капитанское чсв</entitydescription.RIBABuyablesteelcabinet>
   
-  <entityname.RIBABuyableBunk1>Койка</entityname.RIBABuyableBunk1>
-  <entitydescription.RIBABuyableBunk1>RIBABuyableBunk1</entitydescription.RIBABuyableBunk1>
+  <entityname.RIBABuyableBunk1>Капсульная койка</entityname.RIBABuyableBunk1>
+  <entitydescription.RIBABuyableBunk1>Почувствуй себя не как дома</entitydescription.RIBABuyableBunk1>
   
   <entityname.RIBABuyableBunk2>Койка</entityname.RIBABuyableBunk2>
-  <entitydescription.RIBABuyableBunk2>RIBABuyableBunk2</entitydescription.RIBABuyableBunk2>
+  <entitydescription.RIBABuyableBunk2>Сам наверху спи</entitydescription.RIBABuyableBunk2>
   
-  <entityname.RIBABuyableBunk3>Койка</entityname.RIBABuyableBunk3>
-  <entitydescription.RIBABuyableBunk3>RIBABuyableBunk3</entitydescription.RIBABuyableBunk3>
+  <entityname.RIBABuyableBunk3>Медицинская койка</entityname.RIBABuyableBunk3>
+  <entitydescription.RIBABuyableBunk3>Показывает оздоровительный сон</entitydescription.RIBABuyableBunk3>
   
   <entityname.RIBAbunkcabinet1>Небольшой шкаф для одежды</entityname.RIBAbunkcabinet1>
   <entitydescription.RIBAbunkcabinet1>Отлично подходит к капсульной койке!</entitydescription.RIBAbunkcabinet1>
@@ -86,18 +86,17 @@
   <entityname.RIBAbunkcabinet2>Небольшой шкаф</entityname.RIBAbunkcabinet2>
   <entitydescription.RIBAbunkcabinet2>Отлично подходит к капсульной койке!</entitydescription.RIBAbunkcabinet2>
   
-  <entityname.RIBABuyableChair1>Стул</entityname.RIBABuyableChair1>
-  <entitydescription.RIBABuyableChair1>RIBABuyableChair1</entitydescription.RIBABuyableChair1>
+  <entityname.RIBABuyableChair1>Кресло начальника</entityname.RIBABuyableChair1>
+  <entitydescription.RIBABuyableChair1>Для господских восседаний</entitydescription.RIBABuyableChair1>
   
-  <entityname.RIBABuyableChair2>Стул</entityname.RIBABuyableChair2>
-  <entitydescription.RIBABuyableChair2>RIBABuyableChair2</entitydescription.RIBABuyableChair2>
+  <entityname.RIBABuyableChair2>Компьютерное кресло</entityname.RIBABuyableChair2>
+  <entitydescription.RIBABuyableChair2>Знал бы твой персонаж, что он уже в игре..</entitydescription.RIBABuyableChair2>
   
-  <entityname.RIBABuyableChair3>Стул</entityname.RIBABuyableChair3>
-  <entitydescription.RIBABuyableChair3>RIBABuyableChair3</entitydescription.RIBABuyableChair3>
+  <entityname.RIBABuyableChair3>Кресло без ручек</entityname.RIBABuyableChair3>
+  <entitydescription.RIBABuyableChair3>и без ножек</entitydescription.RIBABuyableChair3>
   
   <entityname.RIBABuyableMedCurtain>Ширма</entityname.RIBABuyableMedCurtain>
-  <entityname.RIBABuyableMedCurtain>Ширма</entityname.RIBABuyableMedCurtain>
-  <entitydescription.RIBABuyableMedCurtain>RIBABuyableMedCurtain</entitydescription.RIBABuyableMedCurtain>
+  <entitydescription.RIBABuyableMedCurtain>Всё неявным становится явным, и неявным, и снова явным..</entitydescription.RIBABuyableMedCurtain>
   
   <entityname.RIBABuyablesonarmonitor>Монитор сонара</entityname.RIBABuyablesonarmonitor>
   <entitydescription.RIBABuyablesonarmonitor>Можно потише?</entitydescription.RIBABuyablesonarmonitor>
@@ -128,11 +127,11 @@
   <talentname.RIBA_RecipeBook_Machine>Инженер-конструктор</talentname.RIBA_RecipeBook_Machine>
   <talentname.RIBA_RecipeBook_Decorative>Дизайнер</talentname.RIBA_RecipeBook_Decorative>
   
-  <Override>
-  <talentname.logisticssystems>Начальник склада</talentname.logisticssystems>  
-  <talentname.samplecollection>Ведущий радиотехник</talentname.samplecollection>
-  <talentname.modularrepairs>Конструктор-инженер</talentname.modularrepairs>
-  <talentname.inspirationalleader>Художественный руководитель</talentname.inspirationalleader>
-  </Override>
+  <!-- <Override> -->
+  <!-- <talentname.logisticssystems>Начальник склада</talentname.logisticssystems>   -->
+  <!-- <talentname.samplecollection>Ведущий радиотехник</talentname.samplecollection> -->
+  <!-- <talentname.modularrepairs>Конструктор-инженер</talentname.modularrepairs> -->
+  <!-- <talentname.inspirationalleader>Художественный руководитель</talentname.inspirationalleader> -->
+  <!-- </Override> -->
     
 </infotexts>

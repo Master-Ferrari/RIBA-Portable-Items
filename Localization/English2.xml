@@ -73,4 +73,40 @@
   <RIBABuyableItemMsgDetachCrowbar>[[use]]  It's not so easy to demontage  (Crowbar)</RIBABuyableItemMsgDetachCrowbar>
   <RIBABuyableItemMsgDetachWrench>[[use]]  It's not so easy to demontage  (Wrench)</RIBABuyableItemMsgDetachWrench>
   <RIBABuyableFixingtothefloor>Mounting to the floor</RIBABuyableFixingtothefloor>
-</infotexts>
+  <entityname.RIBABuyableBunk1>Capsule Bunk Bed</entityname.RIBABuyableBunk1>
+  <entitydescription.RIBABuyableBunk1>Experience something different from home</entitydescription.RIBABuyableBunk1>
+  <entityname.RIBABuyableBunk2>Bunk Bed</entityname.RIBABuyableBunk2>
+  <entitydescription.RIBABuyableBunk2>Top bunk's all yours</entitydescription.RIBABuyableBunk2>
+  <entityname.RIBABuyableBunk3>Medical Bunk Bed</entityname.RIBABuyableBunk3>
+  <entitydescription.RIBABuyableBunk3>Promotes a healthful sleep</entitydescription.RIBABuyableBunk3>
+  <entityname.RIBAbunkcabinet1>Small Wardrobe</entityname.RIBAbunkcabinet1>
+  <entitydescription.RIBAbunkcabinet1>Matches perfectly with the capsule bunk bed!</entitydescription.RIBAbunkcabinet1>
+  <entityname.RIBAbunkcabinet2>Small Cabinet</entityname.RIBAbunkcabinet2>
+  <entitydescription.RIBAbunkcabinet2>Matches perfectly with the capsule bunk bed!</entitydescription.RIBAbunkcabinet2>
+  <entityname.RIBABuyableChair1>Boss's Chair</entityname.RIBABuyableChair1>
+  <entitydescription.RIBABuyableChair1>For grand seating occasions</entitydescription.RIBABuyableChair1>
+  <entityname.RIBABuyableChair2>Gaming Chair</entityname.RIBABuyableChair2>
+  <entitydescription.RIBABuyableChair2>If only your character knew they're already in a game...</entitydescription.RIBABuyableChair2>
+  <entityname.RIBABuyableChair3>Handless Chair</entityname.RIBABuyableChair3>
+  <entitydescription.RIBABuyableChair3>and legless too</entitydescription.RIBABuyableChair3>
+  <entityname.RIBABuyableMedCurtain>Screen</entityname.RIBABuyableMedCurtain>
+  <entitydescription.RIBABuyableMedCurtain>For there is nothing hidden that has not been revealed, and hidden, and revealed again..</entitydescription.RIBABuyableMedCurtain>
+  <entityname.RIBABuyablesonarmonitor>Sonar Monitor</entityname.RIBABuyablesonarmonitor>
+  <entitydescription.RIBABuyablesonarmonitor>Can we turn the volume down?</entitydescription.RIBABuyablesonarmonitor>
+  <entityname.RIBARecipeBookSupplies>"DIY: Warehouses"</entityname.RIBARecipeBookSupplies>
+  <entitydescription.RIBARecipeBookSupplies>The first issue of RIBA(tm) magazine, showing you the ropes on how to hang a shelf, assemble racks, a cabinet, and a PhD in advanced floor cleaning.</entitydescription.RIBARecipeBookSupplies>
+  <entityname.RIBARecipeBookElectrical>"DIY: Electrics"</entityname.RIBARecipeBookElectrical>
+  <entitydescription.RIBARecipeBookElectrical>The second issue of RIBA(tm) magazine, telling and showing how, with just a fabricator and a license to manufacture from our blueprints, you can assemble a multitude of useful gadgets.</entitydescription.RIBARecipeBookElectrical>
+  <entityname.RIBARecipeBookMachine>"DIY: Mechanics"</entityname.RIBARecipeBookMachine>
+  <entitydescription.RIBARecipeBookMachine>The third issue of RIBA(tm) magazine, telling and showing how, with just a fabricator, you can make a fabricator... Wait..</entitydescription.RIBARecipeBookMachine>
+  <entityname.RIBARecipeBookDecorative>"DIY: Decor"</entityname.RIBARecipeBookDecorative>
+  <entitydescription.RIBARecipeBookDecorative>The fourth issue of RIBA(tm) magazine, telling and showing that it's better not to sleep on the floor.</entitydescription.RIBARecipeBookDecorative>
+  <ribadescription.unlockrecipe>Blueprints for various cool stuff: </ribadescription.unlockrecipe>
+  <ribadescription.ribadummy>[1] [2] [3]</ribadescription.ribadummy>
+  <ribadescription.aaand>And also!</ribadescription.aaand>
+  <ribadescription.booksum>Stacks with the effect from the book.</ribadescription.booksum>
+  <talentname.RIBA_RecipeBook_Supplies>Warehouse Manager</talentname.RIBA_RecipeBook_Supplies>
+  <talentname.RIBA_RecipeBook_Electrical>Electrical Engineer</talentname.RIBA_RecipeBook_Electrical>
+  <talentname.RIBA_RecipeBook_Machine>Mechanical Engineer</talentname.RIBA_RecipeBook_Machine>
+  <talentname.RIBA_RecipeBook_Decorative>Designer</talentname.RIBA_RecipeBook_Decorative>
+  </infotexts>
