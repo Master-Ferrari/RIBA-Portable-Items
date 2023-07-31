@@ -17,14 +17,18 @@ RIBA.Biba = function(item)
     return RIBA.Bibs["Bibs"][item]
 end
 
-local timers = {}                   
-RIBA.isTimerExpired = function(name)
-    print(math.floor(os.time()))
-    return (not timers[name]) or (math.floor(os.time()) >= timers[name]) --(если таймер не установлен) или (сейчас больше чем время срок)
-end
-RIBA.setTimer = function(name, duration)
-    timers[name] = math.floor(os.time()) + duration -- сохраняем время окончания таймера
-end
+-- local timers = {}                   
+-- RIBA.isTimerExpired = function(name)
+--     print(math.floor(os.time()))
+--     return (not timers[name]) or (math.floor(os.time()) >= timers[name]) --(если таймер не установлен) или (сейчас больше чем время срок)
+-- end
+-- RIBA.setTimer = function(name, duration)
+--     timers[name] = math.floor(os.time()) + duration -- сохраняем время окончания таймера
+-- end
+
+
+
+
 
 RIBA.BigMessage = {
     maxQueueSize = 4, -- Максимальный размер очереди
@@ -63,6 +67,7 @@ end
 
 function RIBA.BigMessage.Print()
     if not CLIENT then return end
+    print("\"if not CLIENT\" singleplayer??")
     local currentTime = os.time()
     if RIBA.BigMessage.queue[1]~=nil then
         local nextMessage = RIBA.BigMessage.queue[1]
@@ -74,6 +79,9 @@ function RIBA.BigMessage.Print()
         end
     end
 end
+
+
+
 
 
 RIBA.Component = function(item, name)
