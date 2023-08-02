@@ -5,7 +5,7 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
     local itemName = instance.Item.Prefab.Identifier.Value
     local chName = ptable["character"].Name
 
-    local inInventory = RIBA.hasMatchingString({itemName}, function(str)
+    local inInventory = RibaPI.hasMatchingString({itemName}, function(str)
         return ptable["character"].Inventory.FindItemByIdentifier(str, false) ~= nil -- есть ли у игрока предмет
     end)
     local isSelected = true
@@ -15,15 +15,15 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
     -- print(ptable["character"].SelectedItem.Prefab.Identifier.Value)
 
     local hasMatch = false
-    local RibaRequiredItems = RIBA.GetAttributeValueFromInstance(instance, "RequiredItem", "RIBA_RequiredItems")
-    local isBlockWhenDeattached = RIBA.GetAttributeValueFromInstance(instance, "RequiredItem", "RIBA_blockUseWhenDeattached") == "true" and
+    local RibaRequiredItems = RibaPI.GetAttributeValueFromInstance(instance, "RequiredItem", "RIBA_RequiredItems")
+    local isBlockWhenDeattached = RibaPI.GetAttributeValueFromInstance(instance, "RequiredItem", "RIBA_blockUseWhenDeattached") == "true" and
     true or false
 
     if RibaRequiredItems ~= nil then
-        local RibaRequiredItemsTable = RIBA.splitStringByComma(RibaRequiredItems)
-        hasMatch = RIBA.idcardSearch(RibaRequiredItemsTable, ptable["character"]) -- есть ли у гирока карта
+        local RibaRequiredItemsTable = RibaPI.splitStringByComma(RibaRequiredItems)
+        hasMatch = RibaPI.idcardSearch(RibaRequiredItemsTable, ptable["character"]) -- есть ли у гирока карта
         if not hasMatch then
-            hasMatch = RIBA.hasMatchingString(RibaRequiredItemsTable, function(str)
+            hasMatch = RibaPI.hasMatchingString(RibaRequiredItemsTable, function(str)
                 return ptable["character"].Inventory.FindItemByIdentifier(str, false) ~= nil -- есть ли у игрока предмет
             end)
         end
@@ -33,17 +33,17 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
             ptable.PreventExecution = true -- нет ключа - закрываем
 
             if inInventory then --для моментов когда находится в руках
-                RIBA.ScreenMessage.Big(RIBA.Text("blocked"), Color.Red, "blocked"..itemName..chName)
+                RibaPI.ScreenMessage.Big(RibaPI.Text("blocked"), Color.Red, "blocked"..itemName..chName)
             end
 
             if not CLIENT then --для моментов когда прикреплён и пытается открыться
                 -- print("Кастуем "..itemName.." !!!!!!!!!")
-                RIBA.ScreenMessage.ClCallBig(ptable["character"], RIBA.Text("blocked"), Color.Red, "blockedAndAttached"..itemName..chName, 3)
+                RibaPI.ScreenMessage.ClCallBig(ptable["character"], RibaPI.Text("blocked"), Color.Red, "blockedAndAttached"..itemName..chName, 3)
             end
             
             if Game.IsSingleplayer == true then
                 -- print("EBZZ "..itemName.." !!!!!!!!!")
-                RIBA.ScreenMessage.Big(RIBA.Text("blocked"), Color.Red, "blockedAndAttached"..itemName..chName, 20) --работает при наведении мышки((
+                RibaPI.ScreenMessage.Big(RibaPI.Text("blocked"), Color.Red, "blockedAndAttached"..itemName..chName, 20) --работает при наведении мышки((
             end
 
             return false
@@ -51,7 +51,7 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
     end
 
     if isBlockWhenDeattached then
-        local attached = RIBA.Component(instance.Item, "Holdable").Attached
+        local attached = RibaPI.Component(instance.Item, "Holdable").Attached
         if not attached then
             -- print("контейнер не на стене - закрываем")
             ptable.PreventExecution = true --контейнер не на стене - закрываем
@@ -80,14 +80,14 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(inst
     -- print("ololo")
     local itemName = instance.Item.Prefab.Identifier.Value
     local chName = ptable["character"].Name
-    local nPs = RIBA.Biba(itemName)
+    local nPs = RibaPI.Biba(itemName)
     if nPs ~= nil then
         local maxBItems = ptable["character"].info.GetSavedStatValue(StatTypes.MaxAttachableCount, nPs)
         local CurrentPseudonymItems = 0
         for _, i in ipairs(Item.ItemList) do
             local holdableComponent = i.GetComponent(Components.Holdable)
             if holdableComponent ~= nil and holdableComponent.Attached then
-                local iPs = RIBA.Biba(i.Prefab.Identifier.Value)
+                local iPs = RibaPI.Biba(i.Prefab.Identifier.Value)
                 if iPs ~= nil and iPs == nPs then
                     CurrentPseudonymItems = CurrentPseudonymItems + 1
                 end
@@ -101,9 +101,9 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(inst
 
                 if ptable["character"]==Character.Controlled then
                     if maxBItems == 0 then
-                        RIBA.ScreenMessage.Big(RIBA.Text("books"), Color.Red, "books"..itemName..chName)
+                        RibaPI.ScreenMessage.Big(RibaPI.Text("books"), Color.Red, "books"..itemName..chName)
                     else
-                        RIBA.ScreenMessage.Big(RIBA.Text("cantattach") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Red, "cantattach"..itemName..chName)
+                        RibaPI.ScreenMessage.Big(RibaPI.Text("cantattach") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Red, "cantattach"..itemName..chName)
                     end
                 end
 
@@ -113,13 +113,13 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(inst
             
             if ptable["character"]==Character.Controlled then
                 if CurrentPseudonymItems + 1 == maxBItems then
-                    RIBA.ScreenMessage.Big(RIBA.Text("cantattachwarning") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Yellow, "cantattachwarning"..itemName..chName)
+                    RibaPI.ScreenMessage.Big(RibaPI.Text("cantattachwarning") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Yellow, "cantattachwarning"..itemName..chName)
                 end
                 if CurrentPseudonymItems + 1 == maxBItems then
-                    RIBA.ScreenMessage.Small(ptable["character"], "(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Yellow, "Ylimit"..itemName..chName, 2, nil, 4, false)
+                    RibaPI.ScreenMessage.Small(ptable["character"], "(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Yellow, "Ylimit"..itemName..chName, 2, nil, 4, false)
                 end
                 if CurrentPseudonymItems + 1 < maxBItems then
-                    RIBA.ScreenMessage.Small(ptable["character"], "(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Green, "Glimit"..itemName..chName, 2, nil, 4, false)
+                    RibaPI.ScreenMessage.Small(ptable["character"], "(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Green, "Glimit"..itemName..chName, 2, nil, 4, false)
                 end
             end
 

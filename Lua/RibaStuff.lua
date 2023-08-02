@@ -1,20 +1,20 @@
 
-RIBA.Bibs = json.parse(File.Read(RIBA.Path .. "/Lua/data.json"))
+RibaPI.Bibs = json.parse(File.Read(RibaPI.Path .. "/Lua/data.json"))
 
-RIBA.Language = function()
+RibaPI.Language = function()
     local lang = tostring(GameSettings.CurrentConfig.Language.Value)
-    if RIBA.Bibs["Text"][lang] ~= nil then
+    if RibaPI.Bibs["Text"][lang] ~= nil then
         return lang
     end
     return "English"
 end
 
-RIBA.Text = function(text)
-    return RIBA.Bibs["Text"][RIBA.Language()][text]
+RibaPI.Text = function(text)
+    return RibaPI.Bibs["Text"][RibaPI.Language()][text]
 end
 
-RIBA.Biba = function(item)
-    return RIBA.Bibs["Bibs"][item]
+RibaPI.Biba = function(item)
+    return RibaPI.Bibs["Bibs"][item]
 end
 
 -- local timers = {}                   
@@ -26,7 +26,7 @@ end
 --     timers[name] = math.floor(os.time()) + duration -- сохраняем время окончания таймера
 -- end
 
-RIBA.Component = function(item, name)
+RibaPI.Component = function(item, name)
     for _, component in ipairs(item.Components) do
         if component.Name == name then
             return component
@@ -34,7 +34,7 @@ RIBA.Component = function(item, name)
     end
 end
 
-RIBA.removePrefixAndSuffix = function(input, prefix, suffix)
+RibaPI.removePrefixAndSuffix = function(input, prefix, suffix)
     local success, result = pcall(function()
         local startIdx = string.find(input, prefix)
         if startIdx then
@@ -53,24 +53,24 @@ RIBA.removePrefixAndSuffix = function(input, prefix, suffix)
     end
 end
 
-RIBA.GetAttributeValueFromInstance = function(instance, targetElement, targetAttribute)
+RibaPI.GetAttributeValueFromInstance = function(instance, targetElement, targetAttribute)
     local success, result = pcall(function()
         local isCostylElementString = tostring(instance.originalElement.GetChildElement(tostring(targetElement)).GetAttribute(tostring(targetAttribute)))
-        return RIBA.removePrefixAndSuffix(isCostylElementString, '"', '"')
+        return RibaPI.removePrefixAndSuffix(isCostylElementString, '"', '"')
     end)
     local isCostylElement = success and result or nil
     return isCostylElement
 end
 
-RIBA.GetAttributeValueFromItem = function(item, targetElement, targetAttribute)
+RibaPI.GetAttributeValueFromItem = function(item, targetElement, targetAttribute)
     local success, result = pcall(function()
-        local AttributeString = tostring(RIBA.Component(item,targetElement).originalElement.GetAttribute(tostring(targetAttribute)))
-        return RIBA.removePrefixAndSuffix(AttributeString, '"', '"')
+        local AttributeString = tostring(RibaPI.Component(item,targetElement).originalElement.GetAttribute(tostring(targetAttribute)))
+        return RibaPI.removePrefixAndSuffix(AttributeString, '"', '"')
     end)
     return success and result or nil
 end
 
-RIBA.splitStringByComma = function(inputString)
+RibaPI.splitStringByComma = function(inputString)
     local success, result = pcall(function()
         local result = {}
         local startIndex = 1
@@ -95,7 +95,7 @@ RIBA.splitStringByComma = function(inputString)
     end
 end
 
-RIBA.hasMatchingString = function(strings, condition)
+RibaPI.hasMatchingString = function(strings, condition)
     local success, result = pcall(function()
         for _, str in pairs(strings) do
             if condition(str) then
@@ -111,7 +111,7 @@ RIBA.hasMatchingString = function(strings, condition)
     end
 end
 
-RIBA.idcardSearch = function(strings, character) -- ввод типа RibaRequiredItemsTable
+RibaPI.idcardSearch = function(strings, character) -- ввод типа RibaRequiredItemsTable
     local success, result = pcall(function()
         local idcardTags = {                     --какие теги будут искаться в айдикартах игроков
             { "medic",     { "id_medic", "medic", "med", "doc", "id_medical", "jobid:medicaldoctor" } },
@@ -156,6 +156,6 @@ RIBA.idcardSearch = function(strings, character) -- ввод типа RibaRequir
     end
 end
 
-RIBA.clamp = function (value, min, max)
+RibaPI.clamp = function (value, min, max)
     return math.max(min, math.min(value, max))
 end
