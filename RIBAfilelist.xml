@@ -20,6 +20,7 @@
   <Other file="%ModDir%/Media/FabricatorsAndDeconstructors.png" />
   <Other file="%ModDir%/Lua/Autorun/init.lua" />
   <Other file="%ModDir%/Lua/RibaStuff.lua" />
+  <Other file="%ModDir%/Lua/RibaBigMessage.lua" />
   <Other file="%ModDir%/Lua/RequiredItems.lua" />
   <Other file="%ModDir%/Lua/data.json" />
 </contentpackage>

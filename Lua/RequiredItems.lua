@@ -1,7 +1,45 @@
 ---@diagnostic disable: undefined-field, redundant-parameter, return-type-mismatch
 
+-- RIBA.isSelected = function(item, character)
+
+--     local success, result = pcall(function()
+--         local selectedItem = character.SelectedItem.Prefab.Identifier.Value
+
+--         if not CLIENT then
+--             print("(((((")
+--         end
+
+--         if item == character.SelectedItem then
+--             -- print("урааа")
+--             return true
+--         end
+--         return false
+--     end)
+
+--     if success then
+--         return result
+--     else
+--         if not CLIENT then
+--             print("RIBA: "..item.Prefab.Identifier.Value)
+--             print("Selected: "..character.SelectedItem.Prefab.Identifier.Value)
+--         end
+--         return false
+--     end
+-- end
 
 Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
+
+    local itemName = instance.Item.Prefab.Identifier.Value
+
+    local inInventory = RIBA.hasMatchingString({itemName}, function(str)
+        return ptable["character"].Inventory.FindItemByIdentifier(str, false) ~= nil -- есть ли у игрока предмет
+    end)
+    local isSelected = true
+    -- local isSelected = RIBA.isSelected(instance.Item,ptable["character"])
+
+
+    -- print(ptable["character"].SelectedItem.Prefab.Identifier.Value)
+
     local hasMatch = false
     local RibaRequiredItems = RIBA.GetAttributeValueFromInstance(instance, "RequiredItem", "RIBA_RequiredItems")
     local isBlockWhenDeattached = RIBA.GetAttributeValueFromInstance(instance, "RequiredItem", "RIBA_blockUseWhenDeattached") == "true" and
@@ -16,10 +54,19 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
             end)
         end
 
-        if not hasMatch then
+        if not hasMatch then -- есть ли доступ крч
             -- print("нет ключа - закрываем")
             ptable.PreventExecution = true -- нет ключа - закрываем
-            RIBA.BigMessage.SetNext(RIBA.Text("blocked"), Color.Red, "blocked")
+
+            if inInventory then --для моментов когда находится в руках
+                RIBA.BigMessage.SetNext(RIBA.Text("blocked"), Color.Red, "blocked"..itemName)
+            end
+
+            if not CLIENT then --для моментов когда прикреплён и пытается открыться
+                print("Кастуем "..itemName.." !!!!!!!!!")
+                RIBA.BigMessage.ClCall(ptable["character"], RIBA.Text("blocked"), Color.Red, "blockedAndAttached"..itemName, 3)
+            end
+
             return false
         end
     end
@@ -29,7 +76,9 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
         if not attached then
             -- print("контейнер не на стене - закрываем")
             ptable.PreventExecution = true --контейнер не на стене - закрываем
-            RIBA.BigMessage.SetNext(RIBA.Text("deattachedBlockMessage"), Color.Red, "deattachedBlockMessage")
+            -- if inInventory then
+            --     RIBA.BigMessage.SetNext(RIBA.Text("deattachedBlockMessage"), Color.Red, "deattachedBlockMessage"..itemName)
+            -- end
             return false
         else
             -- print("контейнер на стене - открываем")
@@ -44,6 +93,8 @@ end, Hook.HookMethodType.Before)
 if not CLIENT then return end
 
 Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
+    -- print(#"(GUI.messages)")
+    -- print((GUI.IsFourByThree()))
     RIBA.BigMessage.Print()
 end, Hook.HookMethodType.After)
 
@@ -69,15 +120,15 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(inst
             if CurrentPseudonymItems >= maxBItems then
                 instance.LimitedAttachable = true
                 if maxBItems == 0 then
-                    RIBA.BigMessage.SetNext(RIBA.Text("books"), Color.Red, "books")
+                    RIBA.BigMessage.SetNext(RIBA.Text("books"), Color.Red, "books"..itemName)
                 else
-                    RIBA.BigMessage.SetNext(RIBA.Text("cantattach") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Red, "cantattach")
+                    RIBA.BigMessage.SetNext(RIBA.Text("cantattach") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Red, "cantattach"..itemName)
                 end
             else
                 instance.LimitedAttachable = false
             end
             if CurrentPseudonymItems + 1 == maxBItems then
-                RIBA.BigMessage.SetNext(RIBA.Text("cantattachwarning") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Yellow, "cantattachwarning")
+                RIBA.BigMessage.SetNext(RIBA.Text("cantattachwarning") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Yellow, "cantattachwarning"..itemName)
             end
             if CurrentPseudonymItems + 1 == maxBItems then
                 ptable["character"].AddMessage("(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Yellow, true, "ribamessage1", 3)
@@ -89,6 +140,8 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(inst
     end
 end, Hook.HookMethodType.Before)
 
-Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
-    RIBA.BigMessage.Print()
-end, Hook.HookMethodType.After)
+-- Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
+--     print(#"(GUI.messages)")
+--     print(#(GUI.messages))
+--     RIBA.BigMessage.Print()
+-- end, Hook.HookMethodType.After)

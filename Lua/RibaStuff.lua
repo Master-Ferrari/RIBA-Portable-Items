@@ -26,64 +26,6 @@ end
 --     timers[name] = math.floor(os.time()) + duration -- сохраняем время окончания таймера
 -- end
 
-
-
-
-
-RIBA.BigMessage = {
-    maxQueueSize = 4, -- Максимальный размер очереди
-    coolDownDuration = 1,
-    similarNameCooldownDuration = 15,
-    queue = {},              -- Очередь кулдаунов
-    similarNameCooldowns = {},  -- Таблица разноимённых последних пройденных таймеров и времени их инициализации +30
-    actualCoolDown = 0
-}
-
-function RIBA.BigMessage.SetNext(msg, clr, name)
-    if not CLIENT then return end
-    local currentTime = os.time()
-    local nextTime = currentTime + RIBA.BigMessage.coolDownDuration
-        -- Уходим, если доебались уже в край (в maxQueueSize)
-    local queueSize = #RIBA.BigMessage.queue
-    if queueSize >= RIBA.BigMessage.maxQueueSize then --есть ли места в очереди
-        return
-    end
-        -- Если от прошлого одноимённого таймера прошло менее 30 секунд, то мы уходим 
-    if RIBA.BigMessage.similarNameCooldowns[name]~=nil then
-        if RIBA.BigMessage.similarNameCooldowns[name] > currentTime then
-            return
-        end
-    end
-
-    if queueSize > 0 then
-        local lastTime = RIBA.BigMessage.queue[queueSize].time
-        nextTime = lastTime + RIBA.BigMessage.coolDownDuration
-    end
-
-    table.insert(RIBA.BigMessage.queue, { msg = msg, clr = clr, name = name, time = nextTime })
-    RIBA.BigMessage.similarNameCooldowns[name] = currentTime + RIBA.BigMessage.similarNameCooldownDuration
-
-end
-
-function RIBA.BigMessage.Print()
-    if not CLIENT then return end
-    print("\"if not CLIENT\" singleplayer??")
-    local currentTime = os.time()
-    if RIBA.BigMessage.queue[1]~=nil then
-        local nextMessage = RIBA.BigMessage.queue[1]
-        if math.floor(nextMessage.time-currentTime) <= 0 then --время прило (и есть куда)
-            GUI.ClearMessages()
-            GUI.AddMessage(nextMessage.msg, nextMessage.clr)
-            RIBA.BigMessage.actualCoolDown = nextMessage.time
-            table.remove(RIBA.BigMessage.queue, 1)
-        end
-    end
-end
-
-
-
-
-
 RIBA.Component = function(item, name)
     for _, component in ipairs(item.Components) do
         if component.Name == name then
@@ -212,4 +154,8 @@ RIBA.idcardSearch = function(strings, character) -- ввод типа RibaRequir
     else
         return false
     end
+end
+
+RIBA.clamp = function (value, min, max)
+    return math.max(min, math.min(value, max))
 end
