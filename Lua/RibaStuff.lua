@@ -17,15 +17,6 @@ RibaPI.Biba = function(item)
     return RibaPI.Bibs["Bibs"][item]
 end
 
--- local timers = {}                   
--- RIBA.isTimerExpired = function(name)
---     print(math.floor(os.time()))
---     return (not timers[name]) or (math.floor(os.time()) >= timers[name]) --(если таймер не установлен) или (сейчас больше чем время срок)
--- end
--- RIBA.setTimer = function(name, duration)
---     timers[name] = math.floor(os.time()) + duration -- сохраняем время окончания таймера
--- end
-
 RibaPI.Component = function(item, name)
     for _, component in ipairs(item.Components) do
         if component.Name == name then
@@ -111,9 +102,9 @@ RibaPI.hasMatchingString = function(strings, condition)
     end
 end
 
-RibaPI.idcardSearch = function(strings, character) -- ввод типа RibaRequiredItemsTable
+RibaPI.idcardSearch = function(strings, character) -- output RibaRequiredItemsTable
     local success, result = pcall(function()
-        local idcardTags = {                     --какие теги будут искаться в айдикартах игроков
+        local idcardTags = {                     -- tags for searching in id cards
             { "medic",     { "id_medic", "medic", "med", "doc", "id_medical", "jobid:medicaldoctor" } },
             { "captain",   { "id_captain", "captain", "cap", "com", "commander", "jobid:captain" } },
             { "security",  { "id_security", "security", "sec", "officer", "jobid:securityofficer" } },
@@ -125,15 +116,15 @@ RibaPI.idcardSearch = function(strings, character) -- ввод типа RibaRequ
         local param = ""
         for i, str in ipairs(strings) do
             local splitIndex = string.find(str, ":")
-            if splitIndex then --если :
+            if splitIndex then --if :
                 name = string.sub(str, 1, splitIndex - 1)
                 param = string.sub(str, splitIndex + 1)
-                if name == "idcard" then                      --если idcard
+                if name == "idcard" then                      --if idcard
                     for _, pair in ipairs(idcardTags) do
-                        local key = pair[1]                   --профессия
-                        if param == key then                  --требуемая професссия зарегана
-                            local values = pair[2]            --синонимы
-                            for _, value in ipairs(values) do --поиск синонимов в персонаже
+                        local key = pair[1]                   --profession
+                        if param == key then                  --required profession is registered
+                            local values = pair[2]            --synonyms
+                            for _, value in ipairs(values) do --search for synonyms in a character
                                 local idcard = character.Inventory.FindItemByTag(value, false)
                                 if idcard ~= nil then
                                     if idcard.GetComponent(Components.IdCard)~= nil then

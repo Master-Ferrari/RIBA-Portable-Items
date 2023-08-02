@@ -6,14 +6,8 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
     local chName = ptable["character"].Name
 
     local inInventory = RibaPI.hasMatchingString({itemName}, function(str)
-        return ptable["character"].Inventory.FindItemByIdentifier(str, false) ~= nil -- есть ли у игрока предмет
+        return ptable["character"].Inventory.FindItemByIdentifier(str, false) ~= nil -- does the player have the item
     end)
-    local isSelected = true
-    -- local isSelected = RIBA.isSelected(instance.Item,ptable["character"])
-
-
-    -- print(ptable["character"].SelectedItem.Prefab.Identifier.Value)
-
     local hasMatch = false
     local RibaRequiredItems = RibaPI.GetAttributeValueFromInstance(instance, "RequiredItem", "RIBA_RequiredItems")
     local isBlockWhenDeattached = RibaPI.GetAttributeValueFromInstance(instance, "RequiredItem", "RIBA_blockUseWhenDeattached") == "true" and
@@ -21,29 +15,26 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
 
     if RibaRequiredItems ~= nil then
         local RibaRequiredItemsTable = RibaPI.splitStringByComma(RibaRequiredItems)
-        hasMatch = RibaPI.idcardSearch(RibaRequiredItemsTable, ptable["character"]) -- есть ли у гирока карта
+        hasMatch = RibaPI.idcardSearch(RibaRequiredItemsTable, ptable["character"]) -- does the player have an ID card
         if not hasMatch then
             hasMatch = RibaPI.hasMatchingString(RibaRequiredItemsTable, function(str)
-                return ptable["character"].Inventory.FindItemByIdentifier(str, false) ~= nil -- есть ли у игрока предмет
+                return ptable["character"].Inventory.FindItemByIdentifier(str, false) ~= nil -- does the player have the item
             end)
         end
 
-        if not hasMatch then -- есть ли доступ крч
-            -- print("нет ключа - закрываем")
-            ptable.PreventExecution = true -- нет ключа - закрываем
+        if not hasMatch then -- checking for access, you know
+            ptable.PreventExecution = true -- if there is no key, we close it
 
-            if inInventory then --для моментов когда находится в руках
+            if inInventory then -- for moments when it is in the hands
                 RibaPI.ScreenMessage.Big(RibaPI.Text("blocked"), Color.Red, "blocked"..itemName..chName)
             end
 
-            if not CLIENT then --для моментов когда прикреплён и пытается открыться
-                -- print("Кастуем "..itemName.." !!!!!!!!!")
+            if not CLIENT then -- for moments when attached and trying to open
                 RibaPI.ScreenMessage.ClCallBig(ptable["character"], RibaPI.Text("blocked"), Color.Red, "blockedAndAttached"..itemName..chName, 3)
             end
             
             if Game.IsSingleplayer == true then
-                -- print("EBZZ "..itemName.." !!!!!!!!!")
-                RibaPI.ScreenMessage.Big(RibaPI.Text("blocked"), Color.Red, "blockedAndAttached"..itemName..chName, 20) --работает при наведении мышки((
+                RibaPI.ScreenMessage.Big(RibaPI.Text("blocked"), Color.Red, "blockedAndAttached"..itemName..chName, 20) -- works on hover ((
             end
 
             return false
@@ -53,15 +44,10 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
     if isBlockWhenDeattached then
         local attached = RibaPI.Component(instance.Item, "Holdable").Attached
         if not attached then
-            -- print("контейнер не на стене - закрываем")
-            ptable.PreventExecution = true --контейнер не на стене - закрываем
-            -- if inInventory then
-            --     RIBA.BigMessage.SetNext(RIBA.Text("deattachedBlockMessage"), Color.Red, "deattachedBlockMessage"..itemName)
-            -- end
+            ptable.PreventExecution = true --the container is not on the wall - we close it
             return false
         else
-            -- print("контейнер на стене - открываем")
-            ptable.PreventExecution = true --контейнер на стене - открываем
+            ptable.PreventExecution = true --the container is on the wall - open
             return true
         end
     end
@@ -71,13 +57,7 @@ end, Hook.HookMethodType.Before)
 
 if not CLIENT then return end
 
--- Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
---     RIBA.BigMessage.Print()
--- end, Hook.HookMethodType.After)
-
 Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
-    -- предупреждалку для всех предметов риба и не риба
-    -- print("ololo")
     local itemName = instance.Item.Prefab.Identifier.Value
     local chName = ptable["character"].Name
     local nPs = RibaPI.Biba(itemName)
@@ -126,9 +106,3 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(inst
         end
     end
 end, Hook.HookMethodType.Before)
-
--- Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
---     print(#"(GUI.messages)")
---     print(#(GUI.messages))
---     RIBA.BigMessage.Print()
--- end, Hook.HookMethodType.After)

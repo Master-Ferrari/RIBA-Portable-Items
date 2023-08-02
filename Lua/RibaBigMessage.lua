@@ -20,7 +20,6 @@ function RibaPI.ScreenMessage.Big(msg, clr, category, cooldown) -- добаве�
         RibaPI.ScreenMessage.CreateCategory(category, cooldown)
     end
     if (RibaPI.ScreenMessage.Categories[category][2]<=os.time()) then -- если уже можно добавлять сообщение этого типа 
-        -- print("добавляем   -----  "..category..RIBA.BigMessage.Categories[category][1])
         GUI.AddMessage(msg, clr, lifetime) -- добавляем
         RibaPI.ScreenMessage.Categories[category][2] = os.time()+RibaPI.ScreenMessage.Categories[category][1] -- обновляем момент когда можно добавлять
     end
@@ -64,7 +63,6 @@ function RibaPI.ScreenMessage.Small(character, msg, clr, category, cooldown, val
 
     if (RibaPI.ScreenMessage.Categories[category][2]<=os.time()) then -- если уже можно добавлять сообщение этого типа 
         if not (personal==true and character~=Character.Controlled) then
-            -- print("дывадыад   -----  "..category..RIBA.BigMessage.Categories[category][1])
             character.AddMessage(msg, clr, character==Character.Controlled, value, lifetime)
         end
         RibaPI.ScreenMessage.Categories[category][2] = os.time()+RibaPI.ScreenMessage.Categories[category][1] -- обновляем момент когда можно добавлять
