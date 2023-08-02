@@ -69,23 +69,17 @@
   
   <entityname.RIBABunk1>Дряхлая койка</entityname.RIBABunk1>
   <entitydescription.RIBABunk1>Лежать выше пола - престижно</entitydescription.RIBABunk1>
-  
   <entityname.RIBAChair1>Стул</entityname.RIBAChair1>
   <entitydescription.RIBAChair1>Твёрдый</entitydescription.RIBAChair1>
-  
   <entityname.RIBAMedCurtain>Ширма</entityname.RIBAMedCurtain>
   <entitydescription.RIBAMedCurtain>Из-за кулис выходит...</entitydescription.RIBAMedCurtain>
-  
   <entityname.RIBAsonarmonitor>Монитор сонара</entityname.RIBAsonarmonitor>
   <entitydescription.RIBAsonarmonitor>Можно погромче?</entitydescription.RIBAsonarmonitor>
-  
   <RIBAItemMsgDetachCrowbar>[[use]] Это так просто не выдрать (Лом)</RIBAItemMsgDetachCrowbar>
   <RIBAItemMsgDetachWrench>[[use]] Это так просто не выдрать (Гаечный ключ)</RIBAItemMsgDetachWrench>
   <RIBAFixingtothefloor>Крепление к полу</RIBAFixingtothefloor>
-  
   <RIBAItemMsgDetach>[[use]] Это можно взять</RIBAItemMsgDetach>
   <RIBAdeattachedBlockMessage>Без крепления к стене использовать невозможно!</RIBAdeattachedBlockMessage>
-		
   <!-- названия категорий ассистента -->
   <BIBAcrateshelf_4slots>Стеллаж для четырёх ящиков</BIBAcrateshelf_4slots>
   <BIBAcrateshelf_1slot>Полка для одного ящика</BIBAcrateshelf_1slot>
@@ -120,8 +114,6 @@
   <BIBAbunk>Койка</BIBAbunk>
   <BIBAChair>Сиденье</BIBAChair>
   <BIBAMedCurtain>Ширма</BIBAMedCurtain>
-  
-  
   <BIBAmaxcount1> (по одной штуке на лодку)</BIBAmaxcount1>
   <BIBAmaxcount2> (по две штуки на лодку)</BIBAmaxcount2>
   <BIBAmaxcount3> (по три штуки на лодку)</BIBAmaxcount3>

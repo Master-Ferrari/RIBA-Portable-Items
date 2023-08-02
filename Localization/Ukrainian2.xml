@@ -73,40 +73,42 @@
   <RIBABuyableItemMsgDetachCrowbar>[[use]]  Не так просто демонтувати  (Ломик)</RIBABuyableItemMsgDetachCrowbar>
   <RIBABuyableItemMsgDetachWrench>[[use]]  Не так просто демонтувати  (Розвідний ключWrench)</RIBABuyableItemMsgDetachWrench>
   <RIBABuyableFixingtothefloor>Приєднання до підлоги</RIBABuyableFixingtothefloor>
-  <entityname.RIBABuyableBunk1>ПЕРЕВЕСТИ Капсульная койка</entityname.RIBABuyableBunk1>
-  <entitydescription.RIBABuyableBunk1>ПЕРЕВЕСТИ Почувствуй себя не как дома</entitydescription.RIBABuyableBunk1>
-  <entityname.RIBABuyableBunk2>ПЕРЕВЕСТИ Койка</entityname.RIBABuyableBunk2>
-  <entitydescription.RIBABuyableBunk2>ПЕРЕВЕСТИ Сам наверху спи</entitydescription.RIBABuyableBunk2>
-  <entityname.RIBABuyableBunk3>ПЕРЕВЕСТИ Медицинская койка</entityname.RIBABuyableBunk3>
-  <entitydescription.RIBABuyableBunk3>ПЕРЕВЕСТИ Показывает оздоровительный сон</entitydescription.RIBABuyableBunk3>
-  <entityname.RIBAbunkcabinet1>ПЕРЕВЕСТИ Небольшой шкаф для одежды</entityname.RIBAbunkcabinet1>
-  <entitydescription.RIBAbunkcabinet1>ПЕРЕВЕСТИ Отлично подходит к капсульной койке!</entitydescription.RIBAbunkcabinet1>
-  <entityname.RIBAbunkcabinet2>ПЕРЕВЕСТИ Небольшой шкаф</entityname.RIBAbunkcabinet2>
-  <entitydescription.RIBAbunkcabinet2>ПЕРЕВЕСТИ Отлично подходит к капсульной койке!</entitydescription.RIBAbunkcabinet2>
-  <entityname.RIBABuyableChair1>ПЕРЕВЕСТИ Кресло начальника</entityname.RIBABuyableChair1>
-  <entitydescription.RIBABuyableChair1>ПЕРЕВЕСТИ Для господских восседаний</entitydescription.RIBABuyableChair1>
-  <entityname.RIBABuyableChair2>ПЕРЕВЕСТИ Компьютерное кресло</entityname.RIBABuyableChair2>
-  <entitydescription.RIBABuyableChair2>ПЕРЕВЕСТИ Знал бы твой персонаж, что он уже в игре..</entitydescription.RIBABuyableChair2>
-  <entityname.RIBABuyableChair3>ПЕРЕВЕСТИ Кресло без ручек</entityname.RIBABuyableChair3>
-  <entitydescription.RIBABuyableChair3>ПЕРЕВЕСТИ и без ножек</entitydescription.RIBABuyableChair3>
-  <entityname.RIBABuyableMedCurtain>ПЕРЕВЕСТИ Ширма</entityname.RIBABuyableMedCurtain>
-  <entitydescription.RIBABuyableMedCurtain>ПЕРЕВЕСТИ Всё неявным становится явным, и неявным, и снова явным..</entitydescription.RIBABuyableMedCurtain>
-  <entityname.RIBABuyablesonarmonitor>ПЕРЕВЕСТИ Монитор сонара</entityname.RIBABuyablesonarmonitor>
-  <entitydescription.RIBABuyablesonarmonitor>ПЕРЕВЕСТИ Можно потише?</entitydescription.RIBABuyablesonarmonitor>
-  <entityname.RIBARecipeBookSupplies>ПЕРЕВЕСТИ "Сделай САМ": Склады</entityname.RIBARecipeBookSupplies>
-  <entitydescription.RIBARecipeBookSupplies>ПЕРЕВЕСТИ Первый номер журнала RIBA(тм), рассказывающий и показывающий, как повесить полку, собрать стеллажи, шкаф и мусор с пола.</entitydescription.RIBARecipeBookSupplies>
-  <entityname.RIBARecipeBookElectrical>ПЕРЕВЕСТИ "Сделай САМ": Электрика</entityname.RIBARecipeBookElectrical>
-  <entitydescription.RIBARecipeBookElectrical>ПЕРЕВЕСТИ Второй номер журнала RIBA(тм), рассказывающий и показывающий, как, имея лишь фабрикатор и лицензию на изготовление по нашим чертежам, можно собрать множество полезных вещиц.</entitydescription.RIBARecipeBookElectrical>
-  <entityname.RIBARecipeBookMachine>ПЕРЕВЕСТИ "Сделай САМ": Механика</entityname.RIBARecipeBookMachine>
-  <entitydescription.RIBARecipeBookMachine>ПЕРЕВЕСТИ Третий номер журнала RIBA(тм), рассказывающий и показывающий, как, имея лишь фабрикатор создать фабрикатор... Так..</entitydescription.RIBARecipeBookMachine>
-  <entityname.RIBARecipeBookDecorative>ПЕРЕВЕСТИ "Сделай САМ": Фурнитура</entityname.RIBARecipeBookDecorative>
-  <entitydescription.RIBARecipeBookDecorative>ПЕРЕВЕСТИ Четвёртый номер журнала RIBA(тм), рассказывающий и показывающий, что на полу лучше не спать.</entitydescription.RIBARecipeBookDecorative>
-  <ribadescription.unlockrecipe>ПЕРЕВЕСТИ Доступны рецепты ‖color:gui.Yellow‖р‖end‖‖color:gui.Green‖а‖end‖‖color:gui.Yellow‖з‖end‖‖color:gui.Green‖н‖end‖‖color:gui.Yellow‖ы‖end‖‖color:gui.Green‖х ‖end‖‖color:gui.Yellow‖н‖end‖‖color:gui.Green‖и‖end‖‖color:gui.Yellow‖ш‖end‖‖color:gui.Green‖т‖end‖‖color:gui.Yellow‖я‖end‖‖color:gui.Green‖к‖end‖‖color:gui.Yellow‖о‖end‖‖color:gui.Green‖в‖end‖ : </ribadescription.unlockrecipe>
-  <ribadescription.ribadummy>ПЕРЕВЕСТИ [1] [2] [3]</ribadescription.ribadummy>
-  <ribadescription.aaand>ПЕРЕВЕСТИ А так же!</ribadescription.aaand>
-  <ribadescription.booksum>ПЕРЕВЕСТИ Суммируется с эффектом от книги.</ribadescription.booksum>
-  <talentname.RIBA_RecipeBook_Supplies>ПЕРЕВЕСТИ Заведующий складом</talentname.RIBA_RecipeBook_Supplies>
-  <talentname.RIBA_RecipeBook_Electrical>ПЕРЕВЕСТИ Радиотехник</talentname.RIBA_RecipeBook_Electrical>
-  <talentname.RIBA_RecipeBook_Machine>ПЕРЕВЕСТИ Инженер-конструктор</talentname.RIBA_RecipeBook_Machine>
-  <talentname.RIBA_RecipeBook_Decorative>ПЕРЕВЕСТИ Дизайнер</talentname.RIBA_RecipeBook_Decorative>
-</infotexts>
+  
+  
+  <entityname.RIBABuyableBunk1>Капсульне ліжко</entityname.RIBABuyableBunk1>
+  <entitydescription.RIBABuyableBunk1>Почуй себе не як вдома</entitydescription.RIBABuyableBunk1>
+  <entityname.RIBABuyableBunk2>Ліжко</entityname.RIBABuyableBunk2>
+  <entitydescription.RIBABuyableBunk2>Сам спи нагорі</entitydescription.RIBABuyableBunk2>
+  <entityname.RIBABuyableBunk3>Медичне ліжко</entityname.RIBABuyableBunk3>
+  <entitydescription.RIBABuyableBunk3>Показує оздоровчий сон</entitydescription.RIBABuyableBunk3>
+  <entityname.RIBAbunkcabinet1>Маленька шафа для одягу</entityname.RIBAbunkcabinet1>
+  <entitydescription.RIBAbunkcabinet1>Чудово підходить до капсульного ліжка!</entitydescription.RIBAbunkcabinet1>
+  <entityname.RIBAbunkcabinet2>Маленька шафа</entityname.RIBAbunkcabinet2>
+  <entitydescription.RIBAbunkcabinet2>Чудово підходить до капсульного ліжка!</entitydescription.RIBAbunkcabinet2>
+  <entityname.RIBABuyableChair1>Крісло керівника</entityname.RIBABuyableChair1>
+  <entitydescription.RIBABuyableChair1>Для господарських сидінь</entitydescription.RIBABuyableChair1>
+  <entityname.RIBABuyableChair2>Комп'ютерне крісло</entityname.RIBABuyableChair2>
+  <entitydescription.RIBABuyableChair2>Якби твій персонаж знав, що він вже в грі...</entitydescription.RIBABuyableChair2>
+  <entityname.RIBABuyableChair3>Крісло без ручок</entityname.RIBABuyableChair3>
+  <entitydescription.RIBABuyableChair3>і без ніжок</entitydescription.RIBABuyableChair3>
+  <entityname.RIBABuyableMedCurtain>Ширма</entityname.RIBABuyableMedCurtain>
+  <entitydescription.RIBABuyableMedCurtain>Все неявне стає явним, та знову неявним, і знову явним..</entitydescription.RIBABuyableMedCurtain>
+  <entityname.RIBABuyablesonarmonitor>Монітор сонара</entityname.RIBABuyablesonarmonitor>
+  <entitydescription.RIBABuyablesonarmonitor>Можна тише?</entitydescription.RIBABuyablesonarmonitor>
+  <entityname.RIBARecipeBookSupplies>"Зроби САМ": Склади</entityname.RIBARecipeBookSupplies>
+  <entitydescription.RIBARecipeBookSupplies>Перший номер журналу RIBA(тм), що розповідає та показує, як повісити полицю, зібрати стелажі, шафу та сміття з підлоги.</entitydescription.RIBARecipeBookSupplies>
+  <entityname.RIBARecipeBookElectrical>"Зроби САМ": Електрика</entityname.RIBARecipeBookElectrical>
+  <entitydescription.RIBARecipeBookElectrical>Другий номер журналу RIBA(тм), що розповідає та показує, як, маючи лише фабрикатор і ліцензію на виробництво за нашими кресленнями, можна зібрати багато корисних речей.  </entitydescription.RIBARecipeBookElectrical>
+  <entityname.RIBARecipeBookMachine>"Зроби САМ": Механіка</entityname.RIBARecipeBookMachine>
+  <entitydescription.RIBARecipeBookMachine>Третій номер журналу RIBA(тм), що розповідає та показує, як, маючи лише фабрикатор створити фабрикатор... Так..</entitydescription.RIBARecipeBookMachine>
+  <entityname.RIBARecipeBookDecorative>"Зроби САМ": Фурнітура</entityname.RIBARecipeBookDecorative>
+  <entitydescription.RIBARecipeBookDecorative>Четвертий номер журналу RIBA(тм), що розповідає та показує, що на підлозі краще не спати.</entitydescription.RIBARecipeBookDecorative>
+  <RIBAdescription.unlockrecipe>Доступні рецепти різних приємностей : </RIBAdescription.unlockrecipe>
+  <RIBAdescription.RIBAdummy>[1] [2] [3]</RIBAdescription.RIBAdummy>
+  <RIBAdescription.aaand>А також!</RIBAdescription.aaand>
+  <RIBAdescription.booksum>Сумується з ефектом від книги.</RIBAdescription.booksum>
+  <talentname.RIBA_RecipeBook_Supplies>Керуючий складом</talentname.RIBA_RecipeBook_Supplies>
+  <talentname.RIBA_RecipeBook_Electrical>Радіотехнік</talentname.RIBA_RecipeBook_Electrical>
+  <talentname.RIBA_RecipeBook_Machine>Інженер-конструктор</talentname.RIBA_RecipeBook_Machine>
+  <talentname.RIBA_RecipeBook_Decorative>Дизайнер</talentname.RIBA_RecipeBook_Decorative>
+  </infotexts>

@@ -69,49 +69,51 @@
   <RIBAItemMsgDetachCrowbar>[[use]]  Не так просто демонтувати  (Ломик)</RIBAItemMsgDetachCrowbar>
   <RIBAItemMsgDetachWrench>[[use]]  Не так просто демонтувати  (Розвідний ключ)</RIBAItemMsgDetachWrench>
   <RIBAFixingtothefloor>Приєднання до підлоги</RIBAFixingtothefloor>
-  <entityname.RIBABunk1>ПЕРЕВЕСТИ Дряхлая койка</entityname.RIBABunk1>
-  <entitydescription.RIBABunk1>ПЕРЕВЕСТИ Лежать выше пола - престижно</entitydescription.RIBABunk1>
-  <entityname.RIBAChair1>ПЕРЕВЕСТИ Стул</entityname.RIBAChair1>
-  <entitydescription.RIBAChair1>ПЕРЕВЕСТИ Твёрдый</entitydescription.RIBAChair1>
-  <entityname.RIBAMedCurtain>ПЕРЕВЕСТИ Ширма</entityname.RIBAMedCurtain>
-  <entitydescription.RIBAMedCurtain>ПЕРЕВЕСТИ Из-за кулис выходит...</entitydescription.RIBAMedCurtain>
-  <entityname.RIBAsonarmonitor>ПЕРЕВЕСТИ Монитор сонара</entityname.RIBAsonarmonitor>
-  <entitydescription.RIBAsonarmonitor>ПЕРЕВЕСТИ Можно погромче?</entitydescription.RIBAsonarmonitor>
-  <RIBAItemMsgDetach>ПЕРЕВЕСТИ [[use]] Это можно взять</RIBAItemMsgDetach>
-  <RIBAdeattachedBlockMessage>ПЕРЕВЕСТИ Без крепления к стене использовать невозможно!</RIBAdeattachedBlockMessage>
-  <BIBAcrateshelf_4slots>ПЕРЕВЕСТИ Стеллаж для четырёх ящиков</BIBAcrateshelf_4slots>
-  <BIBAcrateshelf_1slot>ПЕРЕВЕСТИ Полка для одного ящика</BIBAcrateshelf_1slot>
-  <BIBAsuppliescabinet>ПЕРЕВЕСТИ Хозяйственный шкаф</BIBAsuppliescabinet>
-  <BIBAmediumsteelcabinet>ПЕРЕВЕСТИ Средний шкаф</BIBAmediumsteelcabinet>
-  <BIBAsteelcabinet>ПЕРЕВЕСТИ Большой шкаф</BIBAsteelcabinet>
-  <BIBAdivingsuitlocker>ПЕРЕВЕСТИ Шкаф для подводного снаряжения</BIBAdivingsuitlocker>
-  <BIBArailgunshellrack>ПЕРЕВЕСТИ Стойка для снарядов рельсотрона</BIBArailgunshellrack>
-  <BIBAcoilgunammoshelf>ПЕРЕВЕСТИ Полка с боеприпасами для пушки</BIBAcoilgunammoshelf>
-  <BIBAtoxcabinet>ПЕРЕВЕСТИ Шкаф для хранения токсинов</BIBAtoxcabinet>
-  <BIBAoxygentankshelf>ПЕРЕВЕСТИ Полка для хранения кислородных баллонов</BIBAoxygentankshelf>
-  <BIBAweaponholder>ПЕРЕВЕСТИ Оружейная стойка</BIBAweaponholder>
-  <BIBAextinguisherbracket>ПЕРЕВЕСТИ Стойка огнетушителя</BIBAextinguisherbracket>
-  <BIBAsecuresteelcabinet>ПЕРЕВЕСТИ Защищённый стальной шкаф</BIBAsecuresteelcabinet>
-  <BIBAbunkcabinet>ПЕРЕВЕСТИ Небольшие металлические шкафы</BIBAbunkcabinet>
-  <BIBAControlMonitor>ПЕРЕВЕСТИ Монитор видеосигналов</BIBAControlMonitor>
-  <BIBAControlCamera>ПЕРЕВЕСТИ Камера</BIBAControlCamera>
-  <BIBAStatusMonitor>ПЕРЕВЕСТИ Монитор состояния</BIBAStatusMonitor>
-  <BIBAJunctionBox>ПЕРЕВЕСТИ Соединительная коробка</BIBAJunctionBox>
-  <BIBALamp>ПЕРЕВЕСТИ Лампа</BIBALamp>
-  <BIBAbattery>ПЕРЕВЕСТИ Настенная батарея</BIBAbattery>
-  <BIBAchargingdock>ПЕРЕВЕСТИ Зарядка аккумуляторов</BIBAchargingdock>
-  <BIBAsonarmonitor>ПЕРЕВЕСТИ Монитор сонара</BIBAsonarmonitor>
-  <BIBAbigpump>ПЕРЕВЕСТИ Большая помпа</BIBAbigpump>
-  <BIBAsmallpump>ПЕРЕВЕСТИ Маленькая помпа</BIBAsmallpump>
-  <BIBAfabricator>ПЕРЕВЕСТИ Фабрикатор</BIBAfabricator>
-  <BIBAdeconstructor>ПЕРЕВЕСТИ Деконстрактор</BIBAdeconstructor>
-  <BIBAmedfabricator>ПЕРЕВЕСТИ Медицинский фабрикатор</BIBAmedfabricator>
-  <BIBAbunk>ПЕРЕВЕСТИ Койка</BIBAbunk>
-  <BIBAChair>ПЕРЕВЕСТИ Сиденье</BIBAChair>
-  <BIBAMedCurtain>ПЕРЕВЕСТИ Ширма</BIBAMedCurtain>
-  <BIBAmaxcount1>ПЕРЕВЕСТИ  (по одной штуке на лодку)</BIBAmaxcount1>
-  <BIBAmaxcount2>ПЕРЕВЕСТИ  (по две штуки на лодку)</BIBAmaxcount2>
-  <BIBAmaxcount3>ПЕРЕВЕСТИ  (по три штуки на лодку)</BIBAmaxcount3>
-  <BIBAmaxcount4>ПЕРЕВЕСТИ  (по четыре штуки на лодку)</BIBAmaxcount4>
-  <BIBAmaxcount5>ПЕРЕВЕСТИ  (по пять штук на лодку)</BIBAmaxcount5>
+  
+  
+  <entityname.RIBABunk1>Стара причілка</entityname.RIBABunk1>
+  <entitydescription.RIBABunk1>Лежати вище підлоги - престижно</entitydescription.RIBABunk1>
+  <entityname.RIBAChair1>Стілець</entityname.RIBAChair1>
+  <entitydescription.RIBAChair1>Твердий</entitydescription.RIBAChair1>
+  <entityname.RIBAMedCurtain>Ширма</entityname.RIBAMedCurtain>
+  <entitydescription.RIBAMedCurtain>З-за куліс виходить...</entitydescription.RIBAMedCurtain>
+  <entityname.RIBAsonarmonitor>Монітор сонара</entityname.RIBAsonarmonitor>
+  <entitydescription.RIBAsonarmonitor>Можна голосніше?</entitydescription.RIBAsonarmonitor>
+  <RIBAItemMsgDetach>[[use]] Це можна взяти</RIBAItemMsgDetach>
+  <RIBAdeattachedBlockMessage>Без кріплення до стіни використовувати неможливо!</RIBAdeattachedBlockMessage>
+  <BIBAcrateshelf_4slots>Стелаж для чотирьох ящиків</BIBAcrateshelf_4slots>
+  <BIBAcrateshelf_1slot>Полиця для одного ящика</BIBAcrateshelf_1slot>
+  <BIBAsuppliescabinet>Господарська шафа</BIBAsuppliescabinet>
+  <BIBAmediumsteelcabinet>Середня шафа</BIBAmediumsteelcabinet>
+  <BIBAsteelcabinet>Велика шафа</BIBAsteelcabinet>
+  <BIBAdivingsuitlocker>Шафа для підводного спорядження</BIBAdivingsuitlocker>
+  <BIBArailgunshellrack>Стійка для снарядів рейлгана</BIBArailgunshellrack>
+  <BIBAcoilgunammoshelf>Полиця з боєприпасами для гармати</BIBAcoilgunammoshelf>
+  <BIBAtoxcabinet>Шафа для зберігання токсинів</BIBAtoxcabinet>
+  <BIBAoxygentankshelf>Полиця для зберігання кисневих балонів</BIBAoxygentankshelf>
+  <BIBAweaponholder>Оружейна стійка</BIBAweaponholder>
+  <BIBAextinguisherbracket>Стійка вогнегасника</BIBAextinguisherbracket>
+  <BIBAsecuresteelcabinet>Захищена сталева шафа</BIBAsecuresteelcabinet>
+  <BIBAbunkcabinet>Невеликі металеві шафи</BIBAbunkcabinet>
+  <BIBAControlMonitor>Монітор відеосигналів</BIBAControlMonitor>
+  <BIBAControlCamera>Камера</BIBAControlCamera>
+  <BIBAStatusMonitor>Монітор стану</BIBAStatusMonitor>
+  <BIBAJunctionBox>З'єднувальна коробка</BIBAJunctionBox>
+  <BIBALamp>Лампа</BIBALamp>
+  <BIBAbattery>Настінна батарея</BIBAbattery>
+  <BIBAchargingdock>Зарядка аккумуляторів</BIBAchargingdock>
+  <BIBAsonarmonitor>Монітор сонара</BIBAsonarmonitor>
+  <BIBAbigpump>Велика помпа</BIBAbigpump>
+  <BIBAsmallpump>Маленька помпа</BIBAsmallpump>
+  <BIBAfabricator>Фабрикатор</BIBAfabricator>
+  <BIBAdeconstructor>Деконструктор</BIBAdeconstructor>
+  <BIBAmedfabricator>Медичний фабрикатор</BIBAmedfabricator>
+  <BIBAbunk>Причілка</BIBAbunk>
+  <BIBAChair>Сидіння</BIBAChair>
+  <BIBAMedCurtain>Ширма</BIBAMedCurtain>
+  <BIBAmaxcount1> (по одній штуці на човен)</BIBAmaxcount1>
+  <BIBAmaxcount2> (по дві штуки на човен)</BIBAmaxcount2>
+  <BIBAmaxcount3> (по три штуки на човен)</BIBAmaxcount3>
+  <BIBAmaxcount4> (по чотири штуки на човен)</BIBAmaxcount4>
+  <BIBAmaxcount5> (по п'ять штук на човен)</BIBAmaxcount5>
 </infotexts>
