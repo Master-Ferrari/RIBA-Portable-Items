@@ -1,35 +1,9 @@
 ---@diagnostic disable: undefined-field, redundant-parameter, return-type-mismatch
 
--- RIBA.isSelected = function(item, character)
-
---     local success, result = pcall(function()
---         local selectedItem = character.SelectedItem.Prefab.Identifier.Value
-
---         if not CLIENT then
---             print("(((((")
---         end
-
---         if item == character.SelectedItem then
---             -- print("урааа")
---             return true
---         end
---         return false
---     end)
-
---     if success then
---         return result
---     else
---         if not CLIENT then
---             print("RIBA: "..item.Prefab.Identifier.Value)
---             print("Selected: "..character.SelectedItem.Prefab.Identifier.Value)
---         end
---         return false
---     end
--- end
-
 Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
 
     local itemName = instance.Item.Prefab.Identifier.Value
+    local chName = ptable["character"].Name
 
     local inInventory = RIBA.hasMatchingString({itemName}, function(str)
         return ptable["character"].Inventory.FindItemByIdentifier(str, false) ~= nil -- есть ли у игрока предмет
@@ -59,12 +33,17 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredIte
             ptable.PreventExecution = true -- нет ключа - закрываем
 
             if inInventory then --для моментов когда находится в руках
-                RIBA.BigMessage.SetNext(RIBA.Text("blocked"), Color.Red, "blocked"..itemName)
+                RIBA.ScreenMessage.Big(RIBA.Text("blocked"), Color.Red, "blocked"..itemName..chName)
             end
 
             if not CLIENT then --для моментов когда прикреплён и пытается открыться
-                print("Кастуем "..itemName.." !!!!!!!!!")
-                RIBA.BigMessage.ClCall(ptable["character"], RIBA.Text("blocked"), Color.Red, "blockedAndAttached"..itemName, 3)
+                -- print("Кастуем "..itemName.." !!!!!!!!!")
+                RIBA.ScreenMessage.ClCallBig(ptable["character"], RIBA.Text("blocked"), Color.Red, "blockedAndAttached"..itemName..chName, 3)
+            end
+            
+            if Game.IsSingleplayer == true then
+                -- print("EBZZ "..itemName.." !!!!!!!!!")
+                RIBA.ScreenMessage.Big(RIBA.Text("blocked"), Color.Red, "blockedAndAttached"..itemName..chName, 20) --работает при наведении мышки((
             end
 
             return false
@@ -92,15 +71,15 @@ end, Hook.HookMethodType.Before)
 
 if not CLIENT then return end
 
-Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
-    -- print(#"(GUI.messages)")
-    -- print((GUI.IsFourByThree()))
-    RIBA.BigMessage.Print()
-end, Hook.HookMethodType.After)
+-- Hook.Patch("ololo", "Barotrauma.Items.Components.ItemComponent", "HasRequiredItems", function(instance, ptable)
+--     RIBA.BigMessage.Print()
+-- end, Hook.HookMethodType.After)
 
 Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
     -- предупреждалку для всех предметов риба и не риба
+    -- print("ololo")
     local itemName = instance.Item.Prefab.Identifier.Value
+    local chName = ptable["character"].Name
     local nPs = RIBA.Biba(itemName)
     if nPs ~= nil then
         local maxBItems = ptable["character"].info.GetSavedStatValue(StatTypes.MaxAttachableCount, nPs)
@@ -119,23 +98,31 @@ Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(inst
         if instance.Attached == false then
             if CurrentPseudonymItems >= maxBItems then
                 instance.LimitedAttachable = true
-                if maxBItems == 0 then
-                    RIBA.BigMessage.SetNext(RIBA.Text("books"), Color.Red, "books"..itemName)
-                else
-                    RIBA.BigMessage.SetNext(RIBA.Text("cantattach") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Red, "cantattach"..itemName)
+
+                if ptable["character"]==Character.Controlled then
+                    if maxBItems == 0 then
+                        RIBA.ScreenMessage.Big(RIBA.Text("books"), Color.Red, "books"..itemName..chName)
+                    else
+                        RIBA.ScreenMessage.Big(RIBA.Text("cantattach") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Red, "cantattach"..itemName..chName)
+                    end
                 end
+
             else
                 instance.LimitedAttachable = false
             end
-            if CurrentPseudonymItems + 1 == maxBItems then
-                RIBA.BigMessage.SetNext(RIBA.Text("cantattachwarning") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Yellow, "cantattachwarning"..itemName)
+            
+            if ptable["character"]==Character.Controlled then
+                if CurrentPseudonymItems + 1 == maxBItems then
+                    RIBA.ScreenMessage.Big(RIBA.Text("cantattachwarning") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Yellow, "cantattachwarning"..itemName..chName)
+                end
+                if CurrentPseudonymItems + 1 == maxBItems then
+                    RIBA.ScreenMessage.Small(ptable["character"], "(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Yellow, "Ylimit"..itemName..chName, 2, nil, 4, false)
+                end
+                if CurrentPseudonymItems + 1 < maxBItems then
+                    RIBA.ScreenMessage.Small(ptable["character"], "(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Green, "Glimit"..itemName..chName, 2, nil, 4, false)
+                end
             end
-            if CurrentPseudonymItems + 1 == maxBItems then
-                ptable["character"].AddMessage("(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Yellow, true, "ribamessage1", 3)
-            end
-            if CurrentPseudonymItems + 1 < maxBItems then
-                ptable["character"].AddMessage("(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Green, true, "ribamessage1", 3)
-            end
+
         end
     end
 end, Hook.HookMethodType.Before)
