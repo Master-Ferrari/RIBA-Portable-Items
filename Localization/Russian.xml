@@ -110,6 +110,7 @@
   <BIBAfabricator>Фабрикатор</BIBAfabricator>
   <BIBAdeconstructor>Деконстрактор</BIBAdeconstructor>
   <BIBAmedfabricator>Медицинский фабрикатор</BIBAmedfabricator>
+  <BIBAop_researchterminal>Исследовательский терминал</BIBAop_researchterminal>
   <!-- названия категорий декоративных предметов -->
   <BIBAbunk>Койка</BIBAbunk>
   <BIBAChair>Сиденье</BIBAChair>

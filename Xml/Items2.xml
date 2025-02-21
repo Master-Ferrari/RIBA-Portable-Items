@@ -1,58 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
- 
-   <!-- грузовой шкаф для ящиков  -->
+
+  <!-- грузовой шкаф для ящиков  -->
   <Item name="" identifier="RIBABuyablecrateshelf2" isshootable="true" tags="cargocontainer" linkable="true" pickdistance="150" scale="0.5">
     <Sprite texture="%ModDir%/Media/portable4.png" depth="0.82" sourcerect="681,649,341,375" canflipx="false" origin="0.5,0.5" />
-    <DecorativeSprite texture="%ModDir%/Media/portable4.png"  depth="0.79" offset="3,-3" sourcerect="849,278,168,359"/>
+    <DecorativeSprite texture="%ModDir%/Media/portable4.png" depth="0.79" offset="3,-3" sourcerect="849,278,168,359" />
     <Body width="341" height="375" density="40" />
-	
+
     <ItemContainer capacity="4" canbeselected="true" hideitems="false" itempos="173,-54" iteminterval="0,-91" msg="ItemMsgInteractSelect" containedspritedepths="0.8,0.81,0.8,0.81">
       <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
       <Containable items="crate" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
     </ItemContainer>
-    <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" aimpos="110,-15"  controlpose="true" holdpos="130,-45" attachable="true" aimable="false" PickingTime="40.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" handle1="-160,50" handle2="-160,20" >
+    <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" aimpos="110,-15" controlpose="true" holdpos="130,-45" attachable="true" aimable="false" PickingTime="40.0" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" handle1="-160,50" handle2="-160,20">
       <RequiredItem items="Crowbaritem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Deconstruct time="15">
-      <Item identifier="steel"  amount="16"/>
+      <Item identifier="steel" amount="16" />
     </Deconstruct>
     <Price baseprice="999">
       <Price locationtype="outpost" multiplier="1" maxavailable="1" />
       <Price locationtype="city" multiplier="1" maxavailable="1" />
-      <Price locationtype="research" multiplier="1"   sold="false"/>
-      <Price locationtype="military" multiplier="1"   sold="false" />
+      <Price locationtype="research" multiplier="1" sold="false" />
+      <Price locationtype="military" multiplier="1" sold="false" />
       <Price locationtype="mine" multiplier="1" maxavailable="1" />
     </Price>
-	
+
   </Item>
- 
+
   <!-- ПомпачкаААА -->
-  <ImportItem file="../../Content/Items/Pump/pump.xml"  item="pump">
-	<EditAttributes method="replace" identifier="RIBABuyableBigpump" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
-	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all),DecorativeSprite(all),LightComponent(all)"/>
-	
+  <ImportItem file="../../Content/Items/Pump/pump.xml" item="pump">
+    <EditAttributes method="replace" identifier="RIBABuyableBigpump" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" />
+    <RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all),DecorativeSprite(all),LightComponent(all)" />
+
     <Sprite texture="%ModDir%/Media/portable4.png" depth="0.8" sourcerect="416,455,400,192" origin="0.5,0.5" />
     <InfectedSprite texture="%ModDir%/Media/portable4.png" sourcerect="416,4,427,222" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/Media/portable4.png" sourcerect="416,226,427,225" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/Media/portable4.png" sourcerect="16,624,400,192" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/portable4.png" sourcerect="16,832,400,192" depth="0.8" maxcondition="0" />
-    <DecorativeSprite texture="%ModDir%/Media/portable4.png"  depth="0.79" offset="150,50" sourcerect="850,6,41,41" origin="0.5,0.5" rotationspeed="-360">
+    <DecorativeSprite texture="%ModDir%/Media/portable4.png" depth="0.79" offset="150,50" sourcerect="850,6,41,41" origin="0.5,0.5" rotationspeed="-360">
       <AnimationConditional Voltage="gt 0.3" targetitemcomponent="Pump" />
       <AnimationConditional CurrFlow="gt 0.0" targetitemcomponent="Pump" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
-    <DecorativeSprite texture="%ModDir%/Media/portable4.png"  depth="0.78" offset="150,50" sourcerect="907,6,41,41"/>
-	
-	
+    <DecorativeSprite texture="%ModDir%/Media/portable4.png" depth="0.78" offset="150,50" sourcerect="907,6,41,41" />
+
+
     <Price baseprice="1200">
       <Price locationtype="outpost" multiplier="1.1" maxavailable="1" />
       <Price locationtype="city" multiplier="1" maxavailable="1" />
-      <Price locationtype="research" multiplier="1.2"   sold="false"/>
-      <Price locationtype="military" multiplier="1.2"  maxavailable="1" />
+      <Price locationtype="research" multiplier="1.2" sold="false" />
+      <Price locationtype="military" multiplier="1.2" maxavailable="1" />
       <Price locationtype="mine" multiplier="1.2" maxavailable="1" />
     </Price>
     <Body width="400" height="200" density="40" />
@@ -62,31 +62,31 @@
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
     <Deconstruct time="20">
-      <Item identifier="steel" amount="4"/>
+      <Item identifier="steel" amount="4" />
       <Item identifier="aluminium" amount="3" />
       <Item identifier="dementonite" amount="4" />
       <Item identifier="plastic" />
     </Deconstruct>
   </ImportItem>
-  
+
   <!-- Помпачка -->
-  <ImportItem file="../../Content/Items/Pump/pump.xml"  item="smallpump">
-	<EditAttributes method="replace" identifier="RIBABuyablesmallpump" isshootable="true"   impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
-	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all)"/>
-	
+  <ImportItem file="../../Content/Items/Pump/pump.xml" item="smallpump">
+    <EditAttributes method="replace" identifier="RIBABuyablesmallpump" isshootable="true" impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate1R" />
+    <RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all)" />
+
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="688,778,128,74" origin="0.5,0.5" />
     <InfectedSprite texture="%ModDir%/Media/portable.png" sourcerect="555,0,216,129" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/Media/portable.png" sourcerect="339,0,216,129" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="688,852,128,74" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="688,926,128,74" depth="0.8" maxcondition="0" />
-	
+
     <Body width="128" height="74" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachCrowbar" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
     <Deconstruct time="20">
-      <Item identifier="steel" amount="4"/>
+      <Item identifier="steel" amount="4" />
       <Item identifier="aluminium" amount="3" />
       <Item identifier="dementonite" amount="4" />
       <Item identifier="plastic" />
@@ -94,23 +94,23 @@
     <Price baseprice="200">
       <Price locationtype="outpost" multiplier="1.1" />
       <Price locationtype="city" multiplier="1" />
-      <Price locationtype="research" multiplier="1.2"   sold="false"/>
-      <Price locationtype="military" multiplier="1.2"  maxavailable="1" />
+      <Price locationtype="research" multiplier="1.2" sold="false" />
+      <Price locationtype="military" multiplier="1.2" maxavailable="1" />
       <Price locationtype="mine" multiplier="1.2" />
     </Price>
   </ImportItem>
-  
+
   <!-- Монитор камеры -->
-  <ImportItem file="../../Content/Items/Weapons/railgun.xml"  item="periscope">
-	<EditAttributes method="replace" identifier="RIBABuyableControlMonitor" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
-	<RemoveElements elements="Sprite(0),Controller(0)"/>
-	
+  <ImportItem file="../../Content/Items/Weapons/railgun.xml" item="periscope">
+    <EditAttributes method="replace" identifier="RIBABuyableControlMonitor" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2" />
+    <RemoveElements elements="Sprite(0),Controller(0)" />
+
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.7" sourcerect="460,348,140,145" origin="0.5,0.5" />
     <Controller UserPos="-30.0, -0.0" direction="Right" canbeselected="true" msg="ItemMsgInteractSelect">
       <limbposition limb="LeftHand" position="60,-110" />
       <limbposition limb="RightHand" position="120,-130" />
     </Controller>
-	
+
     <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" flicker="0.3" allowingameediting="false" scale="1.">
       <sprite texture="%ModDir%/Media/portable.png" depth="0.59" sourcerect="600,348,122,77" origin="0.47,0.77" alpha="1.0" />
     </LightComponent>
@@ -126,21 +126,21 @@
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
     </Holdable>
     <Price baseprice="300">
-      <Price locationtype="outpost" multiplier="1.8"  sold="false"/>
+      <Price locationtype="outpost" multiplier="1.8" sold="false" />
       <Price locationtype="city" multiplier="1.8" maxavailable="1" />
       <Price locationtype="research" multiplier="1.0" minavailable="1" />
       <Price locationtype="military" multiplier="1.9" minavailable="1" />
-      <Price locationtype="mine" multiplier="1.5" maxavailable="1"/>
+      <Price locationtype="mine" multiplier="1.5" maxavailable="1" />
     </Price>
   </ImportItem>
 
   <!-- Камера -->
-  <ImportItem file="../../Content/Items/Electricity/signalitems.xml"  item="camera">
-	<EditAttributes method="replace" identifier="RIBABuyableControlCamera"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R" rotation="0"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Electricity/signalitems.xml" item="camera">
+    <EditAttributes method="replace" identifier="RIBABuyableControlCamera" isshootable="true" impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate1R" rotation="0" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.7" sourcerect="601,426,57,48" origin="0.5,0.5" />
-	
+
     <Body width="57" height="48" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="Any,LeftHand,RightHand" msg="RIBAItemMsgDetachWrench" PickingTime="20.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
@@ -154,11 +154,11 @@
       </TickBox>
     </CustomInterface>
     <Price baseprice="300">
-      <Price locationtype="outpost" multiplier="1.9"  sold="false" />
+      <Price locationtype="outpost" multiplier="1.9" sold="false" />
       <Price locationtype="city" multiplier="2.3" />
-      <Price locationtype="research" multiplier="1.1" minavailable="1"  />
+      <Price locationtype="research" multiplier="1.1" minavailable="1" />
       <Price locationtype="military" multiplier="1.9" minavailable="1" />
-      <Price locationtype="mine" multiplier="2.5" maxavailable="1"/>
+      <Price locationtype="mine" multiplier="2.5" maxavailable="1" />
     </Price>
     <Deconstruct time="15">
       <Item identifier="fpgacircuit" />
@@ -169,22 +169,22 @@
   </ImportItem>
 
   <!-- монитор состояния	-->
-  <ImportItem file="../../Content/Items/Command/command.xml"  item="statusmonitor">
-	<EditAttributes method="replace" identifier="RIBABuyableStatusMonitor"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
-	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
-	
+  <ImportItem file="../../Content/Items/Command/command.xml" item="statusmonitor">
+    <EditAttributes method="replace" identifier="RIBABuyableStatusMonitor" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2" />
+    <RemoveElements elements="Sprite(0),BrokenSprite(all)" />
+
     <Sprite texture="%ModDir%/Media/portable.png" sourcerect="542,666,146,112" depth="0.7" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="542,778,146,112" depth="0.7" maxcondition="80" fadein="true" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/Media/portable.png" sourcerect="688,666,146,112" depth="0.7" maxcondition="0" origin="0.5,0.5" />
-    
-	<GetExistingElement element="LightComponent(0)">
-		<RemoveElements elements="sprite(0)"/>
-		<sprite texture="%ModDir%/Media/portable.png" depth="0.69" sourcerect="542,890,146,112" origin="0.5,0.5" alpha="1.0" />
+
+    <GetExistingElement element="LightComponent(0)">
+      <RemoveElements elements="sprite(0)" />
+      <sprite texture="%ModDir%/Media/portable.png" depth="0.69" sourcerect="542,890,146,112" origin="0.5,0.5" alpha="1.0" />
     </GetExistingElement>
-	
+
     <Deconstruct time="10">
       <Item identifier="wificomponent" />
-      <Item identifier="equalscomponent"  />
+      <Item identifier="equalscomponent" />
       <Item identifier="greatercomponent" />
       <Item identifier="fpgacircuit" amount="2" />
       <Item identifier="plastic" />
@@ -195,34 +195,34 @@
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
     </Holdable>
     <Price baseprice="600">
-      <Price locationtype="outpost" multiplier="1.9" maxavailable="1"/>
-      <Price locationtype="city" multiplier="2.4" maxavailable="1"/>
+      <Price locationtype="outpost" multiplier="1.9" maxavailable="1" />
+      <Price locationtype="city" multiplier="2.4" maxavailable="1" />
       <Price locationtype="research" multiplier="1.2" />
       <Price locationtype="military" multiplier="1.9" minavailable="1" />
-      <Price locationtype="mine" multiplier="0.7" maxavailable="1"/>
+      <Price locationtype="mine" multiplier="0.7" maxavailable="1" />
     </Price>
   </ImportItem>
-  
+
   <!-- Щиток -->
-  <ImportItem file="../../Content/Items/Electricity/poweritems.xml"  item="junctionbox">
-	<EditAttributes method="replace" identifier="RIBABuyableJunctionBox"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
-	<RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all)"/>
+  <ImportItem file="../../Content/Items/Electricity/poweritems.xml" item="junctionbox">
+    <EditAttributes method="replace" identifier="RIBABuyableJunctionBox" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2" />
+    <RemoveElements elements="Sprite(0),InfectedSprite(0),DamagedInfectedSprite(0),BrokenSprite(all)" />
 
     <Sprite texture="%ModDir%/Media/portable2.png" sourcerect="0,0,113,176" depth="0.8" canflipx="false" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="113,0,113,176" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="226,0я,113,176" depth="0.8" maxcondition="0" />
     <InfectedSprite texture="%ModDir%/Media/portable.png" sourcerect="0,352,161,239" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/Media/portable.png" sourcerect="161,352,161,239" origin="0.5,0.5" />
-	
-	<GetExistingElement element="LightComponent(0)">
-		<RemoveElements elements="sprite(all)"/>
-        <sprite texture="%ModDir%/Media/portable2.png" sourcerect="0,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
-	</GetExistingElement>
-	<GetExistingElement element="LightComponent(1)">
-		<RemoveElements elements="sprite(all)"/>
-        <sprite texture="%ModDir%/Media/portable2.png" sourcerect="113,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
-	</GetExistingElement>
-	
+
+    <GetExistingElement element="LightComponent(0)">
+      <RemoveElements elements="sprite(all)" />
+      <sprite texture="%ModDir%/Media/portable2.png" sourcerect="0,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+    </GetExistingElement>
+    <GetExistingElement element="LightComponent(1)">
+      <RemoveElements elements="sprite(all)" />
+      <sprite texture="%ModDir%/Media/portable2.png" sourcerect="113,176,113,176" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+    </GetExistingElement>
+
     <Deconstruct time="30">
       <Item identifier="steel" amount="3" />
       <Item identifier="copper" amount="2" />
@@ -236,24 +236,24 @@
     <Price baseprice="300">
       <Price locationtype="outpost" multiplier="1.4" />
       <Price locationtype="city" multiplier="1.4" />
-      <Price locationtype="research" multiplier="1.0"  minavailable="1"  />
+      <Price locationtype="research" multiplier="1.0" minavailable="1" />
       <Price locationtype="military" multiplier="2.2" />
       <Price locationtype="mine" multiplier="2.1" />
     </Price>
   </ImportItem>
-  
+
   <!-- Лампа -->
-  <ImportItem file="../../Content/Items/Electricity/lights.xml"  item="lightfluorescentm04">
-	<EditAttributes method="replace" identifier="RIBABuyableLamp"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
-	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+  <ImportItem file="../../Content/Items/Electricity/lights.xml" item="lightfluorescentm04">
+    <EditAttributes method="replace" identifier="RIBABuyableLamp" isshootable="true" impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate1R" />
+    <RemoveElements elements="Sprite(0),BrokenSprite(all)" />
 
     <Sprite texture="%ModDir%/Media/portable2.png" sourcerect="892,846,63,89" depth="0.8" origin="0.5,0.5" />
-	
-	<GetExistingElement element="LightComponent(0)">
-		<RemoveElements elements="LightTexture(0)"/>
-		<sprite texture="%ModDir%/Media/portable2.png" sourcerect="893,936,62,90" alpha="1.0" />
-	</GetExistingElement>
-	
+
+    <GetExistingElement element="LightComponent(0)">
+      <RemoveElements elements="LightTexture(0)" />
+      <sprite texture="%ModDir%/Media/portable2.png" sourcerect="893,936,62,90" alpha="1.0" />
+    </GetExistingElement>
+
     <Deconstruct time="10">
       <Item identifier="tin" />
       <Item identifier="aluminium" />
@@ -267,24 +267,24 @@
     <Price baseprice="125">
       <Price locationtype="outpost" multiplier="1.5" />
       <Price locationtype="city" multiplier="1.7" />
-      <Price locationtype="research" multiplier="0.2"  minavailable="4" />
-      <Price locationtype="military" multiplier="4.3" maxavailable="2"  />
+      <Price locationtype="research" multiplier="0.2" minavailable="4" />
+      <Price locationtype="military" multiplier="4.3" maxavailable="2" />
       <Price locationtype="mine" multiplier="1.2" />
     </Price>
   </ImportItem>
-  
+
   <!-- Батарея -->
-  <ImportItem file="../../Content/Items/Electricity/poweritems.xml"  item="battery">
-	<EditAttributes method="replace" identifier="RIBABuyablebattery"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
-	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+  <ImportItem file="../../Content/Items/Electricity/poweritems.xml" item="battery">
+    <EditAttributes method="replace" identifier="RIBABuyablebattery" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" />
+    <RemoveElements elements="Sprite(0),BrokenSprite(all)" />
 
     <Sprite texture="%ModDir%/Media/portable2.png" sourcerect="339,154,118,160" depth="0.8" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="457,154,118,160" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="575,154,118,160" depth="0.8" maxcondition="0" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Deconstruct time="50">
       <Item identifier="batterycell" amount="4" />
       <Item identifier="fpgacircuit" />
@@ -294,7 +294,7 @@
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.15" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Price baseprice="250">
       <Price locationtype="outpost" multiplier="1.1" maxavailable="2" />
@@ -304,19 +304,19 @@
       <Price locationtype="mine" multiplier="1.9" />
     </Price>
   </ImportItem>
-  
+
   <!-- Станция перезарядки -->
-  <ImportItem file="../../Content/Items/Electricity/poweritems.xml"  item="chargingdock">
-	<EditAttributes method="replace" identifier="RIBABuyablechargingdock"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
-	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
+  <ImportItem file="../../Content/Items/Electricity/poweritems.xml" item="chargingdock">
+    <EditAttributes method="replace" identifier="RIBABuyablechargingdock" isshootable="true" impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate1R" />
+    <RemoveElements elements="Sprite(0),BrokenSprite(all)" />
 
     <Sprite texture="%ModDir%/Media/portable2.png" sourcerect="339,314,118,34" depth="0.8" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="457,314,118,34" depth="0.8" maxcondition="40" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="575,314,118,34" depth="0.8" maxcondition="0" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Deconstruct time="15">
       <Item identifier="aluminium" />
       <Item identifier="wire" amount="2" />
@@ -326,7 +326,7 @@
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="15.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="Wrench" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.75" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Price baseprice="250">
       <Price locationtype="outpost" multiplier="1.1" minavailable="2" />
@@ -336,17 +336,17 @@
       <Price locationtype="mine" multiplier="1.2" />
     </Price>
   </ImportItem>
-  
+
   <!-- Настенный ящик -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="suppliescabinet">
-	<EditAttributes method="replace" identifier="RIBABuyablesuppliescabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
-	<RemoveElements elements="Sprite(0)"/>
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="suppliescabinet">
+    <EditAttributes method="replace" identifier="RIBABuyablesuppliescabinet" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2" />
+    <RemoveElements elements="Sprite(0)" />
 
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.7" sourcerect="693,154,113,125" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="113" height="125" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
@@ -364,17 +364,17 @@
       <Price locationtype="mine" multiplier="1.9" />
     </Price>
   </ImportItem>
-  
+
   <!-- Шкаф  -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="mediumsteelcabinet">
-	<EditAttributes method="replace" identifier="RIBABuyablemediumsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" RIBA_Costyl="true"/>
-	<RemoveElements elements="Sprite(0)"/>
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="mediumsteelcabinet">
+    <EditAttributes method="replace" identifier="RIBABuyablemediumsteelcabinet" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" RIBA_Costyl="true" />
+    <RemoveElements elements="Sprite(0)" />
 
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.84" sourcerect="727,306,149,360" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="113" height="125" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <RequiredItem identifier="wrenchitem" type="Equipped" />
@@ -389,17 +389,17 @@
       <Price locationtype="mine" multiplier="0.9" minavailable="4" />
     </Price>
   </ImportItem>
-  
+
   <!-- Шкаф с окном -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="mediumwindowedsteelcabinet">
-	<EditAttributes method="replace" identifier="RIBABuyablemediumwindowedsteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="mediumwindowedsteelcabinet">
+    <EditAttributes method="replace" identifier="RIBABuyablemediumwindowedsteelcabinet" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.84" sourcerect="876,306,149,360" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="113" height="125" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
@@ -416,17 +416,17 @@
       <Price locationtype="mine" multiplier="0.9" />
     </Price>
   </ImportItem>
-  
+
   <!-- Шкаф большой -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="steelcabinet">
-	<EditAttributes method="replace" identifier="RIBABuyablesteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="steelcabinet">
+    <EditAttributes method="replace" identifier="RIBABuyablesteelcabinet" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable3.png" depth="0.84" sourcerect="499,289,350,359" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="360" height="373" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
@@ -439,30 +439,30 @@
       <Item identifier="steel" />
     </Deconstruct>
     <Price baseprice="700">
-      <Price locationtype="outpost" multiplier="0.9"/>
-      <Price locationtype="city" multiplier="0.8"/>
+      <Price locationtype="outpost" multiplier="0.9" />
+      <Price locationtype="city" multiplier="0.8" />
       <Price locationtype="research" multiplier="1.2" />
       <Price locationtype="military" multiplier="2.2" />
       <Price locationtype="mine" multiplier="0.6" />
     </Price>
   </ImportItem>
-  
+
   <!-- Водолазный шкаф -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="divingsuitlocker">
-	<EditAttributes method="replace" identifier="RIBABuyabledivingsuitlocker"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="divingsuitlocker">
+    <EditAttributes method="replace" identifier="RIBABuyabledivingsuitlocker" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.84" sourcerect="826,0,99,256" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="99" height="256" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" controlpose="true">
-	  <!-- <RequiredItem items="divingsuit" type="Contained" /> -->
+      <!-- <RequiredItem items="divingsuit" type="Contained" /> -->
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.25" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Deconstruct time="20">
       <RequiredItem identifier="steel" />
@@ -477,17 +477,17 @@
       <Price locationtype="mine" multiplier="1.2" />
     </Price>
   </ImportItem>
-  
+
   <!-- МедШкаф -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="medcabinet">
-	<EditAttributes method="replace" identifier="RIBABuyablemedcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="medcabinet">
+    <EditAttributes method="replace" identifier="RIBABuyablemedcabinet" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.84" sourcerect="338,495,204,320" canflipx="false" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Deconstruct time="20">
       <Item identifier="steel" amount="8" />
       <Item identifier="silicon" />
@@ -498,29 +498,29 @@
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
     <Price baseprice="400">
-      <Price locationtype="outpost" multiplier="1.9"/>
-      <Price locationtype="city" multiplier="1.8"/>
+      <Price locationtype="outpost" multiplier="1.9" />
+      <Price locationtype="city" multiplier="1.8" />
       <Price locationtype="research" multiplier="0.2" />
       <Price locationtype="military" multiplier="1.2" />
       <Price locationtype="mine" multiplier="2.2" />
     </Price>
   </ImportItem>
-  
+
   <!-- Патроны для рельсы  -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="railgunshellrack">
-	<EditAttributes method="replace" identifier="RIBABuyablerailgunshellrack"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="railgunshellrack">
+    <EditAttributes method="replace" identifier="RIBABuyablerailgunshellrack" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="333,815,209,209" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="209" height="209" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Deconstruct time="10">
       <Item identifier="steel" amount="3" />
@@ -529,17 +529,17 @@
       <Price locationtype="military" multiplier="0.2" />
     </Price>
   </ImportItem>
-  
+
   <!-- Патроны для коилгана  -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="coilgunammoshelf">
-	<EditAttributes method="replace" identifier="RIBABuyablecoilgunammoshelf"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="coilgunammoshelf">
+    <EditAttributes method="replace" identifier="RIBABuyablecoilgunammoshelf" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="187,724,139,300" canflipx="false" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Deconstruct time="10">
       <Item identifier="steel" amount="3" />
     </Deconstruct>
@@ -547,27 +547,27 @@
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="35" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Price baseprice="100">
       <Price locationtype="military" multiplier="0.2" />
     </Price>
   </ImportItem>
-  
+
   <!-- Токсичный ящик -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="toxcabinet">
-	<EditAttributes method="replace" identifier="RIBABuyabletoxcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="toxcabinet">
+    <EditAttributes method="replace" identifier="RIBABuyabletoxcabinet" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.84" sourcerect="892,665,110,144" canflipx="false" origin="0.5,0.5" />
-	
-	<GetExistingElement element="ItemContainer(0)">
-		<RemoveElements elements="RequiredItem(0)"/>
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)">
-		<EditAttributes method="replace" RIBA_RequiredItems="id_medic,idcard:captain" />
-	  </ImportElement>
-	</GetExistingElement>
-	
+
+    <GetExistingElement element="ItemContainer(0)">
+      <RemoveElements elements="RequiredItem(0)" />
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)">
+        <EditAttributes method="replace" RIBA_RequiredItems="id_medic,idcard:captain" />
+      </ImportElement>
+    </GetExistingElement>
+
     <Body width="110" height="144" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
@@ -578,35 +578,35 @@
       <Item identifier="silicon" amount="2" />
     </Deconstruct>
     <Price baseprice="225">
-      <Price locationtype="outpost" multiplier="1.9"/>
-      <Price locationtype="city" multiplier="1.8"/>
-      <Price locationtype="research" multiplier="0.5"  minavailable="1" />
+      <Price locationtype="outpost" multiplier="1.9" />
+      <Price locationtype="city" multiplier="1.8" />
+      <Price locationtype="research" multiplier="0.5" minavailable="1" />
       <Price locationtype="military" multiplier="1.2" />
       <Price locationtype="mine" multiplier="1.2" />
     </Price>
   </ImportItem>
-  
+
   <!-- Ящик для баллонов  -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="oxygentankshelf2">
-	<EditAttributes method="replace" identifier="RIBABuyableoxygentankshelf"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="oxygentankshelf2">
+    <EditAttributes method="replace" identifier="RIBABuyableoxygentankshelf" isshootable="true" impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate1R" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite name="Diving Suit Locker" texture="%ModDir%/Media/portable.png" depth="0.84" sourcerect="628,497,99,82" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="99" height="82" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Deconstruct time="10">
       <Item identifier="steel" amount="2" />
       <Item identifier="aluminium" />
     </Deconstruct>
-    <Price baseprice="100"   sold="false"/>
+    <Price baseprice="100" sold="false" />
     <Price baseprice="150">
       <Price locationtype="outpost" multiplier="1.1" />
       <Price locationtype="city" multiplier="1" />
@@ -617,21 +617,21 @@
   </ImportItem>
 
   <!-- Держатель для оружия  -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="weaponholder">
-	<EditAttributes method="replace" identifier="RIBABuyableweaponholder"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate1R"/>
-	<RemoveElements elements="Sprite(0), DecorativeSprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="weaponholder">
+    <EditAttributes method="replace" identifier="RIBABuyableweaponholder" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate1R" />
+    <RemoveElements elements="Sprite(0), DecorativeSprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.85" sourcerect="642,579,85,86" canflipx="false" origin="0.5,0.5" />
     <DecorativeSprite texture="%ModDir%/Media/portable.png" depth="0.5" sourcerect="67,626,120,30" canflipx="false" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="209" height="209" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Deconstruct time="6">
       <Item identifier="aluminium" amount="2" />
@@ -640,59 +640,59 @@
       <Price locationtype="military" multiplier="0.5" minamount="2" />
     </Price>
   </ImportItem>
-  
+
   <!-- Держатель для огнетушителя -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="extinguisherbracket">
-	<EditAttributes method="replace" identifier="RIBABuyableextinguisherbracket"  isshootable="true"    impactsoundtag="impact_metal_light"  cargocontaineridentifier="RIBAtemporalcrate1R"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="extinguisherbracket">
+    <EditAttributes method="replace" identifier="RIBABuyableextinguisherbracket" isshootable="true" impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate1R" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.85" sourcerect="955,821,66,203" canflipx="false" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="66" height="203" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" aimable="false" msg="RIBAItemMsgDetachWrench" PickingTime="6.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Deconstruct time="8">
       <Item identifier="carbon" amount="2" />
     </Deconstruct>
     <Price baseprice="60">
       <Price locationtype="outpost" multiplier="1.1" minavailable="1" />
-      <Price locationtype="city" multiplier="1"/>
+      <Price locationtype="city" multiplier="1" />
       <Price locationtype="research" multiplier="1.2" />
       <Price locationtype="military" multiplier="1.2" />
       <Price locationtype="mine" multiplier="0.7" />
     </Price>
   </ImportItem>
-  
+
   <!--  ящик -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="metalcrate">
-	<EditAttributes method="replace" identifier="RIBABuyablemetalcrate"  isshootable="true"  impactsoundtag="impact_metal_heavy"/>
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="metalcrate">
+    <EditAttributes method="replace" identifier="RIBABuyablemetalcrate" isshootable="true" impactsoundtag="impact_metal_heavy" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable.png" depth="0.54" sourcerect="187,641,146,83" origin="0.5,0.5" />
-	
+
     <Deconstruct time="20">
       <Item identifier="steel" />
     </Deconstruct>
     <Price baseprice="50">
       <Price locationtype="outpost" multiplier="1.1" minavailable="1" />
-      <Price locationtype="city" multiplier="1"/>
+      <Price locationtype="city" multiplier="1" />
       <Price locationtype="research" multiplier="1.2" />
       <Price locationtype="military" multiplier="1.2" />
       <Price locationtype="mine" multiplier="0.7" />
     </Price>
   </ImportItem>
-  
+
   <!-- Фабрикатор  -->
-  <ImportItem file="../../Content/Items/Fabricators/fabricators.xml"  item="fabricator">
-	<EditAttributes method="replace" identifier="RIBABuyablefabricator"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
-	<RemoveElements elements="Sprite(0), BrokenSprite(all), DecorativeSprite(all)"/>
-	
+  <ImportItem file="../../Content/Items/Fabricators/fabricators.xml" item="fabricator">
+    <EditAttributes method="replace" identifier="RIBABuyablefabricator" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" />
+    <RemoveElements elements="Sprite(0), BrokenSprite(all), DecorativeSprite(all)" />
+
     <Sprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="0,624,336,400" depth="0.75" />
     <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="336,624,336,400" depth="0.75" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="672,624,336,400" depth="0.75" maxcondition="0" />
@@ -708,25 +708,25 @@
       <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
       <IsActiveConditional Condition="gt 0.0" />
     </DecorativeSprite>
-	<GetExistingElement element="Fabricator(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="Fabricator(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="335" height="390" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-100" handle1="-150,0" handle2="-150,0" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Deconstruct time="35">
-      <Item identifier="fpgacircuit" amount="3"/>
+      <Item identifier="fpgacircuit" amount="3" />
       <Item identifier="terminal" />
-      <Item identifier="steel" amount="8"/>
+      <Item identifier="steel" amount="8" />
       <Item identifier="RIBAStatusMonitor" />
     </Deconstruct>
     <Price baseprice="3000">
-      <Price locationtype="outpost" multiplier="1.5"  sold="false"/>
-      <Price locationtype="city" multiplier="1.6"  minavailable="1"/>
+      <Price locationtype="outpost" multiplier="1.5" sold="false" />
+      <Price locationtype="city" multiplier="1.6" minavailable="1" />
       <Price locationtype="research" multiplier="0.6" />
       <Price locationtype="military" multiplier="1.8" />
       <Price locationtype="mine" multiplier="0.8" />
@@ -734,83 +734,83 @@
   </ImportItem>
 
   <!-- Деконстрактор  -->
-  <ImportItem file="../../Content/Items/Fabricators/fabricators.xml"  item="deconstructor">
-	<EditAttributes method="replace" identifier="RIBABuyabledeconstructor"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
-	<RemoveElements elements="Sprite(0),BrokenSprite(all),DecorativeSprite(all)"/>
-	
-	<Sprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,304,256,320" />
-	<BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="272,304,256,320" depth="0.8" maxcondition="80" fadein="true" />
-	<BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="544,304,256,320" depth="0.8" maxcondition="0" />
-	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.84" sourcerect="866,484,156,105" />
-	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.83" offset="-27,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
-		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
-		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
-		<IsActiveConditional Condition="gt 0.0" />
-	</DecorativeSprite>
-	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.82" offset="-29,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-718">
-		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
-		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
-		<IsActiveConditional Condition="gt 0.0" />
-	</DecorativeSprite>
-	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.81" offset="-30,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-720">
-		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
-		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
-		<IsActiveConditional Condition="gt 0.0" />
-	</DecorativeSprite>
-	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.83" offset="38,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="715">
-		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
-		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
-		<IsActiveConditional Condition="gt 0.0" />
-	</DecorativeSprite>
-	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.82" offset="40,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="718">
-		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
-		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
-		<IsActiveConditional Condition="gt 0.0" />
-	</DecorativeSprite>
-	<DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.81" offset="41,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed=" 720">
-		<AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
-		<AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
-		<IsActiveConditional Condition="gt 0.0" />
-	</DecorativeSprite>
-	<GetExistingElement element="Deconstructor(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+  <ImportItem file="../../Content/Items/Fabricators/fabricators.xml" item="deconstructor">
+    <EditAttributes method="replace" identifier="RIBABuyabledeconstructor" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" />
+    <RemoveElements elements="Sprite(0),BrokenSprite(all),DecorativeSprite(all)" />
+
+    <Sprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,304,256,320" />
+    <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="272,304,256,320" depth="0.8" maxcondition="80" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="544,304,256,320" depth="0.8" maxcondition="0" />
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.84" sourcerect="866,484,156,105" />
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.83" offset="-27,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.82" offset="-29,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-718">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.81" offset="-30,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-720">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.83" offset="38,-20" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="715">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.82" offset="40,-30" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="718">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.81" offset="41,-40" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed=" 720">
+      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Deconstructor" />
+      <AnimationConditional IsActive="True" targetitemcomponent="Deconstructor" />
+      <IsActiveConditional Condition="gt 0.0" />
+    </DecorativeSprite>
+    <GetExistingElement element="Deconstructor(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Deconstruct time="35">
       <Item identifier="fpgacircuit" />
       <Item identifier="terminal" />
-      <Item identifier="steel" amount="2"/>
-      <Item identifier="titaniumaluminiumalloy" amount="1"/>
+      <Item identifier="steel" amount="2" />
+      <Item identifier="titaniumaluminiumalloy" amount="1" />
       <Item identifier="RIBAStatusMonitor" />
     </Deconstruct>
-	<Body width="250" height="320" density="40" />
-	<Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
-		<requireditem identifier="Crowbar" type="Equipped" />
-		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
-	</Holdable>
-	
+    <Body width="250" height="320" density="40" />
+    <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="200,-20" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
+    </Holdable>
+
     <Price baseprice="1500">
-      <Price locationtype="outpost" multiplier="1.5"  sold="false" />
-      <Price locationtype="city" multiplier="1.3"  minavailable="1"  />
+      <Price locationtype="outpost" multiplier="1.5" sold="false" />
+      <Price locationtype="city" multiplier="1.3" minavailable="1" />
       <Price locationtype="research" multiplier="1.1" />
       <Price locationtype="military" multiplier="2.2" />
       <Price locationtype="mine" multiplier="0.4" sold="false" />
     </Price>
   </ImportItem>
-  
+
   <!-- Медфабрикатор  -->
-  <ImportItem file="../../Content/Items/Fabricators/fabricators.xml"  item="medicalfabricator">
-	<EditAttributes method="replace" identifier="RIBABuyablemedfabricator"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R"/>
-	<RemoveElements elements="Sprite(0),BrokenSprite(all)"/>
-	
+  <ImportItem file="../../Content/Items/Fabricators/fabricators.xml" item="medicalfabricator">
+    <EditAttributes method="replace" identifier="RIBABuyablemedfabricator" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2R" />
+    <RemoveElements elements="Sprite(0),BrokenSprite(all)" />
+
     <Sprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" depth="0.8" sourcerect="0,0,336,288" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="336,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="80" fadein="true" />
     <BrokenSprite texture="%ModDir%/Media/FabricatorsAndDeconstructors.png" sourcerect="672,0,336,288" origin="0.5,0.5" depth="0.8" maxcondition="0" />
-	<GetExistingElement element="Fabricator(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="Fabricator(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Deconstruct time="35">
       <Item identifier="fpgacircuit" />
       <Item identifier="terminal" />
@@ -822,66 +822,66 @@
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="300,-60" handle1="-80,120" handle2="-80,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbar" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
-    <Price baseprice="2000">
-      <Price locationtype="outpost" multiplier="2.0"  sold="false"/>
-      <Price locationtype="city" multiplier="2.1"  sold="false" />
-      <Price locationtype="research" multiplier="1.0" maxavailable="1"/>
-      <Price locationtype="military" multiplier="2.0"  sold="false" />
-      <Price locationtype="mine" multiplier="2.0"  sold="false" />
+    <Price baseprice="2000" minleveldifficulty="30">
+      <Price locationtype="outpost" multiplier="2.0" sold="false" />
+      <Price locationtype="city" multiplier="2.1" sold="false" />
+      <Price locationtype="research" multiplier="1.0" maxavailable="1" />
+      <Price locationtype="military" multiplier="2.0" sold="false" />
+      <Price locationtype="mine" multiplier="2.0" sold="false" />
     </Price>
   </ImportItem>
-  
+
   <!-- Исследорвательский терминал -->
-  <ImportItem file="../../Content/Items/Genetic/genetic.xml"  item="op_researchterminal">
-	<EditAttributes method="replace" identifier="RIBAop_researchterminal"  isshootable="true"  impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2"/>
-	<RemoveElements elements="sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Genetic/genetic.xml" item="op_researchterminal">
+    <EditAttributes method="replace" identifier="RIBAop_researchterminal" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2" />
+    <RemoveElements elements="sprite(0)" />
+
     <sprite texture="%ModDir%/Media/portable3.png" sourcerect="0,724,494,297" depth="0.79" premultiplyalpha="false" origin="0.5,0.5" />
-	<GetExistingElement element="LightComponent(0)">
-		<RemoveElements elements="sprite(all)"/>
-        <sprite texture="%ModDir%/Media/portable3.png" sourcerect="0,574,494,145" depth="0.1" origin="0.5,0.93" alpha="1.0" />
-	</GetExistingElement>
-	<GetExistingElement element="Deconstructor(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</GetExistingElement>
-	
+    <GetExistingElement element="LightComponent(0)">
+      <RemoveElements elements="sprite(all)" />
+      <sprite texture="%ModDir%/Media/portable3.png" sourcerect="0,574,494,145" depth="0.1" origin="0.5,0.93" alpha="1.0" />
+    </GetExistingElement>
+    <GetExistingElement element="Deconstructor(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </GetExistingElement>
+
     <Body width="330" height="200" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="45.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="300,-60" handle1="-140,120" handle2="-140,120" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
       <requireditem identifier="Crowbaritem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/StatusEffect(0)" />
     </Holdable>
     <Deconstruct time="55">
-      <Item identifier="fpgacircuit" amount = "4" />
-      <Item identifier="terminal" amount = "2"/>
-      <Item identifier="steel" amount = "4" />
+      <Item identifier="fpgacircuit" amount="4" />
+      <Item identifier="terminal" amount="2" />
+      <Item identifier="steel" amount="4" />
       <Item identifier="RIBAStatusMonitor" />
     </Deconstruct>
-	
-    <Price baseprice="10000">
-      <Price locationtype="outpost" multiplier="1.4"  sold="false"/>
-      <Price locationtype="city" multiplier="1.5"  sold="false" />
-      <Price locationtype="research" multiplier="0.8" maxavailable="1"/>
-      <Price locationtype="military" multiplier="1.7"  sold="false" />
-      <Price locationtype="mine" multiplier="1.0"  sold="false" />
+
+    <Price baseprice="10000" minleveldifficulty="30">
+      <Price locationtype="outpost" multiplier="1.4" sold="false" />
+      <Price locationtype="city" multiplier="1.5" sold="false" />
+      <Price locationtype="research" multiplier="0.8" maxavailable="1" />
+      <Price locationtype="military" multiplier="1.7" sold="false" />
+      <Price locationtype="mine" multiplier="1.0" sold="false" />
     </Price>
   </ImportItem>
-  
+
   <!-- Сейф сб -->
-  <ImportItem file="../../Content/Items/Containers/containers.xml"  item="securesteelcabinet">
-	<EditAttributes method="replace" name="111ololo" identifier="RIBABuyablesecuresteelcabinet"  isshootable="true"  impactsoundtag="impact_metal_heavy" />
-	<RemoveElements elements="Sprite(0)"/>
-	
+  <ImportItem file="../../Content/Items/Containers/containers.xml" item="securesteelcabinet">
+    <EditAttributes method="replace" name="" identifier="RIBABuyablesecuresteelcabinet" isshootable="true" impactsoundtag="impact_metal_heavy" />
+    <RemoveElements elements="Sprite(0)" />
+
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.84" sourcerect="5,362,105,160" origin="0.5,0.5" />
-	<GetExistingElement element="ItemContainer(0)">
-		<RemoveElements elements="RequiredItem(0)"/>
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)">
-		<EditAttributes method="replace" RIBA_RequiredItems="idcard:security,idcard:captain" />
-	  </ImportElement>
-	</GetExistingElement>
-	
+    <GetExistingElement element="ItemContainer(0)">
+      <RemoveElements elements="RequiredItem(0)" />
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)">
+        <EditAttributes method="replace" RIBA_RequiredItems="idcard:security,idcard:captain" />
+      </ImportElement>
+    </GetExistingElement>
+
     <Price baseprice="400">
       <Price locationtype="outpost" multiplier="1" />
       <Price locationtype="city" multiplier="0.9" />
@@ -894,21 +894,21 @@
       <Item identifier="memorycomponent" />
     </Deconstruct>
     <Body width="113" height="125" density="40" />
-    <Holdable limitedattachable="true"  selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+    <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="25.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
-    </Holdable >
+    </Holdable>
   </ImportItem>
-  
+
   <!-- Кроватки -->
   <Item name="" identifier="RIBABuyableBunk1" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="0,0,430,219" depth="0.85" origin="0.5,0.5" />
     <DecorativeSprite texture="%ModDir%/Media/portable3.png" sourcerect="0,0,320,160" depth="0.86" origin="0.5,0.5" offset="-10,0" />
-	
-	<Body width="430" height="219" density="25" /> <!-- крафтельный -->
-	<Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20,60" handle1="35,-60" handle2="35,-60" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
-		<requireditem identifier="Crowbar" type="Equipped" />
-		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+
+    <Body width="430" height="219" density="25" /> <!-- крафтельный -->
+    <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20,60" handle1="35,-60" handle2="35,-60" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
     <Deconstruct time="40">
       <Item identifier="organicfiber" amount="6" />
@@ -922,40 +922,40 @@
       <limbposition limb="LeftFoot" position="464,-120" />
       <limbposition limb="RightHand" position="244,-120" allowusinglimb="false" />
       <limbposition limb="LeftHand" position="244,-120" allowusinglimb="false" />
-	  
-	  <ImportElement file="../../Content/Items/Misc/misc.xml" item="bunk" element="Controller(0)/StatusEffect(0)"/>
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+
+      <ImportElement file="../../Content/Items/Misc/misc.xml" item="bunk" element="Controller(0)/StatusEffect(0)" />
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
     </Controller>
     <Price baseprice="500">
-      <Price locationtype="outpost" multiplier="0.4"  maxavailable="4"/>
-      <Price locationtype="city" multiplier="0.5"  maxavailable="4" />
+      <Price locationtype="outpost" multiplier="0.4" maxavailable="4" />
+      <Price locationtype="city" multiplier="0.5" maxavailable="4" />
       <Price locationtype="research" multiplier="1.8" sold="false" />
       <Price locationtype="military" multiplier="1.7" sold="false" />
-      <Price locationtype="mine" multiplier="1.0"  maxavailable="4" />
+      <Price locationtype="mine" multiplier="1.0" maxavailable="4" />
     </Price>
-	
+
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="mechanical" level="30" />
       <RequiredItem identifier="organicfiber" amount="8" />
-      <RequiredItem identifier="steel" amount="12"/>
+      <RequiredItem identifier="steel" amount="12" />
     </Fabricate>
-	
+
   </Item>
-  
+
   <Item name="" identifier="RIBABuyableBunk2" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
 
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="430,0,385,146" depth="0.85" origin="0.5,0.5" />
-	
-	<Body width="385" height="146" density="25" />
-	<Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="25,45" handle1="30,-30" handle2="30,-30" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
-		<requireditem identifier="Crowbar" type="Equipped" />
-		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+
+    <Body width="385" height="146" density="25" />
+    <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="25,45" handle1="30,-30" handle2="30,-30" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
     <Deconstruct time="30">
       <Item identifier="organicfiber" amount="4" />
       <Item identifier="steel" amount="6" />
     </Deconstruct>
-	
+
     <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
       <limbposition limb="Head" position="-16,-30" />
       <limbposition limb="Torso" position="94,-10" />
@@ -964,35 +964,35 @@
       <limbposition limb="LeftFoot" position="454,-30" />
       <limbposition limb="RightHand" position="234,-30" allowusinglimb="false" />
       <limbposition limb="LeftHand" position="234,-30" allowusinglimb="false" />
-	  
-	  <ImportElement file="../../Content/Items/Misc/misc.xml" item="bunk" element="Controller(0)/StatusEffect(0)"/>
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+
+      <ImportElement file="../../Content/Items/Misc/misc.xml" item="bunk" element="Controller(0)/StatusEffect(0)" />
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
     </Controller>
-	
+
     <Price baseprice="350">
-      <Price locationtype="outpost" multiplier="0.4"  maxavailable="2"/>
-      <Price locationtype="city" multiplier="0.5"  maxavailable="2" />
+      <Price locationtype="outpost" multiplier="0.4" maxavailable="2" />
+      <Price locationtype="city" multiplier="0.5" maxavailable="2" />
       <Price locationtype="research" multiplier="1.8" sold="false" />
-      <Price locationtype="military" multiplier="1.7"  maxavailable="2" />
-      <Price locationtype="mine" multiplier="1.0"  maxavailable="2" />
+      <Price locationtype="military" multiplier="1.7" maxavailable="2" />
+      <Price locationtype="mine" multiplier="1.0" maxavailable="2" />
     </Price>
   </Item>
-  
+
   <Item name="" identifier="RIBABuyableBunk3" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255" isshootable="true">
 
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="489,765,408,186" depth="0.85" origin="0.5,0.5" />
-	
-	<Body width="408" height="186" density="25" />
-	<Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="0,40" handle1="30,-30" handle2="30,-30" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
-		<requireditem identifier="Crowbar" type="Equipped" />
-		<StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+
+    <Body width="408" height="186" density="25" />
+    <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="0,40" handle1="30,-30" handle2="30,-30" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" />
     </Holdable>
     <Deconstruct time="30">
       <Item identifier="organicfiber" amount="4" />
       <Item identifier="steel" amount="8" />
       <Item identifier="antidama1" amount="4" />
     </Deconstruct>
-	
+
     <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
       <limbposition limb="Head" position="-6,-10" />
       <limbposition limb="Torso" position="104,0" />
@@ -1001,38 +1001,38 @@
       <limbposition limb="LeftFoot" position="380,-20" />
       <limbposition limb="RightHand" position="234,-10" allowusinglimb="false" />
       <limbposition limb="LeftHand" position="234,-10" allowusinglimb="false" />
-	  
-	  <ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="opdeco_hospitalbed" element="Controller(0)/StatusEffect(0)"/>
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+
+      <ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="opdeco_hospitalbed" element="Controller(0)/StatusEffect(0)" />
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
     </Controller>
-	
+
     <Price baseprice="650">
-      <Price locationtype="outpost" multiplier="1.4"  sold="false" />
-      <Price locationtype="city" multiplier="1.5"  sold="false" />
-      <Price locationtype="research" multiplier="1.0" maxavailable="2"/>
-      <Price locationtype="military" multiplier="1.3"  maxavailable="1" />
-      <Price locationtype="mine" multiplier="1.8"  sold="false" />
+      <Price locationtype="outpost" multiplier="1.4" sold="false" />
+      <Price locationtype="city" multiplier="1.5" sold="false" />
+      <Price locationtype="research" multiplier="1.0" maxavailable="2" />
+      <Price locationtype="military" multiplier="1.3" maxavailable="1" />
+      <Price locationtype="mine" multiplier="1.8" sold="false" />
     </Price>
   </Item>
-  
+
   <!-- прикроватный ящичек --> <!-- крафтельный -->
   <Item name="" identifier="RIBAbunkcabinet1" isshootable="true" tags="container,suppliescontainer" linkable="true" pickdistance="150" scale="0.5">
     <Sprite texture="%ModDir%/Media/portable5.png" depth="0.7" sourcerect="819,3,92,142" origin="0.5,0.5" />
     <ItemContainer capacity="2" slotsperrow="2" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
-	  <SlotIcon slotindex="2" texture="%ModDir%/Media/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
-	  <SlotIcon slotindex="3" texture="%ModDir%/Media/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
-	  <SlotIcon slotindex="4" texture="%ModDir%/Media/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
-	  <SlotIcon slotindex="5" texture="%ModDir%/Media/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
-	  <SlotIcon slotindex="6" texture="%ModDir%/Media/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
-	  <SlotIcon slotindex="7" texture="%ModDir%/Media/portable3.png" sourcerect="845,935,100,89" origin="0.5,0.5"/>
+      <SlotIcon slotindex="2" texture="%ModDir%/Media/portable3.png" sourcerect="664,164,100,89" origin="0.5,0.5" />
+      <SlotIcon slotindex="3" texture="%ModDir%/Media/portable3.png" sourcerect="664,164,100,89" origin="0.5,0.5" />
+      <SlotIcon slotindex="4" texture="%ModDir%/Media/portable3.png" sourcerect="664,164,100,89" origin="0.5,0.5" />
+      <SlotIcon slotindex="5" texture="%ModDir%/Media/portable3.png" sourcerect="664,164,100,89" origin="0.5,0.5" />
+      <SlotIcon slotindex="6" texture="%ModDir%/Media/portable3.png" sourcerect="664,164,100,89" origin="0.5,0.5" />
+      <SlotIcon slotindex="7" texture="%ModDir%/Media/portable3.png" sourcerect="664,164,100,89" origin="0.5,0.5" />
       <GuiFrame relativesize="0.15,0.45" anchor="Center" style="ItemUI" />
       <Containable items="smallitem,mediumitem" />
-	  <SubContainer capacity="6" maxstacksize="64" hideitems="true">
-		<Containable items="clothing" />
+      <SubContainer capacity="6" maxstacksize="64" hideitems="true">
+        <Containable items="clothing" />
       </SubContainer>
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
     </ItemContainer>
-	
+
     <Body width="92" height="142" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
       <requireditem identifier="wrenchitem" type="Equipped" />
@@ -1048,20 +1048,20 @@
       <Item identifier="plastic" amount="3" />
     </Deconstruct>
     <Price baseprice="150">
-      <Price locationtype="outpost" multiplier="0.4"  maxavailable="4"/>
-      <Price locationtype="city" multiplier="0.5"  maxavailable="4" />
+      <Price locationtype="outpost" multiplier="0.4" maxavailable="4" />
+      <Price locationtype="city" multiplier="0.5" maxavailable="4" />
       <Price locationtype="research" multiplier="1.8" sold="false" />
       <Price locationtype="military" multiplier="1.7" sold="false" />
-      <Price locationtype="mine" multiplier="1.0"  maxavailable="4" />
+      <Price locationtype="mine" multiplier="1.0" maxavailable="4" />
     </Price>
   </Item>
-  
+
   <Item name="" identifier="RIBAbunkcabinet2" isshootable="true" tags="container,suppliescontainer" linkable="true" pickdistance="150" scale="0.5">
     <Sprite texture="%ModDir%/Media/portable5.png" depth="0.7" sourcerect="926,3,92,142" origin="0.5,0.5" />
     <ItemContainer capacity="6" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
       <GuiFrame relativesize="0.18,0.25" anchor="Center" style="ItemUI" />
       <Containable items="smallitem,mediumitem" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
     </ItemContainer>
     <Body width="92" height="142" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachWrench" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
@@ -1077,100 +1077,100 @@
       <Item identifier="aluminium" amount="2" />
       <Item identifier="plastic" amount="2" />
     </Deconstruct>
-	
+
     <Price baseprice="150">
-      <Price locationtype="outpost" multiplier="0.4"  maxavailable="4"/>
-      <Price locationtype="city" multiplier="0.5"  maxavailable="4" />
+      <Price locationtype="outpost" multiplier="0.4" maxavailable="4" />
+      <Price locationtype="city" multiplier="0.5" maxavailable="4" />
       <Price locationtype="research" multiplier="1.8" sold="false" />
       <Price locationtype="military" multiplier="1.7" sold="false" />
-      <Price locationtype="mine" multiplier="1.0"  maxavailable="4" />
+      <Price locationtype="mine" multiplier="1.0" maxavailable="4" />
     </Price>
   </Item>
-  
+
   <!-- стульчики -->
   <Item name="" identifier="RIBABuyableChair1" width="169" height="269" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="494,246,169,269" depth="0.85" premultiplyalpha="false" origin="0.5,0.6" />
-	
-	<ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
-      <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</ImportElement>
-	
-	<Body width="153" height="269" density="40" />
+
+    <ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
+      <!-- <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" /> -->
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </ImportElement>
+
+    <Body width="153" height="269" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetach" PickingTime="5.0" holdpos="100,-60" handle1="0,0" handle2="0,0" aimable="false" attachable="true" attachedbydefault="true">
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.9" setvalue="true" />
     </Holdable>
     <Deconstruct time="10">
       <Item identifier="organicfiber" amount="5" />
-      <Item identifier="steel" amount="2"/>
+      <Item identifier="steel" amount="2" />
     </Deconstruct>
-	
+
     <Price baseprice="450">
-      <Price locationtype="outpost" multiplier="0.4"  maxavailable="3"/>
-      <Price locationtype="city" multiplier="0.5"  maxavailable="3" />
-      <Price locationtype="research" multiplier="1.8" maxavailable="3"/>
-      <Price locationtype="military" multiplier="1.7"  maxavailable="3" />
-      <Price locationtype="mine" multiplier="1.0"  maxavailable="3" />
+      <Price locationtype="outpost" multiplier="0.4" maxavailable="3" />
+      <Price locationtype="city" multiplier="0.5" maxavailable="3" />
+      <Price locationtype="research" multiplier="1.8" maxavailable="3" />
+      <Price locationtype="military" multiplier="1.7" maxavailable="3" />
+      <Price locationtype="mine" multiplier="1.0" maxavailable="3" />
     </Price>
   </Item>
-  
+
   <Item name="" identifier="RIBABuyableChair2" width="146" height="242" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="500,521,146,242" depth="0.85" premultiplyalpha="false" origin="0.5,0.6" />
-	
-	<ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</ImportElement>
-	
-	<Body width="153" height="269" density="40" />
+
+    <ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </ImportElement>
+
+    <Body width="153" height="269" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetach" PickingTime="5.0" holdpos="100,-60" handle1="0,0" handle2="0,0" aimable="false" attachable="true" attachedbydefault="true">
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.9" setvalue="true" />
     </Holdable>
     <Deconstruct time="10">
       <Item identifier="organicfiber" amount="2" />
-      <Item identifier="steel" amount="2"/>
+      <Item identifier="steel" amount="2" />
     </Deconstruct>
-	
+
     <Price baseprice="350">
-      <Price locationtype="outpost" multiplier="0.4"  maxavailable="3"/>
-      <Price locationtype="city" multiplier="0.5"  maxavailable="3" />
-      <Price locationtype="research" multiplier="1.8" maxavailable="3"/>
-      <Price locationtype="military" multiplier="1.7"  maxavailable="3" />
-      <Price locationtype="mine" multiplier="1.0"  maxavailable="3" />
+      <Price locationtype="outpost" multiplier="0.4" maxavailable="3" />
+      <Price locationtype="city" multiplier="0.5" maxavailable="3" />
+      <Price locationtype="research" multiplier="1.8" maxavailable="3" />
+      <Price locationtype="military" multiplier="1.7" maxavailable="3" />
+      <Price locationtype="mine" multiplier="1.0" maxavailable="3" />
     </Price>
   </Item>
-  
+
   <Item name="" identifier="RIBABuyableChair3" width="146" height="242" scale="0.5" category="Decorative" isshootable="true" impactsoundtag="impact_metal_light">
     <sprite texture="%ModDir%/Media/portable5.png" sourcerect="646,521,146,242" depth="0.85" premultiplyalpha="false" origin="0.5,0.5" />
-	
-	<ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
-	</ImportElement>
-	
-	<Body width="153" height="269" density="40" />
+
+    <ImportElement file="../../Content/Map/Outposts/OutpostItems.xml" item="op_cafeteriachair" element="Controller(0)">
+      <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+    </ImportElement>
+
+    <Body width="153" height="269" density="40" />
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetach" PickingTime="5.0" holdpos="100,-60" handle1="0,0" handle2="0,0" aimable="false" attachable="true" attachedbydefault="true">
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.9" setvalue="true" />
     </Holdable>
-	
+
     <Deconstruct time="10">
       <Item identifier="organicfiber" amount="2" />
-      <Item identifier="steel" amount="2"/>
+      <Item identifier="steel" amount="2" />
     </Deconstruct>
-	
+
     <Price baseprice="250">
-      <Price locationtype="outpost" multiplier="0.4"  maxavailable="3"/>
-      <Price locationtype="city" multiplier="0.5"  maxavailable="3" />
-      <Price locationtype="research" multiplier="1.8" maxavailable="3"/>
-      <Price locationtype="military" multiplier="1.7"  maxavailable="3" />
-      <Price locationtype="mine" multiplier="1.0"  maxavailable="3" />
+      <Price locationtype="outpost" multiplier="0.4" maxavailable="3" />
+      <Price locationtype="city" multiplier="0.5" maxavailable="3" />
+      <Price locationtype="research" multiplier="1.8" maxavailable="3" />
+      <Price locationtype="military" multiplier="1.7" maxavailable="3" />
+      <Price locationtype="mine" multiplier="1.0" maxavailable="3" />
     </Price>
   </Item>
-  
+
   <!-- занавеска -->
-  <ImportItem file="../../Content/Map/Outposts/OutpostItems.xml"  item="opdeco_medcurtain">
-	<EditAttributes method="replace" identifier="RIBABuyableMedCurtain" name="" isshootable="true"  impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate2R"/>
-	<RemoveElements elements="Sprite(0),DecorativeSprite(all)"/>
-	
-	<InventoryIcon texture="%ModDir%/Media/portable5.png" sourcerect="0,611,374,366" />
+  <ImportItem file="../../Content/Map/Outposts/OutpostItems.xml" item="opdeco_medcurtain">
+    <EditAttributes method="replace" identifier="RIBABuyableMedCurtain" name="" isshootable="true" impactsoundtag="impact_metal_light" cargocontaineridentifier="RIBAtemporalcrate2R" />
+    <RemoveElements elements="Sprite(0),DecorativeSprite(all)" />
+
+    <InventoryIcon texture="%ModDir%/Media/portable5.png" sourcerect="0,611,374,366" />
     <Sprite texture="%ModDir%/Media/portable5.png" sourcerect="0,981,410,18" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
     <DecorativeSprite texture="%ModDir%/Media/portable5.png" sourcerect="0,611,374,366" depth="0.48" premultiplyalpha="false" origin="0.5,0.035">
       <Conditional targetitemcomponent="Controller" State="eq true" />
@@ -1178,14 +1178,18 @@
     <DecorativeSprite texture="%ModDir%/Media/portable5.png" sourcerect="377,611,102,366" depth="0.48" premultiplyalpha="false" origin="1.5,0.035">
       <Conditional targetitemcomponent="Controller" State="ne true" />
     </DecorativeSprite>
-	
+
     <Body width="374" height="366" density="40" />
-	
-	  
+
+
     <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="10.0" attachable="true" slots="RightHand+LeftHand" aimable="true" controlpose="true" holdpos="30,10" handle1="-15,0" handle2="-15,0" aimpos="65,-10" msg="RIBAItemMsgDetachWrench" attachedbydefault="true">
       <requireditem identifier="Wrench" type="Equipped" />
       <StatusEffect type="Always" target="Character" SpeedMultiplier="0.6" setvalue="true" />
-	  <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/>
+
+      <!-- <GetExistingElement element="Controller(0)">
+        <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)" />
+      </GetExistingElement> -->
+
     </Holdable>
     <Deconstruct time="15">
       <Item identifier="RIBAmediumwindowedsteelcabinet" />
@@ -1193,41 +1197,41 @@
       <Item identifier="organicfiber" amount="4" />
     </Deconstruct>
     <Price baseprice="100">
-      <Price locationtype="outpost" multiplier="0.9"/>
-      <Price locationtype="city" multiplier="0.8"/>
+      <Price locationtype="outpost" multiplier="0.9" />
+      <Price locationtype="city" multiplier="0.8" />
       <Price locationtype="research" multiplier="1.2" />
       <Price locationtype="military" multiplier="2.2" />
       <Price locationtype="mine" multiplier="0.6" />
     </Price>
   </ImportItem>
-  
+
   <!-- монитор сонара  -->
   <!-- <ImportItem file="../../Content/Items/Command/command.xml"  item="sonarmonitor"> -->
-	<!-- <EditAttributes method="replace" identifier="RIBABuyablesonarmonitor"  isshootable="true"  impactsoundtag="impact_metal_heavy" /> -->
-	<!-- <RemoveElements elements="Sprite(0), BrokenSprite(all), DecorativeSprite(all)"/> -->
-	
-    <!-- <Sprite texture="%ModDir%/Media/portable6.png" depth="0.8" sourcerect="0,0,384,212" origin="0.5,0.5" /> -->
-    <!-- <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="0,320,384,212" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" /> -->
-    <!-- <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="0,640,384,212" depth="0.8" maxcondition="0" origin="0.5,0.5" /> -->
-	
-    <!-- <Body width="384" height="212" density="40" /> -->
-	<!-- <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20,60" handle1="35,-60" handle2="35,-60" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true"> -->
-		<!-- <requireditem identifier="Crowbar" type="Equipped" /> -->
-		<!-- <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" /> -->
-	    <!-- <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/> -->
-    <!-- </Holdable> -->
-    <!-- <Deconstruct time="35"> -->
-      <!-- <Item identifier="fpgacircuit" amount="3"/> -->
-      <!-- <Item identifier="steel" amount="4"/> -->
-      <!-- <Item identifier="RIBAStatusMonitor" /> -->
-    <!-- </Deconstruct> -->
-    <!-- <Price baseprice="2000"> -->
-      <!-- <Price locationtype="outpost" multiplier="1.5"  sold="false"/> -->
-      <!-- <Price locationtype="city" multiplier="1.6" maxavailable="1"/> -->
-      <!-- <Price locationtype="research" multiplier="0.6" maxavailable="1"/> -->
-      <!-- <Price locationtype="military" multiplier="0.8" minavailable="1" maxavailable="1"/> -->
-      <!-- <Price locationtype="mine" multiplier="0.8" maxavailable="1"/> -->
-    <!-- </Price> -->
+  <!-- <EditAttributes method="replace" identifier="RIBABuyablesonarmonitor"  isshootable="true"  impactsoundtag="impact_metal_heavy" /> -->
+  <!-- <RemoveElements elements="Sprite(0), BrokenSprite(all), DecorativeSprite(all)"/> -->
+
+  <!-- <Sprite texture="%ModDir%/Media/portable6.png" depth="0.8" sourcerect="0,0,384,212" origin="0.5,0.5" /> -->
+  <!-- <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="0,320,384,212" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" /> -->
+  <!-- <BrokenSprite texture="%ModDir%/Media/portable6.png" sourcerect="0,640,384,212" depth="0.8" maxcondition="0" origin="0.5,0.5" /> -->
+
+  <!-- <Body width="384" height="212" density="40" /> -->
+  <!-- <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" PickingTime="35.0" attachable="true" slots="RightHand+LeftHand" controlpose="true" holdpos="20,60" handle1="35,-60" handle2="35,-60" aimable="false" msg="RIBAItemMsgDetachCrowbar" attachedbydefault="true"> -->
+  <!-- <requireditem identifier="Crowbar" type="Equipped" /> -->
+  <!-- <StatusEffect type="Always" target="Character" SpeedMultiplier="0.1" setvalue="true" /> -->
+  <!-- <ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/RequiredItem(0)"/> -->
+  <!-- </Holdable> -->
+  <!-- <Deconstruct time="35"> -->
+  <!-- <Item identifier="fpgacircuit" amount="3"/> -->
+  <!-- <Item identifier="steel" amount="4"/> -->
+  <!-- <Item identifier="RIBAStatusMonitor" /> -->
+  <!-- </Deconstruct> -->
+  <!-- <Price baseprice="2000"> -->
+  <!-- <Price locationtype="outpost" multiplier="1.5"  sold="false"/> -->
+  <!-- <Price locationtype="city" multiplier="1.6" maxavailable="1"/> -->
+  <!-- <Price locationtype="research" multiplier="0.6" maxavailable="1"/> -->
+  <!-- <Price locationtype="military" multiplier="0.8" minavailable="1" maxavailable="1"/> -->
+  <!-- <Price locationtype="mine" multiplier="0.8" maxavailable="1"/> -->
+  <!-- </Price> -->
   <!-- </ImportItem> -->
-  
+
 </Items>

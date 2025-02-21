@@ -64,6 +64,8 @@
   <entitydescription.RIBAop_researchterminal>Genetic engineering. Only for smart boys.</entitydescription.RIBAop_researchterminal>
   <entityname.RIBAsecuresteelcabinet>Secure steel cabinet</entityname.RIBAsecuresteelcabinet>
   <entitydescription.RIBAsecuresteelcabinet>Safe with access for Captain and Security</entitydescription.RIBAsecuresteelcabinet>
+  <entityname.RIBABuyablesecuresteelcabinet>Secure steel cabinet</entityname.RIBABuyablesecuresteelcabinet>
+  <entitydescription.RIBABuyablesecuresteelcabinet>Safe with access for Captain and Security</entitydescription.RIBABuyablesecuresteelcabinet>
   <entityname.RIBAengineermetalcrate>Secure wire box</entityname.RIBAengineermetalcrate>
   <entitydescription.RIBAengineermetalcrate>Safe with access for Captain and Engineer</entitydescription.RIBAengineermetalcrate>
   <entityname.RIBAmechanicmetalcrate>Secure tool box</entityname.RIBAmechanicmetalcrate>

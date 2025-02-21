@@ -64,6 +64,8 @@
   <entitydescription.RIBAop_researchterminal>Українська домашня біолабараторія для генетичних досліджень. Тільки для розумних хлопчиків.</entitydescription.RIBAop_researchterminal>
   <entityname.RIBAsecuresteelcabinet>Захищена сталева шафа</entityname.RIBAsecuresteelcabinet>
   <entitydescription.RIBAsecuresteelcabinet>Сейф з доступом для капітана та служби безпеки</entitydescription.RIBAsecuresteelcabinet>
+  <entityname.RIBABuyablesecuresteelcabinet>Захищена сталева шафа</entityname.RIBABuyablesecuresteelcabinet>
+  <entitydescription.RIBABuyablesecuresteelcabinet>Сейф з доступом для капітана та служби безпеки</entitydescription.RIBABuyablesecuresteelcabinet>
   <entityname.RIBAengineermetalcrate>Захищена коробка для проводів</entityname.RIBAengineermetalcrate>
   <entitydescription.RIBAengineermetalcrate>Портативний сейф з доступом для капітана та інженера</entitydescription.RIBAengineermetalcrate>
   <entityname.RIBAmechanicmetalcrate>Захищена коробка для інструментів</entityname.RIBAmechanicmetalcrate>

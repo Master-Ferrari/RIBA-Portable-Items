@@ -11,15 +11,16 @@
       "books": "Books must be read!",
       "cantattach": "You can't attach it anymore!",
       "cantattachwarning": "It was the last permissible item of this type! You can't attach it anymore!",
-      "blocked": "Нет доступа!",
-      "deattachedBlockMessage": "Без крепления к стене использовать невозможно!"
+      "blocked": "No access!",
+      "deattachedBlockMessage": "Cannot be used without wall attachment!"
     },
     "Ukrainian":{
       "books": "Треба читати книги!",
       "cantattach": "Не можна більше ставити!",
-      "cantattachwarning": "Це останній предмет такого типу! Не можна більше ставити!",
-      "blocked": "Нет доступа!",
-      "deattachedBlockMessage": "Без крепления к стене использовать невозможно!"
+      "cantattachwarning": "Це останній предмет такого типу! Не можна більше ставити!",  
+      "blocked": "Заблоковано!",
+      "deattachedBlockMessage": "Без кріплення до стіни використання неможливе!"
+    
     }
   },
   "Bibs": {
@@ -127,6 +128,8 @@
     "RIBABuyablesonarmonitor" : "BIBAsonarmonitor",
 
     "RIBAsonartransducer" : "BIBAsonartransducer",
-    "RIBABuyablesonartransducer" : "BIBAsonartransducer"
+    "RIBABuyablesonartransducer" : "BIBAsonartransducer",
+
+    "RIBAop_researchterminal" : "BIBAop_researchterminal"
   } 
 }

@@ -64,6 +64,8 @@
   <entitydescription.RIBAop_researchterminal>Генная инженерия</entitydescription.RIBAop_researchterminal>
   <entityname.RIBAsecuresteelcabinet>Защищённый стальной шкаф</entityname.RIBAsecuresteelcabinet>
   <entitydescription.RIBAsecuresteelcabinet>Сейф с доступом для капитана и сб</entitydescription.RIBAsecuresteelcabinet>
+  <entityname.RIBABuyablesecuresteelcabinet>Защищённый стальной шкаф</entityname.RIBABuyablesecuresteelcabinet>
+  <entitydescription.RIBABuyablesecuresteelcabinet>Сейф с доступом для капитана и сб</entitydescription.RIBABuyablesecuresteelcabinet>
   <entityname.RIBAengineermetalcrate>Защищённый ящик для электроники</entityname.RIBAengineermetalcrate>
   <entitydescription.RIBAengineermetalcrate>Сейф с доступом для капитана и инженера</entitydescription.RIBAengineermetalcrate>
   <entityname.RIBAmechanicmetalcrate>Защищённый ящик для инструментов</entityname.RIBAmechanicmetalcrate>

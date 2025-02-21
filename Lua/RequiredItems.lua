@@ -58,51 +58,53 @@ end, Hook.HookMethodType.Before)
 if not CLIENT then return end
 
 Hook.Patch("ololo", "Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
-    local itemName = instance.Item.Prefab.Identifier.Value
-    local chName = ptable["character"].Name
-    local nPs = RibaPI.Biba(itemName)
-    if nPs ~= nil then
-        local maxBItems = ptable["character"].info.GetSavedStatValue(StatTypes.MaxAttachableCount, nPs)
-        local CurrentPseudonymItems = 0
-        for _, i in ipairs(Item.ItemList) do
-            local holdableComponent = i.GetComponent(Components.Holdable)
-            if holdableComponent ~= nil and holdableComponent.Attached then
-                local iPs = RibaPI.Biba(i.Prefab.Identifier.Value)
-                if iPs ~= nil and iPs == nPs then
-                    CurrentPseudonymItems = CurrentPseudonymItems + 1
+    local success, result = pcall(function()
+        local itemName = instance.Item.Prefab.Identifier.Value
+        local chName = ptable["character"].Name
+        local nPs = RibaPI.Biba(itemName)
+        if nPs ~= nil then
+            local maxBItems = ptable["character"].info.GetSavedStatValue(StatTypes.MaxAttachableCount, nPs)
+            local CurrentPseudonymItems = 0
+            for _, i in ipairs(Item.ItemList) do
+                local holdableComponent = i.GetComponent(Components.Holdable)
+                if holdableComponent ~= nil and holdableComponent.Attached then
+                    local iPs = RibaPI.Biba(i.Prefab.Identifier.Value)
+                    if iPs ~= nil and iPs == nPs then
+                        CurrentPseudonymItems = CurrentPseudonymItems + 1
+                    end
                 end
             end
-        end
 
-        local attached = instance.Attached
-        if instance.Attached == false then
-            if CurrentPseudonymItems >= maxBItems then
-                instance.LimitedAttachable = true
+            local attached = instance.Attached
+            if instance.Attached == false then
+                if CurrentPseudonymItems >= maxBItems then
+                    instance.LimitedAttachable = true
 
+                    if ptable["character"]==Character.Controlled then
+                        if maxBItems == 0 then
+                            RibaPI.ScreenMessage.Big(RibaPI.Text("books"), Color.Red, "books"..itemName..chName)
+                        else
+                            RibaPI.ScreenMessage.Big(RibaPI.Text("cantattach") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Red, "cantattach"..itemName..chName)
+                        end
+                    end
+
+                else
+                    instance.LimitedAttachable = false
+                end
+                
                 if ptable["character"]==Character.Controlled then
-                    if maxBItems == 0 then
-                        RibaPI.ScreenMessage.Big(RibaPI.Text("books"), Color.Red, "books"..itemName..chName)
-                    else
-                        RibaPI.ScreenMessage.Big(RibaPI.Text("cantattach") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Red, "cantattach"..itemName..chName)
+                    if CurrentPseudonymItems + 1 == maxBItems then
+                        RibaPI.ScreenMessage.Big(RibaPI.Text("cantattachwarning") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Yellow, "cantattachwarning"..itemName..chName)
+                    end
+                    if CurrentPseudonymItems + 1 == maxBItems then
+                        RibaPI.ScreenMessage.Small(ptable["character"], "(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Yellow, "Ylimit"..itemName..chName, 2, nil, 4, false)
+                    end
+                    if CurrentPseudonymItems + 1 < maxBItems then
+                        RibaPI.ScreenMessage.Small(ptable["character"], "(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Green, "Glimit"..itemName..chName, 2, nil, 4, false)
                     end
                 end
 
-            else
-                instance.LimitedAttachable = false
             end
-            
-            if ptable["character"]==Character.Controlled then
-                if CurrentPseudonymItems + 1 == maxBItems then
-                    RibaPI.ScreenMessage.Big(RibaPI.Text("cantattachwarning") .. " (" .. maxBItems .. "/" .. maxBItems .. ")", Color.Yellow, "cantattachwarning"..itemName..chName)
-                end
-                if CurrentPseudonymItems + 1 == maxBItems then
-                    RibaPI.ScreenMessage.Small(ptable["character"], "(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Yellow, "Ylimit"..itemName..chName, 2, nil, 4, false)
-                end
-                if CurrentPseudonymItems + 1 < maxBItems then
-                    RibaPI.ScreenMessage.Small(ptable["character"], "(" .. (CurrentPseudonymItems + 1) .. "/" .. maxBItems .. ")", Color.Green, "Glimit"..itemName..chName, 2, nil, 4, false)
-                end
-            end
-
         end
-    end
+    end)
 end, Hook.HookMethodType.Before)

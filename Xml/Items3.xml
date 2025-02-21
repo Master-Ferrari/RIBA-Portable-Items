@@ -66,6 +66,7 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
+	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBAMechanicCard" name="MechanicCard" Tags="smallitem,id_mechanic,mechanic,mech,idcard,jobid:mechanic" hideinmenus="true"/>	
@@ -74,6 +75,7 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
+	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBAEngineerCard" name="EngineerCard" Tags="smallitem,id_engineer,engineer,engi,idcard,jobid:engineer" hideinmenus="true"/>	
@@ -82,6 +84,7 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
+	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBACaptainCard" name="CaptainCard" Tags="smallitem,id_captain,captain,cap,com,idcard,jobid:captain" hideinmenus="true"/>	
@@ -90,14 +93,16 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
+	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
-	<EditAttributes method="replace" identifier="RIBASecurityCard" name="SecurityCard" Tags="smallitem,id_security,security,sec,idcard,jobid:securityofficer" hideinmenus="true"/>	
+	<EditAttributes method="replace" identifier="RIBASecurityCard" name="SecurityCard" Tags="smallitem,id_security,security,sec,idcard,jobid:securityofficer" hideinmenus="true"/>
 	<RemoveElements elements="Sprite(0),InventoryIcon(0),Price(0)"/>
     <InventoryIcon texture="%ModDir%/Media/portable2.png" sourcerect="831,966,57,58" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
+	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBAAssistantCard" name="AssistantCard" Tags="smallitem,id_assistant,assistant,idcard,jobid:assistant" hideinmenus="true"/>	
@@ -106,6 +111,7 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
+	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
   </ImportItem>
 
   <!-- Терминалы -->

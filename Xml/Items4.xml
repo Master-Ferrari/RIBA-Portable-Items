@@ -16,7 +16,7 @@
         <TalentTrigger effectidentifier="standanddeliver" />
       </StatusEffect>
     </Holdable>
-    <Price baseprice="600" minleveldifficulty="20" buyingpricemodifier="2.5" minavailable="1">
+    <Price baseprice="350" minavailable="1">
       <Price storeidentifier="merchantoutpost" />
       <Price storeidentifier="merchantcity" />
       <Price storeidentifier="merchantresearch" />
@@ -40,7 +40,7 @@
         <TalentTrigger effectidentifier="standanddeliver" />
       </StatusEffect>
     </Holdable>
-    <Price baseprice="600" minleveldifficulty="20" buyingpricemodifier="2.5" minavailable="1">
+    <Price baseprice="350" minavailable="1">
       <Price storeidentifier="merchantoutpost" />
       <Price storeidentifier="merchantcity" />
       <Price storeidentifier="merchantresearch" />
@@ -64,7 +64,7 @@
         <TalentTrigger effectidentifier="standanddeliver" />
       </StatusEffect>
     </Holdable>
-    <Price baseprice="600" minleveldifficulty="20" buyingpricemodifier="2.5" minavailable="1">
+    <Price baseprice="350" minavailable="1">
       <Price storeidentifier="merchantoutpost" />
       <Price storeidentifier="merchantcity" />
       <Price storeidentifier="merchantresearch" />
@@ -88,7 +88,7 @@
         <TalentTrigger effectidentifier="standanddeliver" />
       </StatusEffect>
     </Holdable>
-    <Price baseprice="600" minleveldifficulty="20" buyingpricemodifier="2.5" minavailable="1">
+    <Price baseprice="350" minavailable="1">
       <Price storeidentifier="merchantoutpost" />
       <Price storeidentifier="merchantcity" />
       <Price storeidentifier="merchantresearch" />

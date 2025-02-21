@@ -4,7 +4,7 @@
     <Icon texture="%ModDir%/Media/portable3.png" sourcerect="903,644,119,119" />
     <Description tag="ribadescription.unlockrecipe" />
     <Description tag="ribadescription.ribadummy">
-      <Replace tag="[1]" value="BIBAsuppliescabinet, BIBAbunkcabinet " color="gui.orange"/>
+      <Replace tag="[1]" value="BIBAsuppliescabinet, BIBAbunkcabinet" color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount5"/>
       <Replace tag="[3]" value=", "/>
     </Description>
@@ -120,6 +120,11 @@
       <Replace tag="[3]" value=", "/>
     </Description>
     <Description tag="ribadescription.ribadummy">
+      <Replace tag="[1]" value="BIBAop_researchterminal" color="gui.orange"/>
+      <Replace tag="[2]" value="BIBAmaxcount1"/>
+      <Replace tag="[3]" value=", "/>
+    </Description>
+    <Description tag="ribadescription.ribadummy">
       <Replace tag="[1]" value="BIBAfabricator, BIBAdeconstructor, BIBAmedfabricator" color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount2"/>
       <Replace tag="[3]" value="."/>
@@ -129,6 +134,7 @@
     <AddedRecipe itemidentifier="RIBAfabricator" />
     <AddedRecipe itemidentifier="RIBAdeconstructor" />
     <AddedRecipe itemidentifier="RIBAmedfabricator" />
+    <AddedRecipe itemidentifier="RIBAop_researchterminal" />
     <AbilityGroupEffect abilityeffecttype="None">
       <Abilities>
         <CharacterAbilityGivePermanentStat statidentifier="BIBAbigpump" stattype="MaxAttachableCount" value="2" />
@@ -136,6 +142,7 @@
         <CharacterAbilityGivePermanentStat statidentifier="BIBAfabricator" stattype="MaxAttachableCount" value="1" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAdeconstructor" stattype="MaxAttachableCount" value="1" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAmedfabricator" stattype="MaxAttachableCount" value="1" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAop_researchterminal" stattype="MaxAttachableCount" value="1" />
       </Abilities>
     </AbilityGroupEffect>
   </Talent>
@@ -320,6 +327,11 @@
         <Replace tag="[3]" value=", "/>
       </Description>
       <Description tag="ribadescription.ribadummy">
+        <Replace tag="[1]" value="BIBAop_researchterminal" color="gui.orange"/>
+        <Replace tag="[2]" value="BIBAmaxcount1"/>
+        <Replace tag="[3]" value=", "/>
+      </Description>
+      <Description tag="ribadescription.ribadummy">
         <Replace tag="[1]" value="BIBAfabricator, BIBAdeconstructor, BIBAmedfabricator" color="gui.orange"/>
         <Replace tag="[2]" value="BIBAmaxcount2"/>
         <Replace tag="[3]" value="."/>
@@ -331,6 +343,7 @@
       <AddedRecipe itemidentifier="RIBAdeconstructor" />
       <AddedRecipe itemidentifier="RIBAmedfabricator" />
       <AddedRecipe itemidentifier="repairpack"/>
+      <AddedRecipe itemidentifier="RIBAop_researchterminal"/>
       <AbilityGroupEffect abilityeffecttype="None">
         <Abilities>
           <CharacterAbilityGivePermanentStat statidentifier="BIBAbigpump" stattype="MaxAttachableCount" value="2" />
@@ -338,6 +351,7 @@
           <CharacterAbilityGivePermanentStat statidentifier="BIBAfabricator" stattype="MaxAttachableCount" value="1" />
           <CharacterAbilityGivePermanentStat statidentifier="BIBAdeconstructor" stattype="MaxAttachableCount" value="1" />
           <CharacterAbilityGivePermanentStat statidentifier="BIBAmedfabricator" stattype="MaxAttachableCount" value="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAop_researchterminal" stattype="MaxAttachableCount" value="1" />
         </Abilities>
       </AbilityGroupEffect>
     </Talent>
