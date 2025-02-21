@@ -113,4 +113,6 @@
   <talentname.RIBA_RecipeBook_Electrical>Радіотехнік</talentname.RIBA_RecipeBook_Electrical>
   <talentname.RIBA_RecipeBook_Machine>Інженер-конструктор</talentname.RIBA_RecipeBook_Machine>
   <talentname.RIBA_RecipeBook_Decorative>Дизайнер</talentname.RIBA_RecipeBook_Decorative>
+  <entityname.RIBAControlMonitor>Центр нагляду</entityname.RIBAControlMonitor>
+  <entitydescription.RIBAControlMonitor>Робоче місце для перегляду "брудних" фільмів</entitydescription.RIBAControlMonitor>
   </infotexts>

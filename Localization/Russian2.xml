@@ -117,5 +117,9 @@
   <!-- <talentname.modularrepairs>Конструктор-инженер</talentname.modularrepairs> -->
   <!-- <talentname.inspirationalleader>Художественный руководитель</talentname.inspirationalleader> -->
   <!-- </Override> -->
+
+  
+  <entityname.RIBAControlMonitor>Центр наблюдения</entityname.RIBAControlMonitor>
+  <entitydescription.RIBAControlMonitor>Рабочее устройство для просмотра "грязных" фильмов</entitydescription.RIBAControlMonitor>
     
 </infotexts>

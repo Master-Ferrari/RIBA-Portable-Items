@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+<!-- ЧТО-ТО НОВОЕ -->
+
+  <!-- МОНИТОР КАМЕР (много камер) и DIY и Buyable -->
+  <ImportItem file="../../Content/Items/Command/command.xml" item="surveillancecenter">
+
+    <EditAttributes method="replace" identifier="RIBAControlCenter" isshootable="true" impactsoundtag="impact_metal_heavy" />
+    <!-- <RemoveElements elements="Sprite(0),Controller(0)" /> -->
+
+    <!-- <Sprite texture="%ModDir%/Media/portable.png" depth="0.7" sourcerect="460,348,140,145" origin="0.5,0.5" /> -->
+    <RemoveElements elements="Controller(0)" />
+    <Controller UserPos="-30.0, -0.0" direction="Right" canbeselected="true" msg="ItemMsgInteractSelect">
+      <limbposition limb="LeftHand" position="60,-110" />
+      <limbposition limb="RightHand" position="120,-130" />
+    </Controller>
+
+    <!-- <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" flicker="0.3" allowingameediting="false" scale="1.">
+      <sprite texture="%ModDir%/Media/portable.png" depth="0.59" sourcerect="600,348,122,77" origin="0.47,0.77" alpha="1.0" />
+    </LightComponent> -->
+
+    <Deconstruct time="10">
+      <Item identifier="RIBAControlMonitor" amount="2" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="25">
+      <RequiredSkill identifier="electrical" level="85" />
+      <RequiredSkill identifier="mechanical" level="20" />
+    </Fabricate>
+
+    <Body width="279" height="160" density="40" />
+    <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="35.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+    </Holdable>
+    
+    <Price baseprice="700">
+      <Price locationtype="outpost" multiplier="1.8" sold="false" />
+      <Price locationtype="city" multiplier="1.8" maxavailable="1" />
+      <Price locationtype="research" multiplier="1.0" minavailable="1" />
+      <Price locationtype="military" multiplier="1.9" minavailable="1" />
+      <Price locationtype="mine" multiplier="1.5" maxavailable="1" />
+    </Price>
+
+  </ImportItem>
+
+</Items>

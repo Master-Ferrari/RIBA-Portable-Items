@@ -117,4 +117,6 @@
   <BIBAmaxcount3> (по три штуки на човен)</BIBAmaxcount3>
   <BIBAmaxcount4> (по чотири штуки на човен)</BIBAmaxcount4>
   <BIBAmaxcount5> (по п'ять штук на човен)</BIBAmaxcount5>
+  
+  <BIBAControlCenter>Центр нагляду</BIBAControlCenter>
 </infotexts>

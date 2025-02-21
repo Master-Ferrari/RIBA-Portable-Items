@@ -111,4 +111,6 @@
   <talentname.RIBA_RecipeBook_Electrical>Electrical Engineer</talentname.RIBA_RecipeBook_Electrical>
   <talentname.RIBA_RecipeBook_Machine>Mechanical Engineer</talentname.RIBA_RecipeBook_Machine>
   <talentname.RIBA_RecipeBook_Decorative>Designer</talentname.RIBA_RecipeBook_Decorative>
+  <entityname.RIBAControlMonitor>Control Center</entityname.RIBAControlMonitor>
+  <entitydescription.RIBAControlMonitor>Workplace for watching "dirty" movies</entitydescription.RIBAControlMonitor>
   </infotexts>

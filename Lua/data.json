@@ -130,6 +130,8 @@
     "RIBAsonartransducer" : "BIBAsonartransducer",
     "RIBABuyablesonartransducer" : "BIBAsonartransducer",
 
-    "RIBAop_researchterminal" : "BIBAop_researchterminal"
+    "RIBAop_researchterminal" : "BIBAop_researchterminal",
+
+    "RIBAControlCenter" : "BIBAControlCenter"
   } 
 }
