@@ -10,6 +10,7 @@
   <Item file="%ModDir%/Xml/Items2.xml" />
   <Item file="%ModDir%/Xml/Items3.xml" />
   <Item file="%ModDir%/Xml/Items4.xml" />
+  <Item file="%ModDir%/Xml/Items6.xml" />
   <Talents file="%ModDir%/Xml/Talents.xml" />
   <Other file="%ModDir%/Media/portable.png" />
   <Other file="%ModDir%/Media/portable2.png" />

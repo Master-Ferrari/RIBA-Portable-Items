@@ -79,7 +79,7 @@
       <Replace tag="[3]" value=", "/>
     </Description>
     <Description tag="ribadescription.ribadummy">
-      <Replace tag="[1]" value="BIBAControlMonitor, BIBAControlCamera, BIBAStatusMonitor " color="gui.orange"/>
+      <Replace tag="[1]" value="BIBAControlMonitor, BIBAControlCamera, BIBAControlCenter, BIBAStatusMonitor " color="gui.orange"/>
       <Replace tag="[2]" value="BIBAmaxcount2"/>
       <Replace tag="[3]" value=","/>
     </Description>
@@ -90,6 +90,7 @@
     </Description>
     <AddedRecipe itemidentifier="RIBAControlMonitor" />
     <AddedRecipe itemidentifier="RIBAControlCamera" />
+    <AddedRecipe itemidentifier="RIBAControlCenter" />
     <AddedRecipe itemidentifier="RIBAStatusMonitor" />
     <AddedRecipe itemidentifier="RIBAJunctionBox" />
     <AddedRecipe itemidentifier="RIBAbattery" />
@@ -99,6 +100,7 @@
       <Abilities>
         <CharacterAbilityGivePermanentStat statidentifier="BIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAControlCamera" stattype="MaxAttachableCount" value="2" />
+        <CharacterAbilityGivePermanentStat statidentifier="BIBAControlCenter" stattype="MaxAttachableCount" value="2" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAStatusMonitor" stattype="MaxAttachableCount" value="2" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
         <CharacterAbilityGivePermanentStat statidentifier="BIBAbattery" stattype="MaxAttachableCount" value="3" />
@@ -373,7 +375,7 @@
         <Replace tag="[3]" value=", "/>
       </Description>
       <Description tag="ribadescription.ribadummy">
-        <Replace tag="[1]" value="BIBAControlMonitor, BIBAControlCamera, BIBAStatusMonitor " color="gui.orange"/>
+        <Replace tag="[1]" value="BIBAControlMonitor, BIBAControlCenter, BIBAControlCamera, BIBAStatusMonitor " color="gui.orange"/>
         <Replace tag="[2]" value="BIBAmaxcount2"/>
         <Replace tag="[3]" value=","/>
       </Description>
@@ -384,6 +386,7 @@
       </Description>
       <Description tag="ribadescription.booksum" />
       <AddedRecipe itemidentifier="RIBAControlMonitor" />
+      <AddedRecipe itemidentifier="RIBAControlCenter" />
       <AddedRecipe itemidentifier="RIBAControlCamera" />
       <AddedRecipe itemidentifier="RIBAStatusMonitor" />
       <AddedRecipe itemidentifier="RIBAJunctionBox" />
@@ -393,6 +396,7 @@
       <AbilityGroupEffect abilityeffecttype="None">
         <Abilities>
           <CharacterAbilityGivePermanentStat statidentifier="BIBAControlMonitor" stattype="MaxAttachableCount" value="2" />
+          <CharacterAbilityGivePermanentStat statidentifier="BIBAControlCenter" stattype="MaxAttachableCount" value="2" />
           <CharacterAbilityGivePermanentStat statidentifier="BIBAControlCamera" stattype="MaxAttachableCount" value="2" />
           <CharacterAbilityGivePermanentStat statidentifier="BIBAStatusMonitor" stattype="MaxAttachableCount" value="2" />
           <CharacterAbilityGivePermanentStat statidentifier="BIBAJunctionBox" stattype="MaxAttachableCount" value="4" />
