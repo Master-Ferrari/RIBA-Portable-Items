@@ -4,6 +4,7 @@ Cover2.png
 Cover3.png
 *.psd
 .vscode/*
+!.vscode/tasks.json
 Media/backup/*
 RIBA Portable Items Origin.code-workspace
 RIBAXMLL.url
@@ -12,3 +13,8 @@ Localization/otherFiles/*
 MoverLogo.png
 
 .claude/settings.local.json
+
+# --- сборка ---
+build.config.json
+Tools/**/bin/
+Tools/**/obj/

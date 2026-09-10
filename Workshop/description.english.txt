@@ -1,0 +1,44 @@
+[h1][B]Both parts of LUA, SERVER and CLIENT, are REQUIRED ![/B][/h1]
+
+[B]Attention, Sailors![/B]
+
+Tired of your classic ship? Need more space on this tin can? Or perhaps you've overdone it with new recruits, and they're drowning at the slightest flooding? Well then, you've come to the right place! Customize the ship to your twisted taste with this [B]balanced[/B] mod!
+
+This mod allows you to (just imagine) craft, rearrange, and even place your [B]OWN[/B] DIY items! (which are practically identical to vanilla items!). Moreover, these items even have a purchasable version in case you're not too fond of the shine of homemade creations.
+
+[IMG]https://i.ibb.co/nz8Fk5z/Untitled-4.png[/IMG]
+
+[B]So, what items are we talking about? Almost everything![/B]
+Various terminals, pumps, cabinets, fabricators...
+
+Download this mod now, and we promise you'll discover new depths in the already deep gameplay of Barotrauma!
+
+[B]What's new?[/B] (Update "ItWillSinkInLUA")
+Well, new items have been added. (like chairs, for example)
+Some old items are hidden. (such as mechanic's and engineer's chests)
+And generally, there are so many small changes that I'm too lazy to list them all. All for the better, I hope.
+
+All items (including their variations, a whopping 70 of them!) have been updated according to the developers' innovations. I've automated this process, so falling behind will no longer be an issue.
+
+Now the mod uses LUA. ?!?1!? (yes)
+[B]Both the SERVER[/B] and [B]CLIENT parts[/B] are [B]REQUIRED[/B]!
+
+So, why LUA?
+To [B]make things worse for everyone[/B] improve the balance and make it more vanilla.
+Yes, this mod is about campaign and balance, just a reminder. (For something else, there's [URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2764140582][B][I]BaroCraftables+[/I][/B][/URL])
+
+Now each item added by the mod has a maximum quantity restriction on the boat.
+Crafting and installing items now require the appropriate skill. Skills expand the cap of available items.
+[IMG]https://i.ibb.co/3pnpW97/sdfsdf.png[/IMG]
+There are 4 skills for over 20 item categories in total. You can find skills in the development branches of some professions.
+An alternative to skills is recipe books. They are reusable and can be found in the shop.
+The effect of books almost entirely replicates that of skills.
+The effects of books and skills stack, meaning a player who read the book and developed the skill will receive a double cap for corresponding items.
+
+[I]If you don't like this update, I've published a [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3018685410][B][I]legacy version[/I][/B][/URL] as a separate mod.[/I]
+
+[B]You might also find these useful:[/B]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3018655730][img]https://i.ibb.co/x7BZXqP/asdasdas.png[/img][/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2852315967][img]https://i.ibb.co/30K062j/werwerwe.png[/img][/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2857931845][img]https://i.ibb.co/JBPrwJ1/Untitled-10.png[/img][/url]
+[IMG]https://i.ibb.co/RjvrVYg/ezgif-com-gif-maker-4.gif[/IMG][URL=https://discord.gg/ZxuU4767WT][IMG]https://i.ibb.co/VMwkBzx/ezgif-com-resize-1.gif[/IMG][/URL]

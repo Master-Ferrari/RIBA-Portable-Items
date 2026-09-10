@@ -115,4 +115,6 @@
   <talentname.RIBA_RecipeBook_Decorative>Дизайнер</talentname.RIBA_RecipeBook_Decorative>
   <entityname.RIBAControlCenter>Центр нагляду</entityname.RIBAControlCenter>
   <entitydescription.RIBAControlCenter>Робоче місце для перегляду "брудних" фільмів</entitydescription.RIBAControlCenter>
-  </infotexts>
+    <entityname.RIBABuyablepowerdistributor>Розподільник енергії (Новий)</entityname.RIBABuyablepowerdistributor>
+  <entitydescription.RIBABuyablepowerdistributor>Вісім виходів, вісім повзунків і один дуже нервовий електрик</entitydescription.RIBABuyablepowerdistributor>
+</infotexts>

@@ -7,9 +7,16 @@
 		<RequiredItem items="riba_biba" type="Picked" msg="RIBAdeattachedBlockMessage" ignoreineditor="true" RIBA_blockUseWhenDeattached="true"/>
 		
 	    <StatusEffect target="This" type="Always">
-          <Conditional attached="false" targetitemcomponentname="Holdable"/>
+          <Conditional attached="false" targetitemcomponent="Holdable"/>
           <DropContainedItems/>
         </StatusEffect>
+
+		<!-- совместимость с модом донорских карт (workshop 2776270649).
+		     Раньше тянулось ImportElement'ом прямо из того мода, из-за чего сборка
+		     Items3.xml падала целиком, если мод не установлен. -->
+		<ItemContainer capacity="1" maxstacksize="1" hideitems="true">
+		  <Containable items="donorCard" />
+		</ItemContainer>
 		
     </lulalua>
   </Item>

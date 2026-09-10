@@ -116,4 +116,6 @@
   <BIBAmaxcount4> (four per sub)</BIBAmaxcount4>
   <BIBAmaxcount5> (five per sub)</BIBAmaxcount5>
   <BIBAControlCenter>Control center</BIBAControlCenter>
+  <entityname.RIBApowerdistributor>Power distributor DIY</entityname.RIBApowerdistributor>
+  <entitydescription.RIBApowerdistributor>Eight outputs, eight sliders and one very nervous electrician</entitydescription.RIBApowerdistributor>
 </infotexts>

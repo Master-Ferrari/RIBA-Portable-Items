@@ -123,4 +123,6 @@
   
   <BIBAControlCenter>Центр наблюдения</BIBAControlCenter>
   
+  <entityname.RIBApowerdistributor>Распределитель энергии DIY</entityname.RIBApowerdistributor>
+  <entitydescription.RIBApowerdistributor>Восемь выходов, восемь ползунков и один очень нервный электрик</entitydescription.RIBApowerdistributor>
 </infotexts>

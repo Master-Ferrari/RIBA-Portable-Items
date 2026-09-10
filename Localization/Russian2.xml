@@ -122,4 +122,6 @@
   <entityname.RIBAControlCenter>Центр наблюдения</entityname.RIBAControlCenter>
   <entitydescription.RIBAControlCenter>Рабочее устройство для просмотра "грязных" фильмов</entitydescription.RIBAControlCenter>
     
+  <entityname.RIBABuyablepowerdistributor>Распределитель энергии (новый)</entityname.RIBABuyablepowerdistributor>
+  <entitydescription.RIBABuyablepowerdistributor>Восемь выходов, восемь ползунков и один очень нервный электрик</entitydescription.RIBABuyablepowerdistributor>
 </infotexts>

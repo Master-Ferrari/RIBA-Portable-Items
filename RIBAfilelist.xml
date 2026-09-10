@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="RIBA Portable Items" modversion="5.0" corepackage="False" steamworkshopid="2382545579" gameversion="1.0.9.0" altnames="RIBA Portable Items">
+<contentpackage name="RIBA Portable Items" modversion="6.0" corepackage="False" steamworkshopid="2382545579" gameversion="1.13.4.0" altnames="RIBA Portable Items">
   <Text file="%ModDir%/Localization/Ukrainian.xml" />
   <Text file="%ModDir%/Localization/Ukrainian2.xml" />
   <Text file="%ModDir%/Localization/Russian.xml" />

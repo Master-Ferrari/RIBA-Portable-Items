@@ -1,0 +1,59 @@
+{
+  "_help": "Настройки страницы мода в Мастерской. Заливает Tools/RibaPublish (build.cmd -Publish). Поля с префиксом _ - справочные, читаются только глазами.",
+  "_availableTags": [
+    "submarine",
+    "item",
+    "monster",
+    "mission",
+    "outpost",
+    "beacon station",
+    "wreck",
+    "ruin",
+    "weapons",
+    "medical",
+    "equipment",
+    "art",
+    "event set",
+    "total conversion",
+    "game mode",
+    "gameplay mechanics",
+    "environment",
+    "item assembly",
+    "language",
+    "qol",
+    "client-side",
+    "server-side",
+    "outdated",
+    "library"
+  ],
+  "_visibilityValues": [
+    "public",
+    "friendsonly",
+    "private",
+    "unlisted"
+  ],
+  "workshopId": 2382545579,
+  "visibility": "public",
+  "tags": [
+    "item",
+    "art",
+    "total conversion",
+    "environment",
+    "item assembly"
+  ],
+  "defaultLanguage": "english",
+  "descriptions": {
+    "english": {
+      "title": "RIBA Portable Items. Updated September 2026",
+      "bodyFile": "Workshop/description.english.txt"
+    },
+    "russian": {
+      "title": "RIBA Portable Items. Обновлено в сентябре 2026",
+      "bodyFile": "Workshop/description.russian.txt"
+    },
+    "ukrainian": {
+      "title": "RIBA Portable Items. Оновлено у вересні 2026",
+      "bodyFile": "Workshop/description.ukrainian.txt"
+    }
+  }
+}

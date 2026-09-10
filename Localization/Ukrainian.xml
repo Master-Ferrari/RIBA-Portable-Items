@@ -119,4 +119,6 @@
   <BIBAmaxcount5> (по п'ять штук на човен)</BIBAmaxcount5>
   
   <BIBAControlCenter>Центр нагляду</BIBAControlCenter>
+  <entityname.RIBApowerdistributor>Розподільник енергії (Саморобний)</entityname.RIBApowerdistributor>
+  <entitydescription.RIBApowerdistributor>Вісім виходів, вісім повзунків і один дуже нервовий електрик</entitydescription.RIBApowerdistributor>
 </infotexts>

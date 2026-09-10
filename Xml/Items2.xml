@@ -210,7 +210,7 @@
 
     <Sprite texture="%ModDir%/Media/portable2.png" sourcerect="0,0,113,176" depth="0.8" canflipx="false" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="113,0,113,176" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="226,0я,113,176" depth="0.8" maxcondition="0" />
+    <BrokenSprite texture="%ModDir%/Media/portable2.png" sourcerect="226,0,113,176" depth="0.8" maxcondition="0" />
     <InfectedSprite texture="%ModDir%/Media/portable.png" sourcerect="0,352,161,239" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/Media/portable.png" sourcerect="161,352,161,239" origin="0.5,0.5" />
 
@@ -241,6 +241,33 @@
       <Price locationtype="mine" multiplier="2.1" />
     </Price>
   </ImportItem>
+  <!-- РАСПРЕДЕЛИТЕЛЬ ЭНЕРГИИ (покупной) -->
+  <ImportItem file="../../Content/Items/Electricity/poweritems.xml" item="powerdistributor">
+    <EditAttributes method="replace" identifier="RIBABuyablepowerdistributor" isshootable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="RIBAtemporalcrate2" />
+
+    <RemoveElements elements="Sprite(0)" />
+    <Sprite texture="Content/Items/Electricity/PowerDistributor.png" sourcerect="0,0,112,128" depth="0.8" canflipx="false" origin="0.5,0.5" />
+
+    <Deconstruct time="40">
+      <Item identifier="steel" amount="4" />
+      <Item identifier="copper" amount="3" />
+      <Item identifier="wire" amount="6" />
+      <Item identifier="fpgacircuit" amount="1" />
+    </Deconstruct>
+    <Body width="112" height="128" density="40" />
+    <Holdable limitedattachable="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="RIBAItemMsgDetachCrowbar" PickingTime="40.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true">
+      <requireditem identifier="crowbar" type="Equipped" />
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.2" setvalue="true" />
+    </Holdable>
+    <Price baseprice="700">
+      <Price locationtype="outpost" multiplier="1.4" />
+      <Price locationtype="city" multiplier="1.4" />
+      <Price locationtype="research" multiplier="1.0" minavailable="1" />
+      <Price locationtype="military" multiplier="1.8" minavailable="1" />
+      <Price locationtype="mine" multiplier="2.1" />
+    </Price>
+  </ImportItem>
+
 
   <!-- Лампа -->
   <ImportItem file="../../Content/Items/Electricity/lights.xml" item="lightfluorescentm04">

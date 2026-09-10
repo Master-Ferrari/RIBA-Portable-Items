@@ -113,4 +113,6 @@
   <talentname.RIBA_RecipeBook_Decorative>Designer</talentname.RIBA_RecipeBook_Decorative>
   <entityname.RIBAControlCenter>Control Center</entityname.RIBAControlCenter>
   <entitydescription.RIBAControlCenter>Workplace for watching "dirty" movies</entitydescription.RIBAControlCenter>
-  </infotexts>
+    <entityname.RIBABuyablepowerdistributor>Power distributor (new)</entityname.RIBABuyablepowerdistributor>
+  <entitydescription.RIBABuyablepowerdistributor>Eight outputs, eight sliders and one very nervous electrician</entitydescription.RIBABuyablepowerdistributor>
+</infotexts>

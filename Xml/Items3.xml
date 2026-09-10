@@ -66,7 +66,7 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
-	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
+	<ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/ItemContainer(0)"/>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBAMechanicCard" name="MechanicCard" Tags="smallitem,id_mechanic,mechanic,mech,idcard,jobid:mechanic" hideinmenus="true"/>	
@@ -75,7 +75,7 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
-	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
+	<ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/ItemContainer(0)"/>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBAEngineerCard" name="EngineerCard" Tags="smallitem,id_engineer,engineer,engi,idcard,jobid:engineer" hideinmenus="true"/>	
@@ -84,7 +84,7 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
-	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
+	<ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/ItemContainer(0)"/>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBACaptainCard" name="CaptainCard" Tags="smallitem,id_captain,captain,cap,com,idcard,jobid:captain" hideinmenus="true"/>	
@@ -93,7 +93,7 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
-	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
+	<ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/ItemContainer(0)"/>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBASecurityCard" name="SecurityCard" Tags="smallitem,id_security,security,sec,idcard,jobid:securityofficer" hideinmenus="true"/>
@@ -102,7 +102,7 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
-	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
+	<ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/ItemContainer(0)"/>
   </ImportItem>
   <ImportItem file="../../Content/Items/idcard.xml"  item="idcard">
 	<EditAttributes method="replace" identifier="RIBAAssistantCard" name="AssistantCard" Tags="smallitem,id_assistant,assistant,idcard,jobid:assistant" hideinmenus="true"/>	
@@ -111,7 +111,7 @@
     <Sprite texture="%ModDir%/Media/portable2.png" depth="0.8" sourcerect="830,943,16,10" />
 	<IdCard OwnerName="???" />
 	<Price baseprice="10"   sold="false"></Price>
-	<ImportElement file="%LOCALAPPDATA%/Daedalic Entertainment GmbH/Barotrauma/WorkshopMods/Installed/2776270649/Xml/items.xml" item="idcard" element="ItemContainer(0)"/>
+	<ImportElement file="Xml/СommonСomponents.xml" item="RIBAdummy" element="lulalua(0)/ItemContainer(0)"/>
   </ImportItem>
 
   <!-- Терминалы -->

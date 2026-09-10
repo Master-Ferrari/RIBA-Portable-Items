@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>RibaPublish</AssemblyName>
+    <RootNamespace>RibaPublish</RootNamespace>
+    <PlatformTarget>x64</PlatformTarget>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <!-- Путь к установленной игре передаёт build.ps1:  dotnet build -p:BarotraumaDir=... -->
+  <Target Name="CheckBarotraumaDir" BeforeTargets="BeforeBuild"
+          Condition="!Exists('$(BarotraumaDir)\Facepunch.Steamworks.Win64.dll')">
+    <Error Text="Не найден Facepunch.Steamworks.Win64.dll. Передай путь к игре: dotnet build -p:BarotraumaDir=&quot;X:\...\Barotrauma&quot;" />
+  </Target>
+
+  <ItemGroup>
+    <!-- Обёртка Facepunch над Steamworks SDK - берём ту же, что грузит сама игра -->
+    <Reference Include="Facepunch.Steamworks.Win64">
+      <HintPath>$(BarotraumaDir)\Facepunch.Steamworks.Win64.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+
+    <!-- Нативная библиотека Valve, без неё SteamClient.Init не взлетит -->
+    <None Include="$(BarotraumaDir)\steam_api64.dll"
+          CopyToOutputDirectory="PreserveNewest" Visible="false" />
+
+    <!-- SteamAPI_Init читает appid из этого файла в текущей директории -->
+    <None Include="steam_appid.txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
