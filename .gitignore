@@ -10,3 +10,5 @@ RIBAXMLL.url
 Lua/Autorun/init lock.lua
 Localization/otherFiles/*
 MoverLogo.png
+
+.claude/settings.local.json
