@@ -9,8 +9,11 @@ RibaPI.Language = function()
     return "English"
 end
 
-RibaPI.Text = function(text)
-    return RibaPI.Bibs["Text"][RibaPI.Language()][text]
+--- Текст по ключу. lang задают, когда язык отвечающей стороны не свой:
+--- сервер говорит клиенту на языке клиента (client.Language.Value).
+RibaPI.Text = function(text, lang)
+    local pack = lang ~= nil and RibaPI.Bibs["Text"][lang] or nil
+    return (pack or RibaPI.Bibs["Text"][RibaPI.Language()])[text]
 end
 
 RibaPI.Biba = function(item)

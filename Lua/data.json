@@ -7,7 +7,9 @@
             "blocked": "Нет доступа!",
             "deattachedBlockMessage": "Без крепления к стене использовать невозможно!",
             "bookread": "Знание разошлось по экипажу.",
-            "bookmaxed": "Это уже все знают."
+            "bookmaxed": "Это уже все знают.",
+            "noserverlua": "Серверный LUA не найден. Мод RIBA Portable Items будет работать некорректно.\nДля работы мода нужны оба: клиентский и серверный LUA.\nИнструкция по установке в описании мода LuaCsForBarotrauma в мастерской Steam:\nhttps://steamcommunity.com/workshop/filedetails/?id=2559634234",
+            "noclientlua": "Клиентский LUA не найден. Мод RIBA Portable Items будет работать некорректно.\nДля работы мода нужны оба: клиентский и серверный LUA.\nИнструкция по установке в описании мода LuaCsForBarotrauma в мастерской Steam:\nhttps://steamcommunity.com/workshop/filedetails/?id=2559634234"
         },
         "English": {
             "books": "Books must be read!",
@@ -16,7 +18,9 @@
             "blocked": "No access!",
             "deattachedBlockMessage": "Cannot be used without wall attachment!",
             "bookread": "Knowledge shared with the crew.",
-            "bookmaxed": "Everyone already knows this."
+            "bookmaxed": "Everyone already knows this.",
+            "noserverlua": "Server-side LUA not found. The RIBA Portable Items mod will not work correctly.\nThe mod needs both: client-side and server-side LUA.\nInstallation instructions are in the description of the LuaCsForBarotrauma mod in the Steam Workshop:\nhttps://steamcommunity.com/workshop/filedetails/?id=2559634234",
+            "noclientlua": "Client-side LUA not found. The RIBA Portable Items mod will not work correctly.\nThe mod needs both: client-side and server-side LUA.\nInstallation instructions are in the description of the LuaCsForBarotrauma mod in the Steam Workshop:\nhttps://steamcommunity.com/workshop/filedetails/?id=2559634234"
         },
         "Ukrainian": {
             "books": "Треба читати книги!",
@@ -25,7 +29,9 @@
             "blocked": "Заблоковано!",
             "deattachedBlockMessage": "Без кріплення до стіни використання неможливе!",
             "bookread": "Знання розійшлося екіпажем.",
-            "bookmaxed": "Це вже всі знають."
+            "bookmaxed": "Це вже всі знають.",
+            "noserverlua": "Серверний LUA не знайдено. Мод RIBA Portable Items працюватиме некоректно.\nДля роботи мода потрібні обидва: клієнтський і серверний LUA.\nІнструкція зі встановлення в описі мода LuaCsForBarotrauma у майстерні Steam:\nhttps://steamcommunity.com/workshop/filedetails/?id=2559634234",
+            "noclientlua": "Клієнтський LUA не знайдено. Мод RIBA Portable Items працюватиме некоректно.\nДля роботи мода потрібні обидва: клієнтський і серверний LUA.\nІнструкція зі встановлення в описі мода LuaCsForBarotrauma у майстерні Steam:\nhttps://steamcommunity.com/workshop/filedetails/?id=2559634234"
         }
     },
     "Bibs": {
