@@ -75,7 +75,7 @@
     <InfectedSprite texture="%ModDir%/Media/portable4.png" sourcerect="416,4,427,222" origin="0.5,0.5" />
     <DamagedInfectedSprite texture="%ModDir%/Media/portable4.png" sourcerect="416,226,427,225" origin="0.5,0.5" />
     <BrokenSprite texture="%ModDir%/Media/portable4.png" sourcerect="0,204,412,199" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="%ModDir%/Media/portable4.png" sourcerect="0,403,412,199" depth="0.8" maxcondition="0" fadein="true" />
+    <BrokenSprite texture="%ModDir%/Media/portable4.png" sourcerect="0,403,412,199" depth="0.8" maxcondition="0" />
     <DecorativeSprite texture="%ModDir%/Media/portable4.png" depth="0.79" offset="150,50" sourcerect="850,6,41,41" origin="0.5,0.5" rotationspeed="-360">
       <AnimationConditional Voltage="gt 0.3" targetitemcomponent="Pump" />
       <AnimationConditional CurrFlow="gt 0.0" targetitemcomponent="Pump" />

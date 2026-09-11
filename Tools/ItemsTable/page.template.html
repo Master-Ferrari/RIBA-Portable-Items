@@ -1,0 +1,872 @@
+<title>RIBA Balance Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#eaeeec; --surface:#ffffff; --surface-2:#f3f6f4; --sunk:#dfe5e2;
+  --line:#ced7d3; --line-soft:#e1e8e5;
+  --ink:#1a211f; --ink-2:#4c5a55; --ink-3:#7c8b85;
+  --diy:#2f7d69; --diy-bg:#e2efeb; --diy-line:#a9cec3;
+  --buy:#a9661f; --buy-bg:#f6ece0; --buy-line:#e0c39c;
+  --warn:#a8402f; --warn-bg:#f8e7e4;
+  --edit:#5a4bbd; --edit-bg:#ece9fb; --edit-line:#c3bcec;
+  --focus:#2f7d69;
+  --shadow:0 1px 2px rgba(20,40,35,.07), 0 8px 24px -12px rgba(20,40,35,.22);
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --cond:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#101614; --surface:#19211f; --surface-2:#1e2725; --sunk:#0b110f;
+    --line:#2e3a37; --line-soft:#252f2d;
+    --ink:#e4ebe8; --ink-2:#a3b2ac; --ink-3:#75847e;
+    --diy:#5fc0a4; --diy-bg:#16302a; --diy-line:#2b5b50;
+    --buy:#dda05b; --buy-bg:#332617; --buy-line:#5b452a;
+    --warn:#e08375; --warn-bg:#3a1e1a;
+    --edit:#a99cf5; --edit-bg:#241f3d; --edit-line:#463c78;
+    --focus:#5fc0a4;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+  }
+  :root:not([data-theme="light"]) .ico{filter:none}
+}
+:root[data-theme="dark"]{
+  --ground:#101614; --surface:#19211f; --surface-2:#1e2725; --sunk:#0b110f;
+  --line:#2e3a37; --line-soft:#252f2d;
+  --ink:#e4ebe8; --ink-2:#a3b2ac; --ink-3:#75847e;
+  --diy:#5fc0a4; --diy-bg:#16302a; --diy-line:#2b5b50;
+  --buy:#dda05b; --buy-bg:#332617; --buy-line:#5b452a;
+  --warn:#e08375; --warn-bg:#3a1e1a;
+  --edit:#a99cf5; --edit-bg:#241f3d; --edit-line:#463c78;
+  --focus:#5fc0a4;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:14px; line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+}
+:focus-visible{outline:2px solid var(--focus); outline-offset:1px; border-radius:2px}
+
+/* ---------------------------------------------------------------- шапка */
+.bar{
+  position:sticky; top:0; z-index:40; background:var(--surface);
+  border-bottom:1px solid var(--line);
+  padding-block:10px; padding-inline:16px;
+  display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center;
+}
+.brand{display:flex; align-items:baseline; gap:10px; margin-inline-end:auto}
+.brand h1{
+  font-family:var(--cond); font-weight:700; font-size:19px; letter-spacing:.01em;
+  margin:0; text-wrap:balance;
+}
+.brand .sub{
+  font-family:var(--mono); font-size:11px; color:var(--ink-3);
+  letter-spacing:.02em; white-space:nowrap;
+}
+.tools{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+input[type=search]{
+  font:inherit; font-size:13px; color:var(--ink); background:var(--surface-2);
+  border:1px solid var(--line); border-radius:3px; padding:5px 9px; width:190px;
+}
+input[type=search]::placeholder{color:var(--ink-3)}
+.seg{display:flex; border:1px solid var(--line); border-radius:3px; overflow:hidden}
+.seg button{
+  font-family:var(--cond); font-size:13px; font-weight:600; letter-spacing:.02em;
+  background:var(--surface-2); color:var(--ink-2); border:0;
+  border-inline-start:1px solid var(--line); padding:5px 10px; cursor:pointer;
+}
+.seg button:first-child{border-inline-start:0}
+.seg button[aria-pressed="true"]{background:var(--ink); color:var(--surface)}
+.seg button.diy[aria-pressed="true"]{background:var(--diy); color:#fff}
+.seg button.buy[aria-pressed="true"]{background:var(--buy); color:#fff}
+.btn{
+  font-family:var(--cond); font-size:13px; font-weight:600; letter-spacing:.02em;
+  border:1px solid var(--line); background:var(--surface-2); color:var(--ink);
+  border-radius:3px; padding:5px 11px; cursor:pointer;
+}
+.btn:hover{border-color:var(--ink-3)}
+.btn.primary{background:var(--diy); border-color:var(--diy); color:#fff}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.primary[disabled]{background:var(--surface-2); color:var(--ink-3); border-color:var(--line); cursor:default; filter:none}
+.btn.ghost{background:transparent}
+.count-pill{
+  font-family:var(--mono); font-size:11px; padding:3px 7px; border-radius:99px;
+  background:var(--edit-bg); color:var(--edit); border:1px solid var(--edit-line);
+  white-space:nowrap;
+}
+.count-pill.zero{background:var(--surface-2); color:var(--ink-3); border-color:var(--line)}
+
+/* --------------------------------------------------------------- таблица */
+.wrap{padding-inline:16px; padding-block:14px 20px}
+.tablebox{
+  overflow:auto; background:var(--surface);
+  max-height:calc(100vh - var(--barh,52px) - 74px); min-height:340px;
+  border:1px solid var(--line); border-radius:4px; box-shadow:var(--shadow);
+  overscroll-behavior:contain;
+}
+table{border-collapse:separate; border-spacing:0; width:100%; min-width:1080px}
+thead th{
+  position:sticky; top:0; z-index:20; background:var(--surface-2);
+  font-family:var(--cond); font-weight:600; font-size:12px;
+  text-transform:uppercase; letter-spacing:.07em; color:var(--ink-2);
+  text-align:left; padding:8px 10px; border-bottom:1px solid var(--line);
+  white-space:nowrap;
+}
+thead th.sortable{cursor:pointer; user-select:none}
+thead th.sortable:hover{color:var(--ink)}
+thead th .arrow{opacity:.35; font-size:10px; margin-inline-start:3px}
+thead th[aria-sort] .arrow{opacity:1; color:var(--diy)}
+tbody td{
+  padding:9px 10px; border-bottom:1px solid var(--line-soft);
+  vertical-align:top;
+}
+tbody tr:hover td{background:var(--surface-2)}
+tbody tr.dirty td{background:var(--edit-bg)}
+tbody tr.dirty:hover td{background:var(--edit-bg); filter:brightness(1.02)}
+td.c-mark{width:4px; padding:0; border-bottom:1px solid var(--line-soft)}
+tr.v-diy td.c-mark{background:var(--diy)}
+tr.v-buy td.c-mark{background:var(--buy)}
+td.c-ico{width:56px; padding-inline:8px 4px}
+.ico{
+  width:44px; height:44px; display:block; image-rendering:auto;
+  background:var(--sunk); border:1px solid var(--line-soft); border-radius:3px;
+}
+td.c-name{min-width:190px; max-width:260px}
+.nm{font-weight:600; line-height:1.25; text-wrap:balance}
+.nm-ru{font-size:12px; color:var(--ink-3); line-height:1.3}
+.id{
+  font-family:var(--mono); font-size:11px; color:var(--ink-2);
+  background:var(--sunk); border-radius:2px; padding:1px 4px;
+  display:inline-block; margin-top:3px; cursor:copy; border:1px solid transparent;
+}
+.id:hover{border-color:var(--line); color:var(--ink)}
+.flags{display:flex; flex-wrap:wrap; gap:4px; margin-top:5px}
+.flag{
+  font-family:var(--cond); font-size:11px; font-weight:600; letter-spacing:.04em;
+  text-transform:uppercase; padding:1px 5px; border-radius:2px;
+  border:1px solid var(--line); color:var(--ink-2); background:var(--surface-2);
+}
+.flag.warn{color:var(--warn); border-color:var(--warn); background:var(--warn-bg)}
+.flag.talent{color:var(--diy); border-color:var(--diy-line); background:var(--diy-bg)}
+
+td.c-src{width:130px}
+.file{font-family:var(--mono); font-size:12px; color:var(--ink); white-space:nowrap}
+.line{font-family:var(--mono); font-size:11px; color:var(--ink-3)}
+.vanilla{font-family:var(--mono); font-size:10px; color:var(--ink-3); display:block; margin-top:3px; word-break:break-all}
+
+td.c-var{width:88px}
+.tag{
+  font-family:var(--cond); font-weight:700; font-size:12px; letter-spacing:.06em;
+  text-transform:uppercase; padding:2px 7px; border-radius:2px; white-space:nowrap;
+  display:inline-block;
+}
+.tag.diy{color:var(--diy); background:var(--diy-bg); border:1px solid var(--diy-line)}
+.tag.buy{color:var(--buy); background:var(--buy-bg); border:1px solid var(--buy-line)}
+.tag.none{color:var(--ink-3); background:var(--surface-2); border:1px solid var(--line)}
+
+td.c-price{width:170px}
+td.c-fab{min-width:280px}
+td.c-dec{min-width:210px}
+
+/* ----------------------------------------------------------- поля ввода */
+.field{display:flex; align-items:baseline; gap:5px; flex-wrap:wrap}
+.lbl{
+  font-family:var(--cond); font-size:11px; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+input.num, input.txt{
+  font-family:var(--mono); font-size:13px; color:var(--ink);
+  background:transparent; border:1px solid transparent; border-bottom:1px dashed var(--line);
+  border-radius:2px; padding:1px 4px; font-variant-numeric:tabular-nums;
+}
+input.num{width:58px; text-align:right}
+input.num.tiny{width:38px}
+input.txt{width:150px; font-size:12px}
+input.num:hover, input.txt:hover{background:var(--surface-2); border-bottom-color:var(--ink-3)}
+input.num:focus, input.txt:focus{
+  background:var(--surface); border-color:var(--focus); border-bottom-style:solid; outline:none;
+}
+input.changed{color:var(--edit); font-weight:600; border-bottom-color:var(--edit)}
+.money{font-family:var(--mono); font-size:13px; font-variant-numeric:tabular-nums}
+.mk{color:var(--ink-3); font-size:11px; font-family:var(--mono)}
+
+.toggle{
+  display:inline-flex; align-items:center; gap:5px; cursor:pointer;
+  font-family:var(--cond); font-size:12px; font-weight:600; letter-spacing:.03em;
+  text-transform:uppercase; color:var(--ink-2); user-select:none;
+}
+.toggle input{accent-color:var(--diy); margin:0; width:13px; height:13px}
+
+/* ------------------------------------------------------------- компоненты */
+.chips{display:flex; flex-wrap:wrap; gap:4px; margin-top:5px}
+.chip{
+  display:inline-flex; align-items:center; gap:4px;
+  background:var(--surface-2); border:1px solid var(--line);
+  border-radius:3px; padding:2px 4px 2px 2px; max-width:100%;
+}
+tbody tr.dirty .chip{background:var(--surface)}
+.chip img{width:20px; height:20px; display:block; flex:none; border-radius:2px}
+.chip .cn{
+  font-size:12px; color:var(--ink); cursor:text; white-space:nowrap;
+  border-bottom:1px dashed transparent; max-width:130px; overflow:hidden; text-overflow:ellipsis;
+}
+.chip .cn:hover{border-bottom-color:var(--ink-3)}
+.chip .x{
+  border:0; background:transparent; color:var(--ink-3); cursor:pointer;
+  font-size:14px; line-height:1; padding:0 1px; font-family:var(--mono);
+}
+.chip .x:hover{color:var(--warn)}
+.chip.add{border-style:dashed; padding:2px 7px}
+.chip.add button{
+  border:0; background:transparent; color:var(--ink-2); cursor:pointer;
+  font-family:var(--cond); font-size:12px; font-weight:600; letter-spacing:.04em;
+  text-transform:uppercase; padding:0;
+}
+.chip.add button:hover{color:var(--diy)}
+.skill{
+  display:inline-flex; align-items:center; gap:3px; font-family:var(--cond);
+  font-size:12px; font-weight:600; letter-spacing:.03em; text-transform:uppercase;
+  color:var(--ink-2); background:var(--sunk); border-radius:2px; padding:1px 5px;
+}
+.empty{color:var(--ink-3); font-size:12px; font-style:italic}
+.mini{
+  border:0; background:transparent; padding:0; cursor:pointer; color:var(--ink-3);
+  font-family:var(--cond); font-size:11px; font-weight:600; letter-spacing:.05em;
+  text-transform:uppercase; text-decoration:underline; text-underline-offset:2px;
+}
+.mini:hover{color:var(--diy)}
+.mini.revert{color:var(--edit)}
+.flags .revert{display:none}
+tr.dirty .flags .revert{display:inline}
+summary.mini{list-style:none; cursor:pointer}
+summary.mini::-webkit-details-marker{display:none}
+summary.mini::before{content:"▸ "; display:inline-block; transition:transform .15s}
+details[open] > summary.mini::before{content:"▾ "}
+
+.stores{
+  margin-top:6px; border-top:1px dashed var(--line); padding-top:5px;
+  display:grid; grid-template-columns:auto auto auto auto; gap:2px 6px; align-items:center;
+}
+.stores .w{font-family:var(--cond); font-size:11px; font-weight:600; text-transform:uppercase;
+  letter-spacing:.05em; color:var(--ink-3)}
+.stores .res{font-family:var(--mono); font-size:11px; color:var(--ink-2); text-align:right;
+  font-variant-numeric:tabular-nums}
+
+/* ------------------------------------------------------------------ модалка */
+dialog{
+  border:1px solid var(--line); border-radius:5px; background:var(--surface);
+  color:var(--ink); padding:0; max-width:min(760px,94vw); width:100%;
+  box-shadow:var(--shadow);
+}
+dialog::backdrop{background:rgba(8,16,14,.55)}
+.dlg-head{
+  display:flex; align-items:center; gap:10px; padding:12px 16px;
+  border-bottom:1px solid var(--line); flex-wrap:wrap;
+}
+.dlg-head h2{font-family:var(--cond); font-size:17px; font-weight:700; margin:0; margin-inline-end:auto}
+.dlg-body{padding:12px 16px 16px; display:flex; flex-direction:column; gap:10px}
+.dlg-body p{margin:0; font-size:13px; color:var(--ink-2)}
+textarea{
+  font-family:var(--mono); font-size:12px; line-height:1.5; color:var(--ink);
+  background:var(--sunk); border:1px solid var(--line); border-radius:3px;
+  padding:9px; width:100%; resize:vertical; tab-size:2;
+}
+textarea#note{font-family:var(--sans); font-size:13px; min-height:52px; background:var(--surface-2)}
+#out{min-height:300px; max-height:46vh}
+.toast{
+  position:fixed; inset-inline:0; bottom:18px; margin-inline:auto; width:max-content;
+  max-width:90vw; background:var(--ink); color:var(--ground);
+  font-family:var(--cond); font-weight:600; letter-spacing:.03em; font-size:14px;
+  padding:8px 16px; border-radius:3px; z-index:90; opacity:0; transform:translateY(6px);
+  transition:opacity .18s, transform .18s; pointer-events:none;
+}
+.toast.on{opacity:1; transform:none}
+@media (prefers-reduced-motion: reduce){.toast{transition:none}}
+
+.foot{
+  margin-top:12px; font-family:var(--mono); font-size:11px; color:var(--ink-3);
+  display:flex; flex-wrap:wrap; gap:4px 14px;
+}
+@media (max-width:720px){
+  .brand .sub{display:none}
+  input[type=search]{width:130px}
+  .wrap{padding-inline:16px}
+}
+</style>
+
+<header class="bar">
+  <div class="brand">
+    <h1>RIBA Balance Sheet</h1>
+    <span class="sub" id="stamp"></span>
+  </div>
+  <div class="tools">
+    <input type="search" id="q" placeholder="имя, id, компонент…" aria-label="Поиск">
+    <div class="seg" id="fvar" role="group" aria-label="Вариант">
+      <button type="button" data-v="all" aria-pressed="true">все</button>
+      <button type="button" class="diy" data-v="DIY" aria-pressed="false">DIY</button>
+      <button type="button" class="buy" data-v="Buyable" aria-pressed="false">Buyable</button>
+    </div>
+    <div class="seg" id="ffile" role="group" aria-label="Файл"></div>
+    <button type="button" class="btn ghost" id="onlydirty" aria-pressed="false">только правки</button>
+    <span class="count-pill zero" id="pill">0 правок</span>
+    <button type="button" class="btn" id="reset">сбросить</button>
+    <button type="button" class="btn primary" id="export" disabled>Экспорт диффа</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="tablebox">
+    <table id="tbl">
+      <thead>
+        <tr>
+          <th aria-hidden="true"></th>
+          <th></th>
+          <th class="sortable" data-k="name">Предмет <span class="arrow">↕</span></th>
+          <th class="sortable" data-k="src">Файл <span class="arrow">↕</span></th>
+          <th class="sortable" data-k="variant">Вариант <span class="arrow">↕</span></th>
+          <th class="sortable" data-k="price">Покупка <span class="arrow">↕</span></th>
+          <th class="sortable" data-k="fab">Крафт <span class="arrow">↕</span></th>
+          <th class="sortable" data-k="dec">Разбор <span class="arrow">↕</span></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <div class="foot" id="foot"></div>
+</main>
+
+<dialog id="dlg">
+  <div class="dlg-head">
+    <h2>Дифф изменений</h2>
+    <button type="button" class="btn primary" id="copy">Скопировать</button>
+    <button type="button" class="btn" id="close">Закрыть</button>
+  </div>
+  <div class="dlg-body">
+    <p>Скопируй и отдай мне — я применю правки к <span class="file">Xml/Items*.xml</span>.</p>
+    <textarea id="note" placeholder="Комментарий: что и зачем меняем (необязательно)"></textarea>
+    <textarea id="out" readonly spellcheck="false"></textarea>
+  </div>
+</dialog>
+
+<datalist id="ids"></datalist>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="application/json" id="data">/*__DATA__*/</script>
+<script>
+(function(){
+"use strict";
+const DATA = JSON.parse(document.getElementById("data").textContent);
+const ORIG = DATA.items;
+const CAT  = DATA.catalog;
+const KEY  = "riba-balance-v1";
+
+/* ---------------------------------------------------- рабочая копия + правки */
+const clone = o => JSON.parse(JSON.stringify(o));
+let WORK = clone(ORIG);
+const byId = {}; WORK.forEach(x => byId[x.id] = x);
+const origById = {}; ORIG.forEach(x => origById[x.id] = x);
+
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(collect(true))); }catch(e){}
+}
+function restore(){
+  let raw = null;
+  try{ raw = localStorage.getItem(KEY); }catch(e){ return; }
+  if(!raw) return;
+  let d; try{ d = JSON.parse(raw); }catch(e){ return; }
+  (d.changes||[]).forEach(ch => {
+    const it = byId[ch.id]; if(!it) return;
+    ["price","fabricate","deconstruct"].forEach(blk => applyChange(it, blk, ch[blk]));
+  });
+  if(d.note) note.value = d.note;
+}
+function applyChange(it, blk, ch){
+  if(!ch) return;
+  if("from" in ch && "to" in ch){            // блок целиком добавлен или удалён
+    it[blk] = ch.to === null ? null : clone(ch.to);
+    return;
+  }
+  const fresh = blk === "fabricate" ? blankFab()
+              : blk === "deconstruct" ? blankDec()
+              : {baseprice:"0", sold:false, minavailable:null, maxavailable:null, stores:[]};
+  const tgt = it[blk] || (it[blk] = fresh);
+  for(const k in ch){
+    const v = ch[k];
+    if(v && typeof v === "object" && "to" in v) tgt[k] = clone(v.to);
+  }
+}
+const blankFab = () => ({requiredtime:"10", fabricators:"fabricator", outamount:null, skills:[], items:[]});
+const blankDec = () => ({time:"10", chooserandom:null, items:[]});
+
+/* ---------------------------------------------------------------- утилиты */
+const el = (t,c,txt) => { const n=document.createElement(t); if(c) n.className=c;
+  if(txt!=null) n.textContent=txt; return n; };
+const num = v => { const f = parseFloat(v); return isFinite(f) ? f : 0; };
+const catOf = id => CAT[String(id||"").toLowerCase()] || {id, name:id, icon:null, mod:false};
+const eq = (a,b) => JSON.stringify(a===undefined?null:a) === JSON.stringify(b===undefined?null:b);
+const listSig = l => (l||[]).map(x => `${String(x.id).toLowerCase()}:${x.amount}`).join(",");
+
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("on");
+  clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove("on"), 1900);
+}
+
+/* ------------------------------------------------------------------- дифф */
+const SCALARS = {
+  price:       ["baseprice","sold","minavailable","maxavailable"],
+  fabricate:   ["requiredtime","fabricators","outamount"],
+  deconstruct: ["time","chooserandom"]
+};
+function itemDiff(it){
+  const o = origById[it.id], out = {};
+  ["price","fabricate","deconstruct"].forEach(blk => {
+    const a = o[blk], b = it[blk];
+    if(!a && !b) return;
+    if(a && !b){ out[blk] = {to:null, from:"есть блок"}; return; }
+    if(!a && b){ out[blk] = {from:null, to:clone(b)};   return; }
+    const d = {};
+    SCALARS[blk].forEach(k => { if(!eq(a[k],b[k])) d[k] = {from:a[k]??null, to:b[k]??null}; });
+    if(blk !== "price" && listSig(a.items) !== listSig(b.items)){
+      d.items = {
+        from: (a.items||[]).map(x=>({id:x.id, amount:x.amount})),
+        to:   (b.items||[]).map(x=>({id:x.id, amount:x.amount})),
+        delta: listDelta(a.items, b.items)
+      };
+    }
+    if(blk === "fabricate"){
+      const sa = (a.skills||[]).map(s=>`${s.id}:${s.level}`).join(",");
+      const sb = (b.skills||[]).map(s=>`${s.id}:${s.level}`).join(",");
+      if(sa !== sb) d.skills = {from:clone(a.skills||[]), to:clone(b.skills||[])};
+    }
+    if(blk === "price"){
+      const sa = JSON.stringify(a.stores||[]), sb = JSON.stringify(b.stores||[]);
+      if(sa !== sb) d.stores = {from:clone(a.stores||[]), to:clone(b.stores||[])};
+    }
+    if(Object.keys(d).length) out[blk] = d;
+  });
+  return Object.keys(out).length ? out : null;
+}
+function listDelta(a,b){
+  const A = {}, B = {}, lines = [];
+  (a||[]).forEach(x => A[String(x.id).toLowerCase()] = x);
+  (b||[]).forEach(x => B[String(x.id).toLowerCase()] = x);
+  Object.keys(B).forEach(k => {
+    if(!A[k]) lines.push(`+ ${B[k].id} ×${B[k].amount}`);
+    else if(String(A[k].amount) !== String(B[k].amount))
+      lines.push(`~ ${B[k].id} ×${A[k].amount} → ×${B[k].amount}`);
+  });
+  Object.keys(A).forEach(k => { if(!B[k]) lines.push(`− ${A[k].id} ×${A[k].amount}`); });
+  return lines;
+}
+function collect(forStorage){
+  const changes = [];
+  WORK.forEach(it => {
+    const d = itemDiff(it);
+    if(!d) return;
+    changes.push(Object.assign({
+      id: it.id,
+      name: it.name_en,
+      file: "Xml/" + it.srcfile,
+      line: it.srcline,
+      variant: it.variant
+    }, d));
+  });
+  const doc = {
+    mod: DATA.mod,
+    exported: new Date().toISOString(),
+    note: note.value.trim() || undefined,
+    changes
+  };
+  if(forStorage) doc.note = note.value;
+  return doc;
+}
+const dirtyIds = () => new Set(WORK.filter(it => itemDiff(it)).map(it => it.id));
+
+/* --------------------------------------------------------------- рендер */
+const rows  = document.getElementById("rows");
+const note  = document.getElementById("note");
+const state = {q:"", variant:"all", file:"all", onlyDirty:false, sort:"name", dir:1};
+const ROW_EL = new Map();
+
+function makeNum(get, set, cls){
+  const i = el("input", "num" + (cls ? " " + cls : ""));
+  i.type = "text"; i.inputMode = "decimal"; i.value = get() ?? "";
+  i.addEventListener("input", () => { set(i.value.trim() === "" ? null : i.value.trim()); afterEdit(); });
+  return i;
+}
+function markChanged(input, same){ input.classList.toggle("changed", !same); }
+
+function componentChips(list, owner, key, onChange){
+  const box = el("div","chips");
+  (list||[]).forEach((c, i) => {
+    const chip = el("div","chip");
+    const info = catOf(c.id);
+    const img = el("img");
+    img.alt = ""; img.src = info.icon || "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+    chip.append(img);
+    const nm = el("span","cn", info.name || c.id);
+    nm.title = c.id + (info.mod ? "  (предмет мода)" : "");
+    nm.tabIndex = 0;
+    const swap = () => {
+      const inp = el("input","txt"); inp.value = c.id; inp.setAttribute("list","ids");
+      nm.replaceWith(inp); inp.focus(); inp.select();
+      const commit = () => { const v = inp.value.trim(); if(v && v !== c.id){ c.id = v; onChange(); }
+        else { inp.replaceWith(nm); } };
+      inp.addEventListener("blur", commit);
+      inp.addEventListener("keydown", e => { if(e.key==="Enter"){ e.preventDefault(); inp.blur(); }
+        if(e.key==="Escape"){ inp.replaceWith(nm); } });
+    };
+    nm.addEventListener("click", swap);
+    nm.addEventListener("keydown", e => { if(e.key==="Enter"){ e.preventDefault(); swap(); } });
+    chip.append(nm, el("span","mk","×"));
+    const amt = makeNum(() => c.amount, v => { c.amount = v ?? "1"; }, "tiny");
+    amt.setAttribute("aria-label", "количество " + c.id);
+    chip.append(amt);
+    const x = el("button","x","×");
+    x.type = "button"; x.title = "убрать"; x.setAttribute("aria-label","убрать " + c.id);
+    x.addEventListener("click", () => { list.splice(i,1); onChange(); });
+    chip.append(x);
+    box.append(chip);
+  });
+  const add = el("div","chip add");
+  const ab = el("button", null, "+ компонент"); ab.type = "button";
+  ab.addEventListener("click", () => {
+    const inp = el("input","txt"); inp.setAttribute("list","ids"); inp.placeholder = "identifier";
+    ab.replaceWith(inp); inp.focus();
+    const commit = () => { const v = inp.value.trim();
+      if(v){ list.push({id:v, amount:"1", name:catOf(v).name}); onChange(); }
+      else { inp.replaceWith(ab); } };
+    inp.addEventListener("blur", commit);
+    inp.addEventListener("keydown", e => { if(e.key==="Enter"){ e.preventDefault(); inp.blur(); }
+      if(e.key==="Escape"){ inp.replaceWith(ab); } });
+  });
+  add.append(ab);
+  box.append(add);
+  return box;
+}
+
+function priceCell(it, redraw){
+  const td = el("td","c-price");
+  const p = it.price || (it.price = {baseprice:"0", sold:false, stores:[], minavailable:null, maxavailable:null});
+  const o = origById[it.id].price || {};
+  const f = el("div","field");
+  const bp = makeNum(() => p.baseprice, v => { p.baseprice = v; markChanged(bp, eq(o.baseprice, p.baseprice)); });
+  bp.setAttribute("aria-label","базовая цена " + it.id);
+  markChanged(bp, eq(o.baseprice, p.baseprice));
+  f.append(bp, el("span","mk","mk"));
+  td.append(f);
+
+  const t = el("label","toggle");
+  const cb = el("input"); cb.type = "checkbox"; cb.checked = !!p.sold;
+  cb.addEventListener("change", () => { p.sold = cb.checked; afterEdit(); redraw(); });
+  t.append(cb, el("span", null, p.sold ? "в продаже" : "не продаётся"));
+  td.append(t);
+
+  if(p.stores && p.stores.length){
+    const det = el("details");
+    const sum = el("summary"); sum.className = "mini";
+    sum.textContent = `магазины (${p.stores.length})`;
+    det.append(sum);
+    const g = el("div","stores");
+    p.stores.forEach(s => {
+      g.append(el("span","w", s.where));
+      const m = makeNum(() => s.multiplier, v => { s.multiplier = v; afterEdit(); recalc(); }, "tiny");
+      m.setAttribute("aria-label", `множитель ${s.where} у ${it.id}`);
+      g.append(m);
+      const sc = el("label","toggle");
+      const scb = el("input"); scb.type = "checkbox"; scb.checked = !!s.sold;
+      scb.addEventListener("change", () => { s.sold = scb.checked; afterEdit(); recalc(); });
+      sc.append(scb);
+      g.append(sc);
+      const res = el("span","res");
+      g.append(res);
+      s._res = res;
+    });
+    const recalc = () => p.stores.forEach(s => {
+      s._res.textContent = s.sold
+        ? Math.round(num(p.baseprice) * (s.multiplier == null ? 1 : num(s.multiplier))) + " mk"
+        : "—";
+    });
+    recalc();
+    bp.addEventListener("input", recalc);
+    det.append(g);
+    td.append(det);
+  }
+  return td;
+}
+
+function fabCell(it){
+  const td = el("td","c-fab");
+  const o = origById[it.id].fabricate;
+  if(!it.fabricate){
+    const b = el("button","mini","+ добавить рецепт"); b.type = "button";
+    b.addEventListener("click", () => { it.fabricate = blankFab(); afterEdit(); render(); });
+    td.append(el("div","empty","нет рецепта"), b);
+    if(o) td.append(document.createTextNode(" "), revertBtn(it));
+    return td;
+  }
+  const fb = it.fabricate;
+  const f = el("div","field");
+  f.append(el("span","lbl","время"));
+  const t = makeNum(() => fb.requiredtime, v => { fb.requiredtime = v;
+    markChanged(t, eq(o && o.requiredtime, fb.requiredtime)); });
+  t.setAttribute("aria-label","время крафта " + it.id);
+  markChanged(t, eq(o && o.requiredtime, fb.requiredtime));
+  f.append(t, el("span","mk","с"));
+  (fb.skills||[]).forEach(s => {
+    const sk = el("span","skill");
+    sk.append(el("span", null, s.id));
+    const lv = makeNum(() => s.level, v => { s.level = v; afterEdit(); }, "tiny");
+    lv.setAttribute("aria-label", `навык ${s.id} у ${it.id}`);
+    sk.append(lv);
+    f.append(sk);
+  });
+  const rm = el("button","mini","убрать рецепт"); rm.type = "button";
+  rm.addEventListener("click", () => { it.fabricate = null; afterEdit(); render(); });
+  f.append(rm);
+  td.append(f);
+  td.append(componentChips(fb.items, fb, "items", () => { afterEdit(); render(); }));
+  return td;
+}
+
+function decCell(it){
+  const td = el("td","c-dec");
+  const o = origById[it.id].deconstruct;
+  if(!it.deconstruct){
+    const b = el("button","mini","+ добавить разбор"); b.type = "button";
+    b.addEventListener("click", () => { it.deconstruct = blankDec(); afterEdit(); render(); });
+    td.append(el("div","empty","не разбирается"), b);
+    return td;
+  }
+  const dc = it.deconstruct;
+  const f = el("div","field");
+  f.append(el("span","lbl","время"));
+  const t = makeNum(() => dc.time, v => { dc.time = v; markChanged(t, eq(o && o.time, dc.time)); });
+  t.setAttribute("aria-label","время разбора " + it.id);
+  markChanged(t, eq(o && o.time, dc.time));
+  f.append(t, el("span","mk","с"));
+  const rm = el("button","mini","убрать"); rm.type = "button";
+  rm.addEventListener("click", () => { it.deconstruct = null; afterEdit(); render(); });
+  f.append(rm);
+  td.append(f);
+  td.append(componentChips(dc.items, dc, "items", () => { afterEdit(); render(); }));
+  return td;
+}
+
+function revertBtn(it){
+  const b = el("button","mini revert","вернуть"); b.type = "button";
+  b.addEventListener("click", () => {
+    const i = WORK.findIndex(x => x.id === it.id);
+    WORK[i] = clone(origById[it.id]); byId[it.id] = WORK[i];
+    afterEdit(); render();
+  });
+  return b;
+}
+
+function row(it, dirty){
+  const tr = el("tr", (it.variant === "DIY" ? "v-diy" : it.variant === "Buyable" ? "v-buy" : "") +
+                      (dirty ? " dirty" : ""));
+  tr.append(el("td","c-mark"));
+
+  const tdI = el("td","c-ico");
+  const img = el("img","ico"); img.src = it.icon; img.alt = "";
+  img.loading = "lazy"; img.width = 44; img.height = 44;
+  tdI.append(img); tr.append(tdI);
+
+  const tdN = el("td","c-name");
+  tdN.append(el("div","nm", it.name_en));
+  if(it.name_ru) tdN.append(el("div","nm-ru", it.name_ru));
+  const id = el("span","id", it.id);
+  id.title = "скопировать identifier";
+  id.addEventListener("click", () => {
+    navigator.clipboard?.writeText(it.id).then(() => toast("id скопирован: " + it.id),
+                                               () => toast("не вышло скопировать"));
+  });
+  tdN.append(id);
+  const flags = el("div","flags");
+  if(it.orphan)  flags.append(el("span","flag warn","не купить, не скрафтить"));
+  if(it.talents.length) flags.append(el("span","flag talent","рецепт из таланта"));
+  flags.append(revertBtn(it));
+  tdN.append(flags);
+  tr.append(tdN);
+
+  const tdS = el("td","c-src");
+  tdS.append(el("div","file", it.srcfile));
+  tdS.append(el("span","line","строка " + it.srcline));
+  if(it.vanilla_item) tdS.append(el("span","vanilla","ваниль: " + it.vanilla_item));
+  tr.append(tdS);
+
+  const tdV = el("td","c-var");
+  const tag = el("span","tag " + (it.variant === "DIY" ? "diy" : it.variant === "Buyable" ? "buy" : "none"),
+                 it.variant);
+  tdV.append(tag);
+  tr.append(tdV);
+
+  tr.append(priceCell(it, () => render()));
+  tr.append(fabCell(it));
+  tr.append(decCell(it));
+  return tr;
+}
+
+const SORT = {
+  name:    it => (it.name_en || it.id).toLowerCase(),
+  src:     it => it.srcfile + String(it.srcline).padStart(5,"0"),
+  variant: it => it.variant,
+  price:   it => it.price ? num(it.price.baseprice) : -1,
+  fab:     it => it.fabricate ? num(it.fabricate.requiredtime) : -1,
+  dec:     it => it.deconstruct ? num(it.deconstruct.time) : -1
+};
+
+function visible(){
+  const dirt = dirtyIds();
+  const q = state.q.toLowerCase().trim();
+  return WORK.filter(it => {
+    if(state.variant !== "all" && it.variant !== state.variant) return false;
+    if(state.file !== "all" && it.srcfile !== state.file) return false;
+    if(state.onlyDirty && !dirt.has(it.id)) return false;
+    if(!q) return true;
+    const hay = [it.id, it.name_en, it.name_ru, it.srcfile,
+      ...(it.fabricate ? it.fabricate.items.map(c=>c.id) : []),
+      ...(it.deconstruct ? it.deconstruct.items.map(c=>c.id) : [])].join(" ").toLowerCase();
+    return hay.includes(q);
+  });
+}
+
+function render(){
+  const dirt = dirtyIds();
+  const list = visible();
+  const key = SORT[state.sort] || SORT.name;
+  list.sort((a,b) => {
+    const A = key(a), B = key(b);
+    if(A < B) return -state.dir;
+    if(A > B) return state.dir;
+    return (a.name_en||a.id).localeCompare(b.name_en||b.id);
+  });
+  ROW_EL.clear();
+  rows.replaceChildren(...list.map(it => {
+    const tr = row(it, dirt.has(it.id));
+    ROW_EL.set(it.id, tr);
+    return tr;
+  }));
+
+  const pill = document.getElementById("pill");
+  pill.textContent = dirt.size + " " + plural(dirt.size, "правка","правки","правок");
+  pill.classList.toggle("zero", dirt.size === 0);
+  document.getElementById("export").disabled = dirt.size === 0;
+
+  const diy = list.filter(x=>x.variant==="DIY").length;
+  document.getElementById("foot").replaceChildren(
+    el("span",null,`показано ${list.length} из ${WORK.length} · DIY ${diy} · Buyable ${list.length-diy}`),
+    el("span",null,"цены в марках; время в секундах"),
+    el("span",null,"источник: Xml/Items*.xml, значения после сборки RIBAXML")
+  );
+  document.querySelectorAll("thead th.sortable").forEach(th => {
+    if(th.dataset.k === state.sort){
+      th.setAttribute("aria-sort", state.dir > 0 ? "ascending" : "descending");
+      th.querySelector(".arrow").textContent = state.dir > 0 ? "↑" : "↓";
+    } else { th.removeAttribute("aria-sort"); th.querySelector(".arrow").textContent = "↕"; }
+  });
+}
+function plural(n,a,b,c){
+  const m = n % 100, k = n % 10;
+  if(m > 10 && m < 20) return c;
+  if(k === 1) return a;
+  if(k >= 2 && k <= 4) return b;
+  return c;
+}
+let saveT;
+function afterEdit(){ clearTimeout(saveT); saveT = setTimeout(save, 250); syncPill(); }
+function syncPill(){
+  const dirt = dirtyIds();
+  ROW_EL.forEach((tr, id) => tr.classList.toggle("dirty", dirt.has(id)));
+  const n = dirt.size;
+  const pill = document.getElementById("pill");
+  pill.textContent = n + " " + plural(n,"правка","правки","правок");
+  pill.classList.toggle("zero", n === 0);
+  document.getElementById("export").disabled = n === 0;
+}
+
+/* -------------------------------------------------------------- управление */
+document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+document.getElementById("fvar").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  state.variant = b.dataset.v; render();
+  [...e.currentTarget.children].forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+});
+const ffile = document.getElementById("ffile");
+["all", ...[...new Set(ORIG.map(x => x.srcfile))].sort()].forEach((f,i) => {
+  const b = el("button", null, f === "all" ? "все файлы" : f.replace(".xml",""));
+  b.type = "button"; b.dataset.f = f; b.setAttribute("aria-pressed", String(i === 0));
+  ffile.append(b);
+});
+ffile.addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  state.file = b.dataset.f; render();
+  [...ffile.children].forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+});
+document.getElementById("onlydirty").addEventListener("click", e => {
+  state.onlyDirty = !state.onlyDirty;
+  e.currentTarget.setAttribute("aria-pressed", String(state.onlyDirty));
+  e.currentTarget.classList.toggle("primary", state.onlyDirty);
+  render();
+});
+document.querySelectorAll("thead th.sortable").forEach(th => {
+  th.tabIndex = 0;
+  const go = () => {
+    if(state.sort === th.dataset.k) state.dir = -state.dir;
+    else { state.sort = th.dataset.k; state.dir = 1; }
+    render();
+  };
+  th.addEventListener("click", go);
+  th.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); go(); } });
+});
+document.getElementById("reset").addEventListener("click", () => {
+  if(!dirtyIds().size) return toast("править нечего");
+  if(!confirm("Сбросить все правки и вернуть значения из мода?")) return;
+  WORK = clone(ORIG); WORK.forEach(x => byId[x.id] = x);
+  note.value = "";
+  try{ localStorage.removeItem(KEY); }catch(e){}
+  render(); toast("правки сброшены");
+});
+
+const dlg = document.getElementById("dlg");
+const out = document.getElementById("out");
+document.getElementById("export").addEventListener("click", () => {
+  out.value = JSON.stringify(collect(false), null, 2);
+  dlg.showModal();
+});
+note.addEventListener("input", () => {
+  if(dlg.open) out.value = JSON.stringify(collect(false), null, 2);
+  afterEdit();
+});
+document.getElementById("close").addEventListener("click", () => dlg.close());
+document.getElementById("copy").addEventListener("click", () => {
+  out.select();
+  navigator.clipboard?.writeText(out.value).then(
+    () => toast("дифф в буфере — вставляй в чат"),
+    () => { try{ document.execCommand("copy"); toast("дифф в буфере"); }
+            catch(e){ toast("выдели текст и скопируй вручную"); } });
+});
+
+/* ------------------------------------------------------------ автодополнение */
+document.getElementById("ids").replaceChildren(...DATA.suggest.map(id => {
+  const o = document.createElement("option"); o.value = id; return o;
+}));
+document.getElementById("stamp").textContent =
+  `${ORIG.length} предметов · ${DATA.mod}`;
+
+restore();
+render();
+
+const bar = document.querySelector(".bar");
+const setBarH = () => document.documentElement.style.setProperty(
+  "--barh", bar.getBoundingClientRect().height + "px");
+setBarH();
+if(window.ResizeObserver) new ResizeObserver(setBarH).observe(bar);
+else window.addEventListener("resize", setBarH);
+})();
+</script>
