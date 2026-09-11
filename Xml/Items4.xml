@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
 
+  <!-- legacy: снята с продажи, заменена на RIBABookSupplies. Оставлена рабочей
+       ради предметов в старых сейвах. -->
   <Item name="" identifier="RIBARecipeBookSupplies" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="8" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
     <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,37,54" />
@@ -16,15 +18,10 @@
         <TalentTrigger effectidentifier="standanddeliver" />
       </StatusEffect>
     </Holdable>
-    <Price baseprice="350" minavailable="1">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
-    </Price>
   </Item>
   
+  <!-- legacy: снята с продажи, заменена на RIBABookElectrical. Оставлена рабочей
+       ради предметов в старых сейвах. -->
   <Item name="" identifier="RIBARecipeBookElectrical" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="8" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
     <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,904,37,54" />
@@ -40,15 +37,10 @@
         <TalentTrigger effectidentifier="standanddeliver" />
       </StatusEffect>
     </Holdable>
-    <Price baseprice="350" minavailable="1">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
-    </Price>
   </Item>
   
+  <!-- legacy: снята с продажи, заменена на RIBABookMachine. Оставлена рабочей
+       ради предметов в старых сейвах. -->
   <Item name="" identifier="RIBARecipeBookMachine" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="8" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
     <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,839,37,54" />
@@ -64,15 +56,10 @@
         <TalentTrigger effectidentifier="standanddeliver" />
       </StatusEffect>
     </Holdable>
-    <Price baseprice="350" minavailable="1">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
-    </Price>
   </Item>
   
+  <!-- legacy: снята с продажи, заменена на RIBABookDecorative. Оставлена рабочей
+       ради предметов в старых сейвах. -->
   <Item name="" identifier="RIBARecipeBookDecorative" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,fabricate_microchip" maxstacksize="8" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="storagecab,crewcab" />
     <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,774,37,54" />
@@ -88,13 +75,78 @@
         <TalentTrigger effectidentifier="standanddeliver" />
       </StatusEffect>
     </Holdable>
-    <Price baseprice="350" minavailable="1">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+  </Item>
+
+
+  <!-- Supplies: одноразовая, поднимает уровень категории для всей кампании.
+       Логика чтения — в Lua (RequiredItems.lua), здесь только предмет. -->
+  <Item name="" identifier="RIBABookSupplies" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,ribabook" scale="0.5" impactsoundtag="impact_soft">
+    <PreferredContainer primary="storagecab,crewcab" secondary="locker" />
+    <PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab" amount="1" spawnprobability="0.03" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,969,37,54" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,976,33,39" depth="0.6" />
+    <Body width="28" height="36" density="20" />
+    <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect" />
+    <Price baseprice="400" minavailable="1" maxavailable="1" sold="false">
+      <Price storeidentifier="merchantoutpost" sold="true" />
+      <Price storeidentifier="merchantcity" sold="true" />
+      <Price storeidentifier="merchantresearch" sold="true" />
+      <Price storeidentifier="merchantmilitary" sold="true" />
+      <Price storeidentifier="merchantmine" sold="true" />
     </Price>
   </Item>
 
+  <!-- Electrical: одноразовая, поднимает уровень категории для всей кампании.
+       Логика чтения — в Lua (RequiredItems.lua), здесь только предмет. -->
+  <Item name="" identifier="RIBABookElectrical" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,ribabook" scale="0.5" impactsoundtag="impact_soft">
+    <PreferredContainer primary="storagecab,crewcab" secondary="locker" />
+    <PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab" amount="1" spawnprobability="0.03" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,904,37,54" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,911,33,39" depth="0.6" />
+    <Body width="28" height="36" density="20" />
+    <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect" />
+    <Price baseprice="400" minavailable="1" maxavailable="1" sold="false">
+      <Price storeidentifier="merchantoutpost" sold="true" />
+      <Price storeidentifier="merchantcity" sold="true" />
+      <Price storeidentifier="merchantresearch" sold="true" />
+      <Price storeidentifier="merchantmilitary" sold="true" />
+      <Price storeidentifier="merchantmine" sold="true" />
+    </Price>
+  </Item>
+
+  <!-- Machine: одноразовая, поднимает уровень категории для всей кампании.
+       Логика чтения — в Lua (RequiredItems.lua), здесь только предмет. -->
+  <Item name="" identifier="RIBABookMachine" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,ribabook" scale="0.5" impactsoundtag="impact_soft">
+    <PreferredContainer primary="storagecab,crewcab" secondary="locker" />
+    <PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab" amount="1" spawnprobability="0.03" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,839,37,54" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,846,33,39" depth="0.6" />
+    <Body width="28" height="36" density="20" />
+    <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect" />
+    <Price baseprice="400" minavailable="1" maxavailable="1" sold="false">
+      <Price storeidentifier="merchantoutpost" sold="true" />
+      <Price storeidentifier="merchantcity" sold="true" />
+      <Price storeidentifier="merchantresearch" sold="true" />
+      <Price storeidentifier="merchantmilitary" sold="true" />
+      <Price storeidentifier="merchantmine" sold="true" />
+    </Price>
+  </Item>
+
+  <!-- Decorative: одноразовая, поднимает уровень категории для всей кампании.
+       Логика чтения — в Lua (RequiredItems.lua), здесь только предмет. -->
+  <Item name="" identifier="RIBABookDecorative" category="Misc" cargocontaineridentifier="metalcrate" Tags="smallitem,ribabook" scale="0.5" impactsoundtag="impact_soft">
+    <PreferredContainer primary="storagecab,crewcab" secondary="locker" />
+    <PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab" amount="1" spawnprobability="0.03" />
+    <InventoryIcon texture="%ModDir%/Media/portable3.png" sourcerect="985,774,37,54" />
+    <Sprite texture="%ModDir%/Media/portable3.png" sourcerect="946,781,33,39" depth="0.6" />
+    <Body width="28" height="36" density="20" />
+    <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect" />
+    <Price baseprice="400" minavailable="1" maxavailable="1" sold="false">
+      <Price storeidentifier="merchantoutpost" sold="true" />
+      <Price storeidentifier="merchantcity" sold="true" />
+      <Price storeidentifier="merchantresearch" sold="true" />
+      <Price storeidentifier="merchantmilitary" sold="true" />
+      <Price storeidentifier="merchantmine" sold="true" />
+    </Price>
+  </Item>
 </Items>

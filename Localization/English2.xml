@@ -115,4 +115,28 @@
   <entitydescription.RIBAControlCenter>Workplace for watching "dirty" movies</entitydescription.RIBAControlCenter>
     <entityname.RIBABuyablepowerdistributor>Power distributor (new)</entityname.RIBABuyablepowerdistributor>
   <entitydescription.RIBABuyablepowerdistributor>Eight outputs, eight sliders and one very nervous electrician</entitydescription.RIBABuyablepowerdistributor>
+  <talentname.RIBA_Supplies_1>Warehouse Manager (1/2)</talentname.RIBA_Supplies_1>
+  <talentdescription.RIBA_Supplies_1>+100% to the installation limit for supplies items, for the whole crew. Talent "Warehouse Manager" level 1/2.</talentdescription.RIBA_Supplies_1>
+  <talentname.RIBA_Supplies_2>Warehouse Manager (2/2)</talentname.RIBA_Supplies_2>
+  <talentdescription.RIBA_Supplies_2>+200% to the installation limit for supplies items, for the whole crew. Talent "Warehouse Manager" level 2/2.</talentdescription.RIBA_Supplies_2>
+  <talentname.RIBA_Electrical_1>Electrical Engineer (1/2)</talentname.RIBA_Electrical_1>
+  <talentdescription.RIBA_Electrical_1>+100% to the installation limit for electrical items, for the whole crew. Talent "Electrical Engineer" level 1/2.</talentdescription.RIBA_Electrical_1>
+  <talentname.RIBA_Electrical_2>Electrical Engineer (2/2)</talentname.RIBA_Electrical_2>
+  <talentdescription.RIBA_Electrical_2>+200% to the installation limit for electrical items, for the whole crew. Talent "Electrical Engineer" level 2/2.</talentdescription.RIBA_Electrical_2>
+  <talentname.RIBA_Machine_1>Mechanical Engineer (1/2)</talentname.RIBA_Machine_1>
+  <talentdescription.RIBA_Machine_1>+100% to the installation limit for machinery items, for the whole crew. Talent "Mechanical Engineer" level 1/2.</talentdescription.RIBA_Machine_1>
+  <talentname.RIBA_Machine_2>Mechanical Engineer (2/2)</talentname.RIBA_Machine_2>
+  <talentdescription.RIBA_Machine_2>+200% to the installation limit for machinery items, for the whole crew. Talent "Mechanical Engineer" level 2/2.</talentdescription.RIBA_Machine_2>
+  <talentname.RIBA_Decorative_1>Designer (1/2)</talentname.RIBA_Decorative_1>
+  <talentdescription.RIBA_Decorative_1>+100% to the installation limit for decor items, for the whole crew. Talent "Designer" level 1/2.</talentdescription.RIBA_Decorative_1>
+  <talentname.RIBA_Decorative_2>Designer (2/2)</talentname.RIBA_Decorative_2>
+  <talentdescription.RIBA_Decorative_2>+200% to the installation limit for decor items, for the whole crew. Talent "Designer" level 2/2.</talentdescription.RIBA_Decorative_2>
+  <entityname.RIBABookSupplies>Crafting manual: Supplies</entityname.RIBABookSupplies>
+  <entitydescription.RIBABookSupplies>Read it to raise the crew's installation limit for supplies items. Maximum - two levels.</entitydescription.RIBABookSupplies>
+  <entityname.RIBABookElectrical>Crafting manual: Electrical</entityname.RIBABookElectrical>
+  <entitydescription.RIBABookElectrical>Read it to raise the crew's installation limit for electrical items. Maximum - two levels.</entitydescription.RIBABookElectrical>
+  <entityname.RIBABookMachine>Crafting manual: Machinery</entityname.RIBABookMachine>
+  <entitydescription.RIBABookMachine>Read it to raise the crew's installation limit for machinery items. Maximum - two levels.</entitydescription.RIBABookMachine>
+  <entityname.RIBABookDecorative>Crafting manual: Decor</entityname.RIBABookDecorative>
+  <entitydescription.RIBABookDecorative>Read it to raise the crew's installation limit for decor items. Maximum - two levels.</entitydescription.RIBABookDecorative>
 </infotexts>

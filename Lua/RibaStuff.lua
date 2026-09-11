@@ -17,6 +17,22 @@ RibaPI.Biba = function(item)
     return RibaPI.Bibs["Bibs"][item]
 end
 
+-- Категории знаний и таблица групп: см. Docs/books-and-limits.md
+RibaPI.Categories = RibaPI.Bibs["Categories"] or {}
+RibaPI.Groups = RibaPI.Bibs["Groups"] or {}
+
+--- Базовый лимит группы - тот, что есть у всех со старта, без книг.
+RibaPI.Base = function(group)
+    local g = group ~= nil and RibaPI.Groups[group] or nil
+    return g ~= nil and g.base or nil
+end
+
+--- Категория знаний, к которой относится группа предметов.
+RibaPI.CategoryOf = function(group)
+    local g = group ~= nil and RibaPI.Groups[group] or nil
+    return g ~= nil and g.category or nil
+end
+
 RibaPI.Component = function(item, name)
     for _, component in ipairs(item.Components) do
         if component.Name == name then

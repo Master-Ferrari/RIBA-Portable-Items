@@ -124,4 +124,28 @@
     
   <entityname.RIBABuyablepowerdistributor>Распределитель энергии (новый)</entityname.RIBABuyablepowerdistributor>
   <entitydescription.RIBABuyablepowerdistributor>Восемь выходов, восемь ползунков и один очень нервный электрик</entitydescription.RIBABuyablepowerdistributor>
+  <talentname.RIBA_Supplies_1>Заведующий складом (1/2)</talentname.RIBA_Supplies_1>
+  <talentdescription.RIBA_Supplies_1>+100% к лимиту установки предметов снабжения для всего экипажа. Уровень таланта "Заведующий складом" 1/2.</talentdescription.RIBA_Supplies_1>
+  <talentname.RIBA_Supplies_2>Заведующий складом (2/2)</talentname.RIBA_Supplies_2>
+  <talentdescription.RIBA_Supplies_2>+200% к лимиту установки предметов снабжения для всего экипажа. Уровень таланта "Заведующий складом" 2/2.</talentdescription.RIBA_Supplies_2>
+  <talentname.RIBA_Electrical_1>Радиотехник (1/2)</talentname.RIBA_Electrical_1>
+  <talentdescription.RIBA_Electrical_1>+100% к лимиту установки предметов электрики для всего экипажа. Уровень таланта "Радиотехник" 1/2.</talentdescription.RIBA_Electrical_1>
+  <talentname.RIBA_Electrical_2>Радиотехник (2/2)</talentname.RIBA_Electrical_2>
+  <talentdescription.RIBA_Electrical_2>+200% к лимиту установки предметов электрики для всего экипажа. Уровень таланта "Радиотехник" 2/2.</talentdescription.RIBA_Electrical_2>
+  <talentname.RIBA_Machine_1>Инженер-конструктор (1/2)</talentname.RIBA_Machine_1>
+  <talentdescription.RIBA_Machine_1>+100% к лимиту установки предметов механизмов для всего экипажа. Уровень таланта "Инженер-конструктор" 1/2.</talentdescription.RIBA_Machine_1>
+  <talentname.RIBA_Machine_2>Инженер-конструктор (2/2)</talentname.RIBA_Machine_2>
+  <talentdescription.RIBA_Machine_2>+200% к лимиту установки предметов механизмов для всего экипажа. Уровень таланта "Инженер-конструктор" 2/2.</talentdescription.RIBA_Machine_2>
+  <talentname.RIBA_Decorative_1>Дизайнер (1/2)</talentname.RIBA_Decorative_1>
+  <talentdescription.RIBA_Decorative_1>+100% к лимиту установки предметов декора для всего экипажа. Уровень таланта "Дизайнер" 1/2.</talentdescription.RIBA_Decorative_1>
+  <talentname.RIBA_Decorative_2>Дизайнер (2/2)</talentname.RIBA_Decorative_2>
+  <talentdescription.RIBA_Decorative_2>+200% к лимиту установки предметов декора для всего экипажа. Уровень таланта "Дизайнер" 2/2.</talentdescription.RIBA_Decorative_2>
+  <entityname.RIBABookSupplies>Справочник: снабжение</entityname.RIBABookSupplies>
+  <entitydescription.RIBABookSupplies>Прочтите, чтобы поднять лимит установки предметов снабжения для всего экипажа. Максимум - два уровня.</entitydescription.RIBABookSupplies>
+  <entityname.RIBABookElectrical>Справочник: электрика</entityname.RIBABookElectrical>
+  <entitydescription.RIBABookElectrical>Прочтите, чтобы поднять лимит установки предметов электрики для всего экипажа. Максимум - два уровня.</entitydescription.RIBABookElectrical>
+  <entityname.RIBABookMachine>Справочник: механизмы</entityname.RIBABookMachine>
+  <entitydescription.RIBABookMachine>Прочтите, чтобы поднять лимит установки предметов механизмов для всего экипажа. Максимум - два уровня.</entitydescription.RIBABookMachine>
+  <entityname.RIBABookDecorative>Справочник: декор</entityname.RIBABookDecorative>
+  <entitydescription.RIBABookDecorative>Прочтите, чтобы поднять лимит установки предметов декора для всего экипажа. Максимум - два уровня.</entitydescription.RIBABookDecorative>
 </infotexts>

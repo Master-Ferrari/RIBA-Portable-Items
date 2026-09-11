@@ -99,6 +99,9 @@ input[type=search]::placeholder{color:var(--ink-3)}
 }
 .count-pill.zero{background:var(--surface-2); color:var(--ink-3); border-color:var(--line)}
 
+/* ------------------------------------------------------------- вкладки */
+.seg.tabs button{font-size:14px; padding:6px 14px}
+
 /* --------------------------------------------------------------- таблица */
 .wrap{padding-inline:16px; padding-block:14px 20px}
 .tablebox{
@@ -107,7 +110,9 @@ input[type=search]::placeholder{color:var(--ink-3)}
   border:1px solid var(--line); border-radius:4px; box-shadow:var(--shadow);
   overscroll-behavior:contain;
 }
-table{border-collapse:separate; border-spacing:0; width:100%; min-width:1080px}
+table{border-collapse:separate; border-spacing:0; width:100%}
+#tbl{min-width:1080px}
+#gtbl{min-width:660px}
 thead th{
   position:sticky; top:0; z-index:20; background:var(--surface-2);
   font-family:var(--cond); font-weight:600; font-size:12px;
@@ -157,7 +162,7 @@ td.c-src{width:130px}
 .line{font-family:var(--mono); font-size:11px; color:var(--ink-3)}
 .vanilla{font-family:var(--mono); font-size:10px; color:var(--ink-3); display:block; margin-top:3px; word-break:break-all}
 
-td.c-var{width:88px}
+td.c-var{width:104px}
 .tag{
   font-family:var(--cond); font-weight:700; font-size:12px; letter-spacing:.06em;
   text-transform:uppercase; padding:2px 7px; border-radius:2px; white-space:nowrap;
@@ -166,6 +171,14 @@ td.c-var{width:88px}
 .tag.diy{color:var(--diy); background:var(--diy-bg); border:1px solid var(--diy-line)}
 .tag.buy{color:var(--buy); background:var(--buy-bg); border:1px solid var(--buy-line)}
 .tag.none{color:var(--ink-3); background:var(--surface-2); border:1px solid var(--line)}
+
+.limit{
+  font-family:var(--mono); font-size:11px; color:var(--ink-2); margin-top:5px;
+  font-variant-numeric:tabular-nums; cursor:help;
+}
+.limit b{font-size:13px; color:var(--ink); font-weight:600}
+.limit.none{color:var(--warn); cursor:default}
+.limit.zero b{color:var(--warn)}
 
 td.c-price{width:170px}
 td.c-fab{min-width:280px}
@@ -255,6 +268,79 @@ details[open] > summary.mini::before{content:"▾ "}
 .stores .res{font-family:var(--mono); font-size:11px; color:var(--ink-2); text-align:right;
   font-variant-numeric:tabular-nums}
 
+/* -------------------------------------------------------------- таланты */
+.notice{
+  display:flex; gap:11px; align-items:flex-start;
+  border:1px solid var(--warn); background:var(--warn-bg);
+  border-radius:4px; padding:11px 14px; margin-bottom:14px;
+}
+.notice .bang{
+  font-family:var(--cond); font-weight:700; font-size:12px; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--warn); white-space:nowrap; padding-top:1px;
+}
+.notice p{margin:0; font-size:13px; line-height:1.5; max-width:78ch; color:var(--ink)}
+.notice code{font-family:var(--mono); font-size:12px; background:var(--sunk);
+  padding:1px 4px; border-radius:2px}
+
+.sechead{
+  font-family:var(--cond); font-size:13px; font-weight:700; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--ink-3); margin:18px 0 8px;
+  display:flex; align-items:baseline; gap:9px;
+}
+.sechead:first-child{margin-top:0}
+.sechead span{font-family:var(--sans); font-size:12px; font-weight:400;
+  letter-spacing:0; text-transform:none; color:var(--ink-3)}
+
+#gbox{max-height:52vh}
+#gtbl td{vertical-align:middle}
+td.g-name{font-family:var(--mono); font-size:12px; white-space:nowrap}
+td.g-items{width:100%}
+td.g-grants{white-space:nowrap}
+td.g-total{text-align:right; white-space:nowrap}
+.gtot{font-family:var(--mono); font-size:16px; font-weight:600;
+  font-variant-numeric:tabular-nums}
+.gtot.zero{color:var(--warn)}
+.grant{
+  display:inline-flex; align-items:center; gap:4px; margin-inline-end:5px;
+  font-family:var(--cond); font-size:12px; font-weight:600; letter-spacing:.03em;
+  text-transform:uppercase; color:var(--ink-2);
+}
+.grant b{font-family:var(--mono); font-size:12px; color:var(--ink)}
+.grant.book{color:var(--diy)} .grant.book b{color:var(--diy)}
+.grant.override{color:var(--buy)} .grant.override b{color:var(--buy)}
+.minis{display:flex; flex-wrap:wrap; gap:3px; align-items:center}
+.minis img{width:22px; height:22px; border-radius:2px; background:var(--sunk);
+  border:1px solid var(--line-soft)}
+
+.tgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(430px,100%),1fr)); gap:14px}
+.tcard{
+  background:var(--surface); border:1px solid var(--line); border-radius:4px;
+  box-shadow:var(--shadow); padding:14px; display:flex; flex-direction:column; gap:12px;
+}
+.tcard.dirty{border-color:var(--edit); background:var(--edit-bg)}
+.tcard.dirty .chip{background:var(--surface)}
+.thead{display:flex; gap:12px; align-items:flex-start}
+.ticon{
+  width:56px; height:56px; flex:none; border-radius:3px;
+  background:var(--sunk); border:1px solid var(--line-soft);
+}
+.tmeta{display:flex; flex-direction:column; gap:2px; min-width:0; margin-inline-end:auto}
+.tname{font-family:var(--cond); font-size:19px; font-weight:700; line-height:1.15;
+  text-wrap:balance}
+.tname-ru{font-size:12px; color:var(--ink-3)}
+.tsrc{font-family:var(--mono); font-size:11px; color:var(--ink-3)}
+.tfrom{display:flex; flex-wrap:wrap; gap:5px; align-items:center; margin-top:4px}
+.tsect{display:flex; flex-direction:column; gap:6px}
+.tsect > .lbl{border-top:1px solid var(--line-soft); padding-top:8px}
+.lrow{
+  display:grid; grid-template-columns:minmax(140px,auto) 54px 1fr auto;
+  gap:8px; align-items:center;
+}
+.lrow .g{font-family:var(--mono); font-size:12px; color:var(--ink);
+  overflow:hidden; text-overflow:ellipsis}
+.lrow .g.van{color:var(--ink-3)}
+.lrow .g.orphan{color:var(--warn)}
+
 /* ------------------------------------------------------------------ модалка */
 dialog{
   border:1px solid var(--line); border-radius:5px; background:var(--surface);
@@ -291,7 +377,10 @@ textarea#note{font-family:var(--sans); font-size:13px; min-height:52px; backgrou
   display:flex; flex-wrap:wrap; gap:4px 14px;
 }
 @media (max-width:720px){
+  .brand{width:100%}
   .brand .sub{display:none}
+  .lrow{grid-template-columns:1fr 54px auto}
+  .lrow .minis{grid-column:1 / -1}
   input[type=search]{width:130px}
   .wrap{padding-inline:16px}
 }
@@ -301,8 +390,13 @@ textarea#note{font-family:var(--sans); font-size:13px; min-height:52px; backgrou
   <div class="brand">
     <h1>RIBA Balance Sheet</h1>
     <span class="sub" id="stamp"></span>
+    <div class="seg tabs" id="tabs" role="group" aria-label="Раздел">
+      <button type="button" data-t="items" aria-pressed="true">Предметы</button>
+      <button type="button" data-t="talents" aria-pressed="false">Таланты</button>
+    </div>
   </div>
-  <div class="tools">
+  <div class="tools" id="itemtools">
+    <span class="tools" id="itemfilters">
     <input type="search" id="q" placeholder="имя, id, компонент…" aria-label="Поиск">
     <div class="seg" id="fvar" role="group" aria-label="Вариант">
       <button type="button" data-v="all" aria-pressed="true">все</button>
@@ -311,6 +405,7 @@ textarea#note{font-family:var(--sans); font-size:13px; min-height:52px; backgrou
     </div>
     <div class="seg" id="ffile" role="group" aria-label="Файл"></div>
     <button type="button" class="btn ghost" id="onlydirty" aria-pressed="false">только правки</button>
+    </span>
     <span class="count-pill zero" id="pill">0 правок</span>
     <button type="button" class="btn" id="reset">сбросить</button>
     <button type="button" class="btn primary" id="export" disabled>Экспорт диффа</button>
@@ -318,6 +413,7 @@ textarea#note{font-family:var(--sans); font-size:13px; min-height:52px; backgrou
 </header>
 
 <main class="wrap">
+ <section id="view-items">
   <div class="tablebox">
     <table id="tbl">
       <thead>
@@ -336,6 +432,39 @@ textarea#note{font-family:var(--sans); font-size:13px; min-height:52px; backgrou
     </table>
   </div>
   <div class="foot" id="foot"></div>
+ </section>
+
+ <section id="view-talents" hidden>
+  <div class="notice">
+    <span class="bang">Важно</span>
+    <p><code>CharacterAbilityGivePermanentStat</code> без <code>setvalue</code>
+       <b>складывает</b> значение с уже накопленным
+       (<code>CharacterInfo.cs:2157</code>). Каждая книга мода дублирует
+       перекрытый ванильный талант один в один, так что персонаж, у которого
+       есть и то и другое, получает <b>двойной лимит</b> — механик с
+       <i>Modular Repairs</i>, прочитавший «DIY: Mechanics», ставит 6 малых помп,
+       а не 3. Столбец «итого» ниже считает именно эту сумму.</p>
+  </div>
+
+  <div class="sechead">Группы лимитов <span>сколько предметов группы можно держать прикреплёнными</span></div>
+  <div class="tablebox" id="gbox">
+    <table id="gtbl">
+      <thead>
+        <tr>
+          <th class="sortable" data-g="group">Группа <span class="arrow">↕</span></th>
+          <th>Предметы</th>
+          <th>Откуда лимит</th>
+          <th class="sortable" data-g="total">Итого <span class="arrow">↕</span></th>
+        </tr>
+      </thead>
+      <tbody id="grows"></tbody>
+    </table>
+  </div>
+
+  <div class="sechead">Таланты <span>рецепты и лимиты правятся прямо здесь</span></div>
+  <div class="tgrid" id="tcards"></div>
+  <div class="foot" id="tfoot"></div>
+ </section>
 </main>
 
 <dialog id="dlg">
@@ -352,6 +481,7 @@ textarea#note{font-family:var(--sans); font-size:13px; min-height:52px; backgrou
 </dialog>
 
 <datalist id="ids"></datalist>
+<datalist id="groupids"></datalist>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script type="application/json" id="data">/*__DATA__*/</script>
@@ -361,13 +491,46 @@ textarea#note{font-family:var(--sans); font-size:13px; min-height:52px; backgrou
 const DATA = JSON.parse(document.getElementById("data").textContent);
 const ORIG = DATA.items;
 const CAT  = DATA.catalog;
-const KEY  = "riba-balance-v1";
+const KEY  = "riba-balance-v2";
+const BLANK = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+
+/* иконки и имена лежат одним словарём — предмет упоминается в талантах
+   десятки раз, хранить спрайт при каждом упоминании незачем */
+const ICONS = DATA.icons || {};
+const NAMES = {};
+const iconOf = id => ICONS[String(id || "").toLowerCase()] || BLANK;
+const nameOf = id => NAMES[String(id || "").toLowerCase()] || id;
+ORIG.forEach(x => NAMES[x.id.toLowerCase()] = x.name_en);
+Object.keys(CAT).forEach(k => NAMES[String(CAT[k].id || k).toLowerCase()] = CAT[k].name);
+(DATA.talents || []).forEach(t => {
+  t.recipes.forEach(r => NAMES[r.id.toLowerCase()] = r.name);
+  t.given_by.forEach(r => NAMES[r.id.toLowerCase()] = r.name);
+  t.limits.forEach(l => l.items.forEach(r => NAMES[r.id.toLowerCase()] = r.name));
+});
+(DATA.groups || []).forEach(g => g.items.forEach(r => NAMES[r.id.toLowerCase()] = r.name));
+const GROUP_MEMBERS = {};
+(DATA.groups || []).forEach(g => GROUP_MEMBERS[g.group] = g.items.map(r => r.id));
 
 /* ---------------------------------------------------- рабочая копия + правки */
 const clone = o => JSON.parse(JSON.stringify(o));
 let WORK = clone(ORIG);
 const byId = {}; WORK.forEach(x => byId[x.id] = x);
 const origById = {}; ORIG.forEach(x => origById[x.id] = x);
+
+let TAL = clone(DATA.talents || []);
+const talById  = {}; TAL.forEach(t => talById[t.id] = t);
+const origTal  = {}; (DATA.talents || []).forEach(t => origTal[t.id] = t);
+
+/* лимит установки — сумма по всем талантам, которые дают эту группу:
+   ChangeSavedStatValue без setvalue прибавляет, а не заменяет */
+function groupGrants(grp){
+  const out = [];
+  TAL.forEach(t => t.limits.forEach(l => {
+    if(l.group === grp) out.push({talent:t.id, name:t.name, kind:t.kind, value:l.value});
+  }));
+  return out;
+}
+const groupTotal = grp => groupGrants(grp).reduce((a, g) => a + num(g.value), 0);
 
 function save(){
   try{ localStorage.setItem(KEY, JSON.stringify(collect(true))); }catch(e){}
@@ -380,6 +543,20 @@ function restore(){
   (d.changes||[]).forEach(ch => {
     const it = byId[ch.id]; if(!it) return;
     ["price","fabricate","deconstruct"].forEach(blk => applyChange(it, blk, ch[blk]));
+  });
+  (d.talents || []).forEach(ch => {
+    const t = talById[ch.id]; if(!t) return;
+    if(ch.recipes && ch.recipes.to)
+      t.recipes = ch.recipes.to.map(id => ({id, name:nameOf(id), mod:!!byId[id]}));
+    if(ch.limits) Object.keys(ch.limits).forEach(g => {
+      const v = ch.limits[g];
+      const i = t.limits.findIndex(l => l.group === g);
+      if(v.to === null){ if(i >= 0) t.limits.splice(i, 1); }
+      else if(i >= 0) t.limits[i].value = v.to;
+      else t.limits.push({group:g, value:v.to,
+                          items:(GROUP_MEMBERS[g] || []).map(id => ({id, name:nameOf(id)})),
+                          vanilla_group:!GROUP_MEMBERS[g]});
+    });
   });
   if(d.note) note.value = d.note;
 }
@@ -475,22 +652,67 @@ function collect(forStorage){
       variant: it.variant
     }, d));
   });
+  const talents = [];
+  TAL.forEach(t => {
+    const d = talentDiff(t);
+    if(!d) return;
+    talents.push(Object.assign({
+      id: t.id,
+      name: t.name,
+      file: "Xml/Talents.xml",
+      line: t.line
+    }, d));
+  });
   const doc = {
     mod: DATA.mod,
     exported: new Date().toISOString(),
     note: note.value.trim() || undefined,
     changes
   };
+  if(talents.length) doc.talents = talents;
   if(forStorage) doc.note = note.value;
   return doc;
 }
 const dirtyIds = () => new Set(WORK.filter(it => itemDiff(it)).map(it => it.id));
+
+function talentDiff(t){
+  const o = origTal[t.id];
+  if(!o) return null;
+  const out = {};
+  const oByG = {}, nByG = {};
+  (o.limits || []).forEach(l => oByG[l.group] = l);
+  (t.limits || []).forEach(l => nByG[l.group] = l);
+  const lim = {};
+  Object.keys(nByG).forEach(g => {
+    if(!oByG[g]) lim[g] = {from:null, to:nByG[g].value};
+    else if(String(oByG[g].value) !== String(nByG[g].value))
+      lim[g] = {from:oByG[g].value, to:nByG[g].value, line:oByG[g].line};
+  });
+  Object.keys(oByG).forEach(g => {
+    if(!nByG[g]) lim[g] = {from:oByG[g].value, to:null, line:oByG[g].line};
+  });
+  if(Object.keys(lim).length) out.limits = lim;
+
+  const a = (o.recipes || []).map(r => r.id);
+  const b = (t.recipes || []).map(r => r.id);
+  if(a.join(",") !== b.join(",")){
+    out.recipes = {from:a, to:b, delta:[
+      ...b.filter(x => !a.includes(x)).map(x => "+ " + x),
+      ...a.filter(x => !b.includes(x)).map(x => "\u2212 " + x)
+    ]};
+  }
+  return Object.keys(out).length ? out : null;
+}
+const dirtyTalents = () => new Set(TAL.filter(t => talentDiff(t)).map(t => t.id));
 
 /* --------------------------------------------------------------- рендер */
 const rows  = document.getElementById("rows");
 const note  = document.getElementById("note");
 const state = {q:"", variant:"all", file:"all", onlyDirty:false, sort:"name", dir:1};
 const ROW_EL = new Map();
+const LIM_EL = new Map();   // бейдж лимита в строке предмета
+const GTOT_EL = new Map(); // «итого» в таблице групп
+const TCARD_EL = new Map();
 
 function makeNum(get, set, cls){
   const i = el("input", "num" + (cls ? " " + cls : ""));
@@ -504,12 +726,11 @@ function componentChips(list, owner, key, onChange){
   const box = el("div","chips");
   (list||[]).forEach((c, i) => {
     const chip = el("div","chip");
-    const info = catOf(c.id);
     const img = el("img");
-    img.alt = ""; img.src = info.icon || "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+    img.alt = ""; img.src = iconOf(c.id);
     chip.append(img);
-    const nm = el("span","cn", info.name || c.id);
-    nm.title = c.id + (info.mod ? "  (предмет мода)" : "");
+    const nm = el("span","cn", nameOf(c.id));
+    nm.title = c.id + (byId[c.id] ? "  (предмет мода)" : "");
     nm.tabIndex = 0;
     const swap = () => {
       const inp = el("input","txt"); inp.value = c.id; inp.setAttribute("list","ids");
@@ -572,6 +793,8 @@ function priceCell(it, redraw){
     sum.textContent = `магазины (${p.stores.length})`;
     det.append(sum);
     const g = el("div","stores");
+    const resCells = [];   // DOM держим тут, а не на объекте данных:
+                           // иначе он уедет в JSON.stringify при сравнении диффа
     p.stores.forEach(s => {
       g.append(el("span","w", s.where));
       const m = makeNum(() => s.multiplier, v => { s.multiplier = v; afterEdit(); recalc(); }, "tiny");
@@ -584,10 +807,10 @@ function priceCell(it, redraw){
       g.append(sc);
       const res = el("span","res");
       g.append(res);
-      s._res = res;
+      resCells.push(res);
     });
-    const recalc = () => p.stores.forEach(s => {
-      s._res.textContent = s.sold
+    const recalc = () => p.stores.forEach((s, i) => {
+      resCells[i].textContent = s.sold
         ? Math.round(num(p.baseprice) * (s.multiplier == null ? 1 : num(s.multiplier))) + " mk"
         : "—";
     });
@@ -673,7 +896,7 @@ function row(it, dirty){
   tr.append(el("td","c-mark"));
 
   const tdI = el("td","c-ico");
-  const img = el("img","ico"); img.src = it.icon; img.alt = "";
+  const img = el("img","ico"); img.src = iconOf(it.id); img.alt = "";
   img.loading = "lazy"; img.width = 44; img.height = 44;
   tdI.append(img); tr.append(tdI);
 
@@ -704,12 +927,216 @@ function row(it, dirty){
   const tag = el("span","tag " + (it.variant === "DIY" ? "diy" : it.variant === "Buyable" ? "buy" : "none"),
                  it.variant);
   tdV.append(tag);
+  if(it.biba){
+    const lim = el("div","limit");
+    const b = el("b");
+    lim.append("макс ", b, " шт");
+    lim.title = "группа " + it.biba;
+    LIM_EL.set(it.id, {box:lim, val:b, group:it.biba});
+    tdV.append(lim);
+  } else if(it.attachable){
+    const lim = el("div","limit none","лимита нет");
+    lim.title = it.id + " не значится в таблице Bibs (Lua/data.json), "
+              + "значит ставить можно сколько угодно";
+    tdV.append(lim);
+  }
   tr.append(tdV);
 
   tr.append(priceCell(it, () => render()));
   tr.append(fabCell(it));
   tr.append(decCell(it));
   return tr;
+}
+
+/* ------------------------------------------------------------- таланты */
+const JOBS = {captain:"Капитан", engineer:"Инженер", mechanic:"Механик",
+              assistant:"Ассистент", security:"Охрана", medicaldoctor:"Врач"};
+const gstate = {sort:"group", dir:1};
+
+function refChips(list, onChange, placeholder){
+  const box = el("div","chips");
+  list.forEach((r, i) => {
+    const chip = el("div","chip");
+    const img = el("img"); img.alt = ""; img.src = iconOf(r.id);
+    const nm = el("span","cn", nameOf(r.id));
+    nm.title = r.id + (byId[r.id] ? "  (предмет мода)" : "  (ванильный предмет)");
+    const x = el("button","x","×");
+    x.type = "button"; x.setAttribute("aria-label","убрать " + r.id);
+    x.addEventListener("click", () => { list.splice(i,1); onChange(); });
+    chip.append(img, nm, x);
+    box.append(chip);
+  });
+  const add = el("div","chip add");
+  const ab = el("button", null, placeholder); ab.type = "button";
+  ab.addEventListener("click", () => {
+    const inp = el("input","txt"); inp.setAttribute("list","ids"); inp.placeholder = "identifier";
+    ab.replaceWith(inp); inp.focus();
+    const commit = () => { const v = inp.value.trim();
+      if(v){ list.push({id:v, name:nameOf(v)}); onChange(); } else inp.replaceWith(ab); };
+    inp.addEventListener("blur", commit);
+    inp.addEventListener("keydown", e => {
+      if(e.key === "Enter"){ e.preventDefault(); inp.blur(); }
+      if(e.key === "Escape"){ inp.replaceWith(ab); } });
+  });
+  add.append(ab); box.append(add);
+  return box;
+}
+
+function talentCard(t){
+  const card = el("div","tcard");
+  TCARD_EL.set(t.id, card);
+
+  const head = el("div","thead");
+  const ic = el("img","ticon"); ic.alt = ""; ic.src = ICONS[t.icon_key] || BLANK;
+  head.append(ic);
+  const meta = el("div","tmeta");
+  meta.append(el("div","tname", t.name));
+  if(t.name_ru) meta.append(el("div","tname-ru", t.name_ru));
+  const src = el("div","tsrc", "Xml/Talents.xml : " + t.line + "  ·  " + t.id);
+  meta.append(src);
+  const from = el("div","tfrom");
+  from.append(el("span", "tag " + (t.kind === "book" ? "diy" : "buy"),
+                 t.kind === "book" ? "книга мода" : "перекрывает ваниль"));
+  if(t.tree){
+    from.append(el("span","flag", (JOBS[t.tree.job] || t.tree.job) + ", тир " + t.tree.tier));
+  }
+  t.given_by.forEach(r => {
+    const chip = el("div","chip");
+    const img = el("img"); img.alt = ""; img.src = iconOf(r.id);
+    const nm = el("span","cn", nameOf(r.id)); nm.title = r.id;
+    chip.append(img, nm);
+    from.append(chip);
+  });
+  meta.append(from);
+  head.append(meta);
+  const rv = el("button","mini revert","вернуть"); rv.type = "button";
+  rv.addEventListener("click", () => {
+    const i = TAL.findIndex(x => x.id === t.id);
+    TAL[i] = clone(origTal[t.id]); talById[t.id] = TAL[i];
+    afterEdit(); render();
+  });
+  head.append(rv);
+  card.append(head);
+
+  const rec = el("div","tsect");
+  rec.append(el("div","lbl", `Открывает рецепты · ${t.recipes.length}`));
+  rec.append(refChips(t.recipes, () => { afterEdit(); render(); }, "+ рецепт"));
+  card.append(rec);
+
+  const lim = el("div","tsect");
+  lim.append(el("div","lbl", `Разрешает ставить · ${t.limits.length} ${
+    plural(t.limits.length,"группа","группы","групп")}`));
+  t.limits.forEach((l, i) => {
+    const rowEl = el("div","lrow");
+    const total = groupTotal(l.group);
+    const g = el("span","g" + (l.vanilla_group ? " van" : ""), l.group);
+    g.title = l.vanilla_group
+      ? l.group + " — ванильная группа, в таблице Bibs её нет"
+      : `${l.group}: ${(GROUP_MEMBERS[l.group] || []).length} предметов, итого ${total}`;
+    rowEl.append(g);
+    const v = makeNum(() => l.value, val => { l.value = val ?? "0"; afterEdit(); }, "tiny");
+    v.setAttribute("aria-label", `лимит ${l.group} от ${t.id}`);
+    rowEl.append(v);
+    const minis = el("div","minis");
+    (l.items || []).slice(0, 8).forEach(r => {
+      const im = el("img"); im.alt = ""; im.src = iconOf(r.id); im.title = nameOf(r.id);
+      minis.append(im);
+    });
+    if((l.items || []).length > 8)
+      minis.append(el("span","mk", "+" + (l.items.length - 8)));
+    if(!(l.items || []).length) minis.append(el("span","mk", l.vanilla_group ? "ваниль" : "—"));
+    rowEl.append(minis);
+    const x = el("button","x","×"); x.type = "button";
+    x.setAttribute("aria-label","убрать группу " + l.group);
+    x.addEventListener("click", () => { t.limits.splice(i,1); afterEdit(); render(); });
+    rowEl.append(x);
+    lim.append(rowEl);
+  });
+  const addg = el("div","chip add");
+  const ab = el("button", null, "+ группа"); ab.type = "button";
+  ab.addEventListener("click", () => {
+    const inp = el("input","txt"); inp.setAttribute("list","groupids");
+    inp.placeholder = "BIBA…";
+    ab.replaceWith(inp); inp.focus();
+    const commit = () => { const v = inp.value.trim();
+      if(v){ t.limits.push({group:v, value:"1",
+               items:(GROUP_MEMBERS[v] || []).map(id => ({id, name:nameOf(id)})),
+               vanilla_group:!GROUP_MEMBERS[v]});
+             afterEdit(); render(); }
+      else inp.replaceWith(ab); };
+    inp.addEventListener("blur", commit);
+    inp.addEventListener("keydown", e => {
+      if(e.key === "Enter"){ e.preventDefault(); inp.blur(); }
+      if(e.key === "Escape"){ inp.replaceWith(ab); } });
+  });
+  addg.append(ab);
+  lim.append(addg);
+  card.append(lim);
+  return card;
+}
+
+function renderTalents(){
+  TCARD_EL.clear(); GTOT_EL.clear();
+  document.getElementById("tcards").replaceChildren(...TAL.map(talentCard));
+
+  const rows = (DATA.groups || []).map(g => {
+    const grants = groupGrants(g.group);
+    return {g, grants, total: grants.reduce((a,x) => a + num(x.value), 0)};
+  });
+  const key = gstate.sort === "total" ? r => r.total : r => r.g.group.toLowerCase();
+  rows.sort((a,b) => {
+    const A = key(a), B = key(b);
+    if(A < B) return -gstate.dir;
+    if(A > B) return gstate.dir;
+    return a.g.group.localeCompare(b.g.group);
+  });
+  document.getElementById("grows").replaceChildren(...rows.map(r => {
+    const tr = el("tr");
+    const n = el("td","g-name", r.g.group);
+    if(r.g.vanilla_group) n.title = "ванильная группа, в Lua/data.json её нет";
+    tr.append(n);
+
+    const ti = el("td","g-items");
+    const minis = el("div","minis");
+    r.g.items.slice(0,10).forEach(x => {
+      const im = el("img"); im.alt = ""; im.src = iconOf(x.id); im.title = nameOf(x.id);
+      minis.append(im);
+    });
+    if(r.g.items.length > 10) minis.append(el("span","mk","+" + (r.g.items.length - 10)));
+    if(!r.g.items.length) minis.append(el("span","empty","ванильная группа"));
+    ti.append(minis);
+    tr.append(ti);
+
+    const tg = el("td","g-grants");
+    if(!r.grants.length) tg.append(el("span","flag warn","ни один талант не даёт"));
+    r.grants.forEach(x => {
+      const sp = el("span","grant " + x.kind);
+      sp.append(document.createTextNode(x.name), el("b", null, "+" + x.value));
+      sp.title = x.talent;
+      tg.append(sp);
+    });
+    tr.append(tg);
+
+    const tt = el("td","g-total");
+    const b = el("span","gtot", String(r.total));
+    GTOT_EL.set(r.g.group, b);
+    tt.append(b);
+    tr.append(tt);
+    return tr;
+  }));
+
+  const iss = DATA.issues || {};
+  document.getElementById("tfoot").replaceChildren(
+    el("span",null,`${TAL.length} талантов · ${(DATA.groups||[]).length} групп лимита`),
+    el("span",null,"лимит считается по всей карте, а не по лодке (RequiredItems.lua:68)"),
+    el("span",null,`без лимита вовсе: ${(iss.attachable_no_bib||[]).join(", ") || "—"}`)
+  );
+  document.querySelectorAll("#gtbl th.sortable").forEach(th => {
+    if(th.dataset.g === gstate.sort){
+      th.setAttribute("aria-sort", gstate.dir > 0 ? "ascending" : "descending");
+      th.querySelector(".arrow").textContent = gstate.dir > 0 ? "↑" : "↓";
+    } else { th.removeAttribute("aria-sort"); th.querySelector(".arrow").textContent = "↕"; }
+  });
 }
 
 const SORT = {
@@ -753,10 +1180,8 @@ function render(){
     return tr;
   }));
 
-  const pill = document.getElementById("pill");
-  pill.textContent = dirt.size + " " + plural(dirt.size, "правка","правки","правок");
-  pill.classList.toggle("zero", dirt.size === 0);
-  document.getElementById("export").disabled = dirt.size === 0;
+  renderTalents();
+  syncPill();
 
   const diy = list.filter(x=>x.variant==="DIY").length;
   document.getElementById("foot").replaceChildren(
@@ -781,9 +1206,24 @@ function plural(n,a,b,c){
 let saveT;
 function afterEdit(){ clearTimeout(saveT); saveT = setTimeout(save, 250); syncPill(); }
 function syncPill(){
-  const dirt = dirtyIds();
+  const dirt = dirtyIds(), dirtT = dirtyTalents();
   ROW_EL.forEach((tr, id) => tr.classList.toggle("dirty", dirt.has(id)));
-  const n = dirt.size;
+  TCARD_EL.forEach((c, id) => c.classList.toggle("dirty", dirtT.has(id)));
+  // лимиты живые: правка таланта сразу видна в таблице предметов
+  GTOT_EL.forEach((sp, grp) => {
+    const t = groupTotal(grp);
+    sp.textContent = String(t);
+    sp.classList.toggle("zero", t === 0);
+  });
+  LIM_EL.forEach(rec => {
+    const t = groupTotal(rec.group);
+    rec.val.textContent = String(t);
+    rec.box.classList.toggle("zero", t === 0);
+    rec.box.title = "группа " + rec.group + ": "
+      + (groupGrants(rec.group).map(g => g.name + " +" + g.value).join(", ")
+         || "ни один талант не даёт — поставить нельзя вообще");
+  });
+  const n = dirt.size + dirtT.size;
   const pill = document.getElementById("pill");
   pill.textContent = n + " " + plural(n,"правка","правки","правок");
   pill.classList.toggle("zero", n === 0);
@@ -824,10 +1264,34 @@ document.querySelectorAll("thead th.sortable").forEach(th => {
   th.addEventListener("click", go);
   th.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); go(); } });
 });
+document.querySelectorAll("#gtbl th.sortable").forEach(th => {
+  th.tabIndex = 0;
+  const go = () => {
+    if(gstate.sort === th.dataset.g) gstate.dir = -gstate.dir;
+    else { gstate.sort = th.dataset.g; gstate.dir = th.dataset.g === "total" ? -1 : 1; }
+    renderTalents(); syncPill();
+  };
+  th.addEventListener("click", go);
+  th.addEventListener("keydown", e => {
+    if(e.key === "Enter" || e.key === " "){ e.preventDefault(); go(); } });
+});
+
+const VIEWS = {items:document.getElementById("view-items"),
+               talents:document.getElementById("view-talents")};
+document.getElementById("tabs").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  const t = b.dataset.t;
+  [...e.currentTarget.children].forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  Object.keys(VIEWS).forEach(k => VIEWS[k].hidden = k !== t);
+  document.getElementById("itemfilters").hidden = t !== "items";
+  window.scrollTo({top:0, behavior:"instant"});
+});
+
 document.getElementById("reset").addEventListener("click", () => {
-  if(!dirtyIds().size) return toast("править нечего");
+  if(!dirtyIds().size && !dirtyTalents().size) return toast("править нечего");
   if(!confirm("Сбросить все правки и вернуть значения из мода?")) return;
   WORK = clone(ORIG); WORK.forEach(x => byId[x.id] = x);
+  TAL = clone(DATA.talents || []); TAL.forEach(t => talById[t.id] = t);
   note.value = "";
   try{ localStorage.removeItem(KEY); }catch(e){}
   render(); toast("правки сброшены");
@@ -856,8 +1320,11 @@ document.getElementById("copy").addEventListener("click", () => {
 document.getElementById("ids").replaceChildren(...DATA.suggest.map(id => {
   const o = document.createElement("option"); o.value = id; return o;
 }));
+document.getElementById("groupids").replaceChildren(
+  ...(DATA.groups || []).map(g => { const o = document.createElement("option");
+    o.value = g.group; return o; }));
 document.getElementById("stamp").textContent =
-  `${ORIG.length} предметов · ${DATA.mod}`;
+  `${ORIG.length} предметов · ${TAL.length} талантов · ${DATA.mod}`;
 
 restore();
 render();

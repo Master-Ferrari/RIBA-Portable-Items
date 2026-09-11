@@ -117,4 +117,28 @@
   <entitydescription.RIBAControlCenter>Робоче місце для перегляду "брудних" фільмів</entitydescription.RIBAControlCenter>
     <entityname.RIBABuyablepowerdistributor>Розподільник енергії (Новий)</entityname.RIBABuyablepowerdistributor>
   <entitydescription.RIBABuyablepowerdistributor>Вісім виходів, вісім повзунків і один дуже нервовий електрик</entitydescription.RIBABuyablepowerdistributor>
+  <talentname.RIBA_Supplies_1>Керуючий складом (1/2)</talentname.RIBA_Supplies_1>
+  <talentdescription.RIBA_Supplies_1>+100% до ліміту встановлення предметів постачання для всього екіпажу. Рівень таланту "Керуючий складом" 1/2.</talentdescription.RIBA_Supplies_1>
+  <talentname.RIBA_Supplies_2>Керуючий складом (2/2)</talentname.RIBA_Supplies_2>
+  <talentdescription.RIBA_Supplies_2>+200% до ліміту встановлення предметів постачання для всього екіпажу. Рівень таланту "Керуючий складом" 2/2.</talentdescription.RIBA_Supplies_2>
+  <talentname.RIBA_Electrical_1>Радіотехнік (1/2)</talentname.RIBA_Electrical_1>
+  <talentdescription.RIBA_Electrical_1>+100% до ліміту встановлення предметів електрики для всього екіпажу. Рівень таланту "Радіотехнік" 1/2.</talentdescription.RIBA_Electrical_1>
+  <talentname.RIBA_Electrical_2>Радіотехнік (2/2)</talentname.RIBA_Electrical_2>
+  <talentdescription.RIBA_Electrical_2>+200% до ліміту встановлення предметів електрики для всього екіпажу. Рівень таланту "Радіотехнік" 2/2.</talentdescription.RIBA_Electrical_2>
+  <talentname.RIBA_Machine_1>Інженер-конструктор (1/2)</talentname.RIBA_Machine_1>
+  <talentdescription.RIBA_Machine_1>+100% до ліміту встановлення предметів механізмів для всього екіпажу. Рівень таланту "Інженер-конструктор" 1/2.</talentdescription.RIBA_Machine_1>
+  <talentname.RIBA_Machine_2>Інженер-конструктор (2/2)</talentname.RIBA_Machine_2>
+  <talentdescription.RIBA_Machine_2>+200% до ліміту встановлення предметів механізмів для всього екіпажу. Рівень таланту "Інженер-конструктор" 2/2.</talentdescription.RIBA_Machine_2>
+  <talentname.RIBA_Decorative_1>Дизайнер (1/2)</talentname.RIBA_Decorative_1>
+  <talentdescription.RIBA_Decorative_1>+100% до ліміту встановлення предметів декору для всього екіпажу. Рівень таланту "Дизайнер" 1/2.</talentdescription.RIBA_Decorative_1>
+  <talentname.RIBA_Decorative_2>Дизайнер (2/2)</talentname.RIBA_Decorative_2>
+  <talentdescription.RIBA_Decorative_2>+200% до ліміту встановлення предметів декору для всього екіпажу. Рівень таланту "Дизайнер" 2/2.</talentdescription.RIBA_Decorative_2>
+  <entityname.RIBABookSupplies>Довідник: постачання</entityname.RIBABookSupplies>
+  <entitydescription.RIBABookSupplies>Прочитайте, щоб підняти ліміт встановлення предметів постачання для всього екіпажу. Максимум - два рівні.</entitydescription.RIBABookSupplies>
+  <entityname.RIBABookElectrical>Довідник: електрика</entityname.RIBABookElectrical>
+  <entitydescription.RIBABookElectrical>Прочитайте, щоб підняти ліміт встановлення предметів електрики для всього екіпажу. Максимум - два рівні.</entitydescription.RIBABookElectrical>
+  <entityname.RIBABookMachine>Довідник: механізми</entityname.RIBABookMachine>
+  <entitydescription.RIBABookMachine>Прочитайте, щоб підняти ліміт встановлення предметів механізмів для всього екіпажу. Максимум - два рівні.</entitydescription.RIBABookMachine>
+  <entityname.RIBABookDecorative>Довідник: декор</entityname.RIBABookDecorative>
+  <entitydescription.RIBABookDecorative>Прочитайте, щоб підняти ліміт встановлення предметів декору для всього екіпажу. Максимум - два рівні.</entitydescription.RIBABookDecorative>
 </infotexts>

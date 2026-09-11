@@ -5,21 +5,27 @@
             "cantattach": "Больше ставить нельзя!",
             "cantattachwarning": "Это был последний предмет такого типа! Больше ставить нельзя!",
             "blocked": "Нет доступа!",
-            "deattachedBlockMessage": "Без крепления к стене использовать невозможно!"
+            "deattachedBlockMessage": "Без крепления к стене использовать невозможно!",
+            "bookread": "Знание разошлось по экипажу.",
+            "bookmaxed": "Это уже все знают."
         },
         "English": {
             "books": "Books must be read!",
             "cantattach": "You can't attach it anymore!",
             "cantattachwarning": "It was the last permissible item of this type! You can't attach it anymore!",
             "blocked": "No access!",
-            "deattachedBlockMessage": "Cannot be used without wall attachment!"
+            "deattachedBlockMessage": "Cannot be used without wall attachment!",
+            "bookread": "Knowledge shared with the crew.",
+            "bookmaxed": "Everyone already knows this."
         },
         "Ukrainian": {
             "books": "Треба читати книги!",
             "cantattach": "Не можна більше ставити!",
             "cantattachwarning": "Це останній предмет такого типу! Не можна більше ставити!",
             "blocked": "Заблоковано!",
-            "deattachedBlockMessage": "Без кріплення до стіни використання неможливе!"
+            "deattachedBlockMessage": "Без кріплення до стіни використання неможливе!",
+            "bookread": "Знання розійшлося екіпажем.",
+            "bookmaxed": "Це вже всі знають."
         }
     },
     "Bibs": {
@@ -101,5 +107,141 @@
         "RIBAControlCenter": "BIBAControlCenter",
         "RIBApowerdistributor": "BIBAJunctionBox",
         "RIBABuyablepowerdistributor": "BIBAJunctionBox"
+    },
+    "Categories": [
+        "Supplies",
+        "Electrical",
+        "Machine",
+        "Decorative"
+    ],
+    "Groups": {
+        "BIBAcrateshelf_4slots": {
+            "category": "Supplies",
+            "base": 3
+        },
+        "BIBAcrateshelf_1slot": {
+            "category": "Supplies",
+            "base": 4
+        },
+        "BIBAsuppliescabinet": {
+            "category": "Supplies",
+            "base": 5
+        },
+        "BIBAmediumsteelcabinet": {
+            "category": "Supplies",
+            "base": 3
+        },
+        "BIBAsteelcabinet": {
+            "category": "Supplies",
+            "base": 2
+        },
+        "BIBAdivingsuitlocker": {
+            "category": "Supplies",
+            "base": 4
+        },
+        "BIBArailgunshellrack": {
+            "category": "Supplies",
+            "base": 2
+        },
+        "BIBAcoilgunammoshelf": {
+            "category": "Supplies",
+            "base": 2
+        },
+        "BIBAtoxcabinet": {
+            "category": "Supplies",
+            "base": 1
+        },
+        "BIBAoxygentankshelf": {
+            "category": "Supplies",
+            "base": 4
+        },
+        "BIBAweaponholder": {
+            "category": "Supplies",
+            "base": 4
+        },
+        "BIBAextinguisherbracket": {
+            "category": "Supplies",
+            "base": 2
+        },
+        "BIBAsecuresteelcabinet": {
+            "category": "Supplies",
+            "base": 1
+        },
+        "BIBAbunkcabinet": {
+            "category": "Supplies",
+            "base": 5
+        },
+        "BIBAControlMonitor": {
+            "category": "Electrical",
+            "base": 2
+        },
+        "BIBAControlCamera": {
+            "category": "Electrical",
+            "base": 2
+        },
+        "BIBAControlCenter": {
+            "category": "Electrical",
+            "base": 2
+        },
+        "BIBAStatusMonitor": {
+            "category": "Electrical",
+            "base": 2
+        },
+        "BIBAJunctionBox": {
+            "category": "Electrical",
+            "base": 4
+        },
+        "BIBAbattery": {
+            "category": "Electrical",
+            "base": 3
+        },
+        "BIBAchargingdock": {
+            "category": "Electrical",
+            "base": 3
+        },
+        "BIBAsonarmonitor": {
+            "category": "Electrical",
+            "base": 1
+        },
+        "BIBAbigpump": {
+            "category": "Machine",
+            "base": 2
+        },
+        "BIBAsmallpump": {
+            "category": "Machine",
+            "base": 3
+        },
+        "BIBAfabricator": {
+            "category": "Machine",
+            "base": 1
+        },
+        "BIBAdeconstructor": {
+            "category": "Machine",
+            "base": 1
+        },
+        "BIBAmedfabricator": {
+            "category": "Machine",
+            "base": 1
+        },
+        "BIBAop_researchterminal": {
+            "category": "Machine",
+            "base": 1
+        },
+        "BIBALamp": {
+            "category": "Decorative",
+            "base": 5
+        },
+        "BIBAbunk": {
+            "category": "Decorative",
+            "base": 4
+        },
+        "BIBAChair": {
+            "category": "Decorative",
+            "base": 4
+        },
+        "BIBAMedCurtain": {
+            "category": "Decorative",
+            "base": 2
+        }
     }
 }
