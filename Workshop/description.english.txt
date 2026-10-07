@@ -28,12 +28,13 @@ To [B]make things worse for everyone[/B] improve the balance and make it more va
 Yes, this mod is about campaign and balance, just a reminder. (For something else, there's [URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2764140582][B][I]BaroCraftables+[/I][/B][/URL])
 
 Now each item added by the mod has a maximum quantity restriction on the boat.
-Crafting and installing items now require the appropriate skill. Skills expand the cap of available items.
 [IMG]https://i.ibb.co/3pnpW97/sdfsdf.png[/IMG]
-There are 4 skills for over 20 item categories in total. You can find skills in the development branches of some professions.
-An alternative to skills is recipe books. They are reusable and can be found in the shop.
-The effect of books almost entirely replicates that of skills.
-The effects of books and skills stack, meaning a player who read the book and developed the skill will receive a double cap for corresponding items.
+Everyone has a base install limit.
+Books raise it from there. There are four, one per field: supplies, electrical, machinery, interior.
+The first book of a field doubles the limit for all of its items and unlocks their crafting. The second one triples it. A third does nothing - sell it back.
+Books are single-use. They are sold in shops and occasionally turn up in wrecks and abandoned outposts.
+The knowledge goes to the whole crew at once and is written into the save. Anyone who joins later gets the same limit, no need to read it again.
+The mod no longer overrides vanilla talents.
 
 [I]If you don't like this update, I've published a [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3018685410][B][I]legacy version[/I][/B][/URL] as a separate mod.[/I]
 

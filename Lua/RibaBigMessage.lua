@@ -56,14 +56,18 @@ end
 
 function RibaPI.ScreenMessage.Small(character, msg, clr, category, cooldown, value, lifetime, personal)
 
-    
+    if not CLIENT then return end -- Character.AddMessage есть только на клиенте
+
     if (RibaPI.ScreenMessage.Categories[category]==nil) then
         RibaPI.ScreenMessage.CreateCategory(category, cooldown)
     end
 
     if (RibaPI.ScreenMessage.Categories[category][2]<=os.time()) then -- если уже можно добавлять сообщение этого типа 
         if not (personal==true and character~=Character.Controlled) then
-            character.AddMessage(msg, clr, character==Character.Controlled, value, lifetime)
+            -- Сигнатура в C#: AddMessage(text, color, playSound, identifier, value, lifetime).
+            -- Четвёртым идёт Identifier, а не value - без него lifetime уезжал
+            -- в value и время жизни оставалось дефолтным.
+            character.AddMessage(msg, clr, character==Character.Controlled, category, value, lifetime)
         end
         RibaPI.ScreenMessage.Categories[category][2] = os.time()+RibaPI.ScreenMessage.Categories[category][1] -- обновляем момент когда можно добавлять
     end

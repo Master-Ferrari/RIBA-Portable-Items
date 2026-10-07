@@ -69,7 +69,7 @@ end, Hook.HookMethodType.Before)
 local function countAttached(group, submarine)
     local n = 0
     for _, other in ipairs(Item.ItemList) do
-        if other.Submarine == submarine then
+        if submarine == nil or other.Submarine == submarine then
             local holdable = other.GetComponent(Components.Holdable)
             if holdable ~= nil and holdable.Attached then
                 if RibaPI.Biba(other.Prefab.Identifier.Value) == group then
@@ -79,6 +79,25 @@ local function countAttached(group, submarine)
         end
     end
     return n
+end
+
+--[[ Лодка, к которой крепят. Ваниль берёт её от точки крепления
+     (Holdable.cs:912), но саму точку считает приватный GetAttachPosition -
+     из Lua его не видно. Ближайшее доступное - структура под курсором:
+     крепить можно только туда, где она есть, это и проверяет CanBeAttached.
+
+     character.Submarine как замена не годится: он равен nil у всех, кто вне
+     корпуса, а снаружи к обшивке крепят регулярно. Получался бы подсчёт по
+     «ничьим» предметам, то есть ноль, то есть лимита нет вообще. Поэтому
+     последний запасной вариант - nil, а он означает «считать всё подряд»:
+     ошибиться в строгую сторону лучше, чем раздать безлимит. ]]
+local function attachTargetSub(character, item)
+    local ok, sub = pcall(function()
+        local target = Structure.GetAttachTarget(character.CursorWorldPosition)
+        return target ~= nil and target.Submarine or nil
+    end)
+    if ok and sub ~= nil then return sub end
+    return character.Submarine or item.Submarine
 end
 
 Hook.Patch("RIBA.AttachLimit", "Barotrauma.Items.Components.Holdable", "Use", function(instance, ptable)
@@ -97,7 +116,7 @@ Hook.Patch("RIBA.AttachLimit", "Barotrauma.Items.Components.Holdable", "Use", fu
         -- ваниль считает по своему капу на точный префаб; мы сами себе арбитр
         instance.LimitedAttachable = false
 
-        local installed = countAttached(group, character.Submarine)
+        local installed = countAttached(group, attachTargetSub(character, instance.Item))
         if installed >= cap then
             ptable.PreventExecution = true
             if character == Character.Controlled then
@@ -123,9 +142,26 @@ end, Hook.HookMethodType.Before)
 
 --[[ ======================================================================
      Чтение книги. XML книги логики не содержит - вся она здесь.
+
+     Два подвоха, из-за которых код выглядит сложнее, чем «подняли уровень».
+
+     1. SecondaryUse зовётся КАЖДЫЙ КАДР, пока зажат Aim (Character.cs:2517,
+        requireaimtosecondaryuse по умолчанию true). Удаление предмета при этом
+        отложенное - очередь разбирается в MapEntity.UpdateAll. Ваниль в своих
+        чертежах от повтора защищается сливом Condition; у нас такого нет,
+        поэтому книга помечается израсходованной сразу, в spentBooks.
+     2. Entity.Spawner.AddItemToRemoveQueue на клиенте не делает ничего вовсе
+        (EntitySpawner.cs:383, ранний return при IsClient). То есть на клиенте
+        книга не исчезнет и своей отметки ему тем более не хватает.
+
+     Отсюда правило: состояние меняет только авторитетная сторона - сервер,
+     а в сингле клиент, потому что сервера там нет. Клиент в сети лишь
+     показывает сообщение, его CampaignMetadata приедет синхронизацией.
    ====================================================================== ]]
 
 local BOOK_PREFIX = "RIBABook"
+
+local spentBooks = {} -- Item.ID -> книга уже отдала свой уровень
 
 Hook.Patch("RIBA.ReadBook", "Barotrauma.Items.Components.Holdable", "SecondaryUse", function(instance, ptable)
     local ok, err = pcall(function()
@@ -142,25 +178,41 @@ Hook.Patch("RIBA.ReadBook", "Barotrauma.Items.Components.Holdable", "SecondaryUs
         end
         if not known then return end
 
-        local level, raised = RibaPI.Levels.Raise(category)
+        ptable.PreventExecution = true
 
-        if character == Character.Controlled then
-            local text = raised and RibaPI.Text("bookread") or RibaPI.Text("bookmaxed")
-            RibaPI.ScreenMessage.Big(
-                (text or "") .. " [" .. level .. "/" .. RibaPI.Levels.Max .. "]",
-                raised and Color.Green or Color.Yellow,
-                "book" .. category .. character.Name, 5)
+        local msgCategory = "book" .. category .. character.Name
+
+        -- Потолок: книга не тратится, её можно продать обратно. Повторные
+        -- нажатия не страшны, от спама спасает кулдаун категории.
+        if RibaPI.Levels.Get(category) >= RibaPI.Levels.Max then
+            if CLIENT and character == Character.Controlled then
+                RibaPI.ScreenMessage.Big(
+                    (RibaPI.Text("bookmaxed") or "") ..
+                    " [" .. RibaPI.Levels.Max .. "/" .. RibaPI.Levels.Max .. "]",
+                    Color.Yellow, msgCategory, 5)
+            end
+            return
         end
 
-        if raised then
-            -- книга одноразовая: израсходована
+        if spentBooks[instance.Item.ID] then return end
+        spentBooks[instance.Item.ID] = true
+
+        local level = RibaPI.Levels.Get(category) + 1 -- то, что увидит игрок
+
+        if SERVER or Game.IsSingleplayer then
+            level = RibaPI.Levels.Raise(category)
             for _, other in ipairs(Character.CharacterList) do
                 RibaPI.Levels.SyncTalents(other)
             end
             Entity.Spawner.AddItemToRemoveQueue(instance.Item)
         end
 
-        ptable.PreventExecution = true
+        if CLIENT and character == Character.Controlled then
+            RibaPI.ScreenMessage.Big(
+                (RibaPI.Text("bookread") or "") ..
+                " [" .. level .. "/" .. RibaPI.Levels.Max .. "]",
+                Color.Green, msgCategory, 5)
+        end
     end)
     if not ok then printerror("RIBA.ReadBook: " .. tostring(err)) end
 end, Hook.HookMethodType.Before)

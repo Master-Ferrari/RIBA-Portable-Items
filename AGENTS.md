@@ -232,21 +232,13 @@ Hook.Patch(id, "Barotrauma.Items.Components.Holdable",      "Use",              
    `RIBATerminal`, `RIBABuyableTerminal`, `RIBATextdisplay`,
    `RIBABuyableTextdisplay`, `RIBALRwifiComponent`.
 
-   **Подсчёт идёт по всей карте, а не по лодке.** `RequiredItems.lua:68` обходит
-   `Item.ItemList` целиком, без фильтра по `Submarine`:
-
-   ```lua
-   for _, i in ipairs(Item.ItemList) do
-       local holdableComponent = i.GetComponent(Components.Holdable)
-       if holdableComponent ~= nil and holdableComponent.Attached then
-   ```
-
-   То есть в лимит попадают предметы на аутпостах, на чужих и союзных лодках, на
-   шаттлах — всё, что сейчас есть в уровне. Ваниль с 1.13.4 в такой же ситуации
-   считает по лодке, к которой крепишь (`Structure.GetAttachTarget(attachPos)?.Submarine`).
-   В `Lua/todo` это уже записано строкой «что там по другим режимам? (один кап
-   предметов на все лодки на всей карте)» — то есть задача известная, но не закрытая.
-   Описание мода в Мастерской при этом обещает лимит «on the boat».
+   **Подсчёт по лодке — закрыто,** см. `attachTargetSub` в `RequiredItems.lua`.
+   Ваниль берёт лодку от точки крепления (`Holdable.cs:912`), но сама точка
+   считается приватным `GetAttachPosition`, из Lua её не достать. Берём
+   структуру под курсором — крепить всё равно можно только туда, где она есть.
+   `character.Submarine` для этого не годится: он `nil` у всех, кто вне корпуса,
+   а снаружи к обшивке крепят регулярно, и подсчёт уходил бы по «ничьим»
+   предметам, то есть в ноль, то есть лимита бы не было вовсе.
 3. **Проверка доступа по профессии больше не нужна в Lua.** `RelatedItem.MatchesItem`
    матчит по тегам (`item.HasTag`), а `IdCard.cs:115` вешает на айдишку тег
    `jobid:<job>`. Атрибут принимает список: `items` / `identifiers` / `tags`.
@@ -297,9 +289,6 @@ Hook.Patch(id, "Barotrauma.Items.Components.Holdable",      "Use",              
    **Не проверено в игре:** `type="Always"` требует, чтобы компонент обновлялся.
    Открепленный шкаф на полу может быть неактивен — тогда эффект не сработает.
    Проверять до того, как выпиливать Lua-ветку.
-5. `character.AddMessage` в `RibaBigMessage.lua` вызывается с несовпадающей
-   сигнатурой (см. ниже).
-
 ## Графика: незакрытый долг
 
 **`RIBApowerdistributor` / `RIBABuyablepowerdistributor` пока на ванильной графике.**
@@ -380,12 +369,22 @@ subElement.DoesAttributeReferenceFileNameAlone("texture")
   (83 из 83), но при копипасте из чужих модов это ловушка.
 - Хук `Holdable.Use` целиком завёрнут в `pcall` без обработки ошибки — любое
   падение внутри проглатывается молча. При отладке снимать pcall первым делом.
-- `RibaPI.ScreenMessage.Small` зовёт
-  `character.AddMessage(msg, clr, playSound, value, lifetime)`, а в C# сигнатура
-  `AddMessage(string, Color, bool, Identifier = default, int? value = null, float lifetime = 3.0f)`.
-  Четвёртым позиционным идёт `Identifier`, поэтому предполагаемый `lifetime`
-  попадает в `value`, а реальный `lifetime` остаётся дефолтным.
-- `Hook.Patch` в обоих местах зовётся с одинаковым id `"ololo"`.
+- `character.AddMessage(string, Color, bool, Identifier = default, int? value = null, float lifetime = 3.0f)`
+  — четвёртым позиционным идёт `Identifier`, а не `value`. `ScreenMessage.Small`
+  на этом и спотыкался: `lifetime` уезжал в `value`, а время жизни оставалось
+  дефолтным. Починено, но при добавлении аргументов пересчитывать позиции.
+- `Character.Controlled` на сервере — это `=> null` (`ServerSource/Characters/Character.cs:10`),
+  а не отсутствующий член. То есть `character == Character.Controlled` server-side
+  просто ложно и ничего не бросает; на это опирается вся развилка «показывать
+  сообщение или нет». А вот `Character.AddMessage` существует только на клиенте.
+- **`SecondaryUse` зовётся каждый кадр, пока зажат Aim** (`Character.cs:2517`,
+  `requireaimtosecondaryuse` по умолчанию `true`). Одноразовость предмета на этом
+  не построить: `AddItemToRemoveQueue` откладывает удаление до
+  `MapEntity.UpdateAll`, а на клиенте вообще ничего не делает
+  (`EntitySpawner.cs:383`, ранний `return` при `IsClient`). Ваниль в чертежах
+  защищается сливом `Condition`; у нас для книг заведена таблица `spentBooks`.
+- `Hook.Patch("ololo", ...)` — безымянный id у хука `HasRequiredItems`,
+  исторический. Два других патча названы по-человечески.
 
 ## Git
 
